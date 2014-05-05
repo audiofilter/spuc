@@ -1,0 +1,17 @@
+os:
+  - osx
+language: 
+  - objective-c
+compiler:
+  - clang
+before_install:
+  - brew update
+install:
+  - brew install cmake
+  - brew install boost --with c++11
+# Change this to your needs
+before_script:
+  - mkdir build
+  - cd build
+  - cmake ..
+script: make
