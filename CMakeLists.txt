@@ -14,8 +14,8 @@ message(STATUS "Project spuc")
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 ###set(CMAKE_EXE_LINKER_FLAGS "-static-libstdc++")
 #set(CMAKE_CXX_FLAGS "-Werror -std=c++0x ")
-set(CMAKE_CXX_FLAGS " -std=c++0x ")
-message(STATUS "Using c++11/libstdc++")
+set(CMAKE_CXX_FLAGS " -std=c++11 ")
+message(STATUS "Using c++11")
 ENDIF()
 
 execute_process(COMMAND ${CMAKE_CXX_COMPILER} -dumpversion

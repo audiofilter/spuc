@@ -51,7 +51,7 @@ float_type erf1(float_type x) { return(1-erfc1(x)); }
 */
 void swap(int *a, int *b)
 {
-      register int t;
+      int t;
       t = *a;
       *a = *b;
       *b = t;
