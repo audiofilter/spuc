@@ -42,9 +42,9 @@ template <class Numeric, class Coeff=float_type> class iir_shelf
 {
 protected:   
   long round_bits;
+  Coeff b;                    
   Coeff a0;
   Coeff a1;
-  Coeff b;                    
   Numeric out;
   Numeric previous_out;
   Numeric previous_in;
@@ -58,14 +58,14 @@ public:
   }
   // Constructor specifying lower & upper frequencies rather than coefficients
   iir_shelf(float_type ca, float_type cb) : 
-	a0((ca+1.0)/(cb+1.0)), a1((1.0-ca)/(1.0+b)), b((1.0-cb)/(1.0+cb)), Q(0) {
+	b((1.0-cb)/(1.0+cb)), a0((ca+1.0)/(cb+1.0)), a1((1.0-ca)/(1.0+b)), Q(0) {
 	reset();
   }
   void set(float_type ca, float_type cb) {
-        a0 = ((ca+1.0)/(cb+1.0));
+	a0 = ((ca+1.0)/(cb+1.0));
 	a1 = ((1.0-ca)/(1.0+b));
 	b = ((1.0-cb)/(1.0+cb));
-        reset();
+	reset();
   }
   Coeff get_a0() {return(a0);}
   Coeff get_a1() {return(a1);}
