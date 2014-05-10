@@ -58,11 +58,6 @@ typedef float float_type;
 #endif
 
 // Class Declarations
-class int_s;
-class vfixed;
-class vfloat;
-class vlog;
-class fxd;
 class bit;
 template <class T> class conjr;
 template <class T> class magsqr;
@@ -76,9 +71,6 @@ template <class T> class complex;
 #endif
 template <class T> class matrix;
 template <class T> class vector;
-
-template <long T> class sint;
-template <long T, long F> class fpint;
 
 // Shortcut Typedefs
 typedef builtin<float>   Float;

@@ -23,12 +23,6 @@
 #include <spuc/builtin.h>
 #include <spuc/base_type.h>
 #include <spuc/fundtype.h>
-#include <spuc/sint.h>
-#include <spuc/vfixed.h>
-#include <spuc/fpint.h>
-#include <spuc/vfloat.h>
-#include <spuc/vlog.h>
-#include <spuc/fxd.h>
 #include <spuc/complex.h>
 using namespace SPUC;
 #endif

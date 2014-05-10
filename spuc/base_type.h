@@ -41,48 +41,6 @@ template <typename T> class base_type<complex<T> > {
 public:
   typedef T btype;
 };
-#ifndef NO_SINT
-template <int T> class base_type<sint<T> > {
-public:
-  typedef int_s btype;
-};
-#endif
-#ifndef NO_INT_S
-template <> class base_type<int_s> {
-public:
-  typedef int_s btype;
-};
-#endif
-#ifndef NO_FPINT
-template <int T,int M> class base_type<fpint<T,M> > {
-public:
-  typedef double btype;
-};
-#endif
-#ifndef NO_VFIXED
-template <> class base_type<vfixed> {
-public:
-  typedef double btype;
-};
-#endif
-#ifndef NO_VFLOAT
-template <> class base_type<vfloat> {
-public:
-  typedef double btype;
-};
-#endif
-#ifndef NO_VLOG
-template <> class base_type<vlog> {
-public:
-  typedef double btype;
-};
-#endif
-#ifndef NO_FXD
-template <> class base_type<fxd> {
-public:
-  typedef double btype;
-};
-#endif
 #ifndef NO_BUILTIN
 template <typename T> class base_type<builtin<T> > {
 public:

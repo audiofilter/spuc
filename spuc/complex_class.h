@@ -91,13 +91,6 @@ template <typename T> class complex
   operator const complex<double> () const {	return(complex<double>((double)re,(double)im));  }
   operator const complex<float> () const {	return(complex<float>((float)re,(float)im));  }
   operator const complex<int> () const {	return(complex<int>((int)re,(int)im));  }
-#ifndef PYSTE
-  operator const complex<int_s> ()  const {	return(complex<int_s>((int_s)re,(int_s)im));  }
-  operator const complex<vfixed> ()  const {	return(complex<vfixed>((vfixed)re,(vfixed)im));  }
-  operator const complex<vfloat> ()  const {	return(complex<vfloat>((vfloat)re,(vfloat)im));  }
-  operator const complex<vlog> ()  const {	return(complex<vlog>((vlog)re,(vlog)im));  }
-  operator const complex<fxd> ()  const {	return(complex<fxd>((fxd)re,(fxd)im));  }
-#endif
   operator const complex<builtin<long> > ()  const {  return(complex<builtin<long> >((long)re,(long)im));  }
   operator const complex<builtin<double> > ()  const {  return(complex<builtin<double> >((double)re,(double)im));  }
   operator const complex<builtin<int> > ()  const {	  return(complex<builtin<int> >((int)re,(int)im));  }

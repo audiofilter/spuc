@@ -36,34 +36,6 @@ template <typename T> class quantized_type<complex<T> > {
  public:
   typedef complex<long> dtype;
 };
-#ifndef NO_SINT
-template <long T> class quantized_type<sint<T> > {
- public:
-  typedef int_s dtype;
-};
-#endif
-// Explicit
-#ifndef NO_INT_S
-template <> class quantized_type<int_s> {
- public:
-  typedef int_s dtype;
-};
-template <> class quantized_type<complex<int_s> > {
- public:
-  typedef complex<int_s> dtype;
-};
-#endif
-
-#ifndef NO_VFIXED
-template <> class quantized_type<vfixed> {
- public:
-  typedef vfixed dtype;
-};
-template <> class quantized_type<complex<vfixed> > {
- public:
-  typedef complex<vfixed> dtype;
-};
-#endif
 // template_instantiations: double, long, int_s
 } // namespace SPUC
 #endif

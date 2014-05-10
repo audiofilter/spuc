@@ -21,21 +21,6 @@
 #include <spuc/spuc_types.h>
 #include <iostream>
 #include <spuc/spuc_defines.h>
-#ifndef NO_INT_S
-#include <spuc/int_s.h>
-#endif
-#ifndef NO_VFIXED
-#include <spuc/vfixed.h>
-#endif
-#ifndef NO_VFLOAT
-#include <spuc/vfloat.h>
-#endif
-#ifndef NO_VLOG
-#include <spuc/vlog.h>
-#endif
-#ifndef NO_FXD
-#include <spuc/fxd.h>
-#endif
 namespace SPUC {
 
 //! \file 
@@ -409,42 +394,6 @@ BUILTIN_OPS(Float,Double,double)
 BUILTIN_OPS(Long,Int,long)
 BUILTIN_OPS(Long,Double,double)
 BUILTIN_OPS(Int,Double,double)
-
-#ifndef NO_INT_S
-BUILTIN_OPS(Float,int_s,float)
-BUILTIN_OPS(Double,int_s,double)
-BUILTIN_OPS(Long,int_s,long)
-BUILTIN_OPS(Int,int_s,int)
-#endif
-
-#ifndef NO_VFIXED
-BUILTIN_OPS(Float,vfixed,float)
-BUILTIN_OPS(Double,vfixed,double)
-BUILTIN_OPS(Long,vfixed,long)
-BUILTIN_OPS(Int,vfixed,int)
-#endif
-
-#ifndef NO_VFLOAT
-BUILTIN_OPS(Float,vfloat,float)
-BUILTIN_OPS(Double,vfloat,double)
-BUILTIN_OPS(Long,vfloat,long)
-BUILTIN_OPS(Int,vfloat,int)
-#endif
-
-#ifndef NO_VLOG
-BUILTIN_OPS(Float,vlog,float)
-BUILTIN_OPS(Double,vlog,double)
-BUILTIN_OPS(Long,vlog,long)
-BUILTIN_OPS(Int,vlog,int)
-#endif
-
-#ifndef NO_FXD
-BUILTIN_OPS(Float,fxd,float)
-BUILTIN_OPS(Double,fxd,double)
-BUILTIN_OPS(Long,fxd,long)
-BUILTIN_OPS(Int,fxd,int)
-#endif
-
 
 #endif
 

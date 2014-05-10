@@ -43,8 +43,8 @@ template <class Numeric> class mle
  public:
   const long mlsd_span;//! number of bits spanned by MLSD part of equaliser 
   const long dfe_span; //! Number of bits spanned by DFE part of equaliser 
-  const long n_branches;     //! Number of branches
   const	long n_states;       //! Number of states 
+  const long n_branches;     //! Number of branches
   Numeric fb_est;      //! Feedback estimator for RSDFSE
   fir_adapt< Numeric, Numeric > cfir; //! Channel impulse response
   smart_array<Numeric> cir_mlsd;
@@ -65,8 +65,8 @@ template <class Numeric> class mle
 	mle(int mlsd_size, int dfe_size=0, long q=1) :
 		mlsd_span(mlsd_size+1),
 		dfe_span(dfe_size),
-		n_branches(2*q*n_states),
 		n_states(1 << (q*mlsd_size)),
+		n_branches(2*q*n_states),
 		cir_mlsd(mlsd_span),
 		cir_dfe(dfe_span),
 		f_est(n_branches),

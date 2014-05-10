@@ -6,11 +6,6 @@
 #include <spuc/conj.h>
 #include <spuc/signbit.h>
 #include <spuc/magsq.h>
-#include <spuc/int_s.h>
-#include <spuc/vfloat.h>
-#include <spuc/vfixed.h>
-#include <spuc/fxd.h>
-#include <spuc/vlog.h>
 #include <spuc/builtin.h>
 #ifdef COUNTOPS
 #define ASP_C(x) extern long x; x++; 

@@ -22,7 +22,12 @@ test_ddfse
 test_elliptic_allpass
 test_filters
 test_fir2
-test_fpint
+
+#test_spuc_int
+#test_spuc_int_types
+#test_spuc_fixed
+#test_spuc_fixed_types
+#test_speed
 
 test_iir2nd
 test_iir
@@ -36,8 +41,8 @@ test_smart_test
 
 test_q
 test_rls
-test_sint2
-test_sint
+#test_sint2
+#test_sint
 test_cmat
 )
 
@@ -67,4 +72,4 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
   TARGET_LINK_LIBRARIES(test_ls_solve itpp)
 ENDIF()
 
-set(EXECUTABLE_OUTPUT_PATH ..)
+set(EXECUTABLE_OUTPUT_PATH ../..)

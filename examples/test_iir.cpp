@@ -6,6 +6,7 @@ using namespace std;
 #include <spuc/elliptic_iir.h>
 #include <spuc/iir.h>
 #include <spuc/iir_2nd.h>
+#include <spuc/spuc_fp.h>
 using namespace SPUC;
 //! \brief testing various types for IIR 
 //
@@ -25,9 +26,8 @@ int main(int argv, char* argc[]) {
   iir<float_type> LPF(BPF);
 
 
-  iir<sint<16> ,float_type> IPF(BPF);
-  iir<vfixed ,vfixed > FPF(BPF);
-  iir<float_type ,fpint<15,15> > SPF(BPF);
+  iir<spuc_int<16> ,float_type> IPF(BPF);
+  iir<float_type ,spuc_fixed<30,15> > SPF(BPF);
 
 
 

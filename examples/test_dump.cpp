@@ -2,7 +2,6 @@
 #include <fstream>
 #include <iomanip>
 using namespace std;
-#include <spuc/sint.h>
 #include <spuc/iir_2nd.h>
 #include <spuc/iir.h>
 #include <spuc/butterworth_iir.h>

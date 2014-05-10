@@ -30,12 +30,6 @@ endif()
 
 SET(TYPE_SRCS 
 spuc/bit.cpp
-spuc/fxd.cpp
-spuc/int_s.cpp
-spuc/int_u.cpp
-spuc/vfixed.cpp
-spuc/vfloat.cpp
-spuc/vlog.cpp
 )
 
 SET(FILT_SRCS  
