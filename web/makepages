@@ -1,0 +1,6 @@
+pages:
+	mv modules.html orig_modules.html
+	cp ../spuc/web/ref_modules.html modules.html
+	#cp ../spuc/web/ref_gifs/*.gif ./latex
+	#gif2png ./latex/*.gif
+	cp  ../spuc/web/ref_gifs/*.png ./latex

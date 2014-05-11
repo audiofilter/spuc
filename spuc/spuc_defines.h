@@ -57,13 +57,12 @@ namespace SPUC {
      <li> 8) Capitalized and uppercase class names are classes not originally in DSP Templates
 	 </ul>
 
-
-	 The classes are designed so that they can be used in a simple straight forward manner. For example, a FIR would be initialized with its tap weights and then simply a member function would be called every time a sample is input or an output is required.
+	 <P>The classes are designed so that they can be used in a simple straight forward manner. For example, a FIR would be initialized with its tap weights and then simply a member function would be called every time a sample is input or an output is required.</p>
 
 	 <P>Before discussing why C++ is better than C for DSP programming. Let's look at some of the pros and cons
-	 for C++ vs. the alternatives.
+	 for C++ vs. the alternatives.</p>
 
-	 <P><B>Pros</B>
+	 <P><B>Pros</B></p>
 	 <ul><li>  The common alternatives are very costly (Alta's SPW, Synopsys Cossap etc.)
 	 <li>    Long learning times/training not required for C++ programmers.
 	 <li>   For complex simulations, C++ is more efficient and yields shorter run times.
@@ -77,7 +76,7 @@ namespace SPUC {
 	 <li>  Can take advantage of Windows GUIs if desired.
 	 </ul>
 
-	 <P><B>Cons</B>
+	 <P><B>Cons</B></p>
 	 <ul><li>    No standardization!
 	 <li>    Lack of documentation.
 	 <li>    Not user friendly/ No GUI.
@@ -85,8 +84,7 @@ namespace SPUC {
 	 <li>    No technical support.
 	 </ul>
 
-
-	 <BR> Please see links such as those below for why to use C++ over C in general.
+	 <P>Please see links such as those below for why to use C++ over C in general.</p>
 	 <BR><A HREF="http://www.cantrip.org/cpp.html">Nathan Myers C++ Articles</A>
 	 <BR><A HREF="http://math.nist.gov/pozo/c++class/">C++ Programming for Scientists Course (PDF) from NIST</A>
 	 <BR><A HREF="http://math.nist.gov/pozo/">Various C++ Math classes from Roldan Pozo at NIST</A>

@@ -1,0 +1,40 @@
+ <H1>Digital Signal Processing Templates in C++</H1>
+ <P><B>Why use C++ Templates?</B>
+	 <P>Since most DSP algorithms are not based on specific data types it makes sense
+	 to represent them using code that is not type specific for several reasons.
+	 Both C++ and untyped languages allow this to some degree. Algorithms can be written 
+	 in python without specifying data types. However, since typically simulations
+	 and/or analysis must be done, simulation speed becomes an issue. C++ does not have 
+	 the performance issues of interpreted languages. Also since the resulting DSP code is often used in the design of ASICs, 
+	 FPGAs or DSP processors, it is typical to have a C/C++ representation of the algorithm.
+	 The beauty of C++ templates is that the same code can be used during the whole design process.
+	 For algorithmic tradeoffs, double/floating point numbers can be used, while for targetting hardware 
+	 or software implementations, fixed-point or integer types can be used for bit-width
+	 reduction and/or analysis.
+	 <HR>
+ <P><B>Python and C++ Templates?</B>
+     <P>Using up-to-date tools written in both C++ and python, such as
+     the Boost python library, pyste and py++, as well as gccxml, it's
+     possible to generated python bindings for most if not all of the
+     C++ template library. Using the power of python and packages such
+     as pythoncard, matplotlib, scipy, etc, one can quickly and easily
+     do many of the same functions as is typically done in matlab or
+     octave. However, by first writing the code in C++ there is no
+     need to have multiple respresentations of the design as there is
+     no need for anything other than test and support functions to be
+     written in python which is inherently better suited for this
+     purpose over C++.
+<HR>
+	
+	 <P><B>This Library provides both C++ template code and the
+	 pyspuc python package and includes</B></P>
+	 <ul> <li> basic building blocks such as complex data types, Fixed-bit width integer classes, pure-delay blocks, etc.
+	 <li> Basic DSP building blocks such as FIR, IIR, Allpass, Running Average, Lagrange interpolation filters, NCO, Cordic rotator.
+	 <li> Several communications functions such as timing, phase and frequency discriminators for BPSK/QPSK signals.
+	 <li> Other miscellaneous DSP/Communications related functions/classes.
+	 <li> Ability to design several types of FIR and IIR filters
+	 <li> Various adaptive equalizer classes
+	 <li> This library also includes code from IT++. 
+ 	 </ul>
+
+
