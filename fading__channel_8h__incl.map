@@ -1,0 +1,28 @@
+<map id="fading_channel.h" name="fading_channel.h">
+<area shape="rect" id="node3" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="1246,372,1360,397"/>
+<area shape="rect" id="node20" href="$fir_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="380,79,455,104"/>
+<area shape="rect" id="node32" href="$noise_8h.html" title="Gaussian noise routine. " alt="" coords="1301,299,1397,324"/>
+<area shape="rect" id="node5" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="2167,519,2310,544"/>
+<area shape="rect" id="node8" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="909,445,998,471"/>
+<area shape="rect" id="node11" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="1022,445,1125,471"/>
+<area shape="rect" id="node13" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="1250,445,1355,471"/>
+<area shape="rect" id="node15" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="2161,445,2260,471"/>
+<area shape="rect" id="node16" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="1379,445,1531,471"/>
+<area shape="rect" id="node17" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1554,445,1729,471"/>
+<area shape="rect" id="node18" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="1753,445,1885,471"/>
+<area shape="rect" id="node19" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="1908,445,2086,471"/>
+<area shape="rect" id="node7" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="1366,592,1516,617"/>
+<area shape="rect" id="node9" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="1378,519,1504,544"/>
+<area shape="rect" id="node10" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="979,519,1072,544"/>
+<area shape="rect" id="node12" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="1147,519,1253,544"/>
+<area shape="rect" id="node14" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="1579,519,1687,544"/>
+<area shape="rect" id="node22" href="$quantiser_8h.html" title="........ " alt="" coords="571,152,690,177"/>
+<area shape="rect" id="node27" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="125,299,259,324"/>
+<area shape="rect" id="node29" href="$fir__coeff_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="112,225,224,251"/>
+<area shape="rect" id="node31" href="$mixed__type_8h.html" title="Determine resultant type when mixing two types in math operations. " alt="" coords="299,152,432,177"/>
+<area shape="rect" id="node23" href="$quantize_8h.html" title="Templated Quantize function. " alt="" coords="615,225,729,251"/>
+<area shape="rect" id="node24" href="$quantized__type_8h.html" title="Determine quantized version of particular type, i.e complex&lt;double&gt; &#45;&gt; complex&lt;long&gt;, etc. " alt="" coords="632,519,787,544"/>
+<area shape="rect" id="node25" href="$quantizer_8h.html" title="spuc/quantizer.h" alt="" coords="711,299,830,324"/>
+<area shape="rect" id="node26" href="$real__quantize_8h.html" title="Templated quantize function. " alt="" coords="810,519,955,544"/>
+<area shape="rect" id="node30" href="$qnoise_8h.html" title="class to add quantization noise to signal " alt="" coords="430,299,533,324"/>
+</map>

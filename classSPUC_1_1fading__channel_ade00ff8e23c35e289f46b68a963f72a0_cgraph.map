@@ -1,0 +1,8 @@
+<map id="SPUC::fading_channel::generate_channel" name="SPUC::fading_channel::generate_channel">
+<area shape="rect" id="node2" href="$classSPUC_1_1noise.html#a83dee6e8872536e51da02ba7c25c994d" title="complex gaussian noise " alt="" coords="210,5,360,31"/>
+<area shape="rect" id="node4" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="439,56,527,81"/>
+<area shape="rect" id="node5" href="$group__functions.html#ga05aa4ab6852e60a9202639b461596e38" title="complex exponential " alt="" coords="241,107,328,132"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1noise.html#a140536d7a6b44da2a5f22263da222136" title="Uniform noise. " alt="" coords="408,5,557,31"/>
+<area shape="rect" id="node6" href="$namespaceSPUC.html#af83ded758099fb4fddd4f51d9975dada" title="complex exponential " alt="" coords="437,107,528,132"/>
+<area shape="rect" id="node7" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="605,107,692,132"/>
+</map>

@@ -1,0 +1,23 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$classSPUC_1_1qpsk__ber__test.html#a427d86dee7b2e8714370daccf34e7988" title="SPUC::qpsk_ber_test\l::ber_results" alt="" coords="117,5,266,44"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1qpsk__ber__test.html#acd112f598e474d360ddbb827cbba2ae1" title="SPUC::qpsk_ber_test\l::final_results" alt="" coords="117,68,266,107"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1qpsk__ber__test.html#a58012423261a38fe987376f1795b5c5a" title="SPUC::qpsk_ber_test\l::found_sync" alt="" coords="117,131,266,169"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1qpsk__ber__test.html#a4fe0cac92579c8c499d2e6a346b8bc28" title="SPUC::qpsk_ber_test\l::init_delay" alt="" coords="117,193,266,232"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1sim__qpsk__variable.html#ad5ddbd10dc1bdffaffcdf606420c84b6" title="SPUC::sim_qpsk_variable\l::loop_end" alt="" coords="104,319,280,357"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1sim__qpsk__variable.html#a19ba3268e8bfb09c72202475dbbf086c" title="SPUC::sim_qpsk_variable\l::loop_init" alt="" coords="104,433,280,472"/>
+<area shape="rect" id="node9" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="793,408,881,433"/>
+<area shape="rect" id="node11" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="576,643,682,668"/>
+<area shape="rect" id="node13" href="$classSPUC_1_1noise.html#affc34237c0bfd2947dbe7af79301cdea" title="Change seed. " alt="" coords="112,699,271,724"/>
+<area shape="rect" id="node14" href="$classSPUC_1_1sim__qpsk__variable.html#af00e1a963d2987d7eb2ff5ff016e5029" title="SPUC::sim_qpsk_variable\l::step" alt="" coords="104,521,280,560"/>
+<area shape="rect" id="node21" href="$classSPUC_1_1qpsk__ber__test.html#a24a81f565a3d5e09bf6eb3d6e898cd1d" title="SPUC::qpsk_ber_test\l::synchronize" alt="" coords="117,256,266,295"/>
+<area shape="rect" id="node22" href="$classSPUC_1_1noise.html#a7031d213e5fcec25950b346c4a9a64b7" title="Uniform noise. " alt="" coords="130,748,253,773"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1max__pn.html#a77af51b51a948e99c878dcbea658efff" title="Get output (fast method) " alt="" coords="346,232,485,257"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1quad__data.html#a7c48cc03b9d71c4e6f10412e51b80d79" title="SPUC::quad_data::set\l_initial_offset" alt="" coords="339,459,493,497"/>
+<area shape="rect" id="node12" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="755,643,920,668"/>
+<area shape="rect" id="node15" href="$classSPUC_1_1sim__qpsk__variable.html#a63df3a7eeace9bbe18bfcbdb2d628795" title="!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! " alt="" coords="328,521,504,560"/>
+<area shape="rect" id="node20" href="$classSPUC_1_1sim__qpsk__variable.html#ab0c3669709d9ea0a079d626f79a84372" title="SPUC::sim_qpsk_variable\l::rx_step" alt="" coords="328,584,504,623"/>
+<area shape="rect" id="node16" href="$classSPUC_1_1quad__data.html#a264d7b85dafaf0c3b558e5f271a01a1a" title="SPUC::quad_data::get\l_sample" alt="" coords="552,517,707,556"/>
+<area shape="rect" id="node17" href="$classSPUC_1_1vco.html#aa6d52c46f5f328a20c8e15cc46f5936d" title="return output with updated input " alt="" coords="567,580,692,605"/>
+<area shape="rect" id="node18" href="$classSPUC_1_1noise.html#a83dee6e8872536e51da02ba7c25c994d" title="complex gaussian noise " alt="" coords="554,461,705,487"/>
+<area shape="rect" id="node19" href="$classSPUC_1_1noise.html#a140536d7a6b44da2a5f22263da222136" title="Uniform noise. " alt="" coords="763,461,912,487"/>
+</map>

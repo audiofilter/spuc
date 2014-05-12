@@ -1,0 +1,13 @@
+<map id="lagrange.h" name="lagrange.h">
+<area shape="rect" id="node2" href="$qpsk_8h.html" title="A QPSK receiver that can operate at exactly 2 samples/symbol. " alt="" coords="238,79,299,104"/>
+<area shape="rect" id="node7" href="$qpsk__variable_8h.html" title="A QPSK receiver that can operate over a range of non&#45;integer sampling rates. " alt="" coords="446,152,561,177"/>
+<area shape="rect" id="node10" href="$quad__data_8h.html" title="Class for QPSK data using a root raised cosine transmit filter. " alt="" coords="323,79,419,104"/>
+<area shape="rect" id="node11" href="$resampler_8h.html" title="A resampling block using interpolator, halfband filter and NCO. " alt="" coords="494,79,585,104"/>
+<area shape="rect" id="node12" href="$sim__qam_8h.html" title="A Class for simulating a QAM system. " alt="" coords="609,79,696,104"/>
+<area shape="rect" id="node3" href="$sim__qpsk_8h.html" title="A Class for simulating a QPSK system. " alt="" coords="224,152,313,177"/>
+<area shape="rect" id="node4" href="$qpsk__main_8cpp.html" title="qpsk_main.cpp" alt="" coords="297,225,408,251"/>
+<area shape="rect" id="node5" href="$qpsk__main__vs_8cpp.html" title="qpsk_main_vs.cpp" alt="" coords="5,225,137,251"/>
+<area shape="rect" id="node6" href="$qpsk__temp_8cpp.html" title="qpsk_temp.cpp" alt="" coords="161,225,272,251"/>
+<area shape="rect" id="node8" href="$sim__qpsk__variable_8h.html" title="A Class for simulating a variable rate QPSK system. " alt="" coords="432,225,575,251"/>
+<area shape="rect" id="node9" href="$qpsk__variable__main_8cpp.html" title="qpsk_variable_main.cpp" alt="" coords="421,299,586,324"/>
+</map>

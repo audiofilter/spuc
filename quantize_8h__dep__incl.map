@@ -1,0 +1,51 @@
+<map id="quantize.h" name="quantize.h">
+<area shape="rect" id="node2" href="$quantiser_8h.html" title="........ " alt="" coords="3551,79,3638,104"/>
+<area shape="rect" id="node3" href="$allpass__1_8h.html" title="Template class for 1st order allpass filter with programmble gain and delay. " alt="" coords="433,152,521,177"/>
+<area shape="rect" id="node10" href="$allpass__2nd_8h.html" title="Template for 2nd order allpass filter. " alt="" coords="1273,152,1377,177"/>
+<area shape="rect" id="node17" href="$fir_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="2616,152,2658,177"/>
+<area shape="rect" id="node31" href="$iir_8h.html" title="Template Class for iir filter. " alt="" coords="3463,225,3505,251"/>
+<area shape="rect" id="node40" href="$iir__1st_8h.html" title="Template Class for 1st Order iir filter. " alt="" coords="3632,152,3700,177"/>
+<area shape="rect" id="node41" href="$iir__2nd_8h.html" title="Template for 2nd Order IIR filter. " alt="" coords="3338,152,3411,177"/>
+<area shape="rect" id="node42" href="$iir__comb_8h.html" title="Template for IIR comb type filter with programmable delay and gain. " alt="" coords="3725,152,3808,177"/>
+<area shape="rect" id="node43" href="$iir__exp1_8h.html" title="Template Class for 1st Order lowpass iir filter. " alt="" coords="3832,152,3911,177"/>
+<area shape="rect" id="node44" href="$iir__hpf_8h.html" title="Template Class for 1st Order high pass IIR filter from S&#45;domain transformation. " alt="" coords="3935,152,4003,177"/>
+<area shape="rect" id="node45" href="$iir__hpf1_8h.html" title="Template Class for 1st Order High&#45;pass iir filter. " alt="" coords="4027,152,4103,177"/>
+<area shape="rect" id="node46" href="$iir__lpf_8h.html" title="Template Class for 1st Order low pass iir filter. " alt="" coords="3681,225,3745,251"/>
+<area shape="rect" id="node47" href="$iir__lpf1_8h.html" title="Template Class for 1st Order lowpass iir filter. " alt="" coords="3485,152,3557,177"/>
+<area shape="rect" id="node48" href="$iir__shelf_8h.html" title="Template Class for shelf filter. " alt="" coords="4127,152,4206,177"/>
+<area shape="rect" id="node49" href="$lagrange_8h.html" title="Template Class for Lagrange interpolation using a FIR filter. " alt="" coords="1881,152,1966,177"/>
+<area shape="rect" id="node50" href="$nested__allpass__1_8h.html" title="nested_allpass_1.h" alt="" coords="4229,152,4365,177"/>
+<area shape="rect" id="node4" href="$allpass_8h.html" title="Template Class for allpass filter consisting of. " alt="" coords="5,225,79,251"/>
+<area shape="rect" id="node5" href="$iir__allpass1_8h.html" title="Template Class for IIR Filter using 2 1st order sections. " alt="" coords="103,225,203,251"/>
+<area shape="rect" id="node6" href="$iir__allpass1__halfband_8h.html" title="Template Class for Allpass halfband IIR Filter. " alt="" coords="226,225,384,251"/>
+<area shape="rect" id="node7" href="$iir__delay__allpass1_8h.html" title="Template Class for IIR filter consisting of 2 1st Order Allpass sections. " alt="" coords="408,225,546,251"/>
+<area shape="rect" id="node8" href="$notch__comb_8h.html" title="notch_comb.h" alt="" coords="570,225,675,251"/>
+<area shape="rect" id="node9" href="$shelf__allpass1_8h.html" title="IIR zolzer filter based on 2nd order allpass structure. " alt="" coords="699,225,815,251"/>
+<area shape="rect" id="node11" href="$cutboost_8h.html" title="IIR structure that can cut or boost signals at a programmed frequency. " alt="" coords="840,225,922,251"/>
+<area shape="rect" id="node12" href="$iir__allpass2_8h.html" title="Template Class for IIR filter using sum of 2nd Order Allpass sections. " alt="" coords="946,225,1045,251"/>
+<area shape="rect" id="node13" href="$nested__iir__allpass__1_8h.html" title="nested_iir_allpass_1.h" alt="" coords="1069,225,1223,251"/>
+<area shape="rect" id="node14" href="$nested__iir__allpass__2_8h.html" title="nested_iir_allpass_2.h" alt="" coords="1248,225,1402,251"/>
+<area shape="rect" id="node15" href="$nested__shelf__allpass__2_8h.html" title="nested_shelf_allpass_2.h" alt="" coords="1426,225,1598,251"/>
+<area shape="rect" id="node16" href="$notch__allpass_8h.html" title="IIR notch filter based on 2nd order allpass structure. " alt="" coords="1621,225,1735,251"/>
+<area shape="rect" id="node18" href="$fading__channel_8h.html" title="A Class for simulating a FIR channel model. " alt="" coords="2298,225,2421,251"/>
+<area shape="rect" id="node19" href="$fir__adapt_8h.html" title="template class fir_adapt Based on FIR class, created to support LMS adaptive filtering ..." alt="" coords="2445,225,2530,251"/>
+<area shape="rect" id="node20" href="$fir__decim_8h.html" title="template class for fir decimation based on FIR class " alt="" coords="2554,225,2640,251"/>
+<area shape="rect" id="node21" href="$fir__interp_8h.html" title="template class fir_decim based on FIR class, created to support polyphase FIR interpolation ..." alt="" coords="2715,225,2799,251"/>
+<area shape="rect" id="node22" href="$quad__data_8h.html" title="Class for QPSK data using a root raised cosine transmit filter. " alt="" coords="2629,299,2725,324"/>
+<area shape="rect" id="node23" href="$iir__df_8h.html" title="Template Class for Modeling a Direct Form IIR. " alt="" coords="2824,225,2885,251"/>
+<area shape="rect" id="node24" href="$lib__inst_8cpp.html" title="lib_inst.cpp" alt="" coords="2909,225,2997,251"/>
+<area shape="rect" id="node25" href="$qpsk_8h.html" title="A QPSK receiver that can operate at exactly 2 samples/symbol. " alt="" coords="1949,225,2010,251"/>
+<area shape="rect" id="node26" href="$qpsk__variable_8h.html" title="A QPSK receiver that can operate over a range of non&#45;integer sampling rates. " alt="" coords="1810,225,1925,251"/>
+<area shape="rect" id="node27" href="$rls_8h.html" title="Recursive Least Squares Algorithm. " alt="" coords="3020,225,3067,251"/>
+<area shape="rect" id="node28" href="$test__fir2_8cpp.html" title="test_fir2.cpp" alt="" coords="3091,225,3185,251"/>
+<area shape="rect" id="node29" href="$test__mlse_8cpp.html" title="test_mlse.cpp" alt="" coords="2035,225,2138,251"/>
+<area shape="rect" id="node30" href="$test__speed_8cpp.html" title="test_speed.cpp" alt="" coords="2162,225,2274,251"/>
+<area shape="rect" id="node32" href="$test__dump_8cpp.html" title="test_dump.cpp" alt="" coords="3053,299,3162,324"/>
+<area shape="rect" id="node33" href="$test__fp16_8cpp.html" title="test_fp16.cpp" alt="" coords="3566,299,3668,324"/>
+<area shape="rect" id="node34" href="$test__fpint_8cpp.html" title="test_fpint.cpp" alt="" coords="3692,299,3793,324"/>
+<area shape="rect" id="node35" href="$test__iir_8cpp.html" title="test_iir.cpp" alt="" coords="3817,299,3902,324"/>
+<area shape="rect" id="node36" href="$test__iir2nd_8cpp.html" title="test_iir2nd.cpp" alt="" coords="2922,299,3030,324"/>
+<area shape="rect" id="node37" href="$test__int__fp_8cpp.html" title="test_int_fp.cpp" alt="" coords="3186,299,3294,324"/>
+<area shape="rect" id="node38" href="$test__sint_8cpp.html" title="test_sint.cpp" alt="" coords="3318,299,3414,324"/>
+<area shape="rect" id="node39" href="$test__sint2_8cpp.html" title="test_sint2.cpp" alt="" coords="3439,299,3542,324"/>
+</map>

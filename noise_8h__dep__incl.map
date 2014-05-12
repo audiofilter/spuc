@@ -1,0 +1,20 @@
+<map id="noise.h" name="noise.h">
+<area shape="rect" id="node2" href="$baud__eq__env_8h.html" title="Class for doing a simulation of an equalizer running at 1 sample/symbol. " alt="" coords="230,152,343,177"/>
+<area shape="rect" id="node3" href="$equalizers__sim_8cpp.html" title="equalizers_sim.cpp" alt="" coords="5,225,141,251"/>
+<area shape="rect" id="node4" href="$reference__main_8cpp.html" title="reference_main.cpp" alt="" coords="165,225,304,251"/>
+<area shape="rect" id="node5" href="$test__ddfse_8cpp.html" title="test_ddfse.cpp" alt="" coords="328,225,436,251"/>
+<area shape="rect" id="node6" href="$fading__channel_8h.html" title="A Class for simulating a FIR channel model. " alt="" coords="521,79,644,104"/>
+<area shape="rect" id="node9" href="$sim__qam_8h.html" title="A Class for simulating a QAM system. " alt="" coords="463,225,550,251"/>
+<area shape="rect" id="node10" href="$noise_8cpp.html" title="noise.cpp" alt="" coords="678,79,756,104"/>
+<area shape="rect" id="node11" href="$quad__data_8h.html" title="Class for QPSK data using a root raised cosine transmit filter. " alt="" coords="932,79,1027,104"/>
+<area shape="rect" id="node12" href="$sim__qpsk_8h.html" title="A Class for simulating a QPSK system. " alt="" coords="881,152,969,177"/>
+<area shape="rect" id="node13" href="$qpsk__main_8cpp.html" title="qpsk_main.cpp" alt="" coords="703,225,814,251"/>
+<area shape="rect" id="node14" href="$qpsk__main__vs_8cpp.html" title="qpsk_main_vs.cpp" alt="" coords="838,225,970,251"/>
+<area shape="rect" id="node15" href="$qpsk__temp_8cpp.html" title="qpsk_temp.cpp" alt="" coords="993,225,1105,251"/>
+<area shape="rect" id="node16" href="$sim__qpsk__variable_8h.html" title="A Class for simulating a variable rate QPSK system. " alt="" coords="1074,152,1217,177"/>
+<area shape="rect" id="node17" href="$qpsk__variable__main_8cpp.html" title="qpsk_variable_main.cpp" alt="" coords="1157,225,1322,251"/>
+<area shape="rect" id="node18" href="$test__sim__equalizer_8cpp.html" title="test_sim_equalizer.cpp" alt="" coords="1292,79,1449,104"/>
+<area shape="rect" id="node19" href="$test__speed_8cpp.html" title="test_speed.cpp" alt="" coords="1473,79,1585,104"/>
+<area shape="rect" id="node7" href="$fading__channel_8cpp.html" title="fading_channel.cpp" alt="" coords="619,152,756,177"/>
+<area shape="rect" id="node8" href="$qam__tx_8h.html" title="Class for QAM transmitter using a root raised cosine transmit filter. " alt="" coords="468,152,544,177"/>
+</map>

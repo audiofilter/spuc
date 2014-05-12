@@ -1,0 +1,44 @@
+<map id="test_filters.cpp" name="test_filters.cpp">
+<area shape="rect" id="node5" href="$fir__coeff_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="231,225,342,251"/>
+<area shape="rect" id="node26" href="$remez__fir_8h.html" title="template Remez_fir class " alt="" coords="353,299,473,324"/>
+<area shape="rect" id="node27" href="$gaussian__fir_8h.html" title="Calculate coefficients for FIR assuming gaussian frequency response. " alt="" coords="5,152,141,177"/>
+<area shape="rect" id="node28" href="$butterworth__fir_8h.html" title="Calculate coefficients for FIR assuming butterworth frequency response. " alt="" coords="165,152,314,177"/>
+<area shape="rect" id="node29" href="$create__remez__lpfir_8h.html" title="Calculate coefficients for lowpass FIR assuming equiripple frequency response. " alt="" coords="389,152,563,177"/>
+<area shape="rect" id="node30" href="$iir__allpass1_8h.html" title="Template Class for IIR Filter using 2 1st order sections. " alt="" coords="1274,79,1405,104"/>
+<area shape="rect" id="node47" href="$iir__allpass1__cascade_8h.html" title="Template Class for iir filter. " alt="" coords="2052,79,2240,104"/>
+<area shape="rect" id="node50" href="$freqz_8h.html" title="Various functions for getting frequency responses of filters. " alt="" coords="1765,225,1859,251"/>
+<area shape="rect" id="node7" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="805,372,939,397"/>
+<area shape="rect" id="node9" href="$qnoise_8h.html" title="class to add quantization noise to signal " alt="" coords="1121,299,1225,324"/>
+<area shape="rect" id="node10" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="1952,372,2066,397"/>
+<area shape="rect" id="node11" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="2922,519,3065,544"/>
+<area shape="rect" id="node14" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="1717,445,1805,471"/>
+<area shape="rect" id="node17" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="1590,445,1693,471"/>
+<area shape="rect" id="node19" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="1880,445,1984,471"/>
+<area shape="rect" id="node21" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="3030,445,3129,471"/>
+<area shape="rect" id="node22" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="2197,445,2349,471"/>
+<area shape="rect" id="node23" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="2372,445,2547,471"/>
+<area shape="rect" id="node24" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="2571,445,2703,471"/>
+<area shape="rect" id="node25" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="2727,445,2905,471"/>
+<area shape="rect" id="node13" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="2223,592,2374,617"/>
+<area shape="rect" id="node15" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="1837,519,1963,544"/>
+<area shape="rect" id="node16" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="1619,519,1711,544"/>
+<area shape="rect" id="node18" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="1488,519,1594,544"/>
+<area shape="rect" id="node20" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="1987,519,2095,544"/>
+<area shape="rect" id="node31" href="$quant_8h.html" title="spuc/quant.h" alt="" coords="2287,152,2385,177"/>
+<area shape="rect" id="node38" href="$allpass__1_8h.html" title="Template class for 1st order allpass filter with programmble gain and delay. " alt="" coords="1130,225,1251,251"/>
+<area shape="rect" id="node46" href="$elliptic__allpass_8h.html" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="2054,299,2204,324"/>
+<area shape="rect" id="node32" href="$round_8h.html" title="Templated round function. " alt="" coords="2289,225,2388,251"/>
+<area shape="rect" id="node35" href="$saturate_8h.html" title="Templated saturate function. " alt="" coords="2838,225,2951,251"/>
+<area shape="rect" id="node33" href="$rounder_8h.html" title="spuc/rounder.h" alt="" coords="2285,299,2395,324"/>
+<area shape="rect" id="node34" href="$real__round_8h.html" title="Templated round function. " alt="" coords="3190,519,3318,544"/>
+<area shape="rect" id="node36" href="$saturater_8h.html" title="spuc/saturater.h" alt="" coords="3260,299,3377,324"/>
+<area shape="rect" id="node37" href="$real__saturate_8h.html" title="Templated saturation functions. " alt="" coords="3342,519,3484,544"/>
+<area shape="rect" id="node39" href="$quantiser_8h.html" title="........ " alt="" coords="1451,299,1570,324"/>
+<area shape="rect" id="node43" href="$mixed__type_8h.html" title="Determine resultant type when mixing two types in math operations. " alt="" coords="547,372,679,397"/>
+<area shape="rect" id="node44" href="$delay_8h.html" title="Template class for Delay line. " alt="" coords="1001,299,1097,324"/>
+<area shape="rect" id="node45" href="$circ__buffer_8h.html" title="Circular Buffer. " alt="" coords="801,299,927,324"/>
+<area shape="rect" id="node40" href="$quantize_8h.html" title="Templated Quantize function. " alt="" coords="2008,445,2122,471"/>
+<area shape="rect" id="node41" href="$quantized__type_8h.html" title="Determine quantized version of particular type, i.e complex&lt;double&gt; &#45;&gt; complex&lt;long&gt;, etc. " alt="" coords="2221,519,2376,544"/>
+<area shape="rect" id="node48" href="$spuc__math_8h.html" title="Various standard math functions not available elsewhere. " alt="" coords="1740,299,1870,324"/>
+<area shape="rect" id="node49" href="$allpass_8h.html" title="Template Class for allpass filter consisting of. " alt="" coords="1645,152,1751,177"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="SPUC::iir_coeff::quantize" name="SPUC::iir_coeff::quantize">
+<area shape="rect" id="node2" href="$classSPUC_1_1iir__coeff.html#a1a599d2732f6e6b4c516518f9034b8e4" title="SPUC::iir_coeff::ab\l_to_tf" alt="" coords="229,5,363,44"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1iir__coeff.html#adb24f7ca498b8230381a12ebc0e46dbf" title="SPUC::iir_coeff::max\l_abs_coeff" alt="" coords="223,68,368,107"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1iir__coeff.html#ab9ac695504e9f087cf0be193bf410c59" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="416,5,551,44"/>
+<area shape="rect" id="node4" href="$group__misc.html#ga524a8736d3854dd53ada5c79d0192a49" title="SPUC::partial_convolve" alt="" coords="599,12,761,37"/>
+<area shape="rect" id="node6" href="$namespaceSPUC.html#acea99b42e034ac8d81c35e330a7a7039" title="SPUC::ABS" alt="" coords="437,75,530,100"/>
+</map>

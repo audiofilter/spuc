@@ -1,0 +1,16 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$group__iir.html#ga3ca39dd578a66f4a95540ae493d8aa46" title="Calculate coefficients for IIR assuming butterworth frequency response. " alt="" coords="104,92,254,117"/>
+<area shape="rect" id="node14" href="$classSPUC_1_1iir.html#afc31ed1aa1c2cccaf9fec52c167ea568" title="Clock in sample and get output. " alt="" coords="122,141,236,167"/>
+<area shape="rect" id="node15" href="$classSPUC_1_1iir.html#a7ddbf3c1bdbf61e500fa4145f1011b3a" title="print coefficients " alt="" coords="124,191,233,216"/>
+<area shape="rect" id="node3" href="$namespaceSPUC.html#ae96995aa675cee5890eda51f6ec9b2e3" title="Calculate roots. " alt="" coords="310,43,457,68"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1iir__coeff.html#afe628cb748a60dd84e49fc39e3f32929" title="Do bilinear transformation. " alt="" coords="302,92,465,117"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1iir__coeff.html#a505d0536ed015dec3e785ab480f68c5a" title="SPUC::iir_coeff::convert\l_to_ab" alt="" coords="302,141,465,180"/>
+<area shape="rect" id="node4" href="$namespaceSPUC.html#af83ded758099fb4fddd4f51d9975dada" title="complex exponential " alt="" coords="535,5,626,31"/>
+<area shape="rect" id="node6" href="$namespaceSPUC.html#a1face030d2537e2fd1cc05b69cfe7341" title="Type Specific functions. " alt="" coords="538,55,623,80"/>
+<area shape="rect" id="node5" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="733,5,820,31"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1iir__coeff.html#a348cb2d95cda7557974049a795b8f9d2" title="SPUC::iir_coeff::z\l_root_to_ab" alt="" coords="517,128,644,167"/>
+<area shape="rect" id="node12" href="$classSPUC_1_1iir__coeff.html#ab9ac695504e9f087cf0be193bf410c59" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="513,191,648,229"/>
+<area shape="rect" id="node10" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="724,135,830,160"/>
+<area shape="rect" id="node11" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="906,135,1071,160"/>
+<area shape="rect" id="node13" href="$group__misc.html#ga524a8736d3854dd53ada5c79d0192a49" title="SPUC::partial_convolve" alt="" coords="696,197,858,223"/>
+</map>

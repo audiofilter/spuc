@@ -1,0 +1,16 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$classSPUC_1_1iir__allpass__variable__cascade.html#a1abccbdaff9f91c8c5ae6aa3326f6ca3" title="Clock in sample and get output. " alt="" coords="104,85,283,124"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1iir__allpass__variable__cascade.html#aa0a680a35036cd189800a9dfe5f81f1e" title="n = Filter stages " alt="" coords="104,224,283,263"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1circ__buffer.html#a3e8fc8e7a92b0654b6ea281e0c2a1622" title="SPUC::circ_buffer::\lset_size" alt="" coords="341,167,476,205"/>
+<area shape="rect" id="node15" href="$classSPUC_1_1delay.html#a53bf1ba6be005c9a6d650b39ce2bb3c4" title="Set size of delay. " alt="" coords="116,287,270,312"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1circ__buffer.html#ada385290a7f34e937f5ca780ca9728ef" title="SPUC::circ_buffer::\linput" alt="" coords="341,5,476,44"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1circ__buffer.html#a2dc7be31a80ced940e72f319312d31a3" title="SPUC::circ_buffer::last" alt="" coords="331,68,487,93"/>
+<area shape="rect" id="node5" href="$group__misc.html#ga3e75891aaf9af0725250646d50373de9" title="Templated round function template function that uses a class to allow template specialization. " alt="" coords="359,117,459,143"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1circ__buffer.html#a68b8a96870f2575e265187f774ac2489" title="SPUC::circ_buffer::\lreset" alt="" coords="341,229,476,268"/>
+<area shape="rect" id="node9" href="$group__iir.html#gaa77685faf91e6127672237ae391691a9" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="333,292,485,317"/>
+<area shape="rect" id="node10" href="$namespaceSPUC.html#abec337a0f2a5e1f166c944323308745e" title="SPUC::ellik" alt="" coords="535,292,624,317"/>
+<area shape="rect" id="node11" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="674,267,762,292"/>
+<area shape="rect" id="node13" href="$namespaceSPUC.html#a556b2fee49b0b73288c0eb19608cb740" title="SPUC::ellpj" alt="" coords="535,341,624,367"/>
+<area shape="rect" id="node12" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="675,316,762,341"/>
+<area shape="rect" id="node14" href="$namespaceSPUC.html#acea99b42e034ac8d81c35e330a7a7039" title="SPUC::ABS" alt="" coords="672,365,765,391"/>
+</map>

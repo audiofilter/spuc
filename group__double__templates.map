@@ -1,0 +1,7 @@
+<map id="SPUC double templates" name="SPUC double templates">
+<area shape="rect" id="node1" href="$group__misc.html" title="Miscellaneous DSP" alt="" coords="375,17,512,42"/>
+<area shape="rect" id="node2" href="$group__interpolation.html" title="Interpolation filters" alt="" coords="378,74,508,99"/>
+<area shape="rect" id="node3" href="$group__iir.html" title="IIR filters" alt="" coords="406,321,480,346"/>
+<area shape="rect" id="node4" href="$group__fir.html" title="FIR filters" alt="" coords="404,433,482,458"/>
+<area shape="rect" id="node5" href="$group__Allpass.html" title="Allpass filters" alt="" coords="393,503,493,529"/>
+</map>

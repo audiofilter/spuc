@@ -1,0 +1,18 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$group__fir.html#gafdc157ebb69b5b20be11d7e31c7a2784" title="Calculate coefficients for FIR assuming butterworth frequency response. " alt="" coords="104,45,255,71"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1iir__allpass1__cascade.html#a3b947574355762e2de30f8bda6bbebf0" title="Clock in sample and get output. " alt="" coords="113,217,245,256"/>
+<area shape="rect" id="node9" href="$group__fir.html#gaf7bd51ea8384c4038d9cf214a436b52d" title="calculates the coefficients for lowpass FIR based on Remez constraints " alt="" coords="105,155,253,193"/>
+<area shape="rect" id="node14" href="$group__fir.html#gae390a37071a3655dbc2f3bad56ec9359" title="Calculate coefficients for FIR assuming gaussian frequency response. " alt="" coords="110,95,248,120"/>
+<area shape="rect" id="node15" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="126,280,232,305"/>
+<area shape="rect" id="node17" href="$classSPUC_1_1fir__coeff.html#aaed03b013fad078526b0368841a2d7cb" title="SPUC::fir_coeff::print" alt="" coords="106,329,252,355"/>
+<area shape="rect" id="node3" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="738,95,824,120"/>
+<area shape="rect" id="node4" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="341,95,429,120"/>
+<area shape="rect" id="node5" href="$group__functions.html#ga05aa4ab6852e60a9202639b461596e38" title="complex exponential " alt="" coords="342,45,429,71"/>
+<area shape="rect" id="node6" href="$namespaceSPUC.html#af83ded758099fb4fddd4f51d9975dada" title="complex exponential " alt="" coords="558,45,648,71"/>
+<area shape="rect" id="node8" href="$group__misc.html#ga3e75891aaf9af0725250646d50373de9" title="Templated round function template function that uses a class to allow template specialization. " alt="" coords="336,243,435,268"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1remez__fir.html#abc180eb8d8eb5e19ea76fe2faf06ba02" title="SPUC::remez_fir::remez" alt="" coords="303,193,468,219"/>
+<area shape="rect" id="node13" href="$classSPUC_1_1fir__coeff.html#ac139e40e6e8792883427b0d529c83076" title="Set tap weights. " alt="" coords="307,144,464,169"/>
+<area shape="rect" id="node11" href="$group__fir.html#ga88dc2b72ba865110ff2cfd89136a47d9" title="Calculate coefficients for FIR using frequency sampling IDFT. " alt="" coords="516,144,690,169"/>
+<area shape="rect" id="node12" href="$namespaceSPUC.html#a8197c0ae85b86b1d45647f064c656205" title="calculates fir filter coefficients based on frequency sampling design using IDFT " alt="" coords="550,95,656,120"/>
+<area shape="rect" id="node16" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="303,292,468,317"/>
+</map>

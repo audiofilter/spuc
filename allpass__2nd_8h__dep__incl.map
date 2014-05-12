@@ -1,0 +1,9 @@
+<map id="allpass_2nd.h" name="allpass_2nd.h">
+<area shape="rect" id="node2" href="$cutboost_8h.html" title="IIR structure that can cut or boost signals at a programmed frequency. " alt="" coords="5,79,88,104"/>
+<area shape="rect" id="node3" href="$iir__allpass2_8h.html" title="Template Class for IIR filter using sum of 2nd Order Allpass sections. " alt="" coords="112,79,211,104"/>
+<area shape="rect" id="node4" href="$nested__iir__allpass__1_8h.html" title="nested_iir_allpass_1.h" alt="" coords="235,79,389,104"/>
+<area shape="rect" id="node5" href="$nested__iir__allpass__2_8h.html" title="nested_iir_allpass_2.h" alt="" coords="414,79,568,104"/>
+<area shape="rect" id="node6" href="$nested__shelf__allpass__2_8h.html" title="nested_shelf_allpass_2.h" alt="" coords="592,79,763,104"/>
+<area shape="rect" id="node7" href="$notch__allpass_8h.html" title="IIR notch filter based on 2nd order allpass structure. " alt="" coords="787,79,901,104"/>
+<area shape="rect" id="node8" href="$test__notch_8cpp.html" title="test_notch.cpp" alt="" coords="790,152,898,177"/>
+</map>

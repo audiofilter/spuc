@@ -1,0 +1,13 @@
+<map id="SPUC::butterworth_iir" name="SPUC::butterworth_iir">
+<area shape="rect" id="node2" href="$classSPUC_1_1iir__coeff.html#afe628cb748a60dd84e49fc39e3f32929" title="Do bilinear transformation. " alt="" coords="204,5,367,31"/>
+<area shape="rect" id="node3" href="$namespaceSPUC.html#ae96995aa675cee5890eda51f6ec9b2e3" title="Calculate roots. " alt="" coords="212,55,359,80"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1iir__coeff.html#a505d0536ed015dec3e785ab480f68c5a" title="SPUC::iir_coeff::convert\l_to_ab" alt="" coords="204,104,367,143"/>
+<area shape="rect" id="node4" href="$namespaceSPUC.html#af83ded758099fb4fddd4f51d9975dada" title="complex exponential " alt="" coords="437,5,527,31"/>
+<area shape="rect" id="node6" href="$namespaceSPUC.html#a1face030d2537e2fd1cc05b69cfe7341" title="Type Specific functions. " alt="" coords="440,55,525,80"/>
+<area shape="rect" id="node5" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="635,5,722,31"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1iir__coeff.html#a348cb2d95cda7557974049a795b8f9d2" title="SPUC::iir_coeff::z\l_root_to_ab" alt="" coords="419,104,545,143"/>
+<area shape="rect" id="node11" href="$classSPUC_1_1iir__coeff.html#ab9ac695504e9f087cf0be193bf410c59" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="415,167,549,205"/>
+<area shape="rect" id="node9" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="626,111,731,136"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="808,111,973,136"/>
+<area shape="rect" id="node12" href="$group__misc.html#ga524a8736d3854dd53ada5c79d0192a49" title="SPUC::partial_convolve" alt="" coords="597,173,760,199"/>
+</map>

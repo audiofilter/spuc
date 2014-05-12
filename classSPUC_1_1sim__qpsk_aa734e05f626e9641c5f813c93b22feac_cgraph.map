@@ -1,0 +1,6 @@
+<map id="SPUC::sim_qpsk::loop_init" name="SPUC::sim_qpsk::loop_init">
+<area shape="rect" id="node2" href="$classSPUC_1_1qpsk__ber__test.html#af18a951921f5ba05aa302b92267b2ad7" title="SPUC::qpsk_ber_test\l::reset" alt="" coords="235,5,384,44"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1quad__data.html#a7c48cc03b9d71c4e6f10412e51b80d79" title="SPUC::quad_data::set\l_initial_offset" alt="" coords="233,68,387,107"/>
+<area shape="rect" id="node5" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="266,131,354,156"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1max__pn.html#a6d44417e66bb9804b74270587c96696f" title="Reset. " alt="" coords="435,12,585,37"/>
+</map>

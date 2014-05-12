@@ -1,0 +1,9 @@
+<map id="SPUC::qpsk::clock" name="SPUC::qpsk::clock">
+<area shape="rect" id="node2" href="$group__comm.html#gaf1945aa6d769c29e2db6f9afb460e4e5" title="Decision directed timing discriminator (QPSK) " alt="" coords="200,5,330,31"/>
+<area shape="rect" id="node4" href="$group__comm.html#ga45a53b4d36997913fe60817986138fe4" title="Non&#45;decision aided timing discriminator (Gardiner&#39;s algorithm) " alt="" coords="196,55,334,80"/>
+<area shape="rect" id="node5" href="$group__comm.html#ga849581df0b7672883f1777b97c1f83e2" title="Decision directed carrier phase discriminator for QPSK. " alt="" coords="185,104,345,129"/>
+<area shape="rect" id="node6" href="$group__misc.html#ga3e75891aaf9af0725250646d50373de9" title="Templated round function template function that uses a class to allow template specialization. " alt="" coords="215,153,315,179"/>
+<area shape="rect" id="node7" href="$group__misc.html#ga9ed5a765cae048baa4ac35778b879187" title="Templated signbit function template function that uses a class to allow template specialization. " alt="" coords="213,203,317,228"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1loop__filter.html#a0c7670bd9423b58180db265a2d859e3b" title="Normal call with input, returns output. " alt="" coords="200,252,331,291"/>
+<area shape="rect" id="node3" href="$group__misc.html#ga139ffc371488bfbf81aa131b391cc2ca" title="Templated conjugate function template function that uses a class to allow template specialization..." alt="" coords="393,55,483,80"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="SPUC::sim_qam&lt; Numeric &gt;" name="SPUC::sim_qam&lt; Numeric &gt;">
+<area shape="rect" id="node2" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; long \&gt;" alt="" coords="1186,5,1350,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1noise.html" title="Gaussian noise routine. " alt="" coords="1219,55,1317,80"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; CNumeric \&gt;" alt="" coords="283,196,481,221"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1qam__tx.html" title="SPUC::qam_tx\&lt; float\l_type \&gt;" alt="" coords="1195,275,1341,313"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1fir.html" title="SPUC::fir\&lt; SPUC::complex\l\&lt; CNumeric \&gt;, float_type \&gt;" alt="" coords="577,275,759,313"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1qam__mod.html" title="QAM Modulator for BPSK &#45; 64 QAM for 802.11A Data modulation. " alt="" coords="878,344,1003,369"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1max__pn.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="884,167,997,192"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1fir__interp.html" title="SPUC::fir_interp\&lt; SPUC\l::complex\&lt; CNumeric \&gt;,\l float_type \&gt;" alt="" coords="857,268,1023,320"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="275,248,488,287"/>
+<area shape="rect" id="node12" href="$classSPUC_1_1quantiser.html" title="SPUC::quantiser\&lt; SPUC\l::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="296,311,468,349"/>
+<area shape="rect" id="node13" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l float_type \&gt;" alt="" coords="309,399,454,437"/>
+<area shape="rect" id="node15" href="$classSPUC_1_1fir.html" title="SPUC::fir\&lt; SPUC::complex\l\&lt; float_type \&gt;, float_type \&gt;" alt="" coords="1177,392,1359,431"/>
+<area shape="rect" id="node22" href="$classSPUC_1_1lagrange.html" title="SPUC::lagrange\&lt; SPUC\l::complex\&lt; float_type \&gt; \&gt;" alt="" coords="1183,455,1353,493"/>
+<area shape="rect" id="node16" href="$classSPUC_1_1quantiser.html" title="SPUC::quantiser\&lt; SPUC\l::complex\&lt; float_type \&gt; \&gt;" alt="" coords="855,549,1026,588"/>
+<area shape="rect" id="node17" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; float\l_type \&gt; \&gt;" alt="" coords="862,449,1018,501"/>
+<area shape="rect" id="node19" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; float\l_type \&gt;" alt="" coords="864,633,1016,672"/>
+<area shape="rect" id="node20" href="$classSPUC_1_1a__d.html" title="An A/D conversion class. " alt="" coords="1224,517,1312,543"/>
+<area shape="rect" id="node21" href="$classSPUC_1_1vco.html" title="SPUC::vco\&lt; float_type \&gt;" alt="" coords="1184,567,1352,592"/>
+</map>

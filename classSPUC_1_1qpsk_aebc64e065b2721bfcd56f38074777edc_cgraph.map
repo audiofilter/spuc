@@ -1,0 +1,5 @@
+<map id="SPUC::qpsk::qpsk" name="SPUC::qpsk::qpsk">
+<area shape="rect" id="node2" href="$classSPUC_1_1qpsk.html#ae4b051431886aa4b78a1456304e62ba4" title="SPUC::qpsk::reset" alt="" coords="207,12,338,37"/>
+<area shape="rect" id="node4" href="$group__comm.html#ga41ca46c8ba1c5843e27a510ba2209d81" title="Root Raised Cosine functions. " alt="" coords="183,61,361,100"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1loop__filter.html#acfde4da154f654fbea34558e83bff7cc" title="Reset. " alt="" coords="409,5,540,44"/>
+</map>

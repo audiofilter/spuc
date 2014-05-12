@@ -1,0 +1,7 @@
+<map id="SPUC::iir_coeff::convert_to_ab" name="SPUC::iir_coeff::convert_to_ab">
+<area shape="rect" id="node2" href="$classSPUC_1_1iir__coeff.html#ab9ac695504e9f087cf0be193bf410c59" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="217,5,351,44"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1iir__coeff.html#a348cb2d95cda7557974049a795b8f9d2" title="SPUC::iir_coeff::z\l_root_to_ab" alt="" coords="221,68,347,107"/>
+<area shape="rect" id="node3" href="$group__misc.html#ga524a8736d3854dd53ada5c79d0192a49" title="SPUC::partial_convolve" alt="" coords="399,12,561,37"/>
+<area shape="rect" id="node5" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="427,75,533,100"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="609,75,774,100"/>
+</map>

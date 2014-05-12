@@ -1,0 +1,5 @@
+<map id="SPUC::iir_allpass_variable_cascade::clock" name="SPUC::iir_allpass_variable_cascade::clock">
+<area shape="rect" id="node2" href="$classSPUC_1_1circ__buffer.html#ada385290a7f34e937f5ca780ca9728ef" title="SPUC::circ_buffer::\linput" alt="" coords="243,5,378,44"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1circ__buffer.html#a2dc7be31a80ced940e72f319312d31a3" title="SPUC::circ_buffer::last" alt="" coords="233,68,388,93"/>
+<area shape="rect" id="node4" href="$group__misc.html#ga3e75891aaf9af0725250646d50373de9" title="Templated round function template function that uses a class to allow template specialization. " alt="" coords="261,117,360,143"/>
+</map>

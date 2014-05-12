@@ -1,0 +1,11 @@
+<map id="allpass.h" name="allpass.h">
+<area shape="rect" id="node2" href="$iir__allpass1__cascade_8h.html" title="Template Class for iir filter. " alt="" coords="153,85,309,111"/>
+<area shape="rect" id="node5" href="$iir__allpass__variable__cascade_8h.html" title="Template Class for iir filter consisting of 1st order allpass sections. " alt="" coords="333,79,468,117"/>
+<area shape="rect" id="node3" href="$test__elliptic__allpass_8cpp.html" title="test_elliptic_allpass.cpp" alt="" coords="5,165,167,191"/>
+<area shape="rect" id="node4" href="$test__filters_8cpp.html" title="test_filters.cpp" alt="" coords="191,165,298,191"/>
+<area shape="rect" id="node6" href="$spuc_2equalizer_8h.html" title="equalizer.h" alt="" coords="346,165,432,191"/>
+<area shape="rect" id="node9" href="$fast__equalizer_8h.html" title="fast_equalizer.h" alt="" coords="458,165,573,191"/>
+<area shape="rect" id="node7" href="$equalizer_8cpp.html" title="equalizer.cpp" alt="" coords="223,239,323,264"/>
+<area shape="rect" id="node8" href="$test__q_8cpp.html" title="test_q.cpp" alt="" coords="347,239,430,264"/>
+<area shape="rect" id="node10" href="$fast__equalizer_8cpp.html" title="fast_equalizer.cpp" alt="" coords="454,239,582,264"/>
+</map>

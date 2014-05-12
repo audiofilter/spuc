@@ -1,0 +1,14 @@
+<map id="SPUC::iir_coeff::pz_to_ap" name="SPUC::iir_coeff::pz_to_ap">
+<area shape="rect" id="node2" href="$group__misc.html#ga89249af25dcb7ff77fbb59f6840056fe" title="SPUC::convolve" alt="" coords="195,5,313,31"/>
+<area shape="rect" id="node4" href="$group__misc.html#ga44412408e43622684c5146f2070a3b66" title="Calculate the complex roots of a polynomial equation. " alt="" coords="192,104,316,129"/>
+<area shape="rect" id="node8" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="406,155,494,180"/>
+<area shape="rect" id="node9" href="$group__misc.html#ga2bc902aeb439a8445930ba3f7dae7495" title="fliplr &#45; same as matlab function " alt="" coords="209,55,299,80"/>
+<area shape="rect" id="node10" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="397,209,503,235"/>
+<area shape="rect" id="node12" href="$classSPUC_1_1iir__coeff.html#a1f77abe5436d9f3e24bad600d947b249" title="SPUC::iir_coeff::pz\l_to_poly" alt="" coords="187,256,321,295"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1smart__array.html#a4305ed624cdfc865f62d1347a370239f" title="SPUC::smart_array::len" alt="" coords="369,31,531,56"/>
+<area shape="rect" id="node5" href="$group__functions.html#ga05aa4ab6852e60a9202639b461596e38" title="complex exponential " alt="" coords="406,104,494,129"/>
+<area shape="rect" id="node6" href="$namespaceSPUC.html#af83ded758099fb4fddd4f51d9975dada" title="complex exponential " alt="" coords="616,104,707,129"/>
+<area shape="rect" id="node7" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="792,104,879,129"/>
+<area shape="rect" id="node11" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="579,209,744,235"/>
+<area shape="rect" id="node13" href="$group__misc.html#ga524a8736d3854dd53ada5c79d0192a49" title="SPUC::partial_convolve" alt="" coords="369,263,531,288"/>
+</map>

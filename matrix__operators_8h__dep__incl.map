@@ -1,0 +1,9 @@
+<map id="matrix_operators.h" name="matrix_operators.h">
+<area shape="rect" id="node2" href="$matrix_8h.html" title="matrix.h" alt="" coords="381,79,449,104"/>
+<area shape="rect" id="node3" href="$convolutional__interleaver_8h.html" title="Definitions of convolution interleaver class. " alt="" coords="5,152,185,177"/>
+<area shape="rect" id="node4" href="$matrix__insts_8cpp.html" title="matrix_insts.cpp" alt="" coords="208,152,326,177"/>
+<area shape="rect" id="node5" href="$rls_8h.html" title="Recursive Least Squares Algorithm. " alt="" coords="350,152,397,177"/>
+<area shape="rect" id="node6" href="$toeplitz_8h.html" title="Get Symmetric Toeplitz matrix from vector. " alt="" coords="420,152,495,177"/>
+<area shape="rect" id="node7" href="$test__cmat_8cpp.html" title="test_cmat.cpp" alt="" coords="519,152,623,177"/>
+<area shape="rect" id="node8" href="$test__rls_8cpp.html" title="test_rls.cpp" alt="" coords="648,152,737,177"/>
+</map>

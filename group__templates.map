@@ -1,0 +1,10 @@
+<map id="SPUC templates" name="SPUC templates">
+<area shape="rect" id="node1" href="$group__misc.html" title="Miscellaneous DSP" alt="" coords="336,26,472,51"/>
+<area shape="rect" id="node2" href="$group__interpolation.html" title="Interpolation filters" alt="" coords="339,83,469,109"/>
+<area shape="rect" id="node3" href="$group__interl.html" title="Interleavers" alt="" coords="359,135,450,161"/>
+<area shape="rect" id="node4" href="$group__PLL.html" title="Phase lock loop functions" alt="" coords="318,185,490,210"/>
+<area shape="rect" id="node6" href="$group__equalizers.html" title="Equalization classes\l And functions" alt="" coords="333,235,475,274"/>
+<area shape="rect" id="node7" href="$group__fir.html" title="FIR filters" alt="" coords="365,366,443,391"/>
+<area shape="rect" id="node8" href="$group__comm.html" title="Communication classes\l And functions" alt="" coords="323,417,485,455"/>
+<area shape="rect" id="node9" href="$group__sim.html" title="Simulation classes\l And functions" alt="" coords="338,479,470,518"/>
+</map>

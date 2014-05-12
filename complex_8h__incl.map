@@ -1,0 +1,16 @@
+<map id="complex.h" name="complex.h">
+<area shape="rect" id="node3" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="102,152,245,177"/>
+<area shape="rect" id="node6" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="475,79,563,104"/>
+<area shape="rect" id="node10" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="685,79,788,104"/>
+<area shape="rect" id="node12" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="863,79,967,104"/>
+<area shape="rect" id="node14" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="96,79,195,104"/>
+<area shape="rect" id="node15" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="1042,79,1193,104"/>
+<area shape="rect" id="node16" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1217,79,1392,104"/>
+<area shape="rect" id="node17" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="1416,79,1547,104"/>
+<area shape="rect" id="node18" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="1571,79,1749,104"/>
+<area shape="rect" id="node5" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="140,225,290,251"/>
+<area shape="rect" id="node8" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="589,152,715,177"/>
+<area shape="rect" id="node9" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="473,152,565,177"/>
+<area shape="rect" id="node11" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="840,152,947,177"/>
+<area shape="rect" id="node13" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="1073,152,1181,177"/>
+</map>

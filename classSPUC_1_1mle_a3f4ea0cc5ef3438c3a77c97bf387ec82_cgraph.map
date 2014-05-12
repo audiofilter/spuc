@@ -1,0 +1,8 @@
+<map id="SPUC::mle::ddfse" name="SPUC::mle::ddfse">
+<area shape="rect" id="node2" href="$classSPUC_1_1mle.html#adb6bcaf1dec55ce53c7b2ecbdb88c4c1" title="Generic Sequence detection allowing selection of type. " alt="" coords="181,55,325,80"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1mle.html#aed0e4247138a82e0156b07cd6538c336" title="Allows selection of Equalizer type. " alt="" coords="373,29,518,55"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1mle.html#a82332d6b6b04e9be2c358a3220e209a3" title="SPUC::mle::df_est" alt="" coords="380,79,511,104"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1mle.html#af13de8b5b5d5c10b170965962a7f3b6d" title="Feedforward estimates. " alt="" coords="566,5,726,31"/>
+<area shape="rect" id="node5" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="593,55,699,80"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="774,55,939,80"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="SPUC::qpsk_discriminators::pll_disc" name="SPUC::qpsk_discriminators::pll_disc">
+<area shape="rect" id="node2" href="$group__comm.html#ga1c80cea38e3765b85db63aa13df4e725" title="Decision directed carrier phase discriminator for BPSK. " alt="" coords="237,5,397,31"/>
+<area shape="rect" id="node3" href="$group__comm.html#ga849581df0b7672883f1777b97c1f83e2" title="Decision directed carrier phase discriminator for QPSK. " alt="" coords="237,55,397,80"/>
+<area shape="rect" id="node5" href="$group__misc.html#ga2b33b6eb9dec6fa8f62be2d104f3fdbe" title="Templated saturate function template function that uses a class to allow template specialization..." alt="" coords="260,104,374,129"/>
+<area shape="rect" id="node4" href="$group__misc.html#ga139ffc371488bfbf81aa131b391cc2ca" title="Templated conjugate function template function that uses a class to allow template specialization..." alt="" coords="445,55,535,80"/>
+</map>

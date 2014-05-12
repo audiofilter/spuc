@@ -1,0 +1,14 @@
+<map id="SPUC::ofdm_data_encoder::data_map" name="SPUC::ofdm_data_encoder::data_map">
+<area shape="rect" id="node2" href="$classSPUC_1_1qam__mod.html#ad1a5332f5b8b8ae9259d0e77cfe552dd" title="SPUC::qam_mod::data_map" alt="" coords="238,104,430,129"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1ofdm__data__encoder.html#ac5fd037c5087724d2833137845350739" title="SPUC::ofdm_data_encoder\l::get_data_frame" alt="" coords="241,255,426,293"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1qam__mod.html#a1611e66a2f0b39f12e602cbe7f860f83" title="SPUC::qam_mod::bpsk_map" alt="" coords="484,5,678,31"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1qam__mod.html#abcbab9e548917e8c37ca372b38941baf" title="SPUC::qam_mod::qpsk_map" alt="" coords="484,55,678,80"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1qam__mod.html#a4e0fcd49fc51a96e125f992176f96b25" title="SPUC::qam_mod::qam16_map" alt="" coords="478,104,684,129"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1qam__mod.html#ac3271de4f9a18d933197d4a20013a51c" title="SPUC::qam_mod::qam64_map" alt="" coords="478,153,684,179"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1data__conv__encoder.html#aa8b89b80c7f40b67bbf73366d6ffb621" title="SPUC::data_conv_encoder\l::get_data" alt="" coords="732,199,915,237"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1data__conv__encoder.html#abb57458f51270a07f3d15cb269a6679e" title="SPUC::data_conv_encoder\l::conv_encoder" alt="" coords="489,255,672,293"/>
+<area shape="rect" id="node12" href="$classSPUC_1_1ofdm__data__encoder.html#a109e872062850980b43bd7fbf753197a" title="SPUC::ofdm_data_encoder\l::serial_to_word_input" alt="" coords="489,317,673,356"/>
+<area shape="rect" id="node13" href="$classSPUC_1_1ofdm__data__encoder.html#adcd23f71f543b3c2fbb63c1119c6de9a" title="SPUC::ofdm_data_encoder\l::serial_to_word_output" alt="" coords="489,380,673,419"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1max__pn.html#a43334114fb83fc09d6df5ff6fe142ba0" title="Fast method. " alt="" coords="963,205,1124,231"/>
+<area shape="rect" id="node11" href="$group__functions.html#ga0823e7a87d77c3b659c63f9b8db66caa" title="Exclusive or the bits in x together. " alt="" coords="770,261,877,287"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="fading_channel.h" name="fading_channel.h">
+<area shape="rect" id="node2" href="$baud__eq__env_8h.html" title="Class for doing a simulation of an equalizer running at 1 sample/symbol. " alt="" coords="178,79,291,104"/>
+<area shape="rect" id="node6" href="$fading__channel_8cpp.html" title="fading_channel.cpp" alt="" coords="314,79,451,104"/>
+<area shape="rect" id="node7" href="$qam__tx_8h.html" title="Class for QAM transmitter using a root raised cosine transmit filter. " alt="" coords="475,79,551,104"/>
+<area shape="rect" id="node8" href="$sim__qam_8h.html" title="A Class for simulating a QAM system. " alt="" coords="507,152,594,177"/>
+<area shape="rect" id="node3" href="$equalizers__sim_8cpp.html" title="equalizers_sim.cpp" alt="" coords="5,152,141,177"/>
+<area shape="rect" id="node4" href="$reference__main_8cpp.html" title="reference_main.cpp" alt="" coords="165,152,304,177"/>
+<area shape="rect" id="node5" href="$test__ddfse_8cpp.html" title="test_ddfse.cpp" alt="" coords="328,152,436,177"/>
+</map>

@@ -1,0 +1,23 @@
+<map id="quant.h" name="quant.h">
+<area shape="rect" id="node2" href="$round_8h.html" title="Templated round function. " alt="" coords="923,79,1021,104"/>
+<area shape="rect" id="node23" href="$saturate_8h.html" title="Templated saturate function. " alt="" coords="1049,79,1162,104"/>
+<area shape="rect" id="node5" href="$rounder_8h.html" title="spuc/rounder.h" alt="" coords="916,152,1025,177"/>
+<area shape="rect" id="node6" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="983,225,1097,251"/>
+<area shape="rect" id="node22" href="$real__round_8h.html" title="Templated round function. " alt="" coords="195,372,323,397"/>
+<area shape="rect" id="node8" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="494,372,637,397"/>
+<area shape="rect" id="node10" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="1660,299,1748,324"/>
+<area shape="rect" id="node13" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="1482,299,1585,324"/>
+<area shape="rect" id="node15" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="1303,299,1407,324"/>
+<area shape="rect" id="node17" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="346,299,446,324"/>
+<area shape="rect" id="node18" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="520,299,672,324"/>
+<area shape="rect" id="node19" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="695,299,870,324"/>
+<area shape="rect" id="node20" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="894,299,1026,324"/>
+<area shape="rect" id="node21" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="1050,299,1228,324"/>
+<area shape="rect" id="node9" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="877,445,1027,471"/>
+<area shape="rect" id="node11" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="1277,372,1403,397"/>
+<area shape="rect" id="node12" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="1710,372,1802,397"/>
+<area shape="rect" id="node14" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="1477,372,1584,397"/>
+<area shape="rect" id="node16" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="1094,372,1202,397"/>
+<area shape="rect" id="node24" href="$saturater_8h.html" title="spuc/saturater.h" alt="" coords="1050,152,1166,177"/>
+<area shape="rect" id="node25" href="$real__saturate_8h.html" title="Templated saturation functions. " alt="" coords="826,372,968,397"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="SPUC::sim_qpsk::step" name="SPUC::sim_qpsk::step">
+<area shape="rect" id="node2" href="$classSPUC_1_1a__d.html#a81c15ebf8ac1d8fb1f4c2f0d15e13f19" title="Quantize and limit signal to size bits. " alt="" coords="232,5,358,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1sim__qpsk.html#aecc5527b1ca6fc29a8592c87806361cf" title="SPUC::sim_qpsk::rx_step" alt="" coords="208,55,381,80"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1sim__qpsk.html#a39c9b9ab383a01e834ae73179f71d67f" title="SPUC::sim_qpsk::tx_step" alt="" coords="208,104,381,129"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1quad__data.html#a264d7b85dafaf0c3b558e5f271a01a1a" title="SPUC::quad_data::get\l_sample" alt="" coords="429,41,584,80"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1vco.html#aa6d52c46f5f328a20c8e15cc46f5936d" title="return output with updated input " alt="" coords="444,104,569,129"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1noise.html#a83dee6e8872536e51da02ba7c25c994d" title="complex gaussian noise " alt="" coords="432,153,582,179"/>
+<area shape="rect" id="node8" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="663,128,751,153"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1noise.html#a140536d7a6b44da2a5f22263da222136" title="Uniform noise. " alt="" coords="632,177,782,203"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="SPUC::sim_qpsk_variable&lt; Numeric &gt;" name="SPUC::sim_qpsk_variable&lt; Numeric &gt;">
+<area shape="rect" id="node2" href="$classSPUC_1_1noise.html" title="Gaussian noise routine. " alt="" coords="1145,39,1243,64"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1qpsk__ber__test.html" title="A Class for doing BER test on QPSK. " alt="" coords="1119,88,1269,113"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; long \&gt;" alt="" coords="838,32,1002,57"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1max__pn.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="864,104,977,129"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1quad__data.html" title="SPUC::quad_data\&lt; float\l_type \&gt;" alt="" coords="1112,160,1277,199"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1lagrange.html" title="SPUC::lagrange\&lt; SPUC\l::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="582,164,754,203"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="275,85,488,124"/>
+<area shape="rect" id="node15" href="$classSPUC_1_1fir.html" title="SPUC::fir\&lt; SPUC::complex\l\&lt; CNumeric \&gt;, float_type \&gt;" alt="" coords="577,245,759,284"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1quantiser.html" title="SPUC::quantiser\&lt; SPUC\l::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="296,296,468,335"/>
+<area shape="rect" id="node11" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; CNumeric \&gt;" alt="" coords="283,247,481,272"/>
+<area shape="rect" id="node12" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l float_type \&gt;" alt="" coords="309,5,454,44"/>
+<area shape="rect" id="node14" href="$classSPUC_1_1fir__interp.html" title="SPUC::fir_interp\&lt; SPUC\l::complex\&lt; CNumeric \&gt;,\l float_type \&gt;" alt="" coords="837,239,1003,291"/>
+<area shape="rect" id="node16" href="$classSPUC_1_1vco.html" title="SPUC::vco\&lt; float_type \&gt;" alt="" coords="1111,223,1278,248"/>
+<area shape="rect" id="node17" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; float\l_type \&gt;" alt="" coords="1118,293,1270,332"/>
+</map>

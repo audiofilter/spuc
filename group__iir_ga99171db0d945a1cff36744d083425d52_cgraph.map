@@ -1,0 +1,20 @@
+<map id="SPUC::elliptic_iir" name="SPUC::elliptic_iir">
+<area shape="rect" id="node2" href="$classSPUC_1_1iir__coeff.html#afe628cb748a60dd84e49fc39e3f32929" title="Do bilinear transformation. " alt="" coords="174,19,337,44"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1iir__coeff.html#a505d0536ed015dec3e785ab480f68c5a" title="SPUC::iir_coeff::convert\l_to_ab" alt="" coords="174,68,337,107"/>
+<area shape="rect" id="node9" href="$namespaceSPUC.html#a57924117c11305e97e4a8066fdc79dd9" title="SPUC::ellpk" alt="" coords="406,232,499,257"/>
+<area shape="rect" id="node10" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="605,231,693,256"/>
+<area shape="rect" id="node11" href="$namespaceSPUC.html#aa8d9a59ce99f79e2b249c8dc93a3911d" title="get roots in Lamda plane " alt="" coords="185,283,327,308"/>
+<area shape="rect" id="node12" href="$namespaceSPUC.html#a30eca0b1aa338de1172048eb0161be16" title="modulus from ratio of K/K&#39; " alt="" coords="403,332,502,357"/>
+<area shape="rect" id="node17" href="$namespaceSPUC.html#ab6c7b3f2bab2634e6a71837c63d66fb8" title="calculate s plane poles and zeros " alt="" coords="199,131,312,156"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1iir__coeff.html#a348cb2d95cda7557974049a795b8f9d2" title="SPUC::iir_coeff::z\l_root_to_ab" alt="" coords="389,68,516,107"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1iir__coeff.html#ab9ac695504e9f087cf0be193bf410c59" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="385,5,520,44"/>
+<area shape="rect" id="node5" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="596,75,702,100"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="778,75,943,100"/>
+<area shape="rect" id="node8" href="$group__misc.html#ga524a8736d3854dd53ada5c79d0192a49" title="SPUC::partial_convolve" alt="" coords="568,12,730,37"/>
+<area shape="rect" id="node16" href="$namespaceSPUC.html#abec337a0f2a5e1f166c944323308745e" title="SPUC::ellik" alt="" coords="408,281,497,307"/>
+<area shape="rect" id="node13" href="$group__functions.html#ga05aa4ab6852e60a9202639b461596e38" title="complex exponential " alt="" coords="605,332,693,357"/>
+<area shape="rect" id="node14" href="$namespaceSPUC.html#af83ded758099fb4fddd4f51d9975dada" title="complex exponential " alt="" coords="815,332,906,357"/>
+<area shape="rect" id="node15" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="991,281,1078,307"/>
+<area shape="rect" id="node18" href="$namespaceSPUC.html#a556b2fee49b0b73288c0eb19608cb740" title="SPUC::ellpj" alt="" coords="408,131,497,156"/>
+<area shape="rect" id="node19" href="$namespaceSPUC.html#acea99b42e034ac8d81c35e330a7a7039" title="SPUC::ABS" alt="" coords="603,129,695,155"/>
+</map>

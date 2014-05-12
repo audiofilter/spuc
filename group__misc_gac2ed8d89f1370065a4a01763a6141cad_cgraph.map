@@ -1,0 +1,6 @@
+<map id="SPUC::freqz_mag" name="SPUC::freqz_mag">
+<area shape="rect" id="node2" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="220,5,306,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1smart__array.html#a4305ed624cdfc865f62d1347a370239f" title="SPUC::smart_array::len" alt="" coords="182,55,344,80"/>
+<area shape="rect" id="node4" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="210,104,316,129"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="392,104,557,129"/>
+</map>

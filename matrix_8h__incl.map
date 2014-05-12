@@ -1,0 +1,8 @@
+<map id="matrix.h" name="matrix.h">
+<area shape="rect" id="node2" href="$matrix__class_8h.html" title="spuc/matrix_class.h" alt="" coords="175,79,314,104"/>
+<area shape="rect" id="node10" href="$matrix__operators_8h.html" title="spuc/matrix_operators.h" alt="" coords="338,79,503,104"/>
+<area shape="rect" id="node3" href="$vector_8h.html" title="spuc/vector.h" alt="" coords="195,152,295,177"/>
+<area shape="rect" id="node4" href="$vector__class_8h.html" title="spuc/vector_class.h" alt="" coords="87,225,226,251"/>
+<area shape="rect" id="node8" href="$vector__operators_8h.html" title="spuc/vector_operators.h" alt="" coords="250,225,415,251"/>
+<area shape="rect" id="node5" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="89,299,224,324"/>
+</map>

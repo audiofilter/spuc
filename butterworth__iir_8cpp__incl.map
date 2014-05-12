@@ -1,0 +1,21 @@
+<map id="butterworth_iir.cpp" name="butterworth_iir.cpp">
+<area shape="rect" id="node2" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="35,445,178,471"/>
+<area shape="rect" id="node5" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="735,299,849,324"/>
+<area shape="rect" id="node20" href="$spuc__math_8h.html" title="Various standard math functions not available elsewhere. " alt="" coords="830,225,959,251"/>
+<area shape="rect" id="node22" href="$butterworth__iir_8h.html" title="Calculate coefficients for IIR assuming butterworth frequency response. " alt="" coords="687,79,835,104"/>
+<area shape="rect" id="node4" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="221,519,371,544"/>
+<area shape="rect" id="node7" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="621,372,710,397"/>
+<area shape="rect" id="node11" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="913,372,1015,397"/>
+<area shape="rect" id="node13" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="784,372,888,397"/>
+<area shape="rect" id="node15" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="144,372,243,397"/>
+<area shape="rect" id="node16" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="1039,372,1191,397"/>
+<area shape="rect" id="node17" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1214,372,1389,397"/>
+<area shape="rect" id="node18" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="1413,372,1545,397"/>
+<area shape="rect" id="node19" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="318,372,496,397"/>
+<area shape="rect" id="node9" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="818,445,944,471"/>
+<area shape="rect" id="node10" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="702,445,794,471"/>
+<area shape="rect" id="node12" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="1303,445,1409,471"/>
+<area shape="rect" id="node14" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="1171,445,1279,471"/>
+<area shape="rect" id="node23" href="$iir__coeff_8h.html" title="Class for iir filter design. " alt="" coords="839,152,950,177"/>
+<area shape="rect" id="node24" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="1666,225,1801,251"/>
+</map>

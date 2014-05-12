@@ -1,0 +1,20 @@
+<map id="chebyshev_iir.h" name="chebyshev_iir.h">
+<area shape="rect" id="node3" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="5,372,148,397"/>
+<area shape="rect" id="node6" href="$iir__coeff_8h.html" title="Class for iir filter design. " alt="" coords="1511,79,1622,104"/>
+<area shape="rect" id="node5" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="328,445,479,471"/>
+<area shape="rect" id="node7" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="1021,225,1135,251"/>
+<area shape="rect" id="node21" href="$spuc__math_8h.html" title="Various standard math functions not available elsewhere. " alt="" coords="1424,152,1554,177"/>
+<area shape="rect" id="node22" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="1578,152,1712,177"/>
+<area shape="rect" id="node9" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="1248,299,1337,324"/>
+<area shape="rect" id="node12" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="1412,299,1515,324"/>
+<area shape="rect" id="node14" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="1070,299,1174,324"/>
+<area shape="rect" id="node16" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="114,299,213,324"/>
+<area shape="rect" id="node17" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="288,299,439,324"/>
+<area shape="rect" id="node18" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="463,299,637,324"/>
+<area shape="rect" id="node19" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="662,299,793,324"/>
+<area shape="rect" id="node20" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="817,299,995,324"/>
+<area shape="rect" id="node10" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="1079,372,1205,397"/>
+<area shape="rect" id="node11" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="1331,372,1423,397"/>
+<area shape="rect" id="node13" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="1549,372,1655,397"/>
+<area shape="rect" id="node15" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="947,372,1055,397"/>
+</map>

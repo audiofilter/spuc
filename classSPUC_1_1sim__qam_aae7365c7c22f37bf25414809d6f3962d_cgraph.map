@@ -1,0 +1,5 @@
+<map id="SPUC::sim_qam::loop_init" name="SPUC::sim_qam::loop_init">
+<area shape="rect" id="node2" href="$classSPUC_1_1qam__tx.html#a5095e330d6f7a15433b487aec54a4eba" title="SPUC::qam_tx::loop_init" alt="" coords="242,5,408,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1vco.html#a14e3b5019a0ea59ced222a96c29dd45e" title="Set new frequency. " alt="" coords="230,55,420,80"/>
+<area shape="rect" id="node4" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="281,104,369,129"/>
+</map>

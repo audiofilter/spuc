@@ -1,0 +1,7 @@
+<map id="SPUC::qam_data_demap" name="SPUC::qam_data_demap">
+<area shape="rect" id="node2" href="$group__comm.html#gac121f16345038b6a574ef587eb9f8947" title="BPSK data demapping. " alt="" coords="233,5,412,31"/>
+<area shape="rect" id="node3" href="$group__comm.html#ga7555cb7f9e923237fe57dcaa7b92fb7b" title="16&#45;QAM data demapping " alt="" coords="227,55,418,80"/>
+<area shape="rect" id="node4" href="$group__comm.html#ga86e453500a85a5ee0229bd65bc1c244b" title="64&#45;QAM data demapping " alt="" coords="227,104,418,129"/>
+<area shape="rect" id="node6" href="$group__comm.html#ga97fc85474b0434c15d72ee0c292fe283" title="QPSK data demapping. " alt="" coords="233,153,412,179"/>
+<area shape="rect" id="node5" href="$namespaceSPUC.html#acea99b42e034ac8d81c35e330a7a7039" title="SPUC::ABS" alt="" coords="466,104,559,129"/>
+</map>

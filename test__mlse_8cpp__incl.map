@@ -1,0 +1,31 @@
+<map id="test_mlse.cpp" name="test_mlse.cpp">
+<area shape="rect" id="node2" href="$max__pn_8h.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="5,152,117,177"/>
+<area shape="rect" id="node4" href="$delay_8h.html" title="Template class for Delay line. " alt="" coords="218,372,313,397"/>
+<area shape="rect" id="node10" href="$fir_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="537,225,612,251"/>
+<area shape="rect" id="node34" href="$mle_8h.html" title="A Configurable Maximum Likelihood Sequence Estimator Class. " alt="" coords="828,79,913,104"/>
+<area shape="rect" id="node5" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="2039,665,2182,691"/>
+<area shape="rect" id="node8" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="363,445,498,471"/>
+<area shape="rect" id="node7" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="1642,739,1792,764"/>
+<area shape="rect" id="node11" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="1654,665,1780,691"/>
+<area shape="rect" id="node13" href="$quantiser_8h.html" title="........ " alt="" coords="907,299,1026,324"/>
+<area shape="rect" id="node31" href="$fir__coeff_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="416,372,528,397"/>
+<area shape="rect" id="node33" href="$mixed__type_8h.html" title="Determine resultant type when mixing two types in math operations. " alt="" coords="303,299,435,324"/>
+<area shape="rect" id="node14" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="1466,519,1580,544"/>
+<area shape="rect" id="node27" href="$quantize_8h.html" title="Templated Quantize function. " alt="" coords="909,372,1024,397"/>
+<area shape="rect" id="node16" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="1009,592,1098,617"/>
+<area shape="rect" id="node18" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="1172,592,1275,617"/>
+<area shape="rect" id="node20" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="1401,592,1505,617"/>
+<area shape="rect" id="node22" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="2362,592,2461,617"/>
+<area shape="rect" id="node23" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="1631,592,1782,617"/>
+<area shape="rect" id="node24" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1806,592,1981,617"/>
+<area shape="rect" id="node25" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="2005,592,2136,617"/>
+<area shape="rect" id="node26" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="2160,592,2338,617"/>
+<area shape="rect" id="node17" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="1204,665,1297,691"/>
+<area shape="rect" id="node19" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="1423,665,1529,691"/>
+<area shape="rect" id="node21" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="1805,665,1913,691"/>
+<area shape="rect" id="node28" href="$quantized__type_8h.html" title="Determine quantized version of particular type, i.e complex&lt;double&gt; &#45;&gt; complex&lt;long&gt;, etc. " alt="" coords="857,665,1012,691"/>
+<area shape="rect" id="node29" href="$quantizer_8h.html" title="spuc/quantizer.h" alt="" coords="958,445,1076,471"/>
+<area shape="rect" id="node30" href="$real__quantize_8h.html" title="Templated quantize function. " alt="" coords="1036,665,1180,691"/>
+<area shape="rect" id="node32" href="$qnoise_8h.html" title="class to add quantization noise to signal " alt="" coords="572,445,676,471"/>
+<area shape="rect" id="node35" href="$fir__adapt_8h.html" title="template class fir_adapt Based on FIR class, created to support LMS adaptive filtering ..." alt="" coords="710,152,826,177"/>
+</map>

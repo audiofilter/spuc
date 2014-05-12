@@ -1,0 +1,4 @@
+<map id="fir_inv_dft.h" name="fir_inv_dft.h">
+<area shape="rect" id="node2" href="$fir__inv__dft_8cpp.html" title="calculates fir filter coefficients based on frequency sampling design using IDFT " alt="" coords="5,79,110,104"/>
+<area shape="rect" id="node3" href="$remez__fir_8cpp.html" title="remez_fir.cpp" alt="" coords="133,79,235,104"/>
+</map>

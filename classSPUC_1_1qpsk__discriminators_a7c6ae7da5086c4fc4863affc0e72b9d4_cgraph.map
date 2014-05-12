@@ -1,0 +1,5 @@
+<map id="SPUC::qpsk_discriminators::cross_prod_afc" name="SPUC::qpsk_discriminators::cross_prod_afc">
+<area shape="rect" id="node2" href="$group__comm.html#ga1dda9d96922b63057114456b1bab5535" title="Cross&#45;Product frequency discriminator. " alt="" coords="276,5,381,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1qpsk__discriminators.html#a7b62d358fc35cc1ce393178385bc7a85" title="SPUC::qpsk_discriminators\l::sample" alt="" coords="237,55,421,93"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1qpsk__discriminators.html#a8f769929410d6932ef54a2e02156ded2" title="SPUC::qpsk_discriminators\l::update" alt="" coords="469,55,652,93"/>
+</map>

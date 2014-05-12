@@ -1,0 +1,8 @@
+<map id="SPUC::ofdm_data_encoder::get_data_frame" name="SPUC::ofdm_data_encoder::get_data_frame">
+<area shape="rect" id="node2" href="$classSPUC_1_1data__conv__encoder.html#abb57458f51270a07f3d15cb269a6679e" title="SPUC::data_conv_encoder\l::conv_encoder" alt="" coords="238,61,421,100"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1data__conv__encoder.html#aa8b89b80c7f40b67bbf73366d6ffb621" title="SPUC::data_conv_encoder\l::get_data" alt="" coords="470,5,653,44"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1ofdm__data__encoder.html#a109e872062850980b43bd7fbf753197a" title="SPUC::ofdm_data_encoder\l::serial_to_word_input" alt="" coords="238,124,422,163"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1ofdm__data__encoder.html#adcd23f71f543b3c2fbb63c1119c6de9a" title="SPUC::ofdm_data_encoder\l::serial_to_word_output" alt="" coords="238,187,422,225"/>
+<area shape="rect" id="node5" href="$group__functions.html#ga0823e7a87d77c3b659c63f9b8db66caa" title="Exclusive or the bits in x together. " alt="" coords="508,68,615,93"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1max__pn.html#a43334114fb83fc09d6df5ff6fe142ba0" title="Fast method. " alt="" coords="701,12,862,37"/>
+</map>

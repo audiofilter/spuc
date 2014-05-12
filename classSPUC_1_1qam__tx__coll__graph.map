@@ -1,0 +1,10 @@
+<map id="SPUC::qam_tx&lt; Numeric &gt;" name="SPUC::qam_tx&lt; Numeric &gt;">
+<area shape="rect" id="node3" href="$classSPUC_1_1qam__mod.html" title="QAM Modulator for BPSK &#45; 64 QAM for 802.11A Data modulation. " alt="" coords="875,55,1001,80"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; CNumeric \&gt;" alt="" coords="283,107,481,132"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1fir.html" title="SPUC::fir\&lt; SPUC::complex\l\&lt; CNumeric \&gt;, Numeric \&gt;" alt="" coords="577,176,759,215"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1max__pn.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="881,232,995,257"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1fir__interp.html" title="SPUC::fir_interp\&lt; SPUC\l::complex\&lt; CNumeric \&gt;,\l Numeric \&gt;" alt="" coords="855,156,1021,208"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="275,157,488,196"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1quantiser.html" title="SPUC::quantiser\&lt; SPUC\l::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="296,220,468,259"/>
+<area shape="rect" id="node11" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l Numeric \&gt;" alt="" coords="309,283,454,321"/>
+</map>

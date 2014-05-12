@@ -1,0 +1,10 @@
+<map id="SPUC::baud_eq_env&lt; Numeric &gt;" name="SPUC::baud_eq_env&lt; Numeric &gt;">
+<area shape="rect" id="node2" href="$classSPUC_1_1noise.html" title="Gaussian noise routine. " alt="" coords="531,19,628,44"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1fading__channel.html" title="SPUC::fading_channel" alt="" coords="798,92,954,117"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1bpsk__ber__test.html" title="A Class for simulating a BPSK system. " alt="" coords="801,275,950,300"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1max__pn.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="523,236,636,261"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1fir.html" title="SPUC::fir\&lt; SPUC::complex\l\&lt; float_type \&gt;, SPUC::complex\l\&lt; float_type \&gt; \&gt;" alt="" coords="478,75,681,127"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1quantiser.html" title="SPUC::quantiser\&lt; SPUC\l::complex\&lt; float_type \&gt; \&gt;" alt="" coords="218,5,389,44"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; float\l_type \&gt; \&gt;" alt="" coords="226,68,382,120"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; float\l_type \&gt;" alt="" coords="228,149,380,188"/>
+</map>

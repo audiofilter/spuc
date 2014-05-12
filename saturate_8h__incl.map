@@ -1,0 +1,19 @@
+<map id="saturate.h" name="saturate.h">
+<area shape="rect" id="node4" href="$saturater_8h.html" title="spuc/saturater.h" alt="" coords="1211,79,1327,104"/>
+<area shape="rect" id="node5" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="752,152,866,177"/>
+<area shape="rect" id="node21" href="$real__saturate_8h.html" title="Templated saturation functions. " alt="" coords="1242,299,1384,324"/>
+<area shape="rect" id="node7" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="1075,299,1218,324"/>
+<area shape="rect" id="node9" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="230,225,319,251"/>
+<area shape="rect" id="node12" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="403,225,506,251"/>
+<area shape="rect" id="node14" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="581,225,686,251"/>
+<area shape="rect" id="node16" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="760,225,859,251"/>
+<area shape="rect" id="node17" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="883,225,1035,251"/>
+<area shape="rect" id="node18" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1058,225,1233,251"/>
+<area shape="rect" id="node19" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="1257,225,1389,251"/>
+<area shape="rect" id="node20" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="1412,225,1590,251"/>
+<area shape="rect" id="node8" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="753,372,903,397"/>
+<area shape="rect" id="node10" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="493,299,619,324"/>
+<area shape="rect" id="node11" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="94,299,186,324"/>
+<area shape="rect" id="node13" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="312,299,419,324"/>
+<area shape="rect" id="node15" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="694,299,802,324"/>
+</map>

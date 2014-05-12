@@ -1,0 +1,9 @@
+<map id="matrix_insts.cpp" name="matrix_insts.cpp">
+<area shape="rect" id="node2" href="$matrix_8h.html" title="spuc/matrix.h" alt="" coords="282,79,383,104"/>
+<area shape="rect" id="node3" href="$matrix__class_8h.html" title="spuc/matrix_class.h" alt="" coords="175,152,314,177"/>
+<area shape="rect" id="node11" href="$matrix__operators_8h.html" title="spuc/matrix_operators.h" alt="" coords="338,152,503,177"/>
+<area shape="rect" id="node4" href="$vector_8h.html" title="spuc/vector.h" alt="" coords="195,225,295,251"/>
+<area shape="rect" id="node5" href="$vector__class_8h.html" title="spuc/vector_class.h" alt="" coords="87,299,226,324"/>
+<area shape="rect" id="node9" href="$vector__operators_8h.html" title="spuc/vector_operators.h" alt="" coords="250,299,415,324"/>
+<area shape="rect" id="node6" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="89,372,224,397"/>
+</map>

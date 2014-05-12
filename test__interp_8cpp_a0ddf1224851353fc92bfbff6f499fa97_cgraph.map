@@ -1,0 +1,6 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$classSPUC_1_1farrow__upsampler.html#a606dafbbe02acd1e9d23b4de2acf8244" title="SPUC::farrow_upsampler\l::need_sample" alt="" coords="104,5,276,44"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1farrow__upsampler.html#ace25b450b3a96e5301d8ee27bfb7706e" title="SPUC::farrow_upsampler\l::output" alt="" coords="104,68,276,107"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1farrow.html#a05f89a5d8e6d0075d88f422d3c7d0f96" title="Only input new sample. " alt="" coords="334,12,473,37"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1farrow.html#ae7e530ec59905c39d561fde0e782eba8" title="Rephase =&gt; recalculate coefficients and output for new offset (for upsampling) " alt="" coords="324,75,482,100"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="quad_data.h" name="quad_data.h">
+<area shape="rect" id="node2" href="$sim__qpsk_8h.html" title="A Class for simulating a QPSK system. " alt="" coords="203,79,292,104"/>
+<area shape="rect" id="node6" href="$sim__qpsk__variable_8h.html" title="A Class for simulating a variable rate QPSK system. " alt="" coords="400,79,543,104"/>
+<area shape="rect" id="node3" href="$qpsk__main_8cpp.html" title="qpsk_main.cpp" alt="" coords="5,152,116,177"/>
+<area shape="rect" id="node4" href="$qpsk__main__vs_8cpp.html" title="qpsk_main_vs.cpp" alt="" coords="140,152,272,177"/>
+<area shape="rect" id="node5" href="$qpsk__temp_8cpp.html" title="qpsk_temp.cpp" alt="" coords="296,152,407,177"/>
+<area shape="rect" id="node7" href="$qpsk__variable__main_8cpp.html" title="qpsk_variable_main.cpp" alt="" coords="432,152,597,177"/>
+</map>

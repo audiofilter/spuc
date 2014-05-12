@@ -1,0 +1,11 @@
+<map id="Simulation classes And functions" name="Simulation classes And functions">
+<area shape="rect" id="node1" href="$group__misc.html" title="Miscellaneous DSP" alt="" coords="366,45,502,70"/>
+<area shape="rect" id="node2" href="$group__n__templates.html" title="SPUC templates with\l numeric parameters" alt="" coords="360,94,508,133"/>
+<area shape="rect" id="node3" href="$group__complex__templates.html" title="SPUC complex templates" alt="" coords="347,157,521,182"/>
+<area shape="rect" id="node4" href="$group__PLL.html" title="Phase lock loop functions" alt="" coords="348,206,520,231"/>
+<area shape="rect" id="node5" href="$group__real__templates.html" title="SPUC templates with\l real parameters" alt="" coords="360,266,508,305"/>
+<area shape="rect" id="node6" href="$group__templates.html" title="SPUC templates" alt="" coords="374,329,494,354"/>
+<area shape="rect" id="node7" href="$group__equalizers.html" title="Equalization classes\l And functions" alt="" coords="363,378,505,417"/>
+<area shape="rect" id="node8" href="$group__classes.html" title="SPUC non&#45;template classes" alt="" coords="340,470,528,495"/>
+<area shape="rect" id="node9" href="$group__comm.html" title="Communication classes\l And functions" alt="" coords="353,521,515,559"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="SPUC non&#45;template classes" name="SPUC non&#45;template classes">
+<area shape="rect" id="node1" href="$group__misc.html" title="Miscellaneous DSP" alt="" coords="422,63,559,89"/>
+<area shape="rect" id="node2" href="$group__iir.html" title="IIR filters" alt="" coords="454,113,528,138"/>
+<area shape="rect" id="node3" href="$group__PLL.html" title="Phase lock loop functions" alt="" coords="404,162,577,187"/>
+<area shape="rect" id="node4" href="$group__fec.html" title="Forward Error Correcting\l Codes" alt="" coords="406,211,575,250"/>
+<area shape="rect" id="node5" href="$group__fir.html" title="FIR filters" alt="" coords="452,274,530,299"/>
+<area shape="rect" id="node6" href="$group__Allpass.html" title="Allpass filters" alt="" coords="441,323,541,349"/>
+<area shape="rect" id="node8" href="$group__comm.html" title="Communication classes\l And functions" alt="" coords="410,493,572,531"/>
+<area shape="rect" id="node9" href="$group__sim.html" title="Simulation classes\l And functions" alt="" coords="425,590,557,629"/>
+</map>

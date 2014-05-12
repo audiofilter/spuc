@@ -1,0 +1,7 @@
+<map id="SPUC::fading_channel" name="SPUC::fading_channel">
+<area shape="rect" id="node2" href="$classSPUC_1_1noise.html" title="Gaussian noise routine. " alt="" coords="531,19,628,44"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1fir.html" title="SPUC::fir\&lt; SPUC::complex\l\&lt; float_type \&gt;, SPUC::complex\l\&lt; float_type \&gt; \&gt;" alt="" coords="478,68,681,120"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1quantiser.html" title="SPUC::quantiser\&lt; SPUC\l::complex\&lt; float_type \&gt; \&gt;" alt="" coords="218,5,389,44"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; float\l_type \&gt; \&gt;" alt="" coords="226,68,382,120"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; float\l_type \&gt;" alt="" coords="228,144,380,183"/>
+</map>
