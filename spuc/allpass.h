@@ -41,7 +41,7 @@ public:
   
 public:
   //! ord = Filter order
-  allpass(smart_array<Coeff> design, int n) : ap(stages) {
+  allpass(smart_array<Coeff> design, int n) : ap(n) {
 	stages =    n;
 	set_coeffs(design);
   }
