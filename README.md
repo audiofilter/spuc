@@ -6,6 +6,8 @@
 
 This is an update of code that has been on sourceforge for about 14 years. The genesis of this code goes back even further - before decent C++ template support and availability of a useful complex class.
 
+For a lite-weight version please checkout spuclib instead as it does not have the Doxygen generated files like this does
+
 More documentation pages here
 
 http://audiofilter.github.io/spuc/
