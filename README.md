@@ -3,10 +3,10 @@
 
 [![Gitter chat](https://badges.gitter.im/audiofilter/spuc.png)](https://gitter.im/audiofilter/spuc)
 
-
 This is an update of code that has been on sourceforge for about 14 years. The genesis of this code goes back even further - before decent C++ template support and availability of a useful complex class.
 
 For a lite-weight version please checkout spuclib instead as it does not have the Doxygen generated files like this does
+Nor does spuclib have the examples or the python extensions available in audiofilter/pyspuc
 
 More documentation pages here
 
