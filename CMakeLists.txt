@@ -137,3 +137,9 @@ ADD_DEFINITIONS("-Wall -fPIC -DSPUCBOOST")
 # to convert from static library to shared??
 # gcc -shared -o libfilt.so -Wl,-whole-archive libfilt.a -Wl,-no-whole-archive
 add_subdirectory(examples)
+
+option(SPUC_BUILD_PYTHON_EXTENSIONS "Build extensions" OFF)
+
+if (SPUC_BUILD_PYTHON_EXTENSIONS)
+add_subdirectory(../extensions)
+endif()
