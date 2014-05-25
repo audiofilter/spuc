@@ -53,7 +53,7 @@ protected:
 public:
   // Constructor specifying coefficients
   iir_shelf(Coeff A0, Coeff A1, Coeff B, long rb=0) : 
-	a0(A0), a1(A1), b(B), Q(rb) {
+	b(B), a0(A0), a1(A1), Q(rb) {
 	reset();
   }
   // Constructor specifying lower & upper frequencies rather than coefficients
