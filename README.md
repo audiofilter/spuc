@@ -13,9 +13,9 @@ More documentation pages here
 http://audiofilter.github.io/spuc/
 [http://audiofilter.github.io/spuc/]
 
-## Various Sub-projects also on Github
+### Various Sub-projects also on Github
 
-	   PYSPUC 
+PYSPUC 
 [![Build Status](https://travis-ci.org/audiofilter/pyspuc.png)](https://travis-ci.org/audiofilter/pyspuc) 
 	   SPUCLIB 
 [![Build Status](https://travis-ci.org/audiofilter/spuclib.png)](https://travis-ci.org/audiofilter/spuclib)
