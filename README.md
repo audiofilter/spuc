@@ -15,15 +15,16 @@ http://audiofilter.github.io/spuc/
 
 ### Various Sub-projects also on Github
 
+Sub-projects 
 PYSPUC 
 [![Build Status](https://travis-ci.org/audiofilter/pyspuc.png)](https://travis-ci.org/audiofilter/pyspuc) 
-	   SPUCLIB 
+SPUCLIB 
 [![Build Status](https://travis-ci.org/audiofilter/spuclib.png)](https://travis-ci.org/audiofilter/spuclib)
-	   SPUC_QPSK
+SPUC_QPSK
 [![Build Status](https://travis-ci.org/audiofilter/spuc_qpsk.png)](https://travis-ci.org/audiofilter/spuc_qpsk)
-	   SPUC_FIXED 
+SPUC_FIXED 
 [![Build Status](https://travis-ci.org/audiofilter/spuc_fixed.png)](https://travis-ci.org/audiofilter/spuc_fixed)
-	   SPUC_FILTER 
+SPUC_FILTER 
 [![Build Status](https://travis-ci.org/audiofilter/spuc_filter.png)](https://travis-ci.org/audiofilter/spuc_filter)
 
 
