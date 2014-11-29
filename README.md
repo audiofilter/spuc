@@ -10,6 +10,8 @@ This is an update of code that has been on sourceforge for about 14 years. The g
 
 For a lite-weight version please checkout spuclib instead as it does not have the Doxygen generated files like this does.
 
+**Note: spuclib - now has removed boost dependency from code (Nov 2014). This libary doesnt have those updates yet as there are issues building the python extensions. The below sub-projects are fine with the exception of pyspuc (which may still show passing as it hasn't been touched).**
+
 Nor does spuclib have the examples or the python extensions available in audiofilter/pyspuc
 
 More documentation pages here
@@ -20,7 +22,7 @@ http://audiofilter.github.io/spuc/
 ### Various Sub-projects also on Github
 
 
-PYSPUC - python bindings for spuclib
+PYSPUC - python bindings for spuclib (works ok with spuc but not spuclib)
 [![Build Status](https://travis-ci.org/audiofilter/pyspuc.png)](https://travis-ci.org/audiofilter/pyspuc) 
 
 SPUCLIB - CMake build of various libraries without examples, etc
