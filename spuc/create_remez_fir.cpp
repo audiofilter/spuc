@@ -24,9 +24,9 @@
 #include <spuc/remez_fir.h>
 namespace SPUC {
 void create_remez_fir(fir_coeff<float_type>& remezfir, int jtype,int nbands,
-					  smart_array<float_type> edge, 
-					  smart_array<float_type> fx,
-					  smart_array<float_type> wtx) {
+											smart_array<float_type> edge, 
+											smart_array<float_type> fx,
+											smart_array<float_type> wtx) {
   bool ok;
   long nfilt = remezfir.num_taps;
   remez_fir Remz;

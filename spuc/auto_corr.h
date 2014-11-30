@@ -29,8 +29,8 @@ namespace SPUC {
 //! \author Tony Kirke,  Copyright(c) 2001 
 //! \author Tony Kirke
 //! \ingroup template_array_functions misc
-template <class T> smart_array<T> auto_corr(smart_array<T> x) {
-    int i,j;
+template <class T> smart_array<T> auto_corr(const smart_array<T>& x) {
+	int i,j;
 	T d;
 	long N=x.len();
 	smart_array<T> autoc(N);

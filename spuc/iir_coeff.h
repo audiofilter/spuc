@@ -55,12 +55,11 @@ public:
   void bilinear();
   void bilinear2();
   void convert_to_ab();
-  void z_root_to_ab(smart_array<complex<float_type> > z);
+  void z_root_to_ab(smart_array<complex<float_type> >& z);
   void pz_to_ap(); 
   void ab_to_tf();
-  void p2_to_poly(smart_array<complex<float_type> > ab,
-				  smart_array<float_type>& tf);
-  smart_array<float_type> pz_to_poly(smart_array<complex<float_type> > z);
+  smart_array<float_type> p2_to_poly(const smart_array<complex<float_type> >& ab);
+  smart_array<float_type> pz_to_poly(const smart_array<complex<float_type> >& z);
   complex<float_type> get_root(long i);
   complex<float_type> get_zero(long i);
   float_type get_a(long i);

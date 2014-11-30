@@ -18,14 +18,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 // from directory: spuc_include
-#ifdef SPUCBOOST
 #include <spuc/spuc_defines.h>
 #include <spuc/builtin.h>
 #include <spuc/base_type.h>
 #include <spuc/fundtype.h>
 #include <spuc/complex.h>
 using namespace SPUC;
-#endif
 namespace SPUC {
 //! \file
 //! \brief Class needed only for boost includes

@@ -28,18 +28,17 @@ namespace SPUC {
 //--------------------------------------------------------------------------
 // Interleave the coded bits
 //--------------------------------------------------------------------------
-smart_array<bool> ofdm_data_encoder::interleave(smart_array<bool> data_in) 
+void ofdm_data_encoder::interleave(const smart_array<bool>& data_in) 
 {
   int k;
   for (int i=0;i<coded_bits_per_frame;i++) {
 	k = 16*i-(coded_bits_per_frame-1)*(long)floor(16.0*i/coded_bits_per_frame);
 #ifdef NO_INT
-	interleaved[i] = data_in[i];
+	interleaver_out[i] = data_in[i];
 #else
-	interleaved[i] = data_in[k];
+	interleaver_out[i] = data_in[k];
 #endif
   }
-  return(interleaved);
 }
 //--------------------------------------------------------------------------
 complex<long> ofdm_data_encoder::data_map(long rate)
@@ -67,7 +66,7 @@ void ofdm_data_encoder::get_data_frame()
   }
 
   // interleave the block!
-  interleaver_out = interleave(interleaver_in);
+  interleave(interleaver_in);
   
   int bitc=0;
   for (j=0;j<Carriers;j++) {

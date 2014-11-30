@@ -66,7 +66,7 @@ public:
   void init(float_type fp, float_type k) {
 	smart_array<float_type> c0(1);
 	smart_array<float_type> c1(1);
-	elliptic_allpass(c0, c1, fp, 2);
+	elliptic_allpass(c0,c1, fp, 2);
 	b0 = c0[0];
 	b1 = c1[0];
 	

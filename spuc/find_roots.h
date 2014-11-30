@@ -30,6 +30,6 @@ namespace SPUC {
 //
 //! \author Tony Kirke
 //! \ingroup functions misc
-smart_array<complex<float_type> > find_roots(smart_array<float_type> a,long n);
+smart_array<complex<float_type> > find_roots(const smart_array<float_type>& a,long n);
 } // namespace SPUC
 #endif

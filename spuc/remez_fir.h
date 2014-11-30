@@ -58,19 +58,31 @@ class remez_fir {
 	remez_fir() {}  
 
  private:
-  static void createDenseGrid(int r, int numtaps, int numband, smart_array<float_type> bands,
-							  smart_array<float_type> des, smart_array<float_type> weight, int gridSize,
-							  smart_array<float_type> grid, smart_array<float_type> d, smart_array<float_type> w,
+  static void createDenseGrid(int r, int numtaps, int numband, 
+							  smart_array<float_type>& bands,
+							  const smart_array<float_type>& des, 
+							  const smart_array<float_type>& weight, int gridSize,
+							  smart_array<float_type>& grid, 
+							  smart_array<float_type>& d, 
+							  smart_array<float_type>& w,
 							  int symmetry);
-  static void calc_d(int r, smart_array<float_type> x, smart_array<float_type> ad);
-  static void calc_y(int r, smart_array<int> ext, smart_array<float_type> des, smart_array<float_type> w,
-					 smart_array<float_type> d, smart_array<float_type> y);
-  static float_type gee(float_type freq, int r, smart_array<float_type> d, smart_array<float_type> x, smart_array<float_type> y);
-  static void search(int r, smart_array<int> ext, int gridSize, smart_array<float_type> e);
-  static bool isDone(int r, smart_array<int> ext, smart_array<float_type> e);
+
+  static smart_array<float_type> calc_d(int r, const smart_array<float_type>& x);
+  static smart_array<float_type> calc_y(int r, const smart_array<int>& ext, 
+										const smart_array<float_type>& des, 
+										const smart_array<float_type>& w,
+										const smart_array<float_type>& d);
+  static float_type gee(float_type freq, int r,
+						const smart_array<float_type>& ad,
+						const smart_array<float_type>& x,
+						const smart_array<float_type>& y);
+  static void search(int r, smart_array<int>& ext, int gridSize, const smart_array<float_type>& e);
+  static bool isDone(int r, const smart_array<int>& ext, const smart_array<float_type>& e);
 public:
   static bool remez(smart_array<float_type>& filt, int n, int numband,
-					smart_array<float_type> bands, smart_array<float_type> des, smart_array<float_type> weight, int type);
+					smart_array<float_type>& bands, 
+					const smart_array<float_type>& des, 
+					const smart_array<float_type>& weight, int type);
 };
 } // namespace SPUC
 #endif

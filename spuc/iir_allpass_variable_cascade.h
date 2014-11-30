@@ -65,7 +65,7 @@ public:
 	if (stages > 0) {
 	  smart_array<float_type> a0(stages);
 	  smart_array<float_type> a1(stages);
-	  elliptic_allpass(a0, a1, fp, stages);
+	  elliptic_allpass(a0,a1, fp, stages);
 	  j = (stages+1)/2;
 	  k = stages - j;
 	  // CONVERT FROM DOUBLE to COEFF

@@ -28,7 +28,7 @@ namespace SPUC {
 //! \author Tony Kirke,  Copyright(c) 2001 
 //! \author Tony Kirke
 //! \ingroup template_array_functions misc
-template <class T> smart_array<T> partial_convolve(smart_array<T> x, smart_array<T> y, int N, int M) {
+template <class T> smart_array<T> partial_convolve(const smart_array<T>& x, const smart_array<T>& y, int N, int M) {
   int i,j;
   int L=M+N-1;
   smart_array<T> c(L);
@@ -37,6 +37,7 @@ template <class T> smart_array<T> partial_convolve(smart_array<T> x, smart_array
 	for (j=0;j<N;j++) {
 	  if ((i-j >= 0) & (i-j < M))
 		c[i] += x[j] * y[i-j];
+//        std::cout << "c[" << i << "] = " << c[i] << "\n";
 	}
   }
   return(c);

@@ -31,7 +31,7 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \ingroup functions iir
 void butterworth_iir(iir_coeff& filt, float_type fcd, bool lpf, float_type amax);
-void butterworth_s(smart_array<complex<float_type> > poles,
-		   smart_array<complex<float_type> > zeros, bool lpf, float_type wp, long n, long n2);
+void butterworth_s(smart_array<complex<float_type> >& poles,
+									 smart_array<complex<float_type> >& zeros, bool lpf, float_type wp, long n, long n2);
 } // namespace SPUC
 #endif

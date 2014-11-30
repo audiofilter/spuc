@@ -29,7 +29,7 @@ namespace SPUC {
 //! \author Tony Kirke,  Copyright(c) 2001 
 //! \author Tony Kirke
 //! \ingroup functions fir
-void inv_dft_symmetric(smart_array<float_type> h, smart_array<float_type> A, int N);
-void inv_dft(smart_array<float_type> h, smart_array<float_type> A, int N);
+smart_array<float_type> inv_dft_symmetric(const smart_array<float_type>& A, int N);
+smart_array<float_type> inv_dft(const smart_array<float_type>& A, int N);
 } // namespace SPUC
 #endif

@@ -19,8 +19,6 @@
 */
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
-#include "boost/shared_array.hpp"
-namespace SPUC {
 //! author="Tony Kirke" *
 //! SPUC - Signal processing using C++ - A DSP libraryy
 
@@ -28,21 +26,45 @@ namespace SPUC {
 //!  \file 
 //!  \brief wrapper for boost shared array that keeps track of 
 //!  number of elements
-template<class T> class smart_array : public boost::shared_array<T> {
- public:
-  //! Default constructor
-  smart_array() {} 
-  //! Create an smart_array of size n
-  smart_array(long n) : boost::shared_array<T>(new T[n]) {
-	elements = n;
-  }
-  void resize(long n) { 
-	elements = n;
-	boost::shared_array<T>::reset(new T[n]); 
-  }
-  long len() const { return(elements); }
- private:
-  long elements;
-};
+
+#ifndef NO_BOOST
+#include "boost/shared_array.hpp"
+namespace SPUC {
+	template<class T> class smart_array : public boost::shared_array<T> {
+	public:
+		//! Default constructor
+		smart_array() {} 
+		//! Create an smart_array of size n
+		smart_array(long n) : boost::shared_array<T>(new T[n]) {
+			elements = n;
+		}
+		void resize(long n) { 
+			elements = n;
+			boost::shared_array<T>::reset(new T[n]); 
+		}
+		long len() const { return(elements); }
+	private:
+		long elements;
+	};
 } // namespace SPUC
+#else
+namespace SPUC {
+	template<class T> class smart_array : public std::unique_ptr<T []> {
+	public:
+		//! Default constructor
+		smart_array() {} 
+		//! Create an smart_array of size n
+		smart_array(long n) : std::unique_ptr<T []>(new T[n]) {
+			elements = n;
+		}
+		void resize(long n) { 
+			elements = n;
+			std::unique_ptr<T []>::reset(new T[n]); 
+		}
+		long len() const { return(elements); }
+	private:
+		long elements;
+	};
+} // namespace SPUC
+#endif
 #endif

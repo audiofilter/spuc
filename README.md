@@ -10,7 +10,7 @@ This is an update of code that has been on sourceforge for about 14 years. The g
 
 For a lite-weight version please checkout spuclib instead as it does not have the Doxygen generated files like this does.
 
-**Note: spuclib - now has removed boost dependency from code (Nov 2014). This libary doesnt have those updates yet as there are issues building the python extensions. The below sub-projects are fine with the exception of pyspuc (which may still show passing as it hasn't been touched).**
+**Note: The libraries + executables can be built eith with or without BOOST dependencies. (Spuclib has them completely removed from code - Nov 2014). However, python extensions can only be currently built with BOOST dependency. The only difference with/witout boost is the 'smart_array' class which either uses boost::shared_array or unique_ptr. The latter seems to have an issue for building python extensions. When boost is not found as part of "Cmake", then NO_BOOST is defined which uses unique_ptr. The below sub-projects are fine with the exception of pyspuc (which may still show passing as it hasn't been touched).**
 
 Nor does spuclib have the examples or the python extensions available in audiofilter/pyspuc
 

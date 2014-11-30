@@ -22,7 +22,8 @@
 namespace SPUC {
 //! \file
 //! \brief calculates fir filter coefficients based on frequency sampling design using IDFT
-void inv_dft_symmetric(smart_array<float_type> h, smart_array<float_type> A, int N) {
+smart_array<float_type> inv_dft_symmetric(const smart_array<float_type>& A, int N) {
+  smart_array<float_type> h(N);
   float_type x, val;
   float_type M = (N-1.0)/2.0;
   int END = (N%2 != 0) ? (int)M : (N/2-1);
@@ -32,9 +33,11 @@ void inv_dft_symmetric(smart_array<float_type> h, smart_array<float_type> A, int
 	for (int k=1; k<=END; k++) val += 2.0*A[k]*cos(x*k);
 	h[n] = val/N;
   }
+  return h;
 }
 //! \brief calculates fir filter coefficients based on frequency sampling design using IDFT
-void inv_dft(smart_array<float_type> h, smart_array<float_type> A, int N) {
+smart_array<float_type> inv_dft(const smart_array<float_type>& A, int N) {
+  smart_array<float_type> h(N);
   float_type x, val;
   float_type M = (N-1.0)/2.0;
   int END = (N%2 != 0) ? (int)M : (N/2-1);
@@ -44,5 +47,6 @@ void inv_dft(smart_array<float_type> h, smart_array<float_type> A, int N) {
 	for (int k=1; k<=END; k++) val += 2.0*A[k]*sin(x*k);
 	h[n] = val/N;
   }
+  return h;
 }
 } // namespace SPUC

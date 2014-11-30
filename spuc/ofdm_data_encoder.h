@@ -57,7 +57,7 @@ public:
 	smart_array<long> pre_mod;
 
  private:
-	smart_array<bool> interleave(smart_array<bool> data_in); 
+	void interleave(const smart_array<bool>& data_in); 
 
  public:
 	int coded_bits_per_frame;

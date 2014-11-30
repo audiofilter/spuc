@@ -64,7 +64,7 @@ namespace SPUC {
  * CADLINC, Inc., Palo Alto, California
  *******************************************************************************/
 
-smart_array<complex<float_type> > find_roots(smart_array<float_type>	a,	long n) {
+smart_array<complex<float_type> > find_roots(const smart_array<float_type>&	a,	long n) {
   const long max_iter = 100;
   const long fig = 10;
   int i,j;

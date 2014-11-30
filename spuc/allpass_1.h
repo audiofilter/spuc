@@ -76,7 +76,7 @@ template <class Numeric,class Coeff=float_type> class allpass_1
   }
     void set_gain(Coeff Gain) { gain = Gain; }
   //! Initializes gain and delay
-  void init(Coeff Gain, long s) { 
+  void init(Coeff& Gain, long s) { 
 	gain = Gain;
 	size = s;
 	mult.set_size(size);

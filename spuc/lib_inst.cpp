@@ -33,7 +33,7 @@ namespace SPUC {
   int dummy_vf(void) {
 	double a;
 	fir<double,double> z(32);
-	smart_array<double> tmp;
+    smart_array<double> tmp;
 
 	tmp = get_taps(z);
 	

@@ -17,6 +17,7 @@ if (GCC_VERSION VERSION_GREATER 4.8 OR GCC_VERSION VERSION_EQUAL 4.8)
 endif()
 
 SET(TARGETS
+test_cic
 test_auto_corr
 test_ddfse
 test_elliptic_allpass

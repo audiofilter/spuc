@@ -173,20 +173,20 @@ template <class Numeric,class Coeff = float_type> class fir
 	c.print();
   }
 
-  template <class N,class C>   friend smart_array<C> get_taps(fir<N,C> x);
-  template <class N,class C>   friend smart_array<N> get_input(fir<N,C> y);
+  template <class N,class C>   friend smart_array<C> get_taps(const fir<N,C>& x);
+  template <class N,class C>   friend smart_array<N> get_input(const fir<N,C>& y);
   void settap(smart_array<Coeff> z) {
 	  for (int i=0;i<num_taps;i++) coeff[i] = z[i]; 
   }  
 };    
 
-template <class Numeric, class Coeff> smart_array<Coeff> get_taps(fir<Numeric,Coeff> f) {
+template <class Numeric, class Coeff> smart_array<Coeff> get_taps(const fir<Numeric,Coeff>& f) {
 	long N = f.num_taps;
 	smart_array<Coeff> V(N);
 	for (int i=0;i<N;i++) V[i] = f.coeff[i];
 	return(V);
 }
-template <class Numeric, class Coeff> smart_array<Numeric> get_input(fir<Numeric,Coeff> f) {
+template <class Numeric, class Coeff> smart_array<Numeric> get_input(const fir<Numeric,Coeff>& f) {
 	long N = f.num_taps;
 	smart_array<Numeric> V(N);
 	for (int i=0;i<N;i++) V[i] = f.z[i];

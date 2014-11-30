@@ -46,9 +46,9 @@ namespace SPUC {
  *************************************************************************/
 bool remez_fir::remez(smart_array<float_type>& filt, 
 					  int numtaps, int numband,
-					  smart_array<float_type> bands, 
-					  smart_array<float_type> des,
-					  smart_array<float_type> weight, 
+					  smart_array<float_type>& bands, 
+					  const smart_array<float_type>& des,
+					  const smart_array<float_type>& weight, 
 					  int type) {
   bool ok=true;
   float_type c;
@@ -82,7 +82,7 @@ bool remez_fir::remez(smart_array<float_type>& filt,
   
   // Create dense frequency grid
   createDenseGrid(r, numtaps, numband, bands, des, weight,
-				  gridSize, grid, d, w, symmetry);
+									gridSize, grid, d,w, symmetry);
 
   // initial guess
   for (i=0; i<=r; i++) ext[i] = i*(gridSize-1) / r;
@@ -116,9 +116,9 @@ bool remez_fir::remez(smart_array<float_type>& filt,
 	// calc x
 	for (i=0; i<=r; i++) x[i] = cos(TWOPI * grid[ext[i]]);
 	// Calculate ad[] function in Parks & Burrus
-	calc_d(r,x,ad);
+	ad = calc_d(r,x);
 	// calc y
-	calc_y(r, ext, d, w, ad, y);
+	y = calc_y(r, ext, d, w, ad);
 	// calculate error array
 	for (i=0; i<gridSize; i++) e[i] = w[i] * (d[i] - gee(grid[i], r, ad, x, y));
 	search(r, ext, gridSize, e);
@@ -132,8 +132,8 @@ bool remez_fir::remez(smart_array<float_type>& filt,
   }
   
   for (i=0; i<=r; i++) x[i] = cos(TWOPI * grid[ext[i]]);
-  calc_d(r,x,ad);
-  calc_y(r,ext,d,w,ad,y);
+  ad = calc_d(r,x);
+  y = calc_y(r,ext,d,w,ad);
   
   // Find the 'taps' of the filter for use with Frequency
   // Sampling.  If odd or Negative symmetry, fix the taps
@@ -149,8 +149,8 @@ bool remez_fir::remez(smart_array<float_type>& filt,
 	taps[i] = gee((float_type)i/numtaps, r, ad, x, y)*c;
   }
   // Frequency sampling design with calculated taps
-  if (symmetry == POSITIVE) inv_dft_symmetric(filt, taps, numtaps);
-  else inv_dft(filt, taps, numtaps);
+  if (symmetry == POSITIVE) filt = inv_dft_symmetric(taps, numtaps);
+  else filt = inv_dft(taps, numtaps);
   return(ok);
 }
 /*******************
@@ -159,12 +159,13 @@ bool remez_fir::remez(smart_array<float_type>& filt,
  * the Weight function (w[]) on that dense grid
  *******************/
 void remez_fir::createDenseGrid(int r, int numtaps, int numband, 
-								smart_array<float_type> bands,
-								smart_array<float_type> des, 
-								smart_array<float_type> weight, int gridSize,
-								smart_array<float_type> grid, 
-								smart_array<float_type> d, 
-								smart_array<float_type> w,
+								smart_array<float_type>& bands,
+								const smart_array<float_type>& des, 
+								const smart_array<float_type>& weight, 
+								int gridSize,
+								smart_array<float_type>& grid, 
+								smart_array<float_type>& d, 
+								smart_array<float_type>& w,
 								int symmetry) {
   float_type lowf, highf;
   float_type delf = 0.5/(GRIDDENSITY*r);
@@ -198,7 +199,8 @@ void remez_fir::createDenseGrid(int r, int numtaps, int numband,
   }
 }
 // Dee function in Parks & Burrus
-void remez_fir::calc_d(int r, smart_array<float_type> x, smart_array<float_type> d) {
+smart_array<float_type> remez_fir::calc_d(int r, const smart_array<float_type>& x) {
+  smart_array<float_type> d(r);
   int i,j,k;
   float_type denom,xi;
   int ld = (r-1)/15 + 1;
@@ -212,13 +214,14 @@ void remez_fir::calc_d(int r, smart_array<float_type> x, smart_array<float_type>
 	if (fabs(denom)<0.00001) denom = 0.00001;
 	d[i] = 1.0/denom;
   }
+  return d;
 }
-void remez_fir::calc_y(int r, 
-					   smart_array<int> ext, 
-					   smart_array<float_type> d, 
-					   smart_array<float_type> w,
-					   smart_array<float_type> ad,
-					   smart_array<float_type> y) {
+smart_array<float_type> remez_fir::calc_y(int r, 
+										  const smart_array<int>& ext, 
+										  const smart_array<float_type>& d, 
+										  const smart_array<float_type>& w,
+										  const smart_array<float_type>& ad) {
+  smart_array<float_type> y(r);
   float_type sign, dev, denom, numer;
   int i;
   
@@ -238,14 +241,15 @@ void remez_fir::calc_y(int r,
 	y[i] = d[ext[i]] - sign * dev/w[ext[i]];
 	sign = -sign;
   }
+  return y;
 }
 /*********************
  * gee (see p301 Parks & Burrus) Digital Filter Design
  *********************/
 float_type remez_fir::gee(float_type freq, int r, 
-						  smart_array<float_type> ad,
-						  smart_array<float_type> x,
-						  smart_array<float_type> y) 
+						  const smart_array<float_type>& ad,
+						  const smart_array<float_type>& x,
+						  const smart_array<float_type>& y) 
 {
   
   int i;
@@ -280,8 +284,8 @@ float_type remez_fir::gee(float_type freq, int r,
  *    of the first/last extremum
  ************************/
 
-void remez_fir::search(int r, smart_array<int> ext, int gridSize, 
-					   smart_array<float_type> e) {
+void remez_fir::search(int r, smart_array<int>& ext, int gridSize, 
+											 const smart_array<float_type>& e) {
   bool up, alt;
   smart_array<int> foundExt(gridSize);  /* Array of found extremals */
   int k = 0;
@@ -348,7 +352,7 @@ void remez_fir::search(int r, smart_array<int> ext, int gridSize,
  * Checks to see if the error function is small enough to consider
  * the result to have converged.
  ********************/
-bool remez_fir::isDone(int r, smart_array<int> ext, smart_array<float_type> e) {
+bool remez_fir::isDone(int r, const smart_array<int>& ext, const smart_array<float_type>& e) {
   int i;
   float_type min, max, current;
   min = max = fabs(e[ext[0]]);

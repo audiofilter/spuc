@@ -32,22 +32,22 @@ namespace SPUC {
 //! \author Tony Kirke
 //!  \ingroup functions comm
 void qam_data_demap(long rate_index, complex<long> data_in,
-					long soft_decision_level, smart_array<long> viterbi_input);
+					long soft_decision_level, smart_array<long>& viterbi_input);
 //! \brief BPSK data demapping
 //! \author Tony Kirke
 //!  \ingroup functions comm
-void bpsk_soft_decision(complex<long> data_in, smart_array<long> viterbi_input);
+void bpsk_soft_decision(complex<long> data_in, smart_array<long>& viterbi_input);
 //! \brief QPSK data demapping
 //! \author Tony Kirke
 //! \ingroup functions comm
-void qpsk_soft_decision(complex<long> data_in, smart_array<long> viterbi_input);
+void qpsk_soft_decision(complex<long> data_in, smart_array<long>& viterbi_input);
 //! \brief 16-QAM data demapping
 //! \author Tony Kirke
 //! \ingroup functions comm
-void qam16_soft_decision(complex<long> data_in, long soft_decision_level, smart_array<long> viterbi_input);
+void qam16_soft_decision(complex<long> data_in, long soft_decision_level, smart_array<long>& viterbi_input);
 //! \brief 64-QAM data demapping
 //! \author Tony Kirke
 //! \ingroup functions comm
-void qam64_soft_decision(complex<long> data_in, long soft_decision_level, smart_array<long> viterbi_input);
+void qam64_soft_decision(complex<long> data_in, long soft_decision_level, smart_array<long>& viterbi_input);
 } // namespace SPUC
 #endif

@@ -41,14 +41,14 @@ public:
   
 public:
   //! ord = Filter order
-  allpass(smart_array<Coeff> design, int n) : ap(n) {
+  allpass(smart_array<Coeff>& design, int n) : ap(n) {
 	stages =    n;
 	set_coeffs(design);
   }
   Coeff get_coefficient(int i) { return(ap[i].get_coefficient()); }
   //! ord = Filter order
   allpass(long n=1) : ap(n) {  }
-  void init(smart_array<Coeff> design, int n, int d=2) {
+  void init(smart_array<Coeff>& design, int n, int d=2) {
 	stages =    n;
 	ap.resize(stages);
 	if (stages>0) set_coeffs(design,d);
@@ -60,7 +60,7 @@ public:
 	for (int j=0;j<stages;j++) ap[j].reset();
   } 
   //! Set 1st order ALLPASS coefficients
-  void set_coeffs(smart_array<Coeff> design, int d=2) {
+  void set_coeffs(smart_array<Coeff>& design, int d=2) {
 	for (int j=0;j<stages;j++) ap[j].init(design[j],d);
   }
   //! Clock in sample and get output.

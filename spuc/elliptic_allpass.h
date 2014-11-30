@@ -32,7 +32,7 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \ingroup functions iir
 //!  \author Tony Kirke,  Copyright(c) 2001 
-void elliptic_allpass(smart_array<float_type> a0, smart_array<float_type> a1, float_type fp, int L);
+void elliptic_allpass(smart_array<float_type>& a0, smart_array<float_type>& a1, float_type fp, int L);
 
   
 } // namespace SPUC

@@ -37,8 +37,8 @@ void elliptic_iir(iir_coeff& filt, float_type fcd, bool lpf, float_type fstop, f
 //! get roots in Lamda plane
 float_type lamda_plane(float_type k, float_type m, int n, float_type eps);
 //! calculate s plane poles and zeros 
-void s_plane(smart_array<complex<float_type> > roots, 
-	     smart_array<complex<float_type> > zeros, bool lpf,
+void s_plane(smart_array<complex<float_type> >& roots, 
+	     smart_array<complex<float_type> >& zeros, bool lpf,
 			 int n, float_type u, float_type m, float_type k,
 			 float_type Kk,	float_type wc);
 float_type ellik(float_type phi,float_type k);

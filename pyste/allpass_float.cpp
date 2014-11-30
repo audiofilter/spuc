@@ -13,7 +13,7 @@ using namespace boost::python;
 BOOST_PYTHON_MODULE(allpass_float)
 {
     class_< SPUC::allpass<float,float> >("allpass_float", init< const SPUC::allpass<float,float>& >())
-        .def(init< SPUC::smart_array<float>, int >())
+        .def(init< SPUC::smart_array<float>&, int >())
         .def(init< optional< long int > >())
         .def_readwrite("stages", &SPUC::allpass<float,float>::stages)
         .def_readwrite("ap", &SPUC::allpass<float,float>::ap)

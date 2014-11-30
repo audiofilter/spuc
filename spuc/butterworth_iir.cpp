@@ -42,9 +42,9 @@ namespace SPUC {
   filt.convert_to_ab();
 }
 //! Calculate roots
-void butterworth_s(smart_array<complex<float_type> > poles,
-		   smart_array<complex<float_type> > zeros,
-		   bool lpf, float_type wp, long n, long n2) {
+void butterworth_s(smart_array<complex<float_type> >& poles,
+				   smart_array<complex<float_type> >& zeros,
+				   bool lpf, float_type wp, long n, long n2) {
   complex<float_type> expj(float_type a);
   long l = 0;
   if (n%2 == 0) l = 1;                                                 
