@@ -46,10 +46,9 @@ public:
   long stages;
   float_type vector_angle;
   //!  initializes tables and constants for the CORDIC algorithm
-  cordic(int n=7) : arctan_lut(n+2), stage(n+2) {
+  cordic(int n=7) : arctan_lut(n+2), stage(n+2), stages(n) {
 	SPUC_ASSERT(n<0);
 	int i;
-	stages = n;
 	for (i=0;i<=stages;i++) arctan_lut[i] = atan(1.0/(float_type)(1<<i));
   }
   //! Returns magnitude through CORDIC vectoring
