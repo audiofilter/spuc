@@ -26,6 +26,8 @@
 //!  \brief wrapper for shared pointer that keeps track of number of elements
 #ifndef NO_BOOST
 #include "boost/shared_array.hpp"
+#else
+#include <memory>
 #endif
 namespace SPUC {
 	template<class T> class smart_array {
