@@ -98,27 +98,33 @@ spuc/qpsk_discriminators.cpp
 spuc/viterbi.cpp
 )
 
+option(SPUC_BUILD_PYTHON_EXTENSIONS "Build extensions" OFF)
 
-FIND_PACKAGE(Boost)
-IF(Boost_FOUND)
-  IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-	# Mac OS X specific code
-	SET(OperatingSystem "Mac OS X")
-	SET(Boost_USE_STATIC_LIBS ON)
-	SET(Boost_USE_MULTITHREADED ON)
-  ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin") 
+if (SPUC_BUILD_PYTHON_EXTENSIONS)
+	FIND_PACKAGE(Boost)
+	IF(Boost_FOUND)
+		IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+			# Mac OS X specific code
+			SET(OperatingSystem "Mac OS X")
+			SET(Boost_USE_STATIC_LIBS ON)
+			SET(Boost_USE_MULTITHREADED ON)
+		ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin") 
+		
+		SET(Boost_USE_STATIC_RUNTIME OFF)
+		FIND_PACKAGE(Boost COMPONENTS python)
+		FIND_PACKAGE(PythonLibs REQUIRED)
+		INCLUDE_DIRECTORIES("${Boost_INCLUDE_DIRS}" ${PYTHON_INCLUDE_DIRS} "/usr/include")
+		LINK_DIRECTORIES(${PYTHON_LIBRARY_DIRS} ${Boost_LIBRARY_DIRS})
+		
+		EXECUTE_PROCESS( COMMAND python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()" OUTPUT_VARIABLE PYTHON_SITE_PACKAGES OUTPUT_STRIP_TRAILING_WHITESPACE)
 
-  SET(Boost_USE_STATIC_RUNTIME OFF)
-  FIND_PACKAGE(Boost COMPONENTS python)
-  FIND_PACKAGE(PythonLibs REQUIRED)
-  INCLUDE_DIRECTORIES("${Boost_INCLUDE_DIRS}" ${PYTHON_INCLUDE_DIRS} "/usr/include")
-  LINK_DIRECTORIES(${PYTHON_LIBRARY_DIRS} ${Boost_LIBRARY_DIRS})
-  
-  EXECUTE_PROCESS( COMMAND python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()" OUTPUT_VARIABLE PYTHON_SITE_PACKAGES OUTPUT_STRIP_TRAILING_WHITESPACE)
- 
-ELSEIF(NOT Boost_FOUND)
-  ADD_DEFINITIONS(-DNO_BOOST)
-	MESSAGE(STATUS "Unable to find correct Boost version. Defining NO_BOOST. Will not be able to build python extensions")
+		MESSAGE(STATUS "Building python extensions")
+		add_subdirectory(extensions)
+	ELSEIF(NOT Boost_FOUND)
+		MESSAGE(STATUS "Unable to find correct Boost version. Defining NO_BOOST. Will not be able to build python extensions")
+	ENDIF()
+ELSE()
+	MESSAGE(STATUS "Not building python extensions - enable with cmake -DSPUC_BUILD_PYTHON_EXTENSIONS=ON (and make sure boost-python is installed)")
 ENDIF()
 
 ADD_DEFINITIONS("-Wall -fPIC")
@@ -134,7 +140,6 @@ SET_TARGET_PROPERTIES(spuc PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 SET_TARGET_PROPERTIES(spuc_types PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 
 
-option(SPUC_BUILD_PYTHON_EXTENSIONS "Build extensions" OFF)
 option(SPUC_BUILD_EXAMPLES "Build examples" OFF)
 
 if (SPUC_BUILD_EXAMPLES)
@@ -144,11 +149,3 @@ else()
 MESSAGE(STATUS "Not building examples - enable with cmake -DSPUC_BUILD_EXAMPLES=ON")
 endif()
 
-if (Boost_FOUND)
-	if (SPUC_BUILD_PYTHON_EXTENSIONS)
-		MESSAGE(STATUS "Building python extensions")
-		add_subdirectory(extensions)
-	else()
-		MESSAGE(STATUS "Not building python extensions - enable with cmake -DSPUC_BUILD_PYTHON_EXTENSIONS=ON")
-	endif()
-endif()
