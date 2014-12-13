@@ -44,9 +44,9 @@ template <class Numeric> class farrow
 {
  public: 
   long num_taps;
-  smart_array<Numeric> coeff;
+  std::vector<Numeric> coeff;
  protected:
-  smart_array<Numeric> z; 
+  std::vector<Numeric> z; 
   Numeric output;
       
  public: 

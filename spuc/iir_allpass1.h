@@ -54,8 +54,8 @@ template <class Numeric,class Coeff=float_type> class iir_allpass1
 	reset();
   }
   iir_allpass1(float_type fp) : Delay(2) {
-		smart_array<Coeff> a0(1);
-		smart_array<Coeff> a1(1);
+		std::vector<Coeff> a0(1);
+		std::vector<Coeff> a1(1);
 		elliptic_allpass(a0,a1, fp, 2);
 		A0.init(a0[0],Delay);
 		A1.init(a1[0],Delay);

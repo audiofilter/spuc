@@ -28,7 +28,7 @@ namespace SPUC {
 //--------------------------------------------------------------------------
 // Interleave the coded bits
 //--------------------------------------------------------------------------
-void ofdm_data_encoder::interleave(const smart_array<bool>& data_in) 
+void ofdm_data_encoder::interleave(const std::vector<bool>& data_in) 
 {
   int k;
   for (int i=0;i<coded_bits_per_frame;i++) {

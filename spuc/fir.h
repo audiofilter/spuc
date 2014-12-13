@@ -41,9 +41,9 @@ namespace SPUC {
 template <class Numeric,class Coeff = float_type> class fir
 {
  public: 
-  smart_array<Coeff> coeff;
+  std::vector<Coeff> coeff;
   //      protected:
-  smart_array<Numeric> z; 
+  std::vector<Numeric> z; 
   Numeric output;
   quantiser<Numeric> Q;
   typedef typename base_type<Numeric>::btype Numeric_base;
@@ -173,22 +173,22 @@ template <class Numeric,class Coeff = float_type> class fir
 	c.print();
   }
 
-  template <class N,class C>   friend smart_array<C> get_taps(const fir<N,C>& x);
-  template <class N,class C>   friend smart_array<N> get_input(const fir<N,C>& y);
-  void settap(smart_array<Coeff> z) {
+  template <class N,class C>   friend std::vector<C> get_taps(const fir<N,C>& x);
+  template <class N,class C>   friend std::vector<N> get_input(const fir<N,C>& y);
+  void settap(std::vector<Coeff> z) {
 	  for (int i=0;i<num_taps;i++) coeff[i] = z[i]; 
   }  
 };    
 
-template <class Numeric, class Coeff> smart_array<Coeff> get_taps(const fir<Numeric,Coeff>& f) {
+template <class Numeric, class Coeff> std::vector<Coeff> get_taps(const fir<Numeric,Coeff>& f) {
 	long N = f.num_taps;
-	smart_array<Coeff> V(N);
+	std::vector<Coeff> V(N);
 	for (int i=0;i<N;i++) V[i] = f.coeff[i];
 	return(V);
 }
-template <class Numeric, class Coeff> smart_array<Numeric> get_input(const fir<Numeric,Coeff>& f) {
+template <class Numeric, class Coeff> std::vector<Numeric> get_input(const fir<Numeric,Coeff>& f) {
 	long N = f.num_taps;
-	smart_array<Numeric> V(N);
+	std::vector<Numeric> V(N);
 	for (int i=0;i<N;i++) V[i] = f.z[i];
 	return(V);
 }

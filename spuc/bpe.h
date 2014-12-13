@@ -39,7 +39,7 @@ namespace SPUC {
 //! \ingroup real_double_templates comm
 template <class Numeric, class Coeff=double> class bpe {
 
-  smart_array<complex<Numeric> > bit;      //! array containing previous inputs 
+  std::vector<complex<Numeric> > bit;      //! array containing previous inputs 
   int quad_prev;      //! Previous quadrant
   int oqtstate;       //! quadrant cross-over indicator
   float_type ang;         //! current averaged angle

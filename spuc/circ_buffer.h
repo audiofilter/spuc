@@ -32,7 +32,7 @@ namespace SPUC {
 template <class T> class circ_buffer {
 
  protected:
-  smart_array<T> buf;
+  std::vector<T> buf;
   int	len;
   int	ptr;
 

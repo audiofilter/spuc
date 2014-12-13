@@ -41,8 +41,8 @@ namespace SPUC {
 template <class Numeric> class cordic
 {
 public:
-  smart_array<float_type> arctan_lut;
-  smart_array<complex<Numeric> > stage;
+  std::vector<float_type> arctan_lut;
+  std::vector<complex<Numeric> > stage;
   long stages;
   float_type vector_angle;
   //!  initializes tables and constants for the CORDIC algorithm

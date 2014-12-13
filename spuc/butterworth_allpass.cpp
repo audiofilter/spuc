@@ -19,8 +19,8 @@
 // from directory: spuc_src
 #include <spuc/butterworth_allpass.h>
 namespace SPUC {
-void butterworth_allpass(smart_array<float_type>& a0, 
-						 smart_array<float_type>& a1, int L) {
+void butterworth_allpass(std::vector<float_type>& a0, 
+						 std::vector<float_type>& a1, int L) {
   int N = 2*L+1;
   int J = L/2;
   int l;

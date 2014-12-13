@@ -38,9 +38,9 @@ namespace SPUC {
 template <class Numeric> class cic
 {
  protected:
-  smart_array<Numeric> diff; //! Differentiators
-  smart_array<Numeric> nacc; //! Accumulators
-  smart_array<Numeric> prev; //! Previous values
+  std::vector<Numeric> diff; //! Differentiators
+  std::vector<Numeric> nacc; //! Accumulators
+  std::vector<Numeric> prev; //! Previous values
   char stages; //! Number of stages
  public:                         
   //! Constructor

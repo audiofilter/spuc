@@ -40,7 +40,7 @@ template <class Numeric> class delay
  public: 
   long num_taps;
  protected:
-  smart_array<Numeric> z; 
+  std::vector<Numeric> z; 
       
  public: 
   //! Constructor

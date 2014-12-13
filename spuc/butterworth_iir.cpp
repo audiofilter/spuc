@@ -42,8 +42,8 @@ namespace SPUC {
   filt.convert_to_ab();
 }
 //! Calculate roots
-void butterworth_s(smart_array<complex<float_type> >& poles,
-				   smart_array<complex<float_type> >& zeros,
+void butterworth_s(std::vector<complex<float_type> >& poles,
+				   std::vector<complex<float_type> >& zeros,
 				   bool lpf, float_type wp, long n, long n2) {
   complex<float_type> expj(float_type a);
   long l = 0;

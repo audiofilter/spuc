@@ -36,7 +36,7 @@ namespace SPUC {
 template <class Numeric> class fir_coeff
 {
  public: 
-  smart_array<Numeric> coeff;
+  std::vector<Numeric> coeff;
   
  public: 
   long num_taps;
@@ -89,8 +89,8 @@ template <class Numeric> class fir_coeff
 	for (int i=0;i<num_taps;i++) std::cout << coeff[i]  << ",";
 	std::cout << "\n";
   }
-  template <class N> friend smart_array<N> get_taps(fir_coeff<N> x);
-  void settap(smart_array<Numeric> z) {
+  template <class N> friend std::vector<N> get_taps(fir_coeff<N> x);
+  void settap(std::vector<Numeric> z) {
 	  for (int i=0;i<num_taps;i++) coeff[i] = z[i]; 
   }
   // Get frequency response at freq
@@ -108,9 +108,9 @@ template <class Numeric> class fir_coeff
 
 };    
 
-template <class T> smart_array<T> get_taps(fir_coeff<T> f) {
+template <class T> std::vector<T> get_taps(fir_coeff<T> f) {
 	long N = f.num_taps;
-	smart_array<T> V(N);
+	std::vector<T> V(N);
 	for (int i=0;i<N;i++) V[i] = f.coeff[i];
 	return(V);
 }

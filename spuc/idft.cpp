@@ -25,12 +25,12 @@
 #include <spuc/idft.h>
 #include <spuc/smart_array.h>
 namespace SPUC {
-void idft(smart_array<complex<float_type> > y, int n)
+void idft(std::vector<complex<float_type> > y, int n)
 {
   int j,l;
 
   /*  n inverse dft length */
-  smart_array<complex<float_type> > x(n+1);
+  std::vector<complex<float_type> > x(n+1);
   complex<float_type> mult;
 
   /*  calculate the w values recursively */
@@ -57,12 +57,12 @@ void idft(smart_array<complex<float_type> > y, int n)
   for (i=0; i<n; i++) y[i] = scale*y[i];
 #endif
 }
-void dft(smart_array<complex<float_type> > y, int n)
+void dft(std::vector<complex<float_type> > y, int n)
 {
   int j,l;
 
   /*  n inverse dft length */
-  smart_array<complex<float_type> > x(n+1);
+  std::vector<complex<float_type> > x(n+1);
 
   for (j=0; j<n; j++) x[j] = y[j];
 

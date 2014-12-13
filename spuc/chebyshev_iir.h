@@ -31,7 +31,7 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \ingroup functions iir
 void chebyshev_iir(iir_coeff& cheb, float_type fcd, bool lpf, float_type ripple);
-void chebyshev_s(smart_array<complex<float_type> >& poles,
-		 smart_array<complex<float_type> >& zeros, bool lpf, float_type wp, float_type epi, long n, long n2);
+void chebyshev_s(std::vector<complex<float_type> >& poles,
+		 std::vector<complex<float_type> >& zeros, bool lpf, float_type wp, float_type epi, long n, long n2);
 } // namespace SPUC
 #endif

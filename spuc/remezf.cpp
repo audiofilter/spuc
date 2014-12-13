@@ -27,9 +27,9 @@ namespace SPUC {
 // thus allowing a simpler interface
 //!  \author Tony Kirke,  Copyright(c) 2001 
 template <float_type Des_function(float_type), float_type Weight_function(float_type)>
-void remez_function(smart_array<float_type>& r_fir,
+void remez_function(std::vector<float_type>& r_fir,
 					int numtaps, int numband, int r, 
-					smart_array<float_type> bands,int type) {
+					std::vector<float_type> bands,int type) {
 
   float_type floor(float_type x);
   int j=0;
@@ -44,9 +44,9 @@ void remez_function(smart_array<float_type>& r_fir,
   int symmetry = (type == BANDPASS)? POSITIVE : NEGATIVE;
   if (symmetry == NEGATIVE) gridSize--;
   
-  //  smart_array<float_type> r_fir(numtaps);
-  smart_array<float_type> des(gridSize);
-  smart_array<float_type> weight(gridSize);
+  //  std::vector<float_type> r_fir(numtaps);
+  std::vector<float_type> des(gridSize);
+  std::vector<float_type> weight(gridSize);
   
   for (int band=0; band < numband; band++) {
 	lowf = bands[2*band];

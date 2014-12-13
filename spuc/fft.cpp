@@ -34,7 +34,7 @@ frequency domain COMPLEX array.
 complex<float_type> fft(complex<float_type> *x, int m)
 
 *************************************************************************/
-void fft(smart_array<complex<float_type> > y, int m)
+void fft(std::vector<complex<float_type> > y, int m)
 {
   complex<float_type> u,temp,tm;
   int wptr;
@@ -43,8 +43,8 @@ void fft(smart_array<complex<float_type> > y, int m)
   /*  n = 2**m = inverse fft length */
   int n = 1 << m;
   le = n/2;
-  smart_array<complex<float_type> > w(n+1);
-  smart_array<complex<float_type> > x(n+1);
+  std::vector<complex<float_type> > w(n+1);
+  std::vector<complex<float_type> > x(n+1);
 
   /*  calculate the w values recursively */
   complex<float_type> w_inc = expj(-TWOPI/n);

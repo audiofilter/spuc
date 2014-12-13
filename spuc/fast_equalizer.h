@@ -29,17 +29,17 @@ class fast_equalizer {
  public:
   typedef complex<double> audio_data_type;
   int num_bands;
-  smart_array<iir_allpass_variable_cascade<audio_data_type,double> > S_All;
-  smart_array<iir_allpass_variable_cascade<audio_data_type,double> > S_Up;
-  smart_array<bool> vld_All;
-  smart_array<bool> vld_en;
-  smart_array<audio_data_type> eqh;
-  smart_array<audio_data_type> eql;
-  smart_array<audio_data_type> fil_out;
-  smart_array<audio_data_type> eq;
-  smart_array<double> levels;
+  std::vector<iir_allpass_variable_cascade<audio_data_type,double> > S_All;
+  std::vector<iir_allpass_variable_cascade<audio_data_type,double> > S_Up;
+  std::vector<bool> vld_All;
+  std::vector<bool> vld_en;
+  std::vector<audio_data_type> eqh;
+  std::vector<audio_data_type> eql;
+  std::vector<audio_data_type> fil_out;
+  std::vector<audio_data_type> eq;
+  std::vector<double> levels;
   audio_data_type lpf;
-  smart_array<double> gains;
+  std::vector<double> gains;
   double lev_gain;
   long count;
 

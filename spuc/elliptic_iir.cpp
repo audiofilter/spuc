@@ -86,8 +86,8 @@ float_type lamda_plane(float_type k, float_type m, int n, float_type eps) {
   return u;
 }
 //! calculate s plane poles and zeros 
-void s_plane(smart_array<complex<float_type> >& roots,
-			 smart_array<complex<float_type> >& zeros, bool lpf,
+void s_plane(std::vector<complex<float_type> >& roots,
+			 std::vector<complex<float_type> >& zeros, bool lpf,
 			 int n, float_type u, float_type m, float_type k,
 			 float_type Kk,	float_type wc) {
   float_type b;

@@ -41,7 +41,7 @@ public:
   const long Max_bits_per_symbol;
   const long soft_decision_level;
   viterbi viterbi_decoder;
-  smart_array<long> viterbi_input;
+  std::vector<long> viterbi_input;
 	
   long enc_rate;
   long rate_index;

@@ -35,20 +35,20 @@ namespace SPUC {
  * ------
  * int numtaps                     - Number of filter coefficients
  * int numband                     - Number of bands in filter specification
- * smart_array<float_type> bands   - User-specified band edges [2 * numband]
- * smart_array<float_type> des     - User-specified band responses [numband]
- * smart_array<float_type> weight  - User-specified error weights [numband]
+ * std::vector<float_type> bands   - User-specified band edges [2 * numband]
+ * std::vector<float_type> des     - User-specified band responses [numband]
+ * std::vector<float_type> weight  - User-specified error weights [numband]
  * int type                        - Type of filter
  *
  * OUTPUT:
  * -------
- * smart_array<float_type> filt    - Impulse response of final filter [numtaps]
+ * std::vector<float_type> filt    - Impulse response of final filter [numtaps]
  *************************************************************************/
-bool remez_fir::remez(smart_array<float_type>& filt, 
+bool remez_fir::remez(std::vector<float_type>& filt, 
 					  int numtaps, int numband,
-					  smart_array<float_type>& bands, 
-					  const smart_array<float_type>& des,
-					  const smart_array<float_type>& weight, 
+					  std::vector<float_type>& bands, 
+					  const std::vector<float_type>& des,
+					  const std::vector<float_type>& weight, 
 					  int type) {
   bool ok=true;
   float_type c;
@@ -70,15 +70,15 @@ bool remez_fir::remez(smart_array<float_type>& filt,
   }
 
   
-  smart_array<float_type> grid(gridSize);
-  smart_array<float_type> d   (gridSize);
-  smart_array<float_type> w   (gridSize);
-  smart_array<float_type> e   (gridSize);
-  smart_array<float_type> x   (r+1);
-  smart_array<float_type> y   (r+1);
-  smart_array<float_type> ad  (r+1);
-  smart_array<float_type> taps(r+1);
-  smart_array<int>    ext(r+1);
+  std::vector<float_type> grid(gridSize);
+  std::vector<float_type> d   (gridSize);
+  std::vector<float_type> w   (gridSize);
+  std::vector<float_type> e   (gridSize);
+  std::vector<float_type> x   (r+1);
+  std::vector<float_type> y   (r+1);
+  std::vector<float_type> ad  (r+1);
+  std::vector<float_type> taps(r+1);
+  std::vector<int>    ext(r+1);
   
   // Create dense frequency grid
   createDenseGrid(r, numtaps, numband, bands, des, weight,
@@ -159,13 +159,13 @@ bool remez_fir::remez(smart_array<float_type>& filt,
  * the Weight function (w[]) on that dense grid
  *******************/
 void remez_fir::createDenseGrid(int r, int numtaps, int numband, 
-								smart_array<float_type>& bands,
-								const smart_array<float_type>& des, 
-								const smart_array<float_type>& weight, 
+								std::vector<float_type>& bands,
+								const std::vector<float_type>& des, 
+								const std::vector<float_type>& weight, 
 								int gridSize,
-								smart_array<float_type>& grid, 
-								smart_array<float_type>& d, 
-								smart_array<float_type>& w,
+								std::vector<float_type>& grid, 
+								std::vector<float_type>& d, 
+								std::vector<float_type>& w,
 								int symmetry) {
   float_type lowf, highf;
   float_type delf = 0.5/(GRIDDENSITY*r);
@@ -199,8 +199,8 @@ void remez_fir::createDenseGrid(int r, int numtaps, int numband,
   }
 }
 // Dee function in Parks & Burrus
-smart_array<float_type> remez_fir::calc_d(int r, const smart_array<float_type>& x) {
-  smart_array<float_type> d(r);
+std::vector<float_type> remez_fir::calc_d(int r, const std::vector<float_type>& x) {
+  std::vector<float_type> d(r);
   int i,j,k;
   float_type denom,xi;
   int ld = (r-1)/15 + 1;
@@ -216,12 +216,12 @@ smart_array<float_type> remez_fir::calc_d(int r, const smart_array<float_type>& 
   }
   return d;
 }
-smart_array<float_type> remez_fir::calc_y(int r, 
-										  const smart_array<int>& ext, 
-										  const smart_array<float_type>& d, 
-										  const smart_array<float_type>& w,
-										  const smart_array<float_type>& ad) {
-  smart_array<float_type> y(r);
+std::vector<float_type> remez_fir::calc_y(int r, 
+										  const std::vector<int>& ext, 
+										  const std::vector<float_type>& d, 
+										  const std::vector<float_type>& w,
+										  const std::vector<float_type>& ad) {
+  std::vector<float_type> y(r);
   float_type sign, dev, denom, numer;
   int i;
   
@@ -247,9 +247,9 @@ smart_array<float_type> remez_fir::calc_y(int r,
  * gee (see p301 Parks & Burrus) Digital Filter Design
  *********************/
 float_type remez_fir::gee(float_type freq, int r, 
-						  const smart_array<float_type>& ad,
-						  const smart_array<float_type>& x,
-						  const smart_array<float_type>& y) 
+						  const std::vector<float_type>& ad,
+						  const std::vector<float_type>& x,
+						  const std::vector<float_type>& y) 
 {
   
   int i;
@@ -284,10 +284,10 @@ float_type remez_fir::gee(float_type freq, int r,
  *    of the first/last extremum
  ************************/
 
-void remez_fir::search(int r, smart_array<int>& ext, int gridSize, 
-											 const smart_array<float_type>& e) {
+void remez_fir::search(int r, std::vector<int>& ext, int gridSize, 
+											 const std::vector<float_type>& e) {
   bool up, alt;
-  smart_array<int> foundExt(gridSize);  /* Array of found extremals */
+  std::vector<int> foundExt(gridSize);  /* Array of found extremals */
   int k = 0;
   int i;
   //  Copy found extremals from ext[]
@@ -352,7 +352,7 @@ void remez_fir::search(int r, smart_array<int>& ext, int gridSize,
  * Checks to see if the error function is small enough to consider
  * the result to have converged.
  ********************/
-bool remez_fir::isDone(int r, const smart_array<int>& ext, const smart_array<float_type>& e) {
+bool remez_fir::isDone(int r, const std::vector<int>& ext, const std::vector<float_type>& e) {
   int i;
   float_type min, max, current;
   min = max = fabs(e[ext[0]]);

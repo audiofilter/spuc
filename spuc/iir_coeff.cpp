@@ -80,7 +80,7 @@ void iir_coeff::ab_to_tf() {
   b_tf = p2_to_poly(zeros);
   state = 3; // in Z-domain 2nd order A/B coefficients
 }
-void iir_coeff::z_root_to_ab(smart_array<complex<float_type> >& z) {
+void iir_coeff::z_root_to_ab(std::vector<complex<float_type> >& z) {
   //if (odd) z[0] = complex<float_type>((float_type)1.0/real(z[0]),0.0);
   for (int j=odd;j<n2;j++) {
  	gain *= (magsq(z[j]) - 2*real(z[j]) + 1.0); 
@@ -90,10 +90,10 @@ void iir_coeff::z_root_to_ab(smart_array<complex<float_type> >& z) {
   state = 3; // in Z-domain 2nd order A/B coefficients
 }
 // Takes poles or zeros and creates a polynomial transfer function
-smart_array<float_type> iir_coeff::pz_to_poly(const smart_array<complex<float_type> >& z) {
-  smart_array<float_type> p2(3);
-  smart_array<float_type> p(order+1);
-  smart_array<float_type> tf(order+1);
+std::vector<float_type> iir_coeff::pz_to_poly(const std::vector<complex<float_type> >& z) {
+  std::vector<float_type> p2(3);
+  std::vector<float_type> p(order+1);
+  std::vector<float_type> tf(order+1);
   float_type td;
   
   p[0] = 1;
@@ -114,10 +114,10 @@ smart_array<float_type> iir_coeff::pz_to_poly(const smart_array<complex<float_ty
 // Takes 'n' 2nd order polynomials of the form 1+a*z + b*z^2
 // where a and b are packed into a complex float_type as complex<float_type>(a,b)
 // and convolves them all together as 1 polynomial
-smart_array<float_type> iir_coeff::p2_to_poly(const smart_array<complex<float_type> >& ab) {
-  smart_array<float_type> tf;
-  smart_array<float_type> p2(3);
-  smart_array<float_type> p(order+1);
+std::vector<float_type> iir_coeff::p2_to_poly(const std::vector<complex<float_type> >& ab) {
+  std::vector<float_type> tf;
+  std::vector<float_type> p2(3);
+  std::vector<float_type> p(order+1);
   
   p[0] = 1;
   p2[0] = 1;
@@ -180,8 +180,8 @@ complex<float_type> iir_coeff::get_zero(long i) {
 }
 void iir_coeff::pz_to_ap() {
   int m = 2*order-1;
-  typedef smart_array<float_type> Array;
-  typedef smart_array<complex<float_type> > CArray;
+  typedef std::vector<float_type> Array;
+  typedef std::vector<complex<float_type> > CArray;
   Array fa;
   Array d2(m);
   Array p2(m);

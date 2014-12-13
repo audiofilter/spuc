@@ -28,12 +28,12 @@ namespace SPUC {
 //! \author Tony Kirke,  Copyright(c) 2001 
 //! \author Tony Kirke
 //! \ingroup template_array_functions misc
-template <class T> smart_array<T> convolve(const smart_array<T>& x, const smart_array<T>& y) {
+template <class T> std::vector<T> convolve(const std::vector<T>& x, const std::vector<T>& y) {
   int i,j;
-  int M = x.len();
-  int N = y.len();
+  int M = x.size();
+  int N = y.size();
   int L=M+N-1;
-  smart_array<T> c(L);
+  std::vector<T> c(L);
   for (i=0;i<L;i++) {
 	c[i] = (T)0;
 	for (j=0;j<N;j++) {

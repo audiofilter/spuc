@@ -47,15 +47,15 @@ template <class Numeric> class mle
   const long n_branches;     //! Number of branches
   Numeric fb_est;      //! Feedback estimator for RSDFSE
   fir_adapt< Numeric, Numeric > cfir; //! Channel impulse response
-  smart_array<Numeric> cir_mlsd;
-  smart_array<Numeric> cir_dfe;
-  smart_array<Numeric> f_est;      //! Feedforward
-  smart_array<Numeric> b_est;
-  smart_array<float_type> weight;     //! state metric calculations/state
-  smart_array<long> path;//! path history
-  smart_array<long> tmp_path; // Temporary variable
-  smart_array<float_type> tmp_weight; // Temporary variable
-  smart_array<long> path_symbol;
+  std::vector<Numeric> cir_mlsd;
+  std::vector<Numeric> cir_dfe;
+  std::vector<Numeric> f_est;      //! Feedforward
+  std::vector<Numeric> b_est;
+  std::vector<float_type> weight;     //! state metric calculations/state
+  std::vector<long> path;//! path history
+  std::vector<long> tmp_path; // Temporary variable
+  std::vector<float_type> tmp_weight; // Temporary variable
+  std::vector<long> path_symbol;
   long phase_states;   //! Phase states for MLSD_CPM (not implemented)
   long total_states;   //! for CPM total = n_states*phase_states! (not implemented)
   float_type phase_inc;    //! phase increment for MLSD_CPM (should divide evenly into 360 degrees) (not implemented)

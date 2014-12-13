@@ -52,8 +52,8 @@ public:
  void set_hpf(bool h) { hpf = h; }
  //
  void init(float_type fp, float_type k, float_type low_gain, float_type high_gain) {
-       smart_array<float_type> c0(1);
-       smart_array<float_type> c1(1);
+       std::vector<float_type> c0(1);
+       std::vector<float_type> c1(1);
        butterworth_allpass(c0, c1, 2); // ignore fp for butterworth func
        b0 = c0[0];
        b1 = c1[0];

@@ -42,7 +42,7 @@ public:
   long order;
   long odd;
   long n2;
-  smart_array<iir_2nd< Numeric, Coeff > > sos;
+  std::vector<iir_2nd< Numeric, Coeff > > sos;
   iir_lpf1< Numeric, Coeff > fos;
   Coeff gain;
   quantiser<Numeric> Q;

@@ -49,12 +49,12 @@ float_type io(float_type x)
 }
 //!  \ingroup fir
 //! \brief hamming window \f$ w(n) = alpha + beta*cos( 2*\pi*(n-1)/(nf-1) )\f$
-smart_array<float_type> hamming(long nf,float_type alpha, float_type beta)
+std::vector<float_type> hamming(long nf,float_type alpha, float_type beta)
 {
   // nf = filter length in samples
   // alpha = constant of window
   // beta = constant of window--generally beta=1-alpha
-  smart_array<float_type> w(nf);
+  std::vector<float_type> w(nf);
   long odd = nf%2;
   float_type xi;
   for (int i=0;i<nf;i++) {
@@ -67,9 +67,9 @@ smart_array<float_type> hamming(long nf,float_type alpha, float_type beta)
 //
 //!  \ingroup fir
 //! \brief hanning window \f$ w(n) = 0.5( 1 - cos( 2*\pi*n/(nf-1) )\f$
-smart_array<float_type> hanning(long nf)
+std::vector<float_type> hanning(long nf)
 {
-  smart_array<float_type> w(nf);
+  std::vector<float_type> w(nf);
   // nf = filter length in samples
   // alpha = constant of window
   // beta = constant of window--generally beta=1-alpha
@@ -85,12 +85,12 @@ smart_array<float_type> hanning(long nf)
 //:
 //!  \ingroup fir
 //! \brief Blackman Window	\f$ w[x] = 0.42 - 0.5*cos(2*\pi*x/nf) + 0.08*cos(2*\pi*x/nf)\f$
-smart_array<float_type> blackman(long nf)
+std::vector<float_type> blackman(long nf)
 {
   // nf = filter length in samples
   // alpha = constant of window
   // beta = constant of window--generally beta=1-alpha
-  smart_array<float_type> w(nf);
+  std::vector<float_type> w(nf);
   long odd = nf%2;
   float_type xi;
   for (int i=0;i<nf;i++) {
@@ -102,11 +102,11 @@ smart_array<float_type> blackman(long nf)
 }
 //!  \ingroup fir
 //! \brief kaiser window
-smart_array<float_type> kaiser(long nf, float_type beta)
+std::vector<float_type> kaiser(long nf, float_type beta)
 {
   // nf = filter length in samples
   // beta = parameter of kaiser window
-  smart_array<float_type> w(nf);
+  std::vector<float_type> w(nf);
   float_type io(float_type b);
   float_type bes = 1.0/io(beta);
   long i;
@@ -124,7 +124,7 @@ smart_array<float_type> kaiser(long nf, float_type beta)
 
 //!  \ingroup fir
 //!  \brief dolph chebyshev window design
-smart_array<float_type> cheby(long nf, long n, long ieo, float_type dp, float_type df, float_type x0) {
+std::vector<float_type> cheby(long nf, long n, long ieo, float_type dp, float_type df, float_type x0) {
   /*! parameters
 	- nf = filter length in samples
 	- w = window array of size n
@@ -135,7 +135,7 @@ smart_array<float_type> cheby(long nf, long n, long ieo, float_type dp, float_ty
 	- x0 = window parameter related to transition width
 	- xn = nf-1
   */ 
-  smart_array<float_type> w(nf);
+  std::vector<float_type> w(nf);
   float_type coshin(float_type x);
   float_type xn = nf - 1;
   float_type fnf = nf;

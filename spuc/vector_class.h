@@ -24,16 +24,16 @@ template<class T> class vector {
   vector() {;}
   vector(int size) { resize(size); }
   vector(const vector<T>& v) {
-	resize(v.len());
-	for (int i=0;i<data.len();i++) data[i] = v[i];
+		resize(v.size());
+	for (int i=0;i<data.size();i++) data[i] = v[i];
   }
   ~vector() { ; }
 
-  inline int len()  const { return data.len(); }
-  inline int size() const { return data.len(); }
+  inline int len()  const { return data.size(); }
+  inline int size() const { return data.size(); }
 
-  inline  void reset() { for (int i=0; i<data.len(); i++) {data[i]=T(0);} }
-  inline  void ones() { for (int i=0; i<data.len(); i++) {data[i]=T(1);} }
+  inline  void reset() { for (int i=0; i<data.size(); i++) {data[i]=T(0);} }
+  inline  void ones() { for (int i=0; i<data.size(); i++) {data[i]=T(1);} }
 
   inline T operator[](int i) const { 	  return data[i]; }
   inline T operator()(int i) const { 	  return data[i]; }
@@ -43,45 +43,45 @@ template<class T> class vector {
   inline T& operator()(int i)  { 	  return data[i]; }
   inline vector& operator+=(const vector<T> &v) {
 	int i;
-	if (data.len() == 0) { 
-	  resize(v.len());
-	  for (i=0; i<v.len(); i++)     data[i] = v[i];	
+	if (data.size() == 0) { 
+	  resize(v.size());
+	  for (i=0; i<v.size(); i++)     data[i] = v[i];	
 	} else {
-	  for (i=0; i<data.len(); i++)  data[i] += v[i];
+	  for (i=0; i<data.size(); i++)  data[i] += v[i];
 	}
 	return(*this);
   }
   inline vector& operator-=(const vector<T> &v) {
 	int i;
-	if (data.len() == 0) { // if not assigned a size.
-	  resize(v.len());
-	  for (i=0; i<v.len(); i++)    data[i] = -v[i];      
+	if (data.size() == 0) { // if not assigned a size.
+	  resize(v.size());
+	  for (i=0; i<v.size(); i++)    data[i] = -v[i];      
 	} else {
-	  for (i=0; i<data.len(); i++) data[i] -= v[i];
+	  for (i=0; i<data.size(); i++) data[i] -= v[i];
 	}
 	return(*this);
   }
-  inline vector& operator+=(const T t) { for (int i=0;i<data.len();i++) data[i]+=t; return *this; }
-  inline vector& operator-=(const T t) { for (int i=0;i<data.len();i++) data[i]-=t; return *this; }
-  inline vector& operator*=(const T t) { for (int i=0;i<data.len();i++) data[i] *= t; return *this; }
-  inline vector& operator/=(const T t) { for (int i=0;i<data.len();i++) data[i]/=t; return *this; }
+  inline vector& operator+=(const T t) { for (int i=0;i<data.size();i++) data[i]+=t; return *this; }
+  inline vector& operator-=(const T t) { for (int i=0;i<data.size();i++) data[i]-=t; return *this; }
+  inline vector& operator*=(const T t) { for (int i=0;i<data.size();i++) data[i] *= t; return *this; }
+  inline vector& operator/=(const T t) { for (int i=0;i<data.size();i++) data[i]/=t; return *this; }
 #endif
   void operator=(const T v) {
-	for (int i=0;i<data.len();i++) data[i] = v; 
+	for (int i=0;i<data.size();i++) data[i] = v; 
   }
   void operator=(const vector<T>& v) {
-	resize(v.len());
-	for (int i=0;i<data.len();i++) data[i] = v[i];
+	resize(v.size());
+	for (int i=0;i<data.size();i++) data[i] = v[i];
   }
 protected:
 
-  void resize(int size)  {
-	if (data.len() == size) return;
-	if (size == 0) return;
-	data.resize(size);
+  void resize(int siz)  {
+	if (data.size() == siz) return;
+	if (siz == 0) return;
+	data.resize(siz);
   }
 
-  smart_array<T> data;
+  std::vector<T> data;
 
 };
 

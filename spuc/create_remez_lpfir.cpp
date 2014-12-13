@@ -27,9 +27,9 @@ namespace SPUC {
 //! \brief calculates the coefficients for lowpass FIR based on Remez constraints
 void create_remez_lpfir(fir_coeff<float_type>& remezfir, float_type pass_edge, float_type stop_edge, float_type stop_weight) {
   bool ok=true;
-  smart_array<float_type> e1(4);
-  smart_array<float_type> f1(4); 
-  smart_array<float_type> w1(4); 
+  std::vector<float_type> e1(4);
+  std::vector<float_type> f1(4); 
+  std::vector<float_type> w1(4); 
   long nfilt = remezfir.num_taps;
   remez_fir Remz;
   w1[0] = 1.0;
@@ -40,7 +40,7 @@ void create_remez_lpfir(fir_coeff<float_type>& remezfir, float_type pass_edge, f
   e1[3] = 0.5;
   f1[0] = 1.0;
   f1[1] = 0.0;
-  smart_array<float_type> fir_coef(nfilt);
+  std::vector<float_type> fir_coef(nfilt);
   ok = Remz.remez(fir_coef,nfilt,2,e1,f1,w1,1);
   if (ok) {
 	for (int i=0;i<nfilt;i++) remezfir.settap(i,fir_coef[i]);

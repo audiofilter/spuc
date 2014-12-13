@@ -64,16 +64,16 @@ namespace SPUC {
  * CADLINC, Inc., Palo Alto, California
  *******************************************************************************/
 
-smart_array<complex<float_type> > find_roots(const smart_array<float_type>&	a,	long n) {
+std::vector<complex<float_type> > find_roots(const std::vector<float_type>&	a,	long n) {
   const long max_iter = 100;
   const long fig = 10;
   int i,j;
-  smart_array<complex<float_type> > roots(n);
-  smart_array<float_type> h(n+3);
-  smart_array<float_type> b(n+3);
-  smart_array<float_type> c(n+3);
-  smart_array<float_type> d(n+3);
-  smart_array<float_type> e(n+3);
+  std::vector<complex<float_type> > roots(n);
+  std::vector<float_type> h(n+3);
+  std::vector<float_type> b(n+3);
+  std::vector<float_type> c(n+3);
+  std::vector<float_type> d(n+3);
+  std::vector<float_type> e(n+3);
   /* [-2 : n] */
   float_type K, ps, qs, pt, qt, s, rev;
   int t;

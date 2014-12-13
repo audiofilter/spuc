@@ -29,6 +29,6 @@ namespace SPUC {
 //! \brief inverse fast fourier transforms (IFFT)
 //! \author Tony Kirke
 //! \ingroup functions functions
-void ifft(smart_array<complex<float_type> > y, int n);
+void ifft(std::vector<complex<float_type> > y, int n);
 } // namespace SPUC
 #endif

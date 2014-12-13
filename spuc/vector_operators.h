@@ -138,14 +138,14 @@ template<class T> inline vector<T> elem_div( const T t,  const vector<T> &v)
     return r;
 }
 
-template<class T> inline vector<T> to_vector(smart_array<T> y)
+template<class T> inline vector<T> to_vector(std::vector<T> y)
 {
   vector<T> v(y.len());
   for (int i=0;i<y.len();i++) v[i] = y[i];
   return(v);
 }
 
-template<class T> inline void copy_vector( smart_array<T> x, smart_array<T> y) 
+template<class T> inline void copy_vector( std::vector<T> x, std::vector<T> y) 
 {
   // maybe use memcpy?????
   // memcpy(y, x, (unsigned int)n*sizeof(T));

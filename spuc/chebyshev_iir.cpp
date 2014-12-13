@@ -38,8 +38,8 @@ void chebyshev_iir(iir_coeff& filt, float_type fcd, bool lpf, float_type ripple=
   filt.convert_to_ab();
 }
 //! Calculate poles (chebyshev)
-void chebyshev_s(smart_array<complex<float_type> >& poles, 
-		 smart_array<complex<float_type> >& zeros,  bool lpf,
+void chebyshev_s(std::vector<complex<float_type> >& poles, 
+		 std::vector<complex<float_type> >& zeros,  bool lpf,
 				 float_type wp, float_type epi, long n, long n2) {
   long l = 0;
   if (n%2 == 0) l = 1;                                                 

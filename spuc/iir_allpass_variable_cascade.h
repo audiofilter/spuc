@@ -63,14 +63,14 @@ public:
 	//prev_input = (Numeric)0;
 	qnoise<Coeff> Quantize((char)coeff_bits);
 	if (stages > 0) {
-	  smart_array<float_type> a0(stages);
-	  smart_array<float_type> a1(stages);
+	  std::vector<float_type> a0(stages);
+	  std::vector<float_type> a1(stages);
 	  elliptic_allpass(a0,a1, fp, stages);
 	  j = (stages+1)/2;
 	  k = stages - j;
 	  // CONVERT FROM DOUBLE to COEFF
-	  smart_array<Coeff> a0c(stages);
-	  smart_array<Coeff> a1c(stages);
+	  std::vector<Coeff> a0c(stages);
+	  std::vector<Coeff> a1c(stages);
 	  if (coeff_bits != 0) {
 		// Don't use convert but quantized float_type coefficients
 		for (int i=0;i<stages;i++) {
@@ -97,14 +97,14 @@ public:
 	prev_input.reset(); //= (Numeric)0;
 	qnoise<Coeff> Quantize((char)coeff_bits);
 	if (stages > 0) {
-	  smart_array<float_type> a0(stages);
-	  smart_array<float_type> a1(stages);
+	  std::vector<float_type> a0(stages);
+	  std::vector<float_type> a1(stages);
 	  elliptic_allpass(a0, a1, fp, stages);
 	  j = (stages+1)/2;
 	  k = stages - j;
 	  // CONVERT FROM DOUBLE to COEFF
-	  smart_array<Coeff> a0c(stages);
-	  smart_array<Coeff> a1c(stages);
+	  std::vector<Coeff> a0c(stages);
+	  std::vector<Coeff> a1c(stages);
 	  if (coeff_bits != 0) {
 		// Don't use convert but quantized float_type coefficients
 		for (int i=0;i<stages;i++) {

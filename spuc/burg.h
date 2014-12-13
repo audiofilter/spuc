@@ -31,16 +31,16 @@ namespace SPUC {
 //! \author Tony Kirke,  Copyright(c) 2001 
 //! \author Tony Kirke
 //! \ingroup template_array_functions misc
-template <class T> smart_array<T> burg( smart_array<T> x, int P) {
+template <class T> std::vector<T> burg( std::vector<T> x, int P) {
   long N = x.len();
   const double EPS = 1e-30;
-  smart_array<T> a(P);
-  smart_array<T> ef(N);
-  smart_array<T> ef_prev(N);
-  smart_array<T> eb(N);
-  smart_array<T> eb_prev(N);
-  smart_array<T> aa(P);
-  smart_array<T> rc(N);
+  std::vector<T> a(P);
+  std::vector<T> ef(N);
+  std::vector<T> ef_prev(N);
+  std::vector<T> eb(N);
+  std::vector<T> eb_prev(N);
+  std::vector<T> aa(P);
+  std::vector<T> rc(N);
   
   T gamma;
   T num, den ;

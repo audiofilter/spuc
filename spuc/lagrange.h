@@ -46,9 +46,9 @@ template <class Numeric, class Coeff=float_type> class lagrange
 {
 public: 
   long num_taps;
-  smart_array<Coeff> coeff;
+  std::vector<Coeff> coeff;
 protected:
-  smart_array<Numeric> z; 
+  std::vector<Numeric> z; 
   Numeric output;
   quantiser<Numeric> Q;
   long round_bits;

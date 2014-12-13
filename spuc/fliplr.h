@@ -27,9 +27,9 @@ namespace SPUC {
 //! \brief fliplr - same as matlab function
 //! \author Tony Kirke
 //! \ingroup template_array_functions misc
-template <class T> smart_array<T> fliplr(const smart_array<T>& x) {
-  int N=x.len();
-  smart_array<T> c(N);
+template <class T> std::vector<T> fliplr(const std::vector<T>& x) {
+  int N=x.size();
+  std::vector<T> c(N);
   for (int j=0;j<N;j++) c[N-j] = x[j];
   return(c);
 }

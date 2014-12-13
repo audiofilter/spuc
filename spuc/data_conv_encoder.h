@@ -53,8 +53,8 @@ class data_conv_encoder
 	long sample;
 	long data_index;
 	bool raw_bit; // current input data bit
-    smart_array<bool> raw_data;
-    smart_array<long> pre_mod;
+    std::vector<bool> raw_data;
+    std::vector<long> pre_mod;
 
  public:
 	int raw_bits_this_frame;

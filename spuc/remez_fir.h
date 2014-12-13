@@ -59,30 +59,30 @@ class remez_fir {
 
  private:
   static void createDenseGrid(int r, int numtaps, int numband, 
-							  smart_array<float_type>& bands,
-							  const smart_array<float_type>& des, 
-							  const smart_array<float_type>& weight, int gridSize,
-							  smart_array<float_type>& grid, 
-							  smart_array<float_type>& d, 
-							  smart_array<float_type>& w,
+							  std::vector<float_type>& bands,
+							  const std::vector<float_type>& des, 
+							  const std::vector<float_type>& weight, int gridSize,
+							  std::vector<float_type>& grid, 
+							  std::vector<float_type>& d, 
+							  std::vector<float_type>& w,
 							  int symmetry);
 
-  static smart_array<float_type> calc_d(int r, const smart_array<float_type>& x);
-  static smart_array<float_type> calc_y(int r, const smart_array<int>& ext, 
-										const smart_array<float_type>& des, 
-										const smart_array<float_type>& w,
-										const smart_array<float_type>& d);
+  static std::vector<float_type> calc_d(int r, const std::vector<float_type>& x);
+  static std::vector<float_type> calc_y(int r, const std::vector<int>& ext, 
+										const std::vector<float_type>& des, 
+										const std::vector<float_type>& w,
+										const std::vector<float_type>& d);
   static float_type gee(float_type freq, int r,
-						const smart_array<float_type>& ad,
-						const smart_array<float_type>& x,
-						const smart_array<float_type>& y);
-  static void search(int r, smart_array<int>& ext, int gridSize, const smart_array<float_type>& e);
-  static bool isDone(int r, const smart_array<int>& ext, const smart_array<float_type>& e);
+						const std::vector<float_type>& ad,
+						const std::vector<float_type>& x,
+						const std::vector<float_type>& y);
+  static void search(int r, std::vector<int>& ext, int gridSize, const std::vector<float_type>& e);
+  static bool isDone(int r, const std::vector<int>& ext, const std::vector<float_type>& e);
 public:
-  static bool remez(smart_array<float_type>& filt, int n, int numband,
-					smart_array<float_type>& bands, 
-					const smart_array<float_type>& des, 
-					const smart_array<float_type>& weight, int type);
+  static bool remez(std::vector<float_type>& filt, int n, int numband,
+					std::vector<float_type>& bands, 
+					const std::vector<float_type>& des, 
+					const std::vector<float_type>& weight, int type);
 };
 } // namespace SPUC
 #endif

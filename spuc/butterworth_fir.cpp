@@ -69,13 +69,13 @@ Also used is the time scaling rule for Fourier transforms:
   if (ord%2) ord += 1; // make even
   end = ord / 2;
   xend = (float_type) end;
-  smart_array<float_type> beta(end);
-  smart_array<float_type> alpha(end);
-  smart_array<float_type> ak(end);
-  smart_array<float_type> xk(end);
-  smart_array<float_type> yk(end);
-  smart_array<float_type> wk(end);
-  smart_array<float_type> lamda(end);
+  std::vector<float_type> beta(end);
+  std::vector<float_type> alpha(end);
+  std::vector<float_type> ak(end);
+  std::vector<float_type> xk(end);
+  std::vector<float_type> yk(end);
+  std::vector<float_type> wk(end);
+  std::vector<float_type> lamda(end);
 
   for (i = 0; i < end; i++) 	{ 
 	x = (float_type) i + 1.0; 
