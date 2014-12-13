@@ -14,12 +14,12 @@ int main()
 {
   float_type quad[2];
   int n,i;
-  smart_array<complex<float_type> > p;
+  std::vector<complex<float_type> > p;
   
   n = 5;
 
   float_type a[] = {0.20882,  -0.97476,   2.08818,  -1.94952,   1.04409,  -0.19495};
-  smart_array<float_type> b(6);
+  std::vector<float_type> b(6);
   b[0] = -0.19495;
   b[1] =  1.04409;
   b[2] = -1.94952;

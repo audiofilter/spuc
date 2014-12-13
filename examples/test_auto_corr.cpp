@@ -8,8 +8,8 @@ int main()
   int n=15;
   int i;
 
-  smart_array<double> a(n);
-  smart_array<double> b;
+  std::vector<double> a(n);
+  std::vector<double> b;
   
   double* z = new double[n];
 

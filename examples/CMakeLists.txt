@@ -38,7 +38,6 @@ test_notch
 test_dump
 test_mlse
 test_roots
-test_smart_test
 
 test_q
 test_rls
