@@ -26,7 +26,7 @@ BOOST_PYTHON_MODULE(fir_coeff_int)
         .def("read_taps", &SPUC::fir_coeff<int>::read_taps)
         .def("quantize", &SPUC::fir_coeff<int>::quantize)
         .def("print", &SPUC::fir_coeff<int>::print)
-        .def("settap", (void (SPUC::fir_coeff<int>::*)(SPUC::smart_array<int>) )&SPUC::fir_coeff<int>::settap)
+        .def("settap", (void (SPUC::fir_coeff<int>::*)(std::vector<int>) )&SPUC::fir_coeff<int>::settap)
         .def("freqz_mag", &SPUC::fir_coeff<int>::freqz_mag)
     ;
 

@@ -40,7 +40,7 @@ BOOST_PYTHON_MODULE(fir_adapt_int)
         .def("iir", &SPUC::fir<int,double>::iir)
         .def("read_taps", &SPUC::fir<int,double>::read_taps)
         .def("print", &SPUC::fir<int,double>::print)
-        .def("settap", (void (SPUC::fir<int,double>::*)(SPUC::smart_array<double>) )&SPUC::fir<int,double>::settap)
+        .def("settap", (void (SPUC::fir<int,double>::*)(std::vector<double>) )&SPUC::fir<int,double>::settap)
     ;
 
 }
