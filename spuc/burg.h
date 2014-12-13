@@ -32,7 +32,7 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \ingroup template_array_functions misc
 template <class T> std::vector<T> burg( std::vector<T> x, int P) {
-  long N = x.len();
+  long N = x.size();
   const double EPS = 1e-30;
   std::vector<T> a(P);
   std::vector<T> ef(N);

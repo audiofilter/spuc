@@ -3,7 +3,7 @@
 #include <spuc/vector.h>
 
 /*
-    Copyright (C) 2014 Tony Kirke
+	Copyright (C) 2014 Tony Kirke
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -51,11 +51,11 @@ template<class T> class matrix {
   void operator=(const matrix<T> &m) {
 	resize(m.rows,m.cols);
 	if (m.datasize == 0) return;
-	for (int i=0;i<data.len();i++) data[i] = m.data[i];
+	for (int i=0;i<data.size();i++) data[i] = m.data[i];
   }
   void operator=(const vector<T> &v) {
 	resize(v.size(), 1);
-	for (int i=0;i<data.len();i++) data[i] = v[i];
+	for (int i=0;i<data.size();i++) data[i] = v[i];
   }
 
   /*

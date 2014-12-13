@@ -31,7 +31,7 @@ namespace SPUC {
 //! \ingroup template_array_functions misc
 template <class T> std::vector<T> levdur(std::vector<T> R)
 {
-  long N = R.len();
+  long N = R.size();
   std::vector<T> a(N);
   T Pe;
   T q, at;
