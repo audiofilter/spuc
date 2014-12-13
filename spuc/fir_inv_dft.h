@@ -26,10 +26,11 @@ namespace SPUC {
 //
 //! \brief Calculate coefficients for FIR using frequency sampling IDFT
 //
-//! \author Tony Kirke,  Copyright(c) 2001 
+//! \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //! \ingroup functions fir
-std::vector<float_type> inv_dft_symmetric(const std::vector<float_type>& A, int N);
+std::vector<float_type> inv_dft_symmetric(const std::vector<float_type>& A,
+                                          int N);
 std::vector<float_type> inv_dft(const std::vector<float_type>& A, int N);
-} // namespace SPUC
+}  // namespace SPUC
 #endif

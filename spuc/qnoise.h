@@ -32,53 +32,47 @@ namespace SPUC {
 //!   Handles real and complex samples
 //! \author Tony Kirke
 //!  \ingroup template_functors misc sim
-template <class Numeric> class qnoise
-{
-protected:
-  char size;              //! Number of bits <= 255
+template <class Numeric>
+class qnoise {
+ protected:
+  char size;  //! Number of bits <= 255
   float_type scale;
   float_type iscale;
 
-public:
-  //! Quantize and limit signal to size bits  
+ public:
+  //! Quantize and limit signal to size bits
   //! Constructor
   qnoise(char h) : size(h) {
-	scale =  (float_type)((1<<(size-1)));
-	iscale = 1.0/scale;
+    scale = (float_type)((1 << (size - 1)));
+    iscale = 1.0 / scale;
   }
   Numeric quant(Numeric x) {
-	return((Numeric)(iscale*floor(scale*(double)x+0.5)));
+    return ((Numeric)(iscale * floor(scale * (double)x + 0.5)));
   }
-  Numeric operator()(Numeric x) { return(quant(x)); }
-  complex<Numeric> operator()(complex<Numeric> x) { 
-	return(
-		   complex<Numeric>(quant(real(x)),quant(imag(x)))
-		   ); 
+  Numeric operator()(Numeric x) { return (quant(x)); }
+  complex<Numeric> operator()(complex<Numeric> x) {
+    return (complex<Numeric>(quant(real(x)), quant(imag(x))));
   }
 };
-template <class T> class qnoise<complex<T> >
-{
-protected:
-  char size;              //! Number of bits <= 255
+template <class T>
+class qnoise<complex<T> > {
+ protected:
+  char size;  //! Number of bits <= 255
   float_type scale;
   float_type iscale;
 
-public:
-  //! Quantize and limit signal to size bits  
+ public:
+  //! Quantize and limit signal to size bits
   //! Constructor
   qnoise(char h) : size(h) {
-	scale =  (float_type)((1<<(size-1)));
-	iscale = 1.0/scale;
+    scale = (float_type)((1 << (size - 1)));
+    iscale = 1.0 / scale;
   }
-  T quant(T x) {
-	return((T)(iscale*floor(scale*(double)x+0.5)));
-  }
-  complex<T> operator()(complex<T> x) { 
-	return(
-		   complex<T>(quant(real(x)),quant(imag(x)))
-		   ); 
+  T quant(T x) { return ((T)(iscale * floor(scale * (double)x + 0.5))); }
+  complex<T> operator()(complex<T> x) {
+    return (complex<T>(quant(real(x)), quant(imag(x))));
   }
 };
 
-} // namespace SPUC
+}  // namespace SPUC
 #endif

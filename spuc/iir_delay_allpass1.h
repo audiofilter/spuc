@@ -23,11 +23,13 @@
 #include <spuc/allpass_1.h>
 namespace SPUC {
 //! \file
-//! \brief  Template Class for IIR filter consisting of 2 1st Order Allpass sections
+//! \brief  Template Class for IIR filter consisting of 2 1st Order Allpass
+//sections
 //
-//! \brief  Template Class for IIR filter consisting of 2 1st Order Allpass sections
+//! \brief  Template Class for IIR filter consisting of 2 1st Order Allpass
+//sections
 //
-//! The filter is a combination of 2 Allpass sections of 
+//! The filter is a combination of 2 Allpass sections of
 //! the form  G(z) =  (a*z*z + 1)/(z*z+a)
 //! so that the overall H(z) is
 //! H(z) = 1/z*G(z,a0) + G(z,a1)
@@ -39,33 +41,37 @@ namespace SPUC {
 //! \image latex allpass_iir.eps
 //! \author Tony Kirke
 //!  \ingroup double_templates iir
-template <class Numeric,class Coeff=float_type> class iir_delay_allpass1
-{
-protected:   
-  allpass_1<Numeric,Coeff> A0,A1;
+template <class Numeric, class Coeff = float_type>
+class iir_delay_allpass1 {
+ protected:
+  allpass_1<Numeric, Coeff> A0, A1;
   delay<Numeric> dly;
   long delay_size;
-  
-public:
-  iir_delay_allpass1(Coeff c0, Coeff c1, long delay=2, long round_bits=0) 
-	: A0(c0,delay,round_bits), A1(c1,delay,round_bits), delay_size(delay)
-  { 
-	dly.set_size(delay);
+
+ public:
+  iir_delay_allpass1(Coeff c0, Coeff c1, long delay = 2, long round_bits = 0)
+      : A0(c0, delay, round_bits),
+        A1(c1, delay, round_bits),
+        delay_size(delay) {
+    dly.set_size(delay);
   }
   //! Reset
-  void reset() { dly.reset(); A0.reset(), A1.reset(); }
+  void reset() {
+    dly.reset();
+    A0.reset(), A1.reset();
+  }
   void set_delay(int d) { dly.set_size(d); }
   //! Shift inputs by one time sample and place new sample into array
   Numeric clock(Numeric input) {
-	Numeric out0,out1;
-	
-	dly.input(input);
-	out0 = A0.clock(input);
-	out1 = A1.clock(dly.check(delay_size/2));
-	return(round((out0 + out1),1));
-	// Complimentary filter return(0.5*(out0 - out1));
+    Numeric out0, out1;
+
+    dly.input(input);
+    out0 = A0.clock(input);
+    out1 = A1.clock(dly.check(delay_size / 2));
+    return (round((out0 + out1), 1));
+    // Complimentary filter return(0.5*(out0 - out1));
   }
-};                                               
+};
 // template_instantiations: long; complex<long>; float_type; complex<float_type>
-} // namespace SPUC
+}  // namespace SPUC
 #endif

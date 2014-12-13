@@ -50,22 +50,21 @@ namespace SPUC {
 //
 //! to illustrate carrier phase locked loop and demod process
 //! see qpsk_variable for more comprehensive example.
-//! \author Tony Kirke,  Copyright(c) 2001 
+//! \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //! \ingroup real_templates comm examples
 //! \image html qpsk.gif
 //! \image latex qpsk.eps
-template <class Numeric> class qpsk
-{
-  public:
+template <class Numeric>
+class qpsk {
+ public:
   typedef typename fundtype<Numeric>::ftype CNumeric;
 
-  a_d	ADC;
+  a_d ADC;
   loop_filter<Numeric> carrier_loop_filter;
   loop_filter<Numeric> symbol_loop_filter;
 
-
-  Numeric carrier_loop_out,symbol_loop_out;
+  Numeric carrier_loop_out, symbol_loop_out;
   bool symbol_clk;
   bool symbol_clk_pls;
   bool sample_clk;
@@ -74,19 +73,19 @@ template <class Numeric> class qpsk
 
   vco<Numeric> c_nco;
 
-  fir< complex<CNumeric>, long > rcv_sqrt_rc;
+  fir<complex<CNumeric>, long> rcv_sqrt_rc;
 
-  delay < complex<CNumeric> > final_baseband_delay;
-  delay < complex<CNumeric> > hard_decision_delay;
-  delay < complex<CNumeric> > timing_disc_delay;
+  delay<complex<CNumeric> > final_baseband_delay;
+  delay<complex<CNumeric> > hard_decision_delay;
+  delay<complex<CNumeric> > timing_disc_delay;
 
   long bpsk;
   long dec_rate_log;
   Numeric carrier_error;
   Numeric symbol_nco_out;
-  complex<CNumeric> prev_sam,prev_sym;
+  complex<CNumeric> prev_sam, prev_sym;
   complex<CNumeric> decision;
-  complex<CNumeric> hard_decision_prev,final_baseband_prev;
+  complex<CNumeric> hard_decision_prev, final_baseband_prev;
   complex<CNumeric> baseband;
   complex<CNumeric> resampled;
   complex<CNumeric> carrier_in;
@@ -95,102 +94,105 @@ template <class Numeric> class qpsk
   complex<CNumeric> mf_out;
   complex<CNumeric> final_baseband;
   complex<CNumeric> hard_decision;
-  
+
   Numeric timing_error;
   Numeric nda_timing_error;
-  Numeric I_data() { return(real(hard_decision)); }
-  Numeric Q_data() { return(imag(hard_decision)); }
-  complex<CNumeric> data() { return(hard_decision); }
-  Numeric carrier_loop() { return(carrier_loop_out); }
-  Numeric symbol_loop() { return(symbol_loop_out); }
-  bool    symclk(void) { return(symbol_clk_pls); }
-  qpsk(void)  : rcv_sqrt_rc(9), final_baseband_delay(2),
-				hard_decision_delay(2), timing_disc_delay(3)
-  {
-	//! alpha = 0.35 root raised cosine fir
-	fir_coeff<long> fir_c(rcv_sqrt_rc.num_taps);
-	root_raised_cosine_quantized(fir_c,0.35,2,8, -0.2);
-	rcv_sqrt_rc.settaps(fir_c);
+  Numeric I_data() { return (real(hard_decision)); }
+  Numeric Q_data() { return (imag(hard_decision)); }
+  complex<CNumeric> data() { return (hard_decision); }
+  Numeric carrier_loop() { return (carrier_loop_out); }
+  Numeric symbol_loop() { return (symbol_loop_out); }
+  bool symclk(void) { return (symbol_clk_pls); }
+  qpsk(void)
+      : rcv_sqrt_rc(9),
+        final_baseband_delay(2),
+        hard_decision_delay(2),
+        timing_disc_delay(3) {
+    //! alpha = 0.35 root raised cosine fir
+    fir_coeff<long> fir_c(rcv_sqrt_rc.num_taps);
+    root_raised_cosine_quantized(fir_c, 0.35, 2, 8, -0.2);
+    rcv_sqrt_rc.settaps(fir_c);
 
-	reset();
+    reset();
 
-	carrier_loop_filter.k0 = 1 << 15; 
-	carrier_loop_filter.k1 = 1 << 8;
+    carrier_loop_filter.k0 = 1 << 15;
+    carrier_loop_filter.k1 = 1 << 8;
 
-	carrier_loop_filter.k0_en = 0;
-	carrier_loop_filter.k1_en = 0;
-	symbol_loop_filter.k0 = 1 << 6;
-	symbol_loop_filter.k1 = 1;
-	
-	symbol_loop_filter.k0_en = 0;
-	symbol_loop_filter.k1_en = 0;
+    carrier_loop_filter.k0_en = 0;
+    carrier_loop_filter.k1_en = 0;
+    symbol_loop_filter.k0 = 1 << 6;
+    symbol_loop_filter.k1 = 1;
+
+    symbol_loop_filter.k0_en = 0;
+    symbol_loop_filter.k1_en = 0;
   }
-  void reset(void) 
-  {
-	rcv_sqrt_rc.reset();
-	carrier_loop_filter.reset();
-	symbol_loop_filter.reset();
-	c_nco.reset_frequency(0);
-	c_nco.reset();
+  void reset(void) {
+    rcv_sqrt_rc.reset();
+    carrier_loop_filter.reset();
+    symbol_loop_filter.reset();
+    c_nco.reset_frequency(0);
+    c_nco.reset();
 
-	carrier_error = 0;
-	timing_error = 0;
-	carrier_loop_out = 0;
-	symbol_loop_out = 0;
-	symbol_clk = 0;
-	symbol_clk_pls = 0;
-	symbol_x2_clk_pls = 0;
-	sample_clk = 0;
-	nda_timing_error = 0;
+    carrier_error = 0;
+    timing_error = 0;
+    carrier_loop_out = 0;
+    symbol_loop_out = 0;
+    symbol_clk = 0;
+    symbol_clk_pls = 0;
+    symbol_x2_clk_pls = 0;
+    sample_clk = 0;
+    nda_timing_error = 0;
   }
-  void clock(complex<CNumeric>adc_out)  {
-	complex<CNumeric> carrier_phase;
-	long nda=0; //! Don't use NDA timing discriminator
-	
-	//! Down conversion 
-	if (symbol_clk_pls)	carrier_phase = c_nco.clock(carrier_loop_out);
-	else 	carrier_phase = c_nco.clock();
-	baseband = adc_out*carrier_phase;
-	baseband = round(baseband,7);
-	
-	symbol_clk_pls = 0;
-	symbol_x2_clk_pls = 0;
-	resampled = baseband; //! Digital Interpolation/Resampling would go here
-	symbol_x2_clk = 1;
-	
-	//! Processing at 2 times the symbol rate
-	if (symbol_x2_clk) {
-	  symbol_x2_clk_pls = 1;
-	  //! input to matched filter & does calculation
-	  mf_in = resampled;
-	  mf_out = rcv_sqrt_rc.update(mf_in); 
-	  mf_out = round(mf_out, 6);
-	  //! Slicer - get sign bit prior to rounding!
-	  hard_decision = signbit(mf_out);
-	  symbol_clk = !symbol_clk;
-	  prev_sym = timing_disc_delay.input(mf_out);
-	  prev_sam = timing_disc_delay.checkback(1);
-	  decision = hard_decision;
-	  if (nda) timing_error = nda_symbol(prev_sym,mf_out);
-	  //! Symbol rate processing	
-	  if (symbol_clk) {
-		hard_decision_prev = hard_decision_delay.input(decision);
-		symbol_clk_pls = 1;
-		//! Matched Filter out
-		final_baseband = mf_out; 
-		//! Symbol discriminator
-		if (!nda) timing_error = dd_symbol(prev_sym,mf_out,
-										   hard_decision_prev,
-										   decision);
-		//! Carrier discriminator
-		carrier_error = qpsk_dd_phase(mf_out,decision);
-		//! Symbol + timing loop filters
-		symbol_loop_out = symbol_loop_filter.update(timing_error); 
-		carrier_loop_out = carrier_loop_filter.update(carrier_error);
-	  }	
-	}
-	return;
+  void clock(complex<CNumeric> adc_out) {
+    complex<CNumeric> carrier_phase;
+    long nda = 0;  //! Don't use NDA timing discriminator
+
+    //! Down conversion
+    if (symbol_clk_pls)
+      carrier_phase = c_nco.clock(carrier_loop_out);
+    else
+      carrier_phase = c_nco.clock();
+    baseband = adc_out * carrier_phase;
+    baseband = round(baseband, 7);
+
+    symbol_clk_pls = 0;
+    symbol_x2_clk_pls = 0;
+    resampled = baseband;  //! Digital Interpolation/Resampling would go here
+    symbol_x2_clk = 1;
+
+    //! Processing at 2 times the symbol rate
+    if (symbol_x2_clk) {
+      symbol_x2_clk_pls = 1;
+      //! input to matched filter & does calculation
+      mf_in = resampled;
+      mf_out = rcv_sqrt_rc.update(mf_in);
+      mf_out = round(mf_out, 6);
+      //! Slicer - get sign bit prior to rounding!
+      hard_decision = signbit(mf_out);
+      symbol_clk = !symbol_clk;
+      prev_sym = timing_disc_delay.input(mf_out);
+      prev_sam = timing_disc_delay.checkback(1);
+      decision = hard_decision;
+      if (nda) timing_error = nda_symbol(prev_sym, mf_out);
+      //! Symbol rate processing
+      if (symbol_clk) {
+        hard_decision_prev = hard_decision_delay.input(decision);
+        symbol_clk_pls = 1;
+        //! Matched Filter out
+        final_baseband = mf_out;
+        //! Symbol discriminator
+        if (!nda)
+          timing_error =
+              dd_symbol(prev_sym, mf_out, hard_decision_prev, decision);
+        //! Carrier discriminator
+        carrier_error = qpsk_dd_phase(mf_out, decision);
+        //! Symbol + timing loop filters
+        symbol_loop_out = symbol_loop_filter.update(timing_error);
+        carrier_loop_out = carrier_loop_filter.update(carrier_error);
+      }
+    }
+    return;
   }
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

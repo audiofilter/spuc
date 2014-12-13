@@ -29,8 +29,9 @@ namespace SPUC {
 //! template function that uses a class to allow template specialization
 //! \author Tony Kirke
 //! \ingroup template_functions misc
-template <class T> T round(T in, long bits) {
-  return( rounder<T>::rounded(in,bits) );
+template <class T>
+T round(T in, long bits) {
+  return (rounder<T>::rounded(in, bits));
 }
-} // namespace SPUC
+}  // namespace SPUC
 #endif

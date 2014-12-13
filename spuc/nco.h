@@ -31,7 +31,7 @@ namespace SPUC {
 //!    Useful for carrier recovery where top bits used for input to
 //!    sine,cos lookup table.
 //!    FCW : frequency control word
-//!    ACC : accumulator 
+//!    ACC : accumulator
 //!    Frequency must be set through interface routines set_frequency
 //!    or reset_frequency.
 //!    Load routine is to allow frequency to be updated (typically with
@@ -40,34 +40,33 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \image html nco.png
 //! \ingroup classes PLL
-class nco
-{
-public:
-	unsigned long phase;
+class nco {
+ public:
+  unsigned long phase;
 
-protected:
-	unsigned long acc;
-	unsigned long fcw;
-	unsigned long new_fcw;
-	unsigned long mask_bits;
+ protected:
+  unsigned long acc;
+  unsigned long fcw;
+  unsigned long new_fcw;
+  unsigned long mask_bits;
 
-public:
-	//! Constructor
-	nco(long bits=8);
-	//! Reset object
-	inline void reset() { phase = new_fcw = fcw = acc = 0; }
-	//! Set frequency control word
-	inline void set_frequency(unsigned long freq) { fcw = freq; }
-	//! Set frequency control word and register for frequency control word
-	inline void reset_frequency(unsigned long freq) { new_fcw = fcw = freq; }
-	//! Return current phase
-	inline long get_phase(void) { return(phase);}
-	//! Load new frequency control word
-	inline void load(long loop_filter_out) {new_fcw = fcw + loop_filter_out;}
-	//! Clock NCO with new frequency control word input
-	long clock(long loop_filter_out);
-	//! Clock NCO without changing frequency control word
-	long clock();
+ public:
+  //! Constructor
+  nco(long bits = 8);
+  //! Reset object
+  inline void reset() { phase = new_fcw = fcw = acc = 0; }
+  //! Set frequency control word
+  inline void set_frequency(unsigned long freq) { fcw = freq; }
+  //! Set frequency control word and register for frequency control word
+  inline void reset_frequency(unsigned long freq) { new_fcw = fcw = freq; }
+  //! Return current phase
+  inline long get_phase(void) { return (phase); }
+  //! Load new frequency control word
+  inline void load(long loop_filter_out) { new_fcw = fcw + loop_filter_out; }
+  //! Clock NCO with new frequency control word input
+  long clock(long loop_filter_out);
+  //! Clock NCO without changing frequency control word
+  long clock();
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

@@ -27,6 +27,9 @@ namespace SPUC {
 //! \brief Templated quantize function
 //! \author Tony Kirke
 //! \ingroup real_template_functions misc
-template <class T> long real_quantize(T in) { return(SPUC_TOLONG(in));}
-} // namespace SPUC
+template <class T>
+long real_quantize(T in) {
+  return (SPUC_TOLONG(in));
+}
+}  // namespace SPUC
 #endif

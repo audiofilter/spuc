@@ -34,5 +34,5 @@ void idft(std::vector<complex<float_type> > y, int n);
 //! \author Tony Kirke
 //! \ingroup functions functions
 void dft(std::vector<complex<float_type> > y, int n);
-} // namespace SPUC
+}  // namespace SPUC
 #endif

@@ -22,16 +22,14 @@
 #include <iomanip>
 #include <spuc/bit.h>
 namespace SPUC {
-std::ostream &operator<<(std::ostream &output, const bit &inbin)
-{
+std::ostream &operator<<(std::ostream &output, const bit &inbin) {
   output << static_cast<int>(inbin);
   return output;
 }
-std::istream &operator>>(std::istream &input, bit &outbin)
-{
+std::istream &operator>>(std::istream &input, bit &outbin) {
   int tmp;
   input >> tmp;
   outbin = tmp;
   return input;
 }
-} // namespace SPUC
+}  // namespace SPUC

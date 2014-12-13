@@ -27,5 +27,5 @@ namespace SPUC {
 void remove_quotes(std::string& p);
 // Remove directory path from string
 void remove_path(std::string& in);
-} // namespace SPUC
+}  // namespace SPUC
 #endif

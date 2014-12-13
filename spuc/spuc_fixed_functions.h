@@ -14,17 +14,15 @@ template <int NINT, int NFRC, SPUC::spuc_q_mode SPUC_Q_MODE,
 std::ostream &operator<<(
     std::ostream &os,
     const SPUC::spuc_fixed<NINT, NFRC, SPUC_Q_MODE, SPUC_O_MODE> &r) {
-  return os << r.to_double(); // << " ";
-}
-;
+  return os << r.to_double();  // << " ";
+};
 template <int NINT, int NFRC, SPUC::spuc_q_mode SPUC_Q_MODE,
           SPUC::spuc_o_mode SPUC_O_MODE>
-std::istream &
-operator>>(std::istream &os,
-           const SPUC::spuc_fixed<NINT, NFRC, SPUC_Q_MODE, SPUC_O_MODE> &r) {
+std::istream &operator>>(
+    std::istream &os,
+    const SPUC::spuc_fixed<NINT, NFRC, SPUC_Q_MODE, SPUC_O_MODE> &r) {
   return os >> r;
-}
-;
+};
 
 namespace SPUC {
 
@@ -45,7 +43,7 @@ operator+(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
                  1,
              Template_Max<INT_BITS_, INT_BITS_1>::maxval + 1, QMODE,
              OMODE> tmp(a);
-  tmp += b; // no saturation needed since enough head space !
+  tmp += b;  // no saturation needed since enough head space !
   return (tmp);
 }
 
@@ -64,7 +62,7 @@ operator-(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
                  1,
              Template_Max<INT_BITS_, INT_BITS_1>::maxval + 1, QMODE,
              OMODE> tmp(a);
-  tmp -= b; // no saturation needed since enough head space !
+  tmp -= b;  // no saturation needed since enough head space !
   return (tmp);
 }
 
@@ -75,7 +73,6 @@ template <int TOTAL_BITS_, int INT_BITS_, int TOTAL_BITS_1, int INT_BITS_1,
 spuc_fixed<(TOTAL_BITS_ + TOTAL_BITS_1), (INT_BITS_ + INT_BITS_1), QMODE, OMODE>
 operator*(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
           const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, QMODE1, OMODE1> &b) {
-
   spuc_fixed<(TOTAL_BITS_ + TOTAL_BITS_1), (INT_BITS_ + INT_BITS_1), QMODE,
              OMODE> tmp;
   typedef typename spuc_fixed<(TOTAL_BITS_ + TOTAL_BITS_1),
@@ -93,7 +90,6 @@ template <int TOTAL_BITS_, int INT_BITS_, int TOTAL_BITS_1, int INT_BITS_1,
 spuc_fixed<(TOTAL_BITS_ + TOTAL_BITS_1), (INT_BITS_ + INT_BITS_1), QMODE, OMODE>
 operator/(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
           const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, QMODE1, OMODE1> &b) {
-
   return ((double)a / (double)b);
 }
 
@@ -155,9 +151,9 @@ operator^(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
 // <<
 template <int W, int TOTAL_BITS_, int INT_BITS_, spuc_q_mode QMODE,
           spuc_o_mode OMODE>
-spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE>
-operator<<(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
-           const spuc_uint<W> &shift) {
+spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE> operator<<(
+    const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
+    const spuc_uint<W> &shift) {
   spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE> tmp(a);
   tmp <<= shift;
   return (tmp);
@@ -165,9 +161,9 @@ operator<<(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
 // <<
 template <int W, int TOTAL_BITS_, int INT_BITS_, spuc_q_mode QMODE,
           spuc_o_mode OMODE>
-spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE>
-operator<<(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
-           const spuc_int<W> &shift) {
+spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE> operator<<(
+    const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
+    const spuc_int<W> &shift) {
   spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE> tmp(a);
   tmp <<= shift;
   return (tmp);
@@ -176,9 +172,9 @@ operator<<(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
 // >>
 template <int W, int TOTAL_BITS_, int INT_BITS_, spuc_q_mode QMODE,
           spuc_o_mode OMODE>
-spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE>
-operator>>(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
-           const spuc_uint<W> &shift) {
+spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE> operator>>(
+    const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
+    const spuc_uint<W> &shift) {
   spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE> tmp(a);
   tmp >>= shift;
   return (tmp);
@@ -186,27 +182,27 @@ operator>>(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
 // >>
 template <int W, int TOTAL_BITS_, int INT_BITS_, spuc_q_mode QMODE,
           spuc_o_mode OMODE>
-spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE>
-operator>>(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
-           const spuc_int<W> &shift) {
+spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE> operator>>(
+    const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
+    const spuc_int<W> &shift) {
   spuc_fixed<TOTAL_BITS_ + W, INT_BITS_ + W, QMODE, OMODE> tmp(a);
   tmp >>= shift;
   return (tmp);
 }
 // >> with int
 template <int TOTAL_BITS_, int INT_BITS_, spuc_q_mode QMODE, spuc_o_mode OMODE>
-spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE>
-operator>>(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
-           const int &shift) {
+spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> operator>>(
+    const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
+    const int &shift) {
   spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> tmp(a);
   tmp >>= shift;
   return (tmp);
 }
 // << with int
 template <int TOTAL_BITS_, int INT_BITS_, spuc_q_mode QMODE, spuc_o_mode OMODE>
-spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE>
-operator<<(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
-           const int &shift) {
+spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> operator<<(
+    const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
+    const int &shift) {
   spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> tmp(a);
   tmp <<= shift;
   return (tmp);
@@ -220,7 +216,7 @@ operator<<(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
 // template <int TOTAL_BITS_, int INT_BITS_, spuc_q_mode QMODE_, spuc_o_mode
 // OMODE_>
 //	bool operator ==(const uint_type& a, const
-//spuc_fixed<TOTAL_BITS_,INT_BITS_,QMODE_,OMODE_> &b)  {return (b.to_int() ==
+// spuc_fixed<TOTAL_BITS_,INT_BITS_,QMODE_,OMODE_> &b)  {return (b.to_int() ==
 //(int)a);	}
 
 // ^
@@ -728,6 +724,6 @@ double operator/(const spuc_fixed<TOTAL_BITS_, INT_BITS_, QMODE, OMODE> &a,
   return (((double)a / (double)b));
 }
 
-} // end of namespace SPUC
+}  // end of namespace SPUC
 
 #endif

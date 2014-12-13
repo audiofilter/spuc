@@ -31,13 +31,13 @@ namespace SPUC {
 //! Curr - current symbol
 //! \author Tony Kirke
 //!	  \ingroup real_template_functions comm
-template <class T> T cp_afc(complex<T> prev, complex<T> curr) 
-{ 
-  complex<T> rot(real(prev)+imag(prev),imag(prev)-real(prev));
-  T dot = real(curr)*real(rot) + imag(curr)*imag(rot);
-  T cross = imag(curr)*real(rot) - real(curr)*imag(rot);
-  T afc = ((dot>=0) ? cross : -cross) - ((cross>=0) ? dot : -dot);
-  return(afc);
+template <class T>
+T cp_afc(complex<T> prev, complex<T> curr) {
+  complex<T> rot(real(prev) + imag(prev), imag(prev) - real(prev));
+  T dot = real(curr) * real(rot) + imag(curr) * imag(rot);
+  T cross = imag(curr) * real(rot) - real(curr) * imag(rot);
+  T afc = ((dot >= 0) ? cross : -cross) - ((cross >= 0) ? dot : -dot);
+  return (afc);
 }
-} // namespace SPUC
+}  // namespace SPUC
 #endif

@@ -22,11 +22,11 @@
 #include <cmath>
 #include <spuc/spuc_defines.h>
 namespace SPUC {
-//! \author Tony Kirke,  Copyright(c) 2001 
+//! \author Tony Kirke,  Copyright(c) 2001
 //! \file
 //! \brief Various basic math functions, reduce,erfc,swap, quicksort
 //
-//! \brief Exclusive or the bits in x together. 
+//! \brief Exclusive or the bits in x together.
 //! \author Tony Kirke
 //! \ingroup functions functions
 bool reduce(long x, long n);
@@ -45,6 +45,6 @@ void swap(int *a, int *b);
 //! \brief Quicksort routine for array of integers
 //! \author Tony Kirke
 //! \ingroup functions functions
-void quicksort(int* v, unsigned n);
-} // namespace SPUC
+void quicksort(int *v, unsigned n);
+}  // namespace SPUC
 #endif

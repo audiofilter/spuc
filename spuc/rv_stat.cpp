@@ -32,7 +32,7 @@ void rv_stat::update(float_type x) {
   count += 1.0;
   av += x;
   sq += SQR(x);
-  min_abs = MIN(ABS(min_abs),x);
-  max_abs = MAX(ABS(max_abs),x);
+  min_abs = MIN(ABS(min_abs), x);
+  max_abs = MAX(ABS(max_abs), x);
 }
-} // namespace SPUC
+}  // namespace SPUC

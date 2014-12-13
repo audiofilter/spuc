@@ -26,13 +26,15 @@ namespace SPUC {
 //! \brief Determine fundamental type when using builtin template
 //! \author Tony Kirke
 //! \ingroup traits traits
-template <typename T> class fundtype {
-public:
+template <typename T>
+class fundtype {
+ public:
   typedef T ftype;
 };
-template <typename T> class fundtype<builtin<T> > {
-public:
+template <typename T>
+class fundtype<builtin<T> > {
+ public:
   typedef T ftype;
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

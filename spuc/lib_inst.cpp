@@ -24,20 +24,20 @@
 #include <spuc/fir.h>
 namespace SPUC {
 
-  /// Dummy functions for library instantations
-  int dummy_cl(complex<long> z) {
-	int a;
-	a = real(z) + imag(z);
-	return(a);
-  }
-  int dummy_vf(void) {
-	double a;
-	fir<double,double> z(32);
-    std::vector<double> tmp;
+/// Dummy functions for library instantations
+int dummy_cl(complex<long> z) {
+  int a;
+  a = real(z) + imag(z);
+  return (a);
+}
+int dummy_vf(void) {
+  double a;
+  fir<double, double> z(32);
+  std::vector<double> tmp;
 
-	tmp = get_taps(z);
-	
-	a = tmp[0];
-	return((int)a);
-  }
-} // namespace SPUC
+  tmp = get_taps(z);
+
+  a = tmp[0];
+  return ((int)a);
+}
+}  // namespace SPUC

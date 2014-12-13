@@ -29,18 +29,20 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \ingroup classes comm
 class bit_scrambler {
-public:
+ public:
   unsigned long g;
   long span;
-  
-public:
+
+ public:
   unsigned long u;
-  bit_scrambler(long gen=0x48, long bits=7, long uinit=-1) 
-	: g(gen), span(bits), u(uinit) {;}
-  void reset() { u=~0; }
+  bit_scrambler(long gen = 0x48, long bits = 7, long uinit = -1)
+      : g(gen), span(bits), u(uinit) {
+    ;
+  }
+  void reset() { u = ~0; }
   bool scramble(bool data_in);
   //! Exclusive or reduction
   bool xor_bits(long x);
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

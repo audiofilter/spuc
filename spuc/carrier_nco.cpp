@@ -24,11 +24,11 @@
 namespace SPUC {
 
 complex<long> carrier_nco::clock(long loop_filter_out, int load) {
-		if (load) new_fcw = fcw + loop_filter_out;
-		acc += new_fcw;
-		phase = acc >> 22;
-		complex<long> cm_exp((long)(127.0*cos(TWOPI*phase/1024.0)+0.5),
-			(long)(127.0*sin(TWOPI*phase/1024.0)+0.5));	
-		return(cm_exp);
+  if (load) new_fcw = fcw + loop_filter_out;
+  acc += new_fcw;
+  phase = acc >> 22;
+  complex<long> cm_exp((long)(127.0 * cos(TWOPI * phase / 1024.0) + 0.5),
+                       (long)(127.0 * sin(TWOPI * phase / 1024.0) + 0.5));
+  return (cm_exp);
 }
-} // namespace SPUC
+}  // namespace SPUC

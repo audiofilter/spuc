@@ -32,27 +32,26 @@ namespace SPUC {
 //!  Exponential decay delay line channel model
 //!  Mean channel power is normalized
 //!  Profiles are generated using gaussian pdf
-//! \author Tony Kirke,  Copyright(c) 2001 
+//! \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //!  \ingroup classes sim comm
-class fading_channel 
-{
+class fading_channel {
  public:
-  fir<complex<float_type>,complex<float_type> >  exp_decay;
-	long taps;
-	float_type delay_spread;
-	noise tap_gain;
+  fir<complex<float_type>, complex<float_type> > exp_decay;
+  long taps;
+  float_type delay_spread;
+  noise tap_gain;
 
-	// constructor
-	fading_channel(long paths=1, float_type norm_delay_spread=1) {
-		taps=paths;
-		delay_spread = norm_delay_spread;
-		exp_decay.set_size(taps);
-		generate_channel();
-	}
-	void setup(float_type norm_delay_spread);
-	void generate_channel();
-	complex<float_type> update(const complex<float_type> s);
+  // constructor
+  fading_channel(long paths = 1, float_type norm_delay_spread = 1) {
+    taps = paths;
+    delay_spread = norm_delay_spread;
+    exp_decay.set_size(taps);
+    generate_channel();
+  }
+  void setup(float_type norm_delay_spread);
+  void generate_channel();
+  complex<float_type> update(const complex<float_type> s);
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

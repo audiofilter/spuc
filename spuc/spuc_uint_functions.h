@@ -13,28 +13,26 @@ namespace SPUC {
 template <int NINT>
 std::ostream &operator<<(std::ostream &os, const spuc_uint<NINT> &r) {
   return os << r.to_int();
-}
-;
+};
 template <int NINT>
 std::istream &operator>>(std::istream &os, const spuc_uint<NINT> &r) {
   return os >> r;
-}
-;
+};
 
 // TEMPLATE functions for +,-,*,/ (divide returns double)
 
 // addition
 template <int W_, int W_1>
-spuc_uint<Template_Max<W_, W_1>::maxval + 1>
-operator+(const spuc_uint<W_> &a, const spuc_uint<W_1> &b) {
+spuc_uint<Template_Max<W_, W_1>::maxval + 1> operator+(
+    const spuc_uint<W_> &a, const spuc_uint<W_1> &b) {
   spuc_uint<Template_Max<W_, W_1>::maxval + 1> tmp(a);
   tmp += b;
   return (tmp);
 }
 
 template <int W_, int W_1>
-spuc_uint<Template_Max<W_, W_1>::maxval + 1>
-operator-(const spuc_uint<W_> &a, const spuc_uint<W_1> &b) {
+spuc_uint<Template_Max<W_, W_1>::maxval + 1> operator-(
+    const spuc_uint<W_> &a, const spuc_uint<W_1> &b) {
   spuc_uint<Template_Max<W_, W_1>::maxval + 1> tmp(a);
   tmp -= b;
   return (tmp);
@@ -131,6 +129,6 @@ bool operator>=(const spuc_uint<W_> &a, const spuc_uint<W_1> &b) {
   return !(a < b);
 }
 
-} // end of namespace SPUC
+}  // end of namespace SPUC
 
 #endif

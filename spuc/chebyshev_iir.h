@@ -27,11 +27,13 @@ namespace SPUC {
 //
 //! \brief Calculate coefficients for IIR assuming chebyshev frequency response
 //
-//! \author Tony Kirke,  Copyright(c) 2001 
+//! \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //! \ingroup functions iir
-void chebyshev_iir(iir_coeff& cheb, float_type fcd, bool lpf, float_type ripple);
+void chebyshev_iir(iir_coeff& cheb, float_type fcd, bool lpf,
+                   float_type ripple);
 void chebyshev_s(std::vector<complex<float_type> >& poles,
-		 std::vector<complex<float_type> >& zeros, bool lpf, float_type wp, float_type epi, long n, long n2);
-} // namespace SPUC
+                 std::vector<complex<float_type> >& zeros, bool lpf,
+                 float_type wp, float_type epi, long n, long n2);
+}  // namespace SPUC
 #endif

@@ -26,19 +26,20 @@ namespace SPUC {
 //
 //! \brief Compute the autocorrelation of the Vector
 //
-//! \author Tony Kirke,  Copyright(c) 2001 
+//! \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //! \ingroup template_array_functions misc
-template <class T> std::vector<T> auto_corr(const std::vector<T>& x) {
-	int i,j;
-	T d;
-	long N=x.size();
-	std::vector<T> autoc(N);
-	for (j=0;j<N;j++) {
-		for (i = j, d = 0; i < N; i++) d += x[i] * x[i-j];
-		autoc[j] = d;
-	}
-	return(autoc);
+template <class T>
+std::vector<T> auto_corr(const std::vector<T>& x) {
+  int i, j;
+  T d;
+  long N = x.size();
+  std::vector<T> autoc(N);
+  for (j = 0; j < N; j++) {
+    for (i = j, d = 0; i < N; i++) d += x[i] * x[i - j];
+    autoc[j] = d;
+  }
+  return (autoc);
 }
-} // namespace SPUC
+}  // namespace SPUC
 #endif

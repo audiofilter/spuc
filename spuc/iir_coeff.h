@@ -30,25 +30,24 @@ namespace SPUC {
 //!  \brief  Class for iir filter design
 //! \author Tony Kirke
 //!  \ingroup classes iir
-class iir_coeff
-{
-public:
+class iir_coeff {
+ public:
   long order;
   long odd;
   long n2;
   std::vector<complex<float_type> > poles;
   std::vector<complex<float_type> > zeros;
-  std::vector<float_type > a_tf;
-  std::vector<float_type > b_tf;
+  std::vector<float_type> a_tf;
+  std::vector<float_type> b_tf;
   float_type gain;
   float_type hpf_gain;
   long state;
   long tf_state;
   long ap_state;
-  
-public:
+
+ public:
   //! ord = Filter order
-  iir_coeff(long ord=1);
+  iir_coeff(long ord = 1);
   //! Destructor
   ~iir_coeff();
   //! Do bilinear transformation
@@ -56,10 +55,12 @@ public:
   void bilinear2();
   void convert_to_ab();
   void z_root_to_ab(std::vector<complex<float_type> >& z);
-  void pz_to_ap(); 
+  void pz_to_ap();
   void ab_to_tf();
-  std::vector<float_type> p2_to_poly(const std::vector<complex<float_type> >& ab);
-  std::vector<float_type> pz_to_poly(const std::vector<complex<float_type> >& z);
+  std::vector<float_type> p2_to_poly(
+      const std::vector<complex<float_type> >& ab);
+  std::vector<float_type> pz_to_poly(
+      const std::vector<complex<float_type> >& z);
   complex<float_type> get_root(long i);
   complex<float_type> get_zero(long i);
   float_type get_a(long i);
@@ -71,5 +72,5 @@ public:
   float_type freqz_mag(float_type freq);
 };
 // template_instantiations: float_type, complex<float_type>
-} // namespace SPUC
+}  // namespace SPUC
 #endif

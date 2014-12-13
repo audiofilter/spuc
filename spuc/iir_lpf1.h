@@ -35,44 +35,43 @@ namespace SPUC {
 //!   Note: Not normalized
 //! \author Tony Kirke
 //! \ingroup double_templates iir
-template <class Numeric, class Coeff=float_type> class iir_lpf1
-{
-protected:   
-  Coeff gain;                    
+template <class Numeric, class Coeff = float_type>
+class iir_lpf1 {
+ protected:
+  Coeff gain;
   Numeric out;
   Numeric previous_out;
   Numeric previous_in;
   quantiser<Numeric> Q;
-  
-public:
-  iir_lpf1(Coeff A=0, long b=0) : gain(A), Q(b) {
-	previous_in = previous_out = out = (Numeric)0 ; }
-  void set_coeff(Coeff A) { gain=A;}
-  void set_round_bits(long x) {	Q.set_bits(x);  }
+
+ public:
+  iir_lpf1(Coeff A = 0, long b = 0) : gain(A), Q(b) {
+    previous_in = previous_out = out = (Numeric)0;
+  }
+  void set_coeff(Coeff A) { gain = A; }
+  void set_round_bits(long x) { Q.set_bits(x); }
   //! Constructor reading coefficient from a file.
   iir_lpf1(const char* file) : Q(0) {
-	std::ifstream iirf(file); 
-	iirf >> gain;
-	iirf.close();
-	previous_in = previous_out = out = (Numeric)0;
-  }             
+    std::ifstream iirf(file);
+    iirf >> gain;
+    iirf.close();
+    previous_in = previous_out = out = (Numeric)0;
+  }
   //! Print out coefficients
-  void print() { std::cout << "IIR Coefficient gain = " << gain << "\n";}
+  void print() { std::cout << "IIR Coefficient gain = " << gain << "\n"; }
   //! Input new sample and calculate output
   Numeric clock(Numeric input) {
-	typename mixed_type<Numeric,Coeff>::dtype sum;
-	// Shift previous outputs and calculate new output */
-	//	out = gain*previous_out + (1-gain)*input;
-	sum = gain*previous_out + (input+previous_in);
-	out = Q(sum);
-	previous_out = out;
-	previous_in = input;
-	return(out);
+    typename mixed_type<Numeric, Coeff>::dtype sum;
+    // Shift previous outputs and calculate new output */
+    //	out = gain*previous_out + (1-gain)*input;
+    sum = gain * previous_out + (input + previous_in);
+    out = Q(sum);
+    previous_out = out;
+    previous_in = input;
+    return (out);
   }
   //! Reset
-  void reset() {
-	previous_in = previous_out = out = (Numeric)0;
-  }
-};                                               
-} // namespace SPUC
+  void reset() { previous_in = previous_out = out = (Numeric)0; }
+};
+}  // namespace SPUC
 #endif

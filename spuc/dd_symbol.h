@@ -34,11 +34,11 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \image html dd_symbol.png
 //!	  \ingroup real_template_functions comm
-template <class T> T dd_symbol(complex<T> prev, complex<T> curr,
-							   complex<T> prev_hard_data, complex<T> hard_data) 
-{
-	return(real(curr*conj(prev_hard_data) - prev*conj(hard_data)));
+template <class T>
+T dd_symbol(complex<T> prev, complex<T> curr, complex<T> prev_hard_data,
+            complex<T> hard_data) {
+  return (real(curr * conj(prev_hard_data) - prev * conj(hard_data)));
 }
 // function_instantiations: long, double
-} // namespace SPUC
+}  // namespace SPUC
 #endif

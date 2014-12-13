@@ -36,34 +36,35 @@ namespace SPUC {
 //! Note: Not normalized
 //! \author Tony Kirke
 //! \ingroup double_templates iir
-template <class Numeric, class Coeff=float_type> class iir_lpf : public iir_lpf1<Numeric,Coeff>
-{
-  using SPUC::iir_lpf1<Numeric,Coeff>::gain;
-  using SPUC::iir_lpf1<Numeric,Coeff>::previous_in;
-  using SPUC::iir_lpf1<Numeric,Coeff>::previous_out;
-  using SPUC::iir_lpf1<Numeric,Coeff>::out;
-  using SPUC::iir_lpf1<Numeric,Coeff>::Q;
-protected:   
-  Coeff a;                    
-  
-public:
-  iir_lpf(Coeff A=0, long b=0) : iir_lpf1<Numeric,Coeff>(A,b) {
-	gain = ((1-A)/(1+A));
-	a = A/(1+A);
+template <class Numeric, class Coeff = float_type>
+class iir_lpf : public iir_lpf1<Numeric, Coeff> {
+  using SPUC::iir_lpf1<Numeric, Coeff>::gain;
+  using SPUC::iir_lpf1<Numeric, Coeff>::previous_in;
+  using SPUC::iir_lpf1<Numeric, Coeff>::previous_out;
+  using SPUC::iir_lpf1<Numeric, Coeff>::out;
+  using SPUC::iir_lpf1<Numeric, Coeff>::Q;
+
+ protected:
+  Coeff a;
+
+ public:
+  iir_lpf(Coeff A = 0, long b = 0) : iir_lpf1<Numeric, Coeff>(A, b) {
+    gain = ((1 - A) / (1 + A));
+    a = A / (1 + A);
   }
-  Coeff get_a0() { return(gain); }
-  Coeff get_b0() { return(a); }
+  Coeff get_a0() { return (gain); }
+  Coeff get_b0() { return (a); }
   //! Input new sample and calculate output
   Numeric clock(Numeric input) {
-	typename mixed_type<Numeric,Coeff>::dtype sum;
-	// Shift previous outputs and calculate new output */
-	//	out = gain*previous_out + (1-gain)*input;
-	sum = gain*previous_out + a*(input+previous_in);
-	out = Q(sum);
-	previous_out = out;
-	previous_in = input;
-	return(out);
+    typename mixed_type<Numeric, Coeff>::dtype sum;
+    // Shift previous outputs and calculate new output */
+    //	out = gain*previous_out + (1-gain)*input;
+    sum = gain * previous_out + a * (input + previous_in);
+    out = Q(sum);
+    previous_out = out;
+    previous_in = input;
+    return (out);
   }
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

@@ -27,5 +27,5 @@ using namespace SPUC;
 namespace SPUC {
 //! \file
 //! \brief Class needed only for boost includes
-} // namespace SPUC
+}  // namespace SPUC
 #endif

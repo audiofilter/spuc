@@ -29,23 +29,19 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \image html qam_mod.png
 //! \ingroup classes comm modulators
-class qam_mod
-{
-public:
-  long rate_index; // 0 BPSK, Max for highest QAM, etc
+class qam_mod {
+ public:
+  long rate_index;  // 0 BPSK, Max for highest QAM, etc
 
  public:
   // Constructor (with default data rate)
-  qam_mod(int index) {
-	  rate_index = index;
-  }
-  ~qam_mod() {  } 
+  qam_mod(int index) { rate_index = index; }
+  ~qam_mod() {}
   complex<long> data_map(long r_ind, long data_in);
   complex<long> bpsk_map(long data_in);
   complex<long> qpsk_map(long data_in);
   complex<long> qam16_map(long data_in);
   complex<long> qam64_map(long data_in);
-  
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

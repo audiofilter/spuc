@@ -33,14 +33,13 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \ingroup classes examples interpolators
 class farrow_upsampler {
-
-public:
+ public:
   float_type time_offset;
   farrow<float_type> INTERP;
-  
-  int need_sample(float_type t_inc,float_type x);
+
+  int need_sample(float_type t_inc, float_type x);
   float_type output(float_type t_inc);
-  farrow_upsampler(int order=4);
+  farrow_upsampler(int order = 4);
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

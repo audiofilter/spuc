@@ -22,11 +22,10 @@ namespace SPUC {
 
 using namespace std;
 // Removes single quotes ' from beginning and end of string
-void remove_quotes(string& paramValStr)
-{
+void remove_quotes(string& paramValStr) {
   const char* startCharacter = "'";
   const char* endCharacter = "'";
-  size_t foundFirst, foundSecond,len;
+  size_t foundFirst, foundSecond, len;
   string paramStr;
   // Look for first
   foundFirst = paramValStr.find_first_of(startCharacter, 0);
@@ -34,14 +33,14 @@ void remove_quotes(string& paramValStr)
   foundSecond = paramValStr.find_last_of(endCharacter);
   len = foundSecond - foundFirst - 1;
   // Extract substring
-  paramValStr = paramValStr.substr(foundFirst+1, len);
+  paramValStr = paramValStr.substr(foundFirst + 1, len);
 }
 void remove_path(string& in) {
   char delim = '/';
   // Split on delim
   size_t pos = in.find_last_of(delim);
   if (pos != string::npos) {
-	in = in.substr(pos+1);
+    in = in.substr(pos + 1);
   }
 }
-} // namespace SPUC
+}  // namespace SPUC

@@ -21,28 +21,26 @@
 namespace SPUC {
 typedef vfloat self;
 // IO functions
-std::ostream& operator <<(std::ostream& os, const self& r) {  
+std::ostream& operator<<(std::ostream& os, const self& r) {
   os << (double)r;
-  return(os);
+  return (os);
 }
-std::istream& operator >>(std::istream& is, self r) {  
+std::istream& operator>>(std::istream& is, self r) {
   double x;
   is >> x;
   r = x;
-  return(is);
+  return (is);
 }
-vfloat operator <<(vfloat r, const natural shift)  {
-  vfloat x=r;
+vfloat operator<<(vfloat r, const natural shift) {
+  vfloat x = r;
   x.exp += shift;
-  return(x);
+  return (x);
 };
 
-
-vfloat operator >>(vfloat r, const natural shift)  {
-  vfloat x=r;
+vfloat operator>>(vfloat r, const natural shift) {
+  vfloat x = r;
   x.exp -= shift;
-  return(x);
+  return (x);
 };
 
-
-} // namespace SPUC
+}  // namespace SPUC

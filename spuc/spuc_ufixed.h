@@ -13,23 +13,28 @@ namespace SPUC {
 template <int TOTAL_BITS_, int INT_BITS_, spuc_q_mode SPUC_Q_MODE_ = SPUC_TRN,
           spuc_o_mode SPUC_O_MODE_ = SPUC_WRAP>
 class spuc_ufixed {
-
   static_assert(TOTAL_BITS_ < 65, " bitwidth is too large > 64");
 
-public: // should be private?
+ public:  // should be private?
   typedef spuc_uint<TOTAL_BITS_> val_type;
   typedef uint64_t max_val_type;
   val_type val;
   static const int TOTAL_BITS = TOTAL_BITS_;
   static const int INTEGER_BITS = INT_BITS_;
 
-public:
+ public:
   /// constructors
   spuc_ufixed() : val(0) {}
   spuc_ufixed(double a) { from_double(a); }
   /// built-in types
-  template <int W> spuc_ufixed(const spuc_int<W> &a) { from_int(a.to_int()); }
-  template <int W> spuc_ufixed(const spuc_uint<W> &a) { from_uint(a.to_int()); }
+  template <int W>
+  spuc_ufixed(const spuc_int<W> &a) {
+    from_int(a.to_int());
+  }
+  template <int W>
+  spuc_ufixed(const spuc_uint<W> &a) {
+    from_uint(a.to_int());
+  }
 
   // Constructors (generated)
   spuc_ufixed(int8_t a) { from_int(a); }
@@ -48,7 +53,6 @@ public:
             spuc_o_mode SPUC_O_MODE_1>
   spuc_ufixed(const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
                                 SPUC_O_MODE_1> &a) {
-
     // Combine separate round and saturates
     val = spuc_saturate_class_function<TOTAL_BITS_, SPUC_O_MODE_>::usaturate(
         spuc_shift_class_function<TOTAL_BITS_ - INT_BITS_,
@@ -59,7 +63,6 @@ public:
             spuc_o_mode SPUC_O_MODE_1>
   spuc_ufixed(const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
                                SPUC_O_MODE_1> &a) {
-
     // Combine separate round and saturates
     val = spuc_saturate_class_function<TOTAL_BITS_, SPUC_O_MODE_>::usaturate(
         spuc_shift_class_function<TOTAL_BITS_ - INT_BITS_,
@@ -79,7 +82,8 @@ public:
   }
 
   /// Conversions
-  template <typename T_> void from_int(T_ x) {
+  template <typename T_>
+  void from_int(T_ x) {
     if (x < 0)
       val = 0;
     else
@@ -87,7 +91,8 @@ public:
           ((max_val_type)x << (TOTAL_BITS_ - INT_BITS_)));
   }
 
-  template <typename T_> void from_uint(T_ x) {
+  template <typename T_>
+  void from_uint(T_ x) {
     val = spuc_saturate_class_function<TOTAL_BITS_, SPUC_O_MODE_>::usaturate(
         ((max_val_type)x << (TOTAL_BITS_ - INT_BITS_)));
   }
@@ -140,10 +145,9 @@ public:
   /// val;
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
-  spuc_ufixed<TOTAL_BITS_, INT_BITS_, SPUC_Q_MODE_, SPUC_O_MODE_> &
-  operator=(const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
-                              SPUC_O_MODE_1> &a) {
-
+  spuc_ufixed<TOTAL_BITS_, INT_BITS_, SPUC_Q_MODE_, SPUC_O_MODE_> &operator=(
+      const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
+                        SPUC_O_MODE_1> &a) {
     spuc_ufixed<TOTAL_BITS_, INT_BITS_, SPUC_Q_MODE_, SPUC_O_MODE_> temp(a);
     val = temp.getVal();
     return *this;
@@ -152,18 +156,17 @@ public:
   ///
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
-  spuc_ufixed<TOTAL_BITS_, INT_BITS_, SPUC_Q_MODE_, SPUC_O_MODE_> &
-  operator=(const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
-                             SPUC_O_MODE_1> &a) {
-
+  spuc_ufixed<TOTAL_BITS_, INT_BITS_, SPUC_Q_MODE_, SPUC_O_MODE_> &operator=(
+      const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1, SPUC_O_MODE_1> &
+          a) {
     spuc_ufixed<TOTAL_BITS_, INT_BITS_, SPUC_Q_MODE_, SPUC_O_MODE_> temp(a);
     val = temp.getVal();
     return *this;
   }
   /// assignment operator from spuc_int
   template <int W_1>
-  spuc_ufixed<TOTAL_BITS_, INT_BITS_, SPUC_Q_MODE_, SPUC_O_MODE_> &
-  operator=(const spuc_int<W_1> &a) {
+  spuc_ufixed<TOTAL_BITS_, INT_BITS_, SPUC_Q_MODE_, SPUC_O_MODE_> &operator=(
+      const spuc_int<W_1> &a) {
     // saturates
     val = spuc_saturate_class_function<TOTAL_BITS_, SPUC_O_MODE_>::saturate(
         max_int_type(a.to_int()));
@@ -171,8 +174,8 @@ public:
   }
   /// assignment operator from spuc_int
   template <int W_1>
-  spuc_ufixed<TOTAL_BITS_, INT_BITS_, SPUC_Q_MODE_, SPUC_O_MODE_> &
-  operator=(const spuc_uint<W_1> &a) {
+  spuc_ufixed<TOTAL_BITS_, INT_BITS_, SPUC_Q_MODE_, SPUC_O_MODE_> &operator=(
+      const spuc_uint<W_1> &a) {
     // saturates
     val = spuc_saturate_class_function<TOTAL_BITS_, SPUC_O_MODE_>::saturate(
         max_int_type(a.to_int()));
@@ -235,40 +238,38 @@ public:
             spuc_o_mode SPUC_O_MODE_1>
   spuc_ufixed &operator+=(const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1,
                                             SPUC_Q_MODE_1, SPUC_O_MODE_1> &a) {
-
     spuc_ufixed<Template_Max_Total_Bits<TOTAL_BITS_, INT_BITS_, TOTAL_BITS_1,
                                         INT_BITS_1>::maxval +
                     1,
                 Template_Max<INT_BITS_, INT_BITS_1>::maxval + 1, SPUC_Q_MODE_1,
-                SPUC_O_MODE_1> tmp(*this); // just extra headroom above and
-                                           // below
+                SPUC_O_MODE_1> tmp(*this);  // just extra headroom above and
+                                            // below
     spuc_ufixed<Template_Max_Total_Bits<TOTAL_BITS_, INT_BITS_, TOTAL_BITS_1,
                                         INT_BITS_1>::maxval +
                     1,
                 Template_Max<INT_BITS_, INT_BITS_1>::maxval + 1, SPUC_Q_MODE_1,
-                SPUC_O_MODE_1> tmpa(a); // just extra headroom above and below
-    tmpa.val += tmp.val;                // no saturation or rounding yet;
-    *this = tmpa;                       // now saturate + round
+                SPUC_O_MODE_1> tmpa(a);  // just extra headroom above and below
+    tmpa.val += tmp.val;                 // no saturation or rounding yet;
+    *this = tmpa;                        // now saturate + round
     return *this;
   }
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
   spuc_ufixed &operator+=(const spuc_fixed<TOTAL_BITS_1, INT_BITS_1,
                                            SPUC_Q_MODE_1, SPUC_O_MODE_1> &a) {
-
     spuc_ufixed<Template_Max_Total_Bits<TOTAL_BITS_, INT_BITS_, TOTAL_BITS_1,
                                         INT_BITS_1>::maxval +
                     2,
                 Template_Max<INT_BITS_, INT_BITS_1>::maxval + 2, SPUC_Q_MODE_1,
-                SPUC_O_MODE_1> tmp(*this); // just extra headroom above and
-                                           // below
+                SPUC_O_MODE_1> tmp(*this);  // just extra headroom above and
+                                            // below
     spuc_ufixed<Template_Max_Total_Bits<TOTAL_BITS_, INT_BITS_, TOTAL_BITS_1,
                                         INT_BITS_1>::maxval +
                     2,
                 Template_Max<INT_BITS_, INT_BITS_1>::maxval + 2, SPUC_Q_MODE_1,
-                SPUC_O_MODE_1> tmpa(a); // just extra headroom above and below
-    tmpa.val += tmp.val;                // no saturation or rounding yet;
-    *this = tmpa;                       // now saturate + round
+                SPUC_O_MODE_1> tmpa(a);  // just extra headroom above and below
+    tmpa.val += tmp.val;                 // no saturation or rounding yet;
+    *this = tmpa;                        // now saturate + round
     return *this;
   }
 
@@ -276,16 +277,14 @@ public:
             spuc_o_mode SPUC_O_MODE_1>
   spuc_ufixed &operator-=(const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1,
                                             SPUC_Q_MODE_1, SPUC_O_MODE_1> &a) {
-
-    *this += (-a); // re-use +=
+    *this += (-a);  // re-use +=
     return *this;
   }
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
   spuc_ufixed &operator-=(const spuc_fixed<TOTAL_BITS_1, INT_BITS_1,
                                            SPUC_Q_MODE_1, SPUC_O_MODE_1> &a) {
-
-    *this += (-a); // re-use +=
+    *this += (-a);  // re-use +=
     return *this;
   }
 
@@ -293,7 +292,6 @@ public:
             spuc_o_mode SPUC_O_MODE_1>
   spuc_ufixed &operator*=(const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1,
                                             SPUC_Q_MODE_1, SPUC_O_MODE_1> &b) {
-
     // first full precision
     spuc_ufixed<(TOTAL_BITS_ + TOTAL_BITS_1), (INT_BITS_ + INT_BITS_1),
                 SPUC_Q_MODE_, SPUC_O_MODE_> tmp = *this * b;
@@ -306,7 +304,6 @@ public:
             spuc_o_mode SPUC_O_MODE_1>
   spuc_ufixed &operator*=(const spuc_fixed<TOTAL_BITS_1, INT_BITS_1,
                                            SPUC_Q_MODE_1, SPUC_O_MODE_1> &b) {
-
     // first full precision
     spuc_ufixed<(TOTAL_BITS_ + TOTAL_BITS_1), (INT_BITS_ + INT_BITS_1),
                 SPUC_Q_MODE_, SPUC_O_MODE_> tmp = *this * b;
@@ -511,23 +508,27 @@ public:
   }
 
   /// Left shifts + assign
-  template <int W> spuc_ufixed &operator<<=(spuc_int<W> shift) {
+  template <int W>
+  spuc_ufixed &operator<<=(spuc_int<W> shift) {
     val = spuc_saturate_class_function<TOTAL_BITS_, SPUC_O_MODE_>::usaturate(
         (max_val_type)val << shift.to_int());
     return *this;
   }
-  template <int W> spuc_ufixed &operator<<=(spuc_uint<W> shift) {
+  template <int W>
+  spuc_ufixed &operator<<=(spuc_uint<W> shift) {
     val = spuc_saturate_class_function<TOTAL_BITS_, SPUC_O_MODE_>::usaturate(
         (max_val_type)val << shift.to_int());
     return *this;
   }
 
   /// Right shifts + assign
-  template <int W> spuc_ufixed &operator>>=(spuc_int<W> shift) {
+  template <int W>
+  spuc_ufixed &operator>>=(spuc_int<W> shift) {
     val >>= shift.to_int();
     return *this;
   }
-  template <int W> spuc_ufixed &operator>>=(spuc_uint<W> shift) {
+  template <int W>
+  spuc_ufixed &operator>>=(spuc_uint<W> shift) {
     val >>= shift.to_int();
     return *this;
   }
@@ -648,9 +649,9 @@ public:
 
   void print(std::ostream &os = ::std::cout) const { os << to_double(); }
 
-}; // end of class
+};  // end of class
 
-} // end of namespace SPUC
+}  // end of namespace SPUC
 
 #include <SPUC/spuc_ufixed_functions.h>
 #include <SPUC/spuc_mixed_functions.h>

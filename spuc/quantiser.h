@@ -37,41 +37,42 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \author Tony Kirke
 //!  \ingroup template_functors template_functors misc sim
-template <class Numeric> class quantiser
-{
-protected:
-  char size;              //! Number of bits <= 8
+template <class Numeric>
+class quantiser {
+ protected:
+  char size;  //! Number of bits <= 8
   float_type scale;
   float_type iscale;
 
-public:
+ public:
   //! Constructor
-  quantiser(char h=0) {
-	  set_bits(h);
-  }
+  quantiser(char h = 0) { set_bits(h); }
   void set_bits(char h) {
-	size = h;
-	iscale =  1.0; // (float_type)((1<<size));
-	scale =  1.0/(float_type)((1<<size));
+    size = h;
+    iscale = 1.0;  // (float_type)((1<<size));
+    scale = 1.0 / (float_type)((1 << size));
   }
-  template <typename T> T operator()(T x) {
+  template <typename T>
+  T operator()(T x) {
 #ifndef ADD_QUANT
-	  return(x);
+    return (x);
 #else
-	  return(quantize_scale(scale,iscale,x));
+    return (quantize_scale(scale, iscale, x));
 #endif
   }
 };
-template <> inline void quantiser<long>::set_bits(char h) {
+template <>
+inline void quantiser<long>::set_bits(char h) {
   size = h;
   iscale = 1.0;
-  scale =  1.0/(float_type)((1<<size));
+  scale = 1.0 / (float_type)((1 << size));
 }
-template <> inline void quantiser<float_type>::set_bits(char h) {
+template <>
+inline void quantiser<float_type>::set_bits(char h) {
   size = h;
-  iscale =  (float_type)((1<<size));
-  scale =  1.0/(float_type)((1<<size));
+  iscale = (float_type)((1 << size));
+  scale = 1.0 / (float_type)((1 << size));
 }
 
-} // namespace SPUC
+}  // namespace SPUC
 #endif

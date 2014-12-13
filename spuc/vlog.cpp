@@ -22,15 +22,15 @@ namespace SPUC {
 typedef vlog self;
 
 // IO functions
-std::ostream& operator <<(std::ostream& os, self r) {  
+std::ostream& operator<<(std::ostream& os, self r) {
   os << (double)r;
-  return(os);
+  return (os);
 }
-std::istream& operator >>(std::istream& is, self r) {  
+std::istream& operator>>(std::istream& is, self r) {
   double x;
   is >> x;
   r = x;
-  return(is);
+  return (is);
 }
 
-} // namespace SPUC
+}  // namespace SPUC

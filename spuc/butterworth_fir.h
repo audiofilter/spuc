@@ -22,13 +22,15 @@
 #include <spuc/fir_coeff.h>
 namespace SPUC {
 //! \file
-//! \brief Calculate coefficients for FIR assuming butterworth frequency response
+//! \brief Calculate coefficients for FIR assuming butterworth frequency
+//response
 //
-//! \brief Calculate coefficients for FIR assuming butterworth frequency response
+//! \brief Calculate coefficients for FIR assuming butterworth frequency
+//response
 //
-//! \author Tony Kirke,  Copyright(c) 2001 
+//! \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //! \ingroup functions fir
 void butterworth_fir(fir_coeff<float_type>& butfir, float_type spb);
-} // namespace SPUC
+}  // namespace SPUC
 #endif

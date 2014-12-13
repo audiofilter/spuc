@@ -29,15 +29,14 @@ namespace SPUC {
 //!  <p>\f$  G(z) =  \frac{a + z^{-1}}{(1+a*z^{-1})} \f$ with A = 0.25
 //! \author Tony Kirke
 //! \ingroup classes Allpass examples
-class allpass_1aq1 
-{
-protected:   
+class allpass_1aq1 {
+ protected:
   long adder2;
-  
-public:
-  allpass_1aq1() { adder2 = 0;}
-  void init() { adder2 = 0;}
+
+ public:
+  allpass_1aq1() { adder2 = 0; }
+  void init() { adder2 = 0; }
   long clock(long input);
-};                                               
-} // namespace SPUC
+};
+}  // namespace SPUC
 #endif

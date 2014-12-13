@@ -28,33 +28,33 @@ namespace SPUC {
 //
 //! \author Tony Kirke
 //! \ingroup n_templates sim
-template <int M, int L=12> class fbool_nco
-{
+template <int M, int L = 12>
+class fbool_nco {
  public:
   bool phase;
-//  char v[20];
+  //  char v[20];
 
-  protected:
+ protected:
   uint<M> acc;
   uint<M> fcw;
   uint<M> new_fcw;
 
-public:
-    fbool_nco() { acc = fcw = new_fcw = 0;}
-	inline void set_frequency(uint<M> freq) { fcw = freq; }
-	inline void reset_frequency(uint<M> freq) { new_fcw = fcw = freq; }
-	inline bool get_phase(void) { return(phase);}
-	inline void load(uint<L> loop_filter_out) {new_fcw = fcw + loop_filter_out;}
-	bool clock() {
-		acc = acc + new_fcw;
-		phase = acc.overflow;
-		return(phase);
-	}
-	bool clock(uint<L> loop_filter_out) {
-	new_fcw = fcw + loop_filter_out;
-	return(clock());
-	}
+ public:
+  fbool_nco() { acc = fcw = new_fcw = 0; }
+  inline void set_frequency(uint<M> freq) { fcw = freq; }
+  inline void reset_frequency(uint<M> freq) { new_fcw = fcw = freq; }
+  inline bool get_phase(void) { return (phase); }
+  inline void load(uint<L> loop_filter_out) { new_fcw = fcw + loop_filter_out; }
+  bool clock() {
+    acc = acc + new_fcw;
+    phase = acc.overflow;
+    return (phase);
+  }
+  bool clock(uint<L> loop_filter_out) {
+    new_fcw = fcw + loop_filter_out;
+    return (clock());
+  }
 };
 // template_instantiations: 5
-} // namespace SPUC
+}  // namespace SPUC
 #endif

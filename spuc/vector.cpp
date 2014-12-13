@@ -20,17 +20,16 @@
 #include <iostream>
 #include <spuc/vector.h>
 namespace SPUC {
-template <class T> std::ostream &operator<<(std::ostream& os, const vector<T> &v)
-{
-    int sz=v.len();
-    os << "[" ;
-    for (int i=0; i<sz; i++) {
-	  os << v(i);
-	  if (i < sz-1)
-	    os << " ";
-    }
-    os << "]" ;
+template <class T>
+std::ostream &operator<<(std::ostream &os, const vector<T> &v) {
+  int sz = v.len();
+  os << "[";
+  for (int i = 0; i < sz; i++) {
+    os << v(i);
+    if (i < sz - 1) os << " ";
+  }
+  os << "]";
 
-    return os;
+  return os;
 }
-} // namespace SPUC
+}  // namespace SPUC

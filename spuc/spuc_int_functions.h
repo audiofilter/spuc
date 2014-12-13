@@ -13,13 +13,11 @@ namespace SPUC {
 template <int NINT>
 std::ostream &operator<<(std::ostream &os, const spuc_int<NINT> &r) {
   return os << r.to_int();
-}
-;
+};
 template <int NINT>
 std::istream &operator>>(std::istream &os, const spuc_int<NINT> &r) {
   return os >> r;
-}
-;
+};
 
 // TEMPLATE functions for +,-,*,/ (divide returns double)
 
@@ -131,6 +129,6 @@ bool operator>=(const spuc_int<W_> &a, const spuc_int<W_1> &b) {
   return !(a < b);
 }
 
-} // end of namespace SPUC
+}  // end of namespace SPUC
 
 #endif

@@ -32,27 +32,30 @@ namespace SPUC {
  * software for any purpose. It is provided "as is" without expressed or     *
  * implied warranty. See the GNU General Public License for more details.    *
  *---------------------------------------------------------------------------*/
-//! 
+//!
 //! Original code modified by Tony Kirke Feb 1, 2003
 //! author="Tony Kirke" *
 //  SPUC - Signal processing using C++ - A DSP library
 
-//! 
-//!  \file 
+//!
+//!  \file
 //!  \brief array class (container)
 //!  \author Tobias Ringstrom
 //!  1.10  2003/01/04 00:21:53
-/*  
-  This file is not separated into a .h and a .cpp file. The reason is to avoid problems with template initializations of this class.
-  An \c array<type> can contain any type and it is not possible to initialize and pre-compile all types that might be put into an \c array.
-  
+/*
+  This file is not separated into a .h and a .cpp file. The reason is to avoid
+  problems with template initializations of this class.
+  An \c array<type> can contain any type and it is not possible to initialize
+  and pre-compile all types that might be put into an \c array.
+
 */
-/*! 
+/*!
   \brief General array class
 
   This class is a general linear array class for arbitrary types. The operations
-  and functions are the same as for the vector Vec class (except for the arithmetics).
-  
+  and functions are the same as for the vector Vec class (except for the
+  arithmetics).
+
   For rarely used types you will need to instantiate the class by
   \code
   template class array<type>;
@@ -69,7 +72,8 @@ namespace SPUC {
   my_array(2) = c;
   \endcode
 */
-template<class T> class array {
+template <class T>
+class array {
  public:
   //! Default constructor
   array();
@@ -79,42 +83,46 @@ template<class T> class array {
   array(const array<T> &a);
   //! Default destructor
   virtual ~array();
-	
+
   //! Get the \c i element
   T &operator()(int i) {
-//    it_assert0(i>=0&&i<ndata,"array::operator()"); 
-	  return data[i]; }
+    //    it_assert0(i>=0&&i<ndata,"array::operator()");
+    return data[i];
+  }
   //! Get the \c i element
   T operator()(int i) const {
-    //it_assert0(i>=0&&i<ndata,"array::operator()");
-	  return data[i]; }
+    // it_assert0(i>=0&&i<ndata,"array::operator()");
+    return data[i];
+  }
   //! Sub-array from element \c i1 to element \c i2
   array<T> operator()(int i1, int i2) const;
   //! Sub-array with the elements given by the integer array
   array<T> operator()(const array<int> &indices) const;
-  
+
   //! Assignment operator
   void operator=(T e);
   //! Assignment operator
   void operator=(const array<T> &a);
-	
+
   //! Append element \c e to the end of the array \c a
   //  friend array<T> concat TEMPLATE_FUN(const array<T> &a1, const T e);
   //! Concat element \c e to the beginning of the array \c a
   //  friend array<T> concat TEMPLATE_FUN(const T e, const array<T> &a);
   //! Concat arrays \c a1 and \c a2
-  //  friend array<T> concat TEMPLATE_FUN(const array<T> &a1,const array<T> &a2);
+  //  friend array<T> concat TEMPLATE_FUN(const array<T> &a1,const array<T>
+  //  &a2);
   //! Concat arrays \c a1, \c a2 and \c a3
-  //  friend array<T> concat TEMPLATE_FUN(const array<T> &a1, const array<T> &a2, const array<T> &a3);
+  //  friend array<T> concat TEMPLATE_FUN(const array<T> &a1, const array<T>
+  //  &a2, const array<T> &a3);
 
   //! Returns the number of data elements in the array object
   int size() const { return ndata; }
   //! Returns the number of data elements in the array object
   int length() const { return ndata; }
   //! Resizing an array<T>.
-  void set_size(int n, bool copy=false);
+  void set_size(int n, bool copy = false);
   //! Resizing an array<T>.
-  void set_length(int n, bool copy=false) { set_size(n, copy); }
+  void set_length(int n, bool copy = false) { set_size(n, copy); }
 
   //! Shift in data at position 0. return data at last position.
   T shift_right(T e);
@@ -132,9 +140,9 @@ template<class T> class array {
   //! Set the subarray defined by indicies i1 to i2 the element value t.
   void set_subarray(int i1, int i2, const T t);
 
-//protected:
+  // protected:
  private:
-  bool in_range(int i) { return ((i<ndata) && (i>=0)); }
+  bool in_range(int i) { return ((i < ndata) && (i >= 0)); }
   int ndata;
   T *data;
 
@@ -143,309 +151,267 @@ template<class T> class array {
   void free();
 };
 
-// --------------------------- Implementation starts here ----------------------------------
+// --------------------------- Implementation starts here
+// ----------------------------------
 
-template<class T>
-array<T>::array()
-{
-    data = 0;
-    ndata = 0;
-}
-
-template<class T>
-array<T>::array(int n)
-{
-    alloc(n);
-}
-
-template<class T>
-array<T>::array(const array<T> &a)
-{
-
-  //  data=NULL;
-  ndata=0;
-  alloc(a.ndata);
-  for (int i=0; i<a.ndata; i++)
-    data[i] = a.data[i];
-}
-
-template<class T>
-array<T>::~array()
-{
-  free();
-}
-
-template<class T>
-void array<T>::alloc(int n)
-{
-  if (n == 0) {
-	//    data = NULL;
-    ndata = 0;
-  }
-  else {
-    data = new T[n];
-//    it_assert1(data!=0, "Out of memory in array::alloc");
-  }
-  ndata = n;
-}
-
-template<class T>
-void array<T>::free()
-{
-
-  delete [] data;
-	
+template <class T>
+array<T>::array() {
   data = 0;
   ndata = 0;
 }
 
-template<class T>
-array<T> array<T>::operator()(int i1, int i2) const
-{
-	//    it_assert0(i1>=0 && i2>=0 && i1<ndata && i2<ndata && i2>=i1, "array::operator()(i1,i2)");
-    array<T> s(i2-i1+1);
-    int i;
-	
-    for (i=0; i<s.ndata; i++)
-	s.data[i] = data[i1+i];
-	
-    return s;
+template <class T>
+array<T>::array(int n) {
+  alloc(n);
 }
 
-template<class T>
-array<T> array<T>::operator()(const array<int> &indices) const
-{
-    array<T> a(indices.size());
-
-    for (int i=0; i<a.size(); i++) {
-		//	it_assert0(indices(i)>=0&&indices(i)<ndata,"array::operator()(indicies)");
-	a(i) = data[indices(i)];
-    }
-
-    return a;
+template <class T>
+array<T>::array(const array<T> &a) {
+  //  data=NULL;
+  ndata = 0;
+  alloc(a.ndata);
+  for (int i = 0; i < a.ndata; i++) data[i] = a.data[i];
 }
 
-template<class T>
-void array<T>::operator=(const array<T> &a)
-{
-    set_size(a.ndata);
-    for (int i=0; i<ndata; i++)
-	data[i] = a.data[i];
+template <class T>
+array<T>::~array() {
+  free();
 }
 
-
-template<class T>
-void array<T>::operator=(T e)
-{
-    for (int i=0; i<ndata; i++)
-	data[i] = e;
+template <class T>
+void array<T>::alloc(int n) {
+  if (n == 0) {
+    //    data = NULL;
+    ndata = 0;
+  } else {
+    data = new T[n];
+    //    it_assert1(data!=0, "Out of memory in array::alloc");
+  }
+  ndata = n;
 }
 
+template <class T>
+void array<T>::free() {
+  delete[] data;
 
-template<class T>
-void array<T>::set_size(int sz, bool copy)
-{
-    int i, min;
-    T *tmp;
-
-    if (ndata == sz)
-      return;
-		
-    if (copy) {
-      tmp = data;
-      min = ndata < sz ? ndata : sz;
-      alloc(sz);
-      for (i=0; i<min; i++)
-	data[i] = tmp[i];
-      delete [] tmp;
-    } else {
-      free();
-      alloc(sz);
-    }
-    ndata = sz;
+  data = 0;
+  ndata = 0;
 }
 
-template<class T>
-T array<T>::shift_right(T x)
-{
-    T ret;
+template <class T>
+array<T> array<T>::operator()(int i1, int i2) const {
+  //    it_assert0(i1>=0 && i2>=0 && i1<ndata && i2<ndata && i2>=i1,
+  //    "array::operator()(i1,i2)");
+  array<T> s(i2 - i1 + 1);
+  int i;
 
-	//    it_assert1(ndata>0, "shift_right");
-    ret = data[ndata-1];
-    for (int i=ndata-1; i>0; i--)
-	data[i] = data[i-1];
-    data[0] = x;
-	
-    return ret;
+  for (i = 0; i < s.ndata; i++) s.data[i] = data[i1 + i];
+
+  return s;
 }
 
+template <class T>
+array<T> array<T>::operator()(const array<int> &indices) const {
+  array<T> a(indices.size());
 
-template<class T>
-array<T> array<T>::shift_right(const array<T> &a)
-{
-    int	i;
-    array<T> out(a.ndata);
+  for (int i = 0; i < a.size(); i++) {
+    //	it_assert0(indices(i)>=0&&indices(i)<ndata,"array::operator()(indicies)");
+    a(i) = data[indices(i)];
+  }
 
-	//    it_assert1(a.ndata<=ndata, "Shift array too large");
-    for (i=0; i<a.ndata; i++)
-	out.data[i] = data[ndata-a.ndata+i];
-    for (i=ndata-1; i>=a.ndata; i--)
-	data[i] = data[i-a.ndata];
-    for (i=0; i<a.ndata; i++)
-	data[i] = a.data[i];
-	
-    return out;
+  return a;
 }
 
-template<class T>
-T array<T>::shift_left(T x)
-{
-    T temp = data[0];
-	
-    for (int i=0; i<ndata-1; i++)
-	data[i]=data[i+1];
-    data[ndata-1] = x;
-	
-    return temp;
+template <class T>
+void array<T>::operator=(const array<T> &a) {
+  set_size(a.ndata);
+  for (int i = 0; i < ndata; i++) data[i] = a.data[i];
 }
 
-template<class T>
-array<T> array<T>::shift_left(const array<T> &a)
-{
-    int	i;
-    array<T> out(a.ndata);
-
-	//    it_assert1(a.ndata<=ndata, "Shift array too large");
-    for (i=0; i<a.ndata; i++)
-	out.data[i] = data[i];
-    for (i=0; i<ndata-a.ndata; i++) {
-      // out.data[i] = data[i]; removed. Is not necessary
-	data[i] = data[i+a.ndata];
-    }
-    for (i=ndata-a.ndata; i<ndata; i++)
-	data[i] = a.data[i-ndata+a.ndata];
-	
-    return out;
+template <class T>
+void array<T>::operator=(T e) {
+  for (int i = 0; i < ndata; i++) data[i] = e;
 }
 
-template<class T>
-void array<T>::swap(int i, int j)
-{
+template <class T>
+void array<T>::set_size(int sz, bool copy) {
+  int i, min;
+  T *tmp;
+
+  if (ndata == sz) return;
+
+  if (copy) {
+    tmp = data;
+    min = ndata < sz ? ndata : sz;
+    alloc(sz);
+    for (i = 0; i < min; i++) data[i] = tmp[i];
+    delete[] tmp;
+  } else {
+    free();
+    alloc(sz);
+  }
+  ndata = sz;
+}
+
+template <class T>
+T array<T>::shift_right(T x) {
+  T ret;
+
+  //    it_assert1(ndata>0, "shift_right");
+  ret = data[ndata - 1];
+  for (int i = ndata - 1; i > 0; i--) data[i] = data[i - 1];
+  data[0] = x;
+
+  return ret;
+}
+
+template <class T>
+array<T> array<T>::shift_right(const array<T> &a) {
+  int i;
+  array<T> out(a.ndata);
+
+  //    it_assert1(a.ndata<=ndata, "Shift array too large");
+  for (i = 0; i < a.ndata; i++) out.data[i] = data[ndata - a.ndata + i];
+  for (i = ndata - 1; i >= a.ndata; i--) data[i] = data[i - a.ndata];
+  for (i = 0; i < a.ndata; i++) data[i] = a.data[i];
+
+  return out;
+}
+
+template <class T>
+T array<T>::shift_left(T x) {
+  T temp = data[0];
+
+  for (int i = 0; i < ndata - 1; i++) data[i] = data[i + 1];
+  data[ndata - 1] = x;
+
+  return temp;
+}
+
+template <class T>
+array<T> array<T>::shift_left(const array<T> &a) {
+  int i;
+  array<T> out(a.ndata);
+
+  //    it_assert1(a.ndata<=ndata, "Shift array too large");
+  for (i = 0; i < a.ndata; i++) out.data[i] = data[i];
+  for (i = 0; i < ndata - a.ndata; i++) {
+    // out.data[i] = data[i]; removed. Is not necessary
+    data[i] = data[i + a.ndata];
+  }
+  for (i = ndata - a.ndata; i < ndata; i++)
+    data[i] = a.data[i - ndata + a.ndata];
+
+  return out;
+}
+
+template <class T>
+void array<T>::swap(int i, int j) {
   //    it_assert1(in_range(i) && in_range(j) , "Shift array too large");
-    
-    T temp = data[i];
-    data[i] = data[j];
-    data[j] = temp;
+
+  T temp = data[i];
+  data[i] = data[j];
+  data[j] = temp;
 }
 
-template<class T>
-void array<T>::set_subarray(int i1, int i2, const array<T> &a)
-{
-  if (i1 == -1)	i1 = ndata-1;
-  if (i2 == -1) i2 = ndata-1;
-  
-  //  it_assert1(in_range(i1) && in_range(i2), "array<T>::set_subarray(): indicies out of range");
+template <class T>
+void array<T>::set_subarray(int i1, int i2, const array<T> &a) {
+  if (i1 == -1) i1 = ndata - 1;
+  if (i2 == -1) i2 = ndata - 1;
+
+  //  it_assert1(in_range(i1) && in_range(i2), "array<T>::set_subarray():
+  //  indicies out of range");
   //  it_assert1(i2>=i1, "array<T>::set_subarray(): i2 >= i1 necessary");
   //  it_assert1(i2-i1+1 == a.ndata, "array<T>::set_subarray(): wrong sizes");
 
-  memcpy(data+i1, a.data, a.ndata*sizeof(T));
+  memcpy(data + i1, a.data, a.ndata * sizeof(T));
 }
 
-template<class T>
-void array<T>::set_subarray(int i1, int i2, const T t)
-{
-  if (i1 == -1)	i1 = ndata-1;
-  if (i2 == -1) i2 = ndata-1;
-  
-  //  it_assert1(in_range(i1) && in_range(i2), "array<T>::set_subarray(): indicies out of range");
+template <class T>
+void array<T>::set_subarray(int i1, int i2, const T t) {
+  if (i1 == -1) i1 = ndata - 1;
+  if (i2 == -1) i2 = ndata - 1;
+
+  //  it_assert1(in_range(i1) && in_range(i2), "array<T>::set_subarray():
+  //  indicies out of range");
   //  it_assert1(i2>=i1, "array<T>::set_subarray(): i2 >= i1 necessary");
 
-  for (int i=i1;i<=i2;i++)
-    data[i] = t;
+  for (int i = i1; i <= i2; i++) data[i] = t;
 }
 
-#ifndef DOXYGEN_SHOULD_SKIP_THIS 
-//Doxygen warnings on these functions
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+// Doxygen warnings on these functions
 
-template<class T>
-array<T> concat(const array<T> &a, const T e)
-{
-    array<T> temp(a.size()+1);
+template <class T>
+array<T> concat(const array<T> &a, const T e) {
+  array<T> temp(a.size() + 1);
 
-    for (int i=0; i<a.size(); i++)
-	temp(i) = a(i);
-    temp(a.size()) = e;
+  for (int i = 0; i < a.size(); i++) temp(i) = a(i);
+  temp(a.size()) = e;
 
-    return temp;
+  return temp;
 }
 
-template<class T>
-array<T> concat(const T e, const array<T> &a)
-{
-    array<T> temp(a.size()+1);
+template <class T>
+array<T> concat(const T e, const array<T> &a) {
+  array<T> temp(a.size() + 1);
 
-    temp(0) = e;
+  temp(0) = e;
 
-    for (int i=0; i<a.size(); i++)
-	temp(i+1) = a(i);
+  for (int i = 0; i < a.size(); i++) temp(i + 1) = a(i);
 
-    return temp;
+  return temp;
 }
 
-template<class T>
-array<T> concat(const array<T> &a1, const array<T> &a2)
-{
-    int i;
-    array<T> temp(a1.size()+a2.size());
+template <class T>
+array<T> concat(const array<T> &a1, const array<T> &a2) {
+  int i;
+  array<T> temp(a1.size() + a2.size());
 
-    for (i=0;i<a1.size();i++) {
-	temp(i) = a1(i);
-    }
-    for (i=0;i<a2.size();i++) {
-	temp(a1.size()+i) = a2(i);
-    }
-    return temp;
+  for (i = 0; i < a1.size(); i++) {
+    temp(i) = a1(i);
+  }
+  for (i = 0; i < a2.size(); i++) {
+    temp(a1.size() + i) = a2(i);
+  }
+  return temp;
 }
 
-template<class T>
-array<T> concat(const array<T> &a1, const array<T> &a2, const array<T> &a3)
-{
+template <class T>
+array<T> concat(const array<T> &a1, const array<T> &a2, const array<T> &a3) {
   // There should be some error control?
-    int i;
-    array<T> temp(a1.size()+a2.size()+a3.size());
+  int i;
+  array<T> temp(a1.size() + a2.size() + a3.size());
 
-    for (i=0;i<a1.size();i++) {
-	temp(i) = a1(i);
-    }
-    for (i=0;i<a2.size();i++) {
-	temp(a1.size()+i) = a2(i);
-    }
-    for (i=0;i<a3.size();i++) {
-	temp(a1.size()+a2.size()+i) = a3(i);
-    }
-    return temp;
+  for (i = 0; i < a1.size(); i++) {
+    temp(i) = a1(i);
+  }
+  for (i = 0; i < a2.size(); i++) {
+    temp(a1.size() + i) = a2(i);
+  }
+  for (i = 0; i < a3.size(); i++) {
+    temp(a1.size() + a2.size() + i) = a3(i);
+  }
+  return temp;
 }
 
 #endif /* DOXYGEN_SHOULD_SKIP_THIS */
 
-/*! 
+/*!
   \relates array
   \brief Output stream for the array class
 */
 #ifdef XXX
-template<class T>
-inline std::ostream &operator<<(std::ostream &o, const array<T> &a)
-{
+template <class T>
+inline std::ostream &operator<<(std::ostream &o, const array<T> &a) {
   o << "{";
-    for (int i=0; i<a.size()-1; i++)
-	o << a(i) << " ";
-    if (a.size() > 0)
-	o << a(a.size()-1);
+  for (int i = 0; i < a.size() - 1; i++) o << a(i) << " ";
+  if (a.size() > 0) o << a(a.size() - 1);
 
-    o << "}";
+  o << "}";
 
-    return o;
+  return o;
 }
 #endif
-} // namespace SPUC
+}  // namespace SPUC
 #endif

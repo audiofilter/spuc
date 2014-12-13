@@ -33,19 +33,18 @@ namespace SPUC {
 //!  \ingroup classes misc sim
 // \image html a_d.gif
 // \image latex a_d.eps
-class a_d
-{
-protected:
-  char size;              //! Number of bits <= 8
+class a_d {
+ protected:
+  char size;  //! Number of bits <= 8
   long max;
   long min;
-  
-public:
+
+ public:
   //! Constructor
-  a_d(char h=8);
-  //! Quantize and limit signal to size bits  
+  a_d(char h = 8);
+  //! Quantize and limit signal to size bits
   long clock(float_type x);
   complex<long> clock(complex<float_type> x);
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

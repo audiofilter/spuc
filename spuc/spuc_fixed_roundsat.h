@@ -24,30 +24,33 @@ class spuc_ufixed;
 
 /// A template class to wrap "round" functions that can be specialized for
 /// fixed-point types
-template <spuc_q_mode Q_> class spuc_round_class_function {
-public:
+template <spuc_q_mode Q_>
+class spuc_round_class_function {
+ public:
   // Default round function is truncate!!!
-  template <typename T_, typename TS_> T_ round(const T_ &a, const TS_ &shift) {
+  template <typename T_, typename TS_>
+  T_ round(const T_ &a, const TS_ &shift) {
     T_ x = a >> shift;
     return (x);
   }
-}; // end of class
+};  // end of class
 /// round return type one extra bit to avoid overflow,specialize other forms as
 /// needed
-template <> class spuc_round_class_function<SPUC_RND> {
-public:
+template <>
+class spuc_round_class_function<SPUC_RND> {
+ public:
   /// Specialized round function for SPUC_RND
   template <typename T_, typename TS_>
   static T_ round(const T_ &a, const TS_ &shift) {
     T_ x = a >> shift;
-    if (shift > 0)
-      x += (a >> (shift - 1)) & 0x1;
+    if (shift > 0) x += (a >> (shift - 1)) & 0x1;
     return (x);
   }
 };
 /// Specialization for SPUC_TRN
-template <> class spuc_round_class_function<SPUC_TRN> {
-public:
+template <>
+class spuc_round_class_function<SPUC_TRN> {
+ public:
   /// Specialized round function for SPUC_TRN
   template <typename T_, typename TS_>
   static T_ round(const T_ &a, const TS_ &shift) {
@@ -58,8 +61,9 @@ public:
 
 /// A template class to wrap "shift" functions that can be specialized for
 /// fixed-point types
-template <int FRAC_BITS_, spuc_q_mode Q_> class spuc_shift_class_function {
-public:
+template <int FRAC_BITS_, spuc_q_mode Q_>
+class spuc_shift_class_function {
+ public:
   /// Default shift function is truncate!!!
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
@@ -76,7 +80,7 @@ public:
            (int)Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
     } else {
       x = (a.getVal() << (int)
-           Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
+               Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
     }
     return (x);
   }
@@ -95,15 +99,15 @@ public:
            (int)Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
     } else {
       x = (a.getVal() << (int)
-           Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
+               Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
     }
     return (x);
   }
-}; // end of class
+};  // end of class
 /// Specialize for SPUC_RND shift return type one extra bit to avoid overflow,
 template <int FRAC_BITS_>
 class spuc_shift_class_function<FRAC_BITS_, SPUC_RND> {
-public:
+ public:
   /// Specialized shift function for SPUC_RND
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
@@ -124,7 +128,7 @@ public:
              0x1;
     } else {
       x = (a.getVal() << (int)
-           Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
+               Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
     }
     return (x);
   }
@@ -147,7 +151,7 @@ public:
              0x1;
     } else {
       x = (a.getVal() << (int)
-           Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
+               Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
     }
     return (x);
   }
@@ -155,7 +159,7 @@ public:
 /// Specialize for SPUC_TRN shift return type one extra bit to avoid overflow,
 template <int FRAC_BITS_>
 class spuc_shift_class_function<FRAC_BITS_, SPUC_TRN> {
-public:
+ public:
   // Specialized shift function for SPUC_TRN
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
@@ -172,9 +176,10 @@ public:
            (int)Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
     } else {
       x = (a.getVal() << (int)
-           Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
+               Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
     }
-    //				std::cout << " Shift_func " << a.getVal() << " -> " << (int)x <<
+    //				std::cout << " Shift_func " << a.getVal() << " -> " << (int)x
+    //<<
     //"\n";
     return (x);
   }
@@ -193,7 +198,7 @@ public:
            (int)Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
     } else {
       x = (a.getVal() << (int)
-           Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
+               Abs_Func<TOTAL_BITS_1 - INT_BITS_1 - FRAC_BITS_>::val);
     }
     return (x);
   }
@@ -203,28 +208,28 @@ public:
 /// fixed-point types
 template <int TOTAL_BITS_, spuc_o_mode SPUC_O_MODE_>
 class spuc_saturate_class_function {
-public:
+ public:
   /// Default saturate function is wrap!
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
-  static typename int_size_needed<TOTAL_BITS_>::int_type
-  saturate_sfixed(const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
-                                   SPUC_O_MODE_1> &a) {
+  static typename int_size_needed<TOTAL_BITS_>::int_type saturate_sfixed(
+      const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1, SPUC_O_MODE_1> &
+          a) {
     typename int_size_needed<TOTAL_BITS_>::int_type x;
     x = a.getVal() & ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1);
     return (x);
   }
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
-  static typename int_size_needed<TOTAL_BITS_>::int_type
-  saturate_sfixed(const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
-                                    SPUC_O_MODE_1> &a) {
+  static typename int_size_needed<TOTAL_BITS_>::int_type saturate_sfixed(
+      const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
+                        SPUC_O_MODE_1> &a) {
     typename int_size_needed<TOTAL_BITS_>::int_type x;
     x = a.getVal() & ((max_int_type(1) << (TOTAL_BITS_)) - 1);
     return (x);
   }
-  static typename int_size_needed<TOTAL_BITS_>::int_type
-  saturate(const max_int_type &a) {
+  static typename int_size_needed<TOTAL_BITS_>::int_type saturate(
+      const max_int_type &a) {
     typename int_size_needed<TOTAL_BITS_>::int_type x;
     if (a > ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1))
       x = ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1);
@@ -234,8 +239,8 @@ public:
       x = a;
     return (x);
   }
-  static typename int_size_needed<TOTAL_BITS_>::int_type
-  usaturate(const max_int_type &a) {
+  static typename int_size_needed<TOTAL_BITS_>::int_type usaturate(
+      const max_int_type &a) {
     typename int_size_needed<TOTAL_BITS_>::int_type x;
     if (a > ((max_int_type(1) << TOTAL_BITS_) - 1))
       x = ((max_int_type(1) << TOTAL_BITS_) - 1);
@@ -243,58 +248,59 @@ public:
       x = a;
     return (x);
   }
-}; // end of class
+};  // end of class
 
 /// Specialized for SPUC_SAT
 template <int TOTAL_BITS_>
 class spuc_saturate_class_function<TOTAL_BITS_, SPUC_SAT> {
-public:
+ public:
   /// Specialized Saturate function for SPUC_SAT
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
-  static typename int_size_needed<TOTAL_BITS_>::int_type
-  saturate_function(const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
-                                     SPUC_O_MODE_1> &a) {
-
+  static typename int_size_needed<TOTAL_BITS_>::int_type saturate_function(
+      const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1, SPUC_O_MODE_1> &
+          a) {
     typename int_size_needed<TOTAL_BITS_>::int_type x;
     x = (a.getVal() > ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1))
             ? ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1)
             : (a.getVal() < ((max_int_type(-1) << (TOTAL_BITS_ - 1))))
                   ? ((max_int_type(-1) << (TOTAL_BITS_ - 1)))
                   : a.getVal();
-    //					std::cout << " Saturate_func " << a.getVal() << " -> " << (int)x
+    //					std::cout << " Saturate_func " << a.getVal() << " -> " <<
+    //(int)x
     //<< "\n";
-    //					std::cout << "\n saturate_func " << (int)a << " -> " << (int)x
+    //					std::cout << "\n saturate_func " << (int)a << " -> " <<
+    //(int)x
     //<< "\n";
     return (x);
   }
   /// Specialized Saturate function for SPUC_SAT
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
-  static typename int_size_needed<TOTAL_BITS_>::int_type
-  saturate_function(const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
-                                      SPUC_O_MODE_1> &a) {
-
+  static typename int_size_needed<TOTAL_BITS_>::int_type saturate_function(
+      const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
+                        SPUC_O_MODE_1> &a) {
     typename int_size_needed<TOTAL_BITS_>::int_type x;
     x = (a.getVal() > ((max_int_type(1) << (TOTAL_BITS_)) - 1))
             ? ((max_int_type(1) << (TOTAL_BITS_)) - 1)
             : a.getVal();
     return (x);
   }
-  static typename int_size_needed<TOTAL_BITS_>::int_type
-  saturate(const max_int_type &a) {
+  static typename int_size_needed<TOTAL_BITS_>::int_type saturate(
+      const max_int_type &a) {
     typename int_size_needed<TOTAL_BITS_>::int_type x;
     x = (a > ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1))
             ? ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1)
             : (a < ((max_int_type(-1) << (TOTAL_BITS_ - 1))))
                   ? ((max_int_type(-1) << (TOTAL_BITS_ - 1)))
                   : a;
-    //					std::cout << "\n saturate_func " << (int)a << " -> " << (int)x
+    //					std::cout << "\n saturate_func " << (int)a << " -> " <<
+    //(int)x
     //<< "\n";
     return (x);
   }
-  static typename int_size_needed<TOTAL_BITS_>::uint_type
-  usaturate(const max_int_type &a) {
+  static typename int_size_needed<TOTAL_BITS_>::uint_type usaturate(
+      const max_int_type &a) {
     typename int_size_needed<TOTAL_BITS_>::uint_type x;
     x = (a > ((max_int_type(1) << TOTAL_BITS_) - 1))
             ? ((max_int_type(1) << TOTAL_BITS_) - 1)
@@ -305,14 +311,13 @@ public:
 /// Specialized for SPUC_SAT_SYM
 template <int TOTAL_BITS_>
 class spuc_saturate_class_function<TOTAL_BITS_, SPUC_SAT_SYM> {
-public:
+ public:
   /// Specialized Saturate function for SPUC_SAT_SYM
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
-  static typename int_size_needed<TOTAL_BITS_>::int_type
-  saturate_function(const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
-                                     SPUC_O_MODE_1> &a) {
-
+  static typename int_size_needed<TOTAL_BITS_>::int_type saturate_function(
+      const spuc_fixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1, SPUC_O_MODE_1> &
+          a) {
     typename int_size_needed<TOTAL_BITS_>::int_type x;
     x = (a.getVal() > ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1))
             ? ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1)
@@ -324,30 +329,30 @@ public:
   /// Specialized Saturate function for SPUC_SAT_SYM
   template <int TOTAL_BITS_1, int INT_BITS_1, spuc_q_mode SPUC_Q_MODE_1,
             spuc_o_mode SPUC_O_MODE_1>
-  static typename int_size_needed<TOTAL_BITS_>::int_type
-  saturate_function(const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
-                                      SPUC_O_MODE_1> &a) {
-
+  static typename int_size_needed<TOTAL_BITS_>::int_type saturate_function(
+      const spuc_ufixed<TOTAL_BITS_1, INT_BITS_1, SPUC_Q_MODE_1,
+                        SPUC_O_MODE_1> &a) {
     typename int_size_needed<TOTAL_BITS_>::int_type x;
     x = (a.getVal() > ((max_int_type(1) << (TOTAL_BITS_)) - 1))
             ? ((max_int_type(1) << (TOTAL_BITS_)) - 1)
             : a.getVal();
     return (x);
   }
-  static typename int_size_needed<TOTAL_BITS_>::int_type
-  saturate(const max_int_type &a) {
+  static typename int_size_needed<TOTAL_BITS_>::int_type saturate(
+      const max_int_type &a) {
     typename int_size_needed<TOTAL_BITS_>::int_type x;
     x = (a > ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1))
             ? ((max_int_type(1) << (TOTAL_BITS_ - 1)) - 1)
             : (a < ((max_int_type(-1) << (TOTAL_BITS_ - 1)) + 1))
                   ? ((max_int_type(-1) << (TOTAL_BITS_ - 1)) + 1)
                   : a;
-    //					std::cout << "\n saturate_func " << (int)a << " -> " << (int)x
+    //					std::cout << "\n saturate_func " << (int)a << " -> " <<
+    //(int)x
     //<< "\n";
     return (x);
   }
-  static typename int_size_needed<TOTAL_BITS_>::uint_type
-  usaturate(const max_int_type &a) {
+  static typename int_size_needed<TOTAL_BITS_>::uint_type usaturate(
+      const max_int_type &a) {
     typename int_size_needed<TOTAL_BITS_>::uint_type x;
     x = (a > ((max_int_type(1) << TOTAL_BITS_) - 1))
             ? ((max_int_type(1) << TOTAL_BITS_) - 1)
@@ -355,6 +360,6 @@ public:
     return (x);
   }
 };
-} // end namespace SPUC
+}  // end namespace SPUC
 
 #endif

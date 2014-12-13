@@ -30,15 +30,16 @@ namespace SPUC {
 //! template function that uses a class to allow template specialization
 //! \author Tony Kirke
 //! \ingroup template_functions misc
-template <typename T> typename quantized_type<T>::dtype quantize(T in) {
+template <typename T>
+typename quantized_type<T>::dtype quantize(T in) {
   typename quantized_type<T>::dtype X = quantizer<T>::quantized(in);
-  return(X);
+  return (X);
 }
-template <typename T> T quantize_scale(float_type x, 
-									   float_type ox,
-									   T y) {
-  //  typename quantized_type<T>::dtype X = quantizer<T>::quantized_scale(x,ox,y);
-  return(quantizer<T>::quantized_scale(x,ox,y));
+template <typename T>
+T quantize_scale(float_type x, float_type ox, T y) {
+  //  typename quantized_type<T>::dtype X =
+  //  quantizer<T>::quantized_scale(x,ox,y);
+  return (quantizer<T>::quantized_scale(x, ox, y));
 }
-} // namespace SPUC
+}  // namespace SPUC
 #endif

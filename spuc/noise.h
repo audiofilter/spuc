@@ -32,28 +32,27 @@ namespace SPUC {
 //!  <p>Requires complex template class
 //! \author Tony Kirke
 //! \ingroup classes misc random
-class noise
-{   
-	protected:
-	char s;            //! Switch 
-	float_type x;          //! Saved calculated value
-    long idum;         //! Random seed
-    
-	public:                            
-    //! Constructor
-	noise(float_type i=1349555.0);						// Constructor
-  	//! Gaussian noise
-	float_type gauss();
-	//! complex gaussian noise
-	complex<float_type> Cgauss(void);
-	//! Uniform noise
-	float_type uni();             
-	//! Uniform noise
-	float_type uniform();
-	//!  Change seed
-    //	void set_seed(float_type i=1349555.0) { idum = (long)i;}
-	//!  Change seed
-	void set_seed(unsigned i=1349555) { idum = i;}
-} ;
-} // namespace SPUC
+class noise {
+ protected:
+  char s;        //! Switch
+  float_type x;  //! Saved calculated value
+  long idum;     //! Random seed
+
+ public:
+  //! Constructor
+  noise(float_type i = 1349555.0);  // Constructor
+                                    //! Gaussian noise
+  float_type gauss();
+  //! complex gaussian noise
+  complex<float_type> Cgauss(void);
+  //! Uniform noise
+  float_type uni();
+  //! Uniform noise
+  float_type uniform();
+  //!  Change seed
+  //	void set_seed(float_type i=1349555.0) { idum = (long)i;}
+  //!  Change seed
+  void set_seed(unsigned i = 1349555) { idum = i; }
+};
+}  // namespace SPUC
 #endif

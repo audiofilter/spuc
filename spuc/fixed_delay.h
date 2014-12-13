@@ -34,45 +34,48 @@ namespace SPUC {
 //! \ingroup double_templates misc
 //! \image html delay.gif
 //! \image latex delay.eps
-template <class Numeric, int D> class fixed_delay 
-{
- public: 
+template <class Numeric, int D>
+class fixed_delay {
+ public:
   long NumTaps;
+
  protected:
-  Numeric z[D+1]; 
-      
- public: 
+  Numeric z[D + 1];
+
+ public:
   //! Constructor
-  fixed_delay() : NumTaps(D+1) {
-	for (int i=0;i<NumTaps;i++) z[i] = (Numeric)0;
+  fixed_delay() : NumTaps(D + 1) {
+    for (int i = 0; i < NumTaps; i++) z[i] = (Numeric)0;
   }
-  void reset(void) { for (int i=0;i<NumTaps;i++) z[i] = (Numeric)0; }
+  void reset(void) {
+    for (int i = 0; i < NumTaps; i++) z[i] = (Numeric)0;
+  }
   //! Get delay at tap i
   Numeric check(long i) {
-	SPUC_ASSERT(i<=this->NumTaps);
-	return(z[i]); 
+    SPUC_ASSERT(i <= this->NumTaps);
+    return (z[i]);
   }
   //! Look back in delay line by i samples
-  Numeric checkback(long i) { 
-	SPUC_ASSERT(i<=this->NumTaps);
-	return(z[NumTaps-1-i]); 
+  Numeric checkback(long i) {
+    SPUC_ASSERT(i <= this->NumTaps);
+    return (z[NumTaps - 1 - i]);
   }
   //! Get last tap
-  Numeric last() { return(z[NumTaps-1]);}
-  //! Clock in new input sample  
+  Numeric last() { return (z[NumTaps - 1]); }
+  //! Clock in new input sample
   Numeric input(Numeric in) {
-	int i;                                           
-	// Update history of inputs
-	for (i=NumTaps-1;i>0;i--) z[i] = z[i-1];  
-	// Add new input
-	z[0] = in;   
-	return(z[NumTaps-1]);
+    int i;
+    // Update history of inputs
+    for (i = NumTaps - 1; i > 0; i--) z[i] = z[i - 1];
+    // Add new input
+    z[0] = in;
+    return (z[NumTaps - 1]);
   }
   //! Clock in new sample and get output from delay line
   inline Numeric update(Numeric in) {
-	input(in);
-	return(z[NumTaps-1]);
-  }	
+    input(in);
+    return (z[NumTaps - 1]);
+  }
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

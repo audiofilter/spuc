@@ -29,7 +29,7 @@ class equalizer {
  public:
   typedef complex<double> audio_data_type;
   int num_bands;
-  std::vector<iir_allpass_variable_cascade<audio_data_type,double> > S_All;
+  std::vector<iir_allpass_variable_cascade<audio_data_type, double> > S_All;
   std::vector<audio_data_type> fil_out;
   std::vector<audio_data_type> eq;
   std::vector<double> levels;
@@ -39,24 +39,25 @@ class equalizer {
   long count;
 
   void adjust_level(int filt_num, double gain);
-	
-  equalizer(int BANDS=10);
-  void init(int points) {; } 
-  void set_fs(double f) { ;}
+
+  equalizer(int BANDS = 10);
+  void init(int points) { ; }
+  void set_fs(double f) { ; }
   void reset();
   complex<double> run(const complex<double>& sample);
   void update_levels();
-  void get_levels(float * levs);
-  void get_gains(float * gains);
+  void get_levels(float* levs);
+  void get_gains(float* gains);
   float get_level(int band) {
-      if (band < num_bands) return((float)levels[band]);
-      else return(0);
+    if (band < num_bands)
+      return ((float)levels[band]);
+    else
+      return (0);
   }
   float get_gain(int band) {
-      if (band < num_bands) return((float)gains[band]);
-      return(0);
+    if (band < num_bands) return ((float)gains[band]);
+    return (0);
   }
-
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

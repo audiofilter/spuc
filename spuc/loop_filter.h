@@ -36,41 +36,45 @@ namespace SPUC {
 //! \ingroup real_double_templates PLL
 //! \image html loop_filter.gif
 //! \image latex loop_filter.eps
-template <class Numeric, class Coeff=double> class loop_filter
-{
+template <class Numeric, class Coeff = double>
+class loop_filter {
  public:
   //! enable first order branch
-  long k0_en; 
+  long k0_en;
   //! enable second order branch
-  long k1_en; 
+  long k1_en;
   //! First order gain
-  Coeff k0; 
+  Coeff k0;
   //! second order gain
-  Coeff k1; 
+  Coeff k1;
   //! Accumulator for k1 branch (should not be written to)
-  typedef typename unquantized_mixed_type<Numeric,Coeff>::dtype k_type;
+  typedef typename unquantized_mixed_type<Numeric, Coeff>::dtype k_type;
   k_type k1_acc;
 
  protected:
   Numeric loop_out;
   k_type k1_prod, k0_prod;
-  
+
  public:
   //! Constructor
-  loop_filter(void) { 
-	reset();
-	k0 = k1 = (Coeff)0; k0_en = k1_en = 0;
+  loop_filter(void) {
+    reset();
+    k0 = k1 = (Coeff)0;
+    k0_en = k1_en = 0;
   }
   //! Reset
-  void reset(void) { k1_acc = k1_prod = k0_prod = (k_type)0; loop_out = (Numeric)0; }
+  void reset(void) {
+    k1_acc = k1_prod = k0_prod = (k_type)0;
+    loop_out = (Numeric)0;
+  }
   //! Normal call with input, returns output.
   Numeric update(Numeric error) {
-    k0_prod = (k0_en) ? error*k0 : 0;
-    k1_prod = (k1_en) ? error*k1 : 0;
-    loop_out = (Numeric)(k1_acc + k0_prod); // Use last k1_acc!
-    k1_acc += k1_prod; 
-    return(loop_out);
+    k0_prod = (k0_en) ? error * k0 : 0;
+    k1_prod = (k1_en) ? error * k1 : 0;
+    loop_out = (Numeric)(k1_acc + k0_prod);  // Use last k1_acc!
+    k1_acc += k1_prod;
+    return (loop_out);
   }
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

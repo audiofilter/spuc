@@ -23,8 +23,8 @@
 namespace SPUC {
 //! \file
 //! \brief  QPSK Quadricorrelator frequency discriminator
-//!  \author Tony Kirke,  Copyright(c) 2001 
-//!  
+//!  \author Tony Kirke,  Copyright(c) 2001
+//!
 //! \brief  QPSK Quadricorrelator frequency discriminator
 //
 //!   Hard_data - Hard decision (complex) data for current symbol
@@ -34,9 +34,9 @@ namespace SPUC {
 //!	  \ingroup real_template_functions comm
 //! \image html qpsk_quadricorrelator.gif
 //! \image latex qpsk_quadricorrelator.eps
-template <class T> T qpsk_quadricorrelator(complex<T> hard_data, complex<T> prev) 
-{
-  return(real(hard_data)*imag(prev)-imag(hard_data)*real(prev));
+template <class T>
+T qpsk_quadricorrelator(complex<T> hard_data, complex<T> prev) {
+  return (real(hard_data) * imag(prev) - imag(hard_data) * real(prev));
 }
-} // namespace SPUC
+}  // namespace SPUC
 #endif

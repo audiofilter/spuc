@@ -7,20 +7,21 @@
 #define SPUC_INT_20140509_CLASS_H_
 #include <iostream>
 #include <sstream>
-#include <cmath> // for floor in spuc_fixed
+#include <cmath>  // for floor in spuc_fixed
 #include <SPUC/spuc_fixed_common.h>
 
 namespace SPUC {
 
 /// A faster version of the older systemc spuc_int
-template <int I_> class spuc_int {
-public:
+template <int I_>
+class spuc_int {
+ public:
   typedef typename int_type_size<NEXT_INT_SIZE<I_>::val>::int_type val_type;
   typedef int64_t max_val_type;
   val_type val;
   static const int INTEGER_BITS = I_;
 
-public:
+ public:
   /// constructors
   spuc_int() : val(0) {}
 
@@ -38,7 +39,10 @@ public:
   spuc_int(const uint64_t &a) : val((int64_t)a) {}
 
   /// from another spuc_int<>
-  template <int I_1> spuc_int(const spuc_int<I_1> &a) { val = a.val; }
+  template <int I_1>
+  spuc_int(const spuc_int<I_1> &a) {
+    val = a.val;
+  }
 
   // for now
   val_type getVal() const { return (val); }
@@ -81,7 +85,8 @@ public:
 
   /// assignment operator from another size, use copy constructor, then copy
   /// val;
-  template <int I_1> spuc_int<I_> &operator=(const spuc_int<I_1> &a) {
+  template <int I_1>
+  spuc_int<I_> &operator=(const spuc_int<I_1> &a) {
     spuc_int<I_> temp(a);
     val = temp.getVal();
     return *this;
@@ -143,17 +148,20 @@ public:
     return *this;
   }
 
-  template <int I_1> spuc_int &operator+=(const spuc_int<I_1> &a) {
+  template <int I_1>
+  spuc_int &operator+=(const spuc_int<I_1> &a) {
     val += a.val;
     return *this;
   }
 
-  template <int I_1> spuc_int &operator-=(const spuc_int<I_1> &a) {
-    *this += (-a); // re-use +=
+  template <int I_1>
+  spuc_int &operator-=(const spuc_int<I_1> &a) {
+    *this += (-a);  // re-use +=
     return *this;
   }
 
-  template <int I_1> spuc_int &operator*=(const spuc_int<I_1> &b) {
+  template <int I_1>
+  spuc_int &operator*=(const spuc_int<I_1> &b) {
     val *= b.val;
     return *this;
   }
@@ -316,23 +324,26 @@ public:
     return *this;
   }
 
-  template <typename T> spuc_int &operator&=(const T &l) {
+  template <typename T>
+  spuc_int &operator&=(const T &l) {
     val &= l;
     return *this;
   }
-  template <typename T> spuc_int &operator|=(const T &l) {
+  template <typename T>
+  spuc_int &operator|=(const T &l) {
     val |= l;
     return *this;
   }
-  template <typename T> spuc_int &operator^=(const T &l) {
+  template <typename T>
+  spuc_int &operator^=(const T &l) {
     val ^= l;
     return *this;
   }
 
   void print(std::ostream &os = ::std::cout) const { os << to_int(); }
 
-}; // end of class
+};  // end of class
 
-} // end of namespace SPUC
+}  // end of namespace SPUC
 
 #endif

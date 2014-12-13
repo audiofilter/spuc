@@ -28,8 +28,7 @@ namespace SPUC {
 //
 //! \author Tony Kirke
 //! \ingroup classes misc
-class rv_stat
-{
+class rv_stat {
  protected:
   float_type count;
   float_type av;
@@ -41,15 +40,28 @@ class rv_stat
   // Constructor
   rv_stat();
   void update(float_type x);
-  inline float_type average() { if (count>0) return(av/count); else return(0);}
-  inline float_type mean_sq() { if (count>0) return(sq/count); else return(0); }
-  inline float_type rms() { return(sqrt(sq/count)); }
-  inline float_type var() { 
-	if (count>0) return( sq/count - (av*av/(count*count))); 
-	else	return(0); }
-  inline float_type std() { return(sqrt(var())); } 
-  inline float_type minimum() { return(min_abs); }
-  inline float_type maximum() { return(max_abs); }
+  inline float_type average() {
+    if (count > 0)
+      return (av / count);
+    else
+      return (0);
+  }
+  inline float_type mean_sq() {
+    if (count > 0)
+      return (sq / count);
+    else
+      return (0);
+  }
+  inline float_type rms() { return (sqrt(sq / count)); }
+  inline float_type var() {
+    if (count > 0)
+      return (sq / count - (av * av / (count * count)));
+    else
+      return (0);
+  }
+  inline float_type std() { return (sqrt(var())); }
+  inline float_type minimum() { return (min_abs); }
+  inline float_type maximum() { return (max_abs); }
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

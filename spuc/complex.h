@@ -8,9 +8,11 @@
 #include <spuc/magsq.h>
 #include <spuc/builtin.h>
 #ifdef COUNTOPS
-#define ASP_C(x) extern long x; x++; 
+#define ASP_C(x) \
+  extern long x; \
+  x++;
 #else
-#define ASP_C(x) 
+#define ASP_C(x)
 #endif
 #ifdef USE_STD_COMPLEX
 #include <complex>

@@ -23,7 +23,7 @@
 namespace SPUC {
 //! \file
 //! \brief   Decision directed carrier phase discriminator for QPSK
-// 
+//
 //! \brief   Decision directed carrier phase discriminator for QPSK
 //
 //!   Runs at the symbol rate
@@ -34,9 +34,9 @@ namespace SPUC {
 //!	\ingroup real_template_functions comm
 //! \image html qpsk_dd_phase.gif
 //! \image latex qpsk_dd_phase.eps
-template <class T> T qpsk_dd_phase(complex<T> curr, complex<T> hard_data) 
-{
-	return(-imag(curr*conj(hard_data)));
+template <class T>
+T qpsk_dd_phase(complex<T> curr, complex<T> hard_data) {
+  return (-imag(curr * conj(hard_data)));
 }
-} // namespace SPUC
+}  // namespace SPUC
 #endif

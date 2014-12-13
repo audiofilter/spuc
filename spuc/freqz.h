@@ -32,131 +32,139 @@ namespace SPUC {
 //! \brief frequency transfer function at freq with iir A and B equations
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> complex<float_type> freqz_point(std::vector<T> b, std::vector<T> a, float_type freq, int N) {
+template <class T>
+complex<float_type> freqz_point(std::vector<T> b, std::vector<T> a,
+                                float_type freq, int N) {
   int i;
-  complex<float_type> z(1,0);
-  complex<float_type> z_inc = complex<float_type>(cos(freq),sin(freq));
+  complex<float_type> z(1, 0);
+  complex<float_type> z_inc = complex<float_type>(cos(freq), sin(freq));
   complex<float_type> nom(0);
   complex<float_type> den(0);
-  for (i=0;i<N;i++) {
-	nom += z*float_type(b[i]);
-	den += z*float_type(a[i]);
-	z *= z_inc;
+  for (i = 0; i < N; i++) {
+    nom += z * float_type(b[i]);
+    den += z * float_type(a[i]);
+    z *= z_inc;
   }
-  nom = nom/den;
-  return(nom);  
+  nom = nom / den;
+  return (nom);
 }
 //! \brief frequency magnitude function at freq with fir x
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> float_type freqz_mag_point(std::vector<T> x, float_type freq, int N) {
-
+template <class T>
+float_type freqz_mag_point(std::vector<T> x, float_type freq, int N) {
   int i;
-  complex<float_type> z(1,0);
+  complex<float_type> z(1, 0);
   complex<float_type> z_inc = expj(freq);
   complex<float_type> sum(0);
-  for (i=0;i<N;i++) {
-	sum += z*float_type(x[i]);
-	z *= z_inc;
+  for (i = 0; i < N; i++) {
+    sum += z * float_type(x[i]);
+    z *= z_inc;
   }
-  return(hypot(sum));  
+  return (hypot(sum));
 }
 //! \brief frequency transfer function at freq for 1st order allpass
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> complex<float_type> freqz_point(T a, float_type freq) {
-  complex<float_type> z(1,0);
-  complex<float_type> z_inc = complex<float_type>(cos(freq),sin(freq));
+template <class T>
+complex<float_type> freqz_point(T a, float_type freq) {
+  complex<float_type> z(1, 0);
+  complex<float_type> z_inc = complex<float_type>(cos(freq), sin(freq));
   complex<float_type> nom;
-  nom   = z + z_inc*float_type(a);
-  nom   = nom/normalized(nom);
-  return(nom);  
+  nom = z + z_inc * float_type(a);
+  nom = nom / normalized(nom);
+  return (nom);
 }
 ////
 //! \brief frequency transfer function over "pts" points for IIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> std::vector<complex<float_type> > freqz(std::vector<T>  b, std::vector<T>  a, int pts) {
-  int i,j;
-  int N=b.len();
+template <class T>
+std::vector<complex<float_type> > freqz(std::vector<T> b, std::vector<T> a,
+                                        int pts) {
+  int i, j;
+  int N = b.len();
   complex<float_type> z;
   complex<float_type> z_inc;
   complex<float_type> nom;
   complex<float_type> den;
   std::vector<complex<float_type> > f(pts);
-  
-  float_type delta = PI/(float_type)pts;
+
+  float_type delta = PI / (float_type)pts;
   float_type freq = 0;
-  for (j=0;j<pts;j++) {
-	freq += delta;
-	z_inc = complex<float_type>(cos(freq),sin(freq));
-	z     = complex<float_type>(1.0,0.0);
-	nom = 0;
-	den = 0;
-	for (i=0;i<N;i++) {
-	  nom += z*float_type(b[i]);
-	  den += z*float_type(a[i]);
-	  z *= z_inc;
-	}
-	f[j] = nom/den;
+  for (j = 0; j < pts; j++) {
+    freq += delta;
+    z_inc = complex<float_type>(cos(freq), sin(freq));
+    z = complex<float_type>(1.0, 0.0);
+    nom = 0;
+    den = 0;
+    for (i = 0; i < N; i++) {
+      nom += z * float_type(b[i]);
+      den += z * float_type(a[i]);
+      z *= z_inc;
+    }
+    f[j] = nom / den;
   }
-  return(f);
+  return (f);
 }
 //! \brief frequency magnitude function over "pts" points for IIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> std::vector<complex<float_type> > freqz_mag(std::vector<T>  b, std::vector<T>  a, int pts) {
-  int i,j;
-  int N=b.len();
+template <class T>
+std::vector<complex<float_type> > freqz_mag(std::vector<T> b, std::vector<T> a,
+                                            int pts) {
+  int i, j;
+  int N = b.len();
   complex<float_type> z;
   complex<float_type> z_inc;
   complex<float_type> nom;
   complex<float_type> den;
-  
+
   std::vector<complex<float_type> > f(pts);
 
-  float_type delta = PI/(float_type)pts;
+  float_type delta = PI / (float_type)pts;
   float_type freq = 0;
-  for (j=0;j<pts;j++) {
-	freq += delta;
-	z_inc = complex<float_type>(cos(freq),sin(freq));
-	z     = complex<float_type>(1.0,0.0);
-	nom = 0;
-	den = 0;
-	for (i=0;i<N;i++) {
-	  nom += z*float_type(b[i]);
-	  den += z*float_type(a[i]);
-	  z *= z_inc;
-	}
-	f[j] = magsq(nom/den);
+  for (j = 0; j < pts; j++) {
+    freq += delta;
+    z_inc = complex<float_type>(cos(freq), sin(freq));
+    z = complex<float_type>(1.0, 0.0);
+    nom = 0;
+    den = 0;
+    for (i = 0; i < N; i++) {
+      nom += z * float_type(b[i]);
+      den += z * float_type(a[i]);
+      z *= z_inc;
+    }
+    f[j] = magsq(nom / den);
   }
-  return(f);
+  return (f);
 }
 //! \brief frequency magnitude function over "pts" points for FIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> std::vector<complex<float_type> > freqz_fir(std::vector<T> x, int pts) {
-  int i,j;
-  int N=x.len();
+template <class T>
+std::vector<complex<float_type> > freqz_fir(std::vector<T> x, int pts) {
+  int i, j;
+  int N = x.len();
   complex<float_type> z;
   complex<float_type> z_inc;
   complex<float_type> nom;
-  float_type delta = PI/(float_type)pts;
+  float_type delta = PI / (float_type)pts;
   float_type freq = 0;
 
   std::vector<complex<float_type> > f(pts);
-  for (j=0;j<pts;j++) {
-	freq += delta;
-	z_inc = complex<float_type>(cos(freq),sin(freq));
-	z     = complex<float_type>(1.0,0.0);
-	nom = 0;
-	for (i=0;i<N;i++) {
-	  nom += z*float_type(x[i]);
-	  z *= z_inc;
-	}
-	f[j] = nom;
+  for (j = 0; j < pts; j++) {
+    freq += delta;
+    z_inc = complex<float_type>(cos(freq), sin(freq));
+    z = complex<float_type>(1.0, 0.0);
+    nom = 0;
+    for (i = 0; i < N; i++) {
+      nom += z * float_type(x[i]);
+      z *= z_inc;
+    }
+    f[j] = nom;
   }
-  return(f);
+  return (f);
 }
-} // namespace SPUC
+}  // namespace SPUC
 #endif

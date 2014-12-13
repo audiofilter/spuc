@@ -30,9 +30,9 @@ namespace SPUC {
 //!   Prev - Previous symbol (prior to hard decision)
 //! \author Tony Kirke
 //!	  \ingroup real_template_functions comm
-template <class T> T bpsk_quadricorrelator(complex<T> hard_data, complex<T> prev) 
-{
-  return(-real(hard_data)*imag(prev));
+template <class T>
+T bpsk_quadricorrelator(complex<T> hard_data, complex<T> prev) {
+  return (-real(hard_data) * imag(prev));
 }
-} // namespace SPUC
+}  // namespace SPUC
 #endif

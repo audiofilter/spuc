@@ -23,19 +23,18 @@
 #include <spuc/complex.h>
 #include <spuc/real_round.h>
 namespace SPUC {
-template <class Numeric> class rounder
-{
-public:
-  static Numeric rounded(Numeric x, long bits) {
-	return(real_round(x,bits));
-  }
+template <class Numeric>
+class rounder {
+ public:
+  static Numeric rounded(Numeric x, long bits) { return (real_round(x, bits)); }
 };
 // partial specialization
-template <typename T> class rounder<complex<T> > {
-public:
+template <typename T>
+class rounder<complex<T> > {
+ public:
   static complex<T> rounded(complex<T> x, long bits) {
-	return(complex<T>(real_round(real(x),bits),real_round(imag(x),bits)));
+    return (complex<T>(real_round(real(x), bits), real_round(imag(x), bits)));
   }
 };
-} // namespace SPUC
+}  // namespace SPUC
 #endif

@@ -20,18 +20,18 @@
 #include <spuc/bit_scrambler.h>
 namespace SPUC {
 bool bit_scrambler::scramble(bool data_in) {
-  bool res = xor_bits(u&g);
+  bool res = xor_bits(u & g);
   u <<= 1;
   u += res;
-  return(data_in ^ res);
+  return (data_in ^ res);
 }
 //! Exclusive or reduction
 bool bit_scrambler::xor_bits(long x) {
-  bool c=0;
-  for (int i =0;i<span;i++) {
-	c ^= (x & 0x01);
-	x >>= 1;
+  bool c = 0;
+  for (int i = 0; i < span; i++) {
+    c ^= (x & 0x01);
+    x >>= 1;
   }
-  return(c);
+  return (c);
 }
-} // namespace SPUC
+}  // namespace SPUC

@@ -22,7 +22,7 @@
 #include <spuc/complex.h>
 namespace SPUC {
 //! \file
-//! \author Tony Kirke,  Copyright(c) 2001 
+//! \author Tony Kirke,  Copyright(c) 2001
 //! \brief Various standard math functions not available elsewhere
 //
 //! \brief sqrt
@@ -68,13 +68,17 @@ complex<float_type> exp(complex<float_type> x);
 //! magnitude of a complex number
 //! \author Tony Kirke
 //! \ingroup functions functions
-inline float_type hypot(complex<float_type> z) {   return sqrt(magsq(z)); }
+inline float_type hypot(complex<float_type> z) { return sqrt(magsq(z)); }
 //! convert from polar to cartesian
 //! \author Tony Kirke
 //! \ingroup functions functions
 complex<float_type> polar(float_type amp, float_type arg);
 //! complex exponential
-inline complex<float> expj(float x) {  return(complex<float>(std::cos(x),std::sin(x)));}
-inline complex<double> expj(double x) {  return(complex<double>(std::cos(x),std::sin(x)));}
-} // namespace SPUC
+inline complex<float> expj(float x) {
+  return (complex<float>(std::cos(x), std::sin(x)));
+}
+inline complex<double> expj(double x) {
+  return (complex<double>(std::cos(x), std::sin(x)));
+}
+}  // namespace SPUC
 #endif

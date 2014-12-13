@@ -34,63 +34,62 @@ frequency domain COMPLEX array.
 complex<float_type> fft(complex<float_type> *x, int m)
 
 *************************************************************************/
-void fft(std::vector<complex<float_type> > y, int m)
-{
-  complex<float_type> u,temp,tm;
+void fft(std::vector<complex<float_type> > y, int m) {
+  complex<float_type> u, temp, tm;
   int wptr;
-  int i,j,k,l,le,windex;
+  int i, j, k, l, le, windex;
 
   /*  n = 2**m = inverse fft length */
   int n = 1 << m;
-  le = n/2;
-  std::vector<complex<float_type> > w(n+1);
-  std::vector<complex<float_type> > x(n+1);
+  le = n / 2;
+  std::vector<complex<float_type> > w(n + 1);
+  std::vector<complex<float_type> > x(n + 1);
 
   /*  calculate the w values recursively */
-  complex<float_type> w_inc = expj(-TWOPI/n);
+  complex<float_type> w_inc = expj(-TWOPI / n);
   complex<float_type> w_x = w_inc;
 
-  for (j=0; j<le; j++) {
+  for (j = 0; j < le; j++) {
     w[j] = w_x;
     w_x *= w_inc;
-	x[j] = y[j];
-	x[j+le] = y[j+le];
+    x[j] = y[j];
+    x[j + le] = y[j + le];
   }
 
   /*  start inverse fft */
   le = n;
   windex = 1;
-  for (l=0; l<m; l++) {
-    le = le/2;
+  for (l = 0; l < m; l++) {
+    le = le / 2;
     /*  first iteration with no multiplies */
-    for (i=0; i<n; i += 2*le) {
-      temp = (x[i] + x[i+le]);
-      x[i+le] = (x[i] - x[i+le]);
+    for (i = 0; i < n; i += 2 * le) {
+      temp = (x[i] + x[i + le]);
+      x[i + le] = (x[i] - x[i + le]);
       x[i] = temp;
     }
 
     /*  remaining iterations use stored w */
-    wptr = windex-1;
-    for (j=1; j<le ; j++) {
-      for (i=j; i<n; i += 2*le) {
-		temp = x[i] + x[i+le];
-		tm = x[i] - x[i+le];
-		x[i+le] = tm*w[wptr];
-		x[i] = temp;
+    wptr = windex - 1;
+    for (j = 1; j < le; j++) {
+      for (i = j; i < n; i += 2 * le) {
+        temp = x[i] + x[i + le];
+        tm = x[i] - x[i + le];
+        x[i + le] = tm * w[wptr];
+        x[i] = temp;
       }
       wptr += windex;
     }
-    windex = 2*windex;
-  }            
+    windex = 2 * windex;
+  }
 
   /*  rearrange data by bit reversing */
 
-  j=0;
-  for (i=1; i<(n-1); i++) {
-    k = n/2;
-    while(k <= j) {
+  j = 0;
+  for (i = 1; i < (n - 1); i++) {
+    k = n / 2;
+    while (k <= j) {
       j = j - k;
-      k = k/2;
+      k = k / 2;
     }
     j = j + k;
     if (i < j) {
@@ -99,7 +98,7 @@ void fft(std::vector<complex<float_type> > y, int m)
       x[i] = temp;
     }
   }
-  
-  for (i=0; i<n; i++) y[i] = x[i];
+
+  for (i = 0; i < n; i++) y[i] = x[i];
 }
-} // namespace SPUC
+}  // namespace SPUC

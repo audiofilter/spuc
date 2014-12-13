@@ -23,20 +23,19 @@
 #include <spuc/fir_coeff.h>
 #include <spuc/remez_fir.h>
 namespace SPUC {
-void create_remez_fir(fir_coeff<float_type>& remezfir, int jtype,int nbands,
-											std::vector<float_type> edge, 
-											std::vector<float_type> fx,
-											std::vector<float_type> wtx) {
+void create_remez_fir(fir_coeff<float_type>& remezfir, int jtype, int nbands,
+                      std::vector<float_type> edge, std::vector<float_type> fx,
+                      std::vector<float_type> wtx) {
   bool ok;
   long nfilt = remezfir.num_taps;
   remez_fir Remz;
   std::vector<float_type> fir_coef(nfilt);
-  ok = Remz.remez(fir_coef,nfilt,nbands,edge,fx,wtx,jtype);
+  ok = Remz.remez(fir_coef, nfilt, nbands, edge, fx, wtx, jtype);
   if (!ok) {
-	for (int i=0;i<nfilt;i++) remezfir.settap(i,0);
-	remezfir.settap(0,1);
+    for (int i = 0; i < nfilt; i++) remezfir.settap(i, 0);
+    remezfir.settap(0, 1);
   } else {
-	for (int i=0;i<nfilt;i++) remezfir.settap(i,fir_coef[i]);
+    for (int i = 0; i < nfilt; i++) remezfir.settap(i, fir_coef[i]);
   }
 }
-} // namespace SPUC
+}  // namespace SPUC

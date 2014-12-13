@@ -31,9 +31,9 @@ namespace SPUC {
 //! assuming elliptic frequency response
 //! \author Tony Kirke
 //! \ingroup functions iir
-//!  \author Tony Kirke,  Copyright(c) 2001 
-void elliptic_allpass(std::vector<float_type>& a0, std::vector<float_type>& a1, float_type fp, int L);
+//!  \author Tony Kirke,  Copyright(c) 2001
+void elliptic_allpass(std::vector<float_type>& a0, std::vector<float_type>& a1,
+                      float_type fp, int L);
 
-  
-} // namespace SPUC
+}  // namespace SPUC
 #endif
