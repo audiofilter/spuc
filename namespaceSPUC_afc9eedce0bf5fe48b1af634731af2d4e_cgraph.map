@@ -1,9 +1,10 @@
 <map id="SPUC::notch_example" name="SPUC::notch_example">
 <area shape="rect" id="node2" href="$classSPUC_1_1notch__iir.html#addfe5bce8958bd4459ada002ce7098c7" title="SPUC::notch_iir::clock" alt="" coords="214,5,368,31"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1fir__decim.html#ad812a1eec3885adb34df8b4edcba52fa" title="SPUC::fir_decim::decim" alt="" coords="210,55,372,80"/>
-<area shape="rect" id="node4" href="$classSPUC_1_1fir__decim.html#a5a89d5a0db424473d7284055781f78dc" title="SPUC::fir_decim::input" alt="" coords="213,104,369,129"/>
-<area shape="rect" id="node5" href="$group__comm.html#gac723f3e6c72c26bf7eb635140e752fbc" title="Raised Cosine functions. " alt="" coords="217,153,365,179"/>
-<area shape="rect" id="node8" href="$classSPUC_1_1fir.html#a9d47e0874a067e34f01ffe1cf1e72564" title="SPUC::fir::settaps" alt="" coords="227,203,355,228"/>
-<area shape="rect" id="node6" href="$namespaceSPUC.html#a1fc2861c1bb426f1aebb493985939e0d" title="SPUC::raised_cosine_imp" alt="" coords="420,153,597,179"/>
-<area shape="rect" id="node7" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="645,153,732,179"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1fir__decim.html#ad812a1eec3885adb34df8b4edcba52fa" title="SPUC::fir_decim::decim" alt="" coords="210,55,372,80"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1fir__decim.html#a5a89d5a0db424473d7284055781f78dc" title="SPUC::fir_decim::input" alt="" coords="213,104,369,129"/>
+<area shape="rect" id="node6" href="$group__comm.html#gac723f3e6c72c26bf7eb635140e752fbc" title="Raised Cosine functions. " alt="" coords="217,153,365,179"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1fir.html#a9d47e0874a067e34f01ffe1cf1e72564" title="SPUC::fir::settaps" alt="" coords="227,203,355,228"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1iir__2nd.html#a1920e1b27ca7e5fc724065cc6d34e17c" title="Input new sample and calculate output. " alt="" coords="437,5,581,31"/>
+<area shape="rect" id="node7" href="$namespaceSPUC.html#a1fc2861c1bb426f1aebb493985939e0d" title="SPUC::raised_cosine_imp" alt="" coords="420,153,597,179"/>
+<area shape="rect" id="node8" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="645,153,732,179"/>
 </map>

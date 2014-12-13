@@ -1,45 +1,44 @@
 <map id="sim_qpsk.h" name="sim_qpsk.h">
-<area shape="rect" id="node4" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="1788,372,1902,397"/>
-<area shape="rect" id="node15" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="465,445,564,471"/>
-<area shape="rect" id="node20" href="$max__pn_8h.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="3867,372,3979,397"/>
-<area shape="rect" id="node21" href="$noise_8h.html" title="Gaussian noise routine. " alt="" coords="2995,152,3091,177"/>
-<area shape="rect" id="node22" href="$vco_8h.html" title="VCO. " alt="" coords="2449,225,2535,251"/>
-<area shape="rect" id="node24" href="$quad__data_8h.html" title="Class for QPSK data using a root raised cosine transmit filter. " alt="" coords="3251,79,3378,104"/>
-<area shape="rect" id="node34" href="$fundtype_8h.html" title="Determine fundamental type when using builtin template. " alt="" coords="3030,225,3146,251"/>
-<area shape="rect" id="node35" href="$qpsk__ber__test_8h.html" title="A Class for doing BER test on QPSK. " alt="" coords="141,299,289,324"/>
-<area shape="rect" id="node38" href="$qpsk_8h.html" title="A QPSK receiver that can operate at exactly 2 samples/symbol. " alt="" coords="2007,152,2100,177"/>
-<area shape="rect" id="node6" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="682,519,825,544"/>
-<area shape="rect" id="node8" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="2394,445,2483,471"/>
-<area shape="rect" id="node11" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="2038,445,2141,471"/>
-<area shape="rect" id="node13" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="2216,445,2320,471"/>
-<area shape="rect" id="node16" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="1612,445,1764,471"/>
-<area shape="rect" id="node17" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1787,445,1962,471"/>
-<area shape="rect" id="node18" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="1254,445,1386,471"/>
-<area shape="rect" id="node19" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="1410,445,1588,471"/>
-<area shape="rect" id="node7" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="1220,592,1370,617"/>
-<area shape="rect" id="node9" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="1773,519,1899,544"/>
-<area shape="rect" id="node10" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="2440,519,2533,544"/>
-<area shape="rect" id="node12" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="1973,519,2080,544"/>
-<area shape="rect" id="node14" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="2206,519,2314,544"/>
-<area shape="rect" id="node23" href="$spuc__math_8h.html" title="Various standard math functions not available elsewhere. " alt="" coords="2635,299,2765,324"/>
-<area shape="rect" id="node25" href="$fir_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="3437,225,3512,251"/>
-<area shape="rect" id="node29" href="$fir__coeff_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="3630,299,3741,324"/>
-<area shape="rect" id="node30" href="$fir__interp_8h.html" title="template class fir_decim based on FIR class, created to support polyphase FIR interpolation ..." alt="" coords="3406,152,3522,177"/>
-<area shape="rect" id="node31" href="$root__raised__cosine_8h.html" title="Root Raised Cosine functions. " alt="" coords="3597,225,3774,251"/>
-<area shape="rect" id="node32" href="$lagrange_8h.html" title="Template Class for Lagrange interpolation using a FIR filter. " alt="" coords="3170,225,3286,251"/>
-<area shape="rect" id="node27" href="$quantiser_8h.html" title="........ " alt="" coords="3234,299,3353,324"/>
-<area shape="rect" id="node28" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="3557,372,3691,397"/>
-<area shape="rect" id="node33" href="$quant_8h.html" title="spuc/quant.h" alt="" coords="3011,299,3109,324"/>
-<area shape="rect" id="node39" href="$delay_8h.html" title="Template class for Delay line. " alt="" coords="2840,299,2936,324"/>
-<area shape="rect" id="node40" href="$loop__filter_8h.html" title="Loop Filter for use in PLL circuits. " alt="" coords="2329,299,2450,324"/>
-<area shape="rect" id="node41" href="$nco_8h.html" title="NCO with 32 bit accumulator. " alt="" coords="841,445,927,471"/>
-<area shape="rect" id="node42" href="$a__d_8h.html" title="An A/D conversion class. " alt="" coords="2525,299,2611,324"/>
-<area shape="rect" id="node43" href="$dd__symbol_8h.html" title="Decision directed timing discriminator (QPSK) " alt="" coords="718,299,847,324"/>
-<area shape="rect" id="node44" href="$qpsk__quadricorrelator_8h.html" title="QPSK Quadricorrelator frequency discriminator. " alt="" coords="921,299,1114,324"/>
-<area shape="rect" id="node45" href="$bpsk__quadricorrelator_8h.html" title="BPSK Quadricorrelator frequency discriminator. " alt="" coords="1137,299,1330,324"/>
-<area shape="rect" id="node46" href="$qpsk__rcfd_8h.html" title="QPSK Reduced complexity frequency discriminator. " alt="" coords="1354,299,1476,324"/>
-<area shape="rect" id="node47" href="$cp__afc_8h.html" title="Cross&#45;Product frequency discriminator. " alt="" coords="1500,299,1604,324"/>
-<area shape="rect" id="node48" href="$carrier__nco_8h.html" title="A specialization example of a sin/cosine look&#45;up NCO. " alt="" coords="1780,299,1911,324"/>
-<area shape="rect" id="node49" href="$nda__symbol_8h.html" title="Non&#45;decision aided timing discriminator (Gardiner&#39;s algorithm) " alt="" coords="1985,299,2121,324"/>
-<area shape="rect" id="node50" href="$qpsk__dd__phase_8h.html" title="Decision directed carrier phase discriminator for QPSK. " alt="" coords="2146,299,2305,324"/>
+<area shape="rect" id="node4" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="1496,372,1610,397"/>
+<area shape="rect" id="node15" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="2777,445,2876,471"/>
+<area shape="rect" id="node20" href="$max__pn_8h.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="2865,372,2977,397"/>
+<area shape="rect" id="node21" href="$noise_8h.html" title="Gaussian noise routine. " alt="" coords="2644,152,2740,177"/>
+<area shape="rect" id="node22" href="$vco_8h.html" title="VCO. " alt="" coords="761,225,847,251"/>
+<area shape="rect" id="node24" href="$quad__data_8h.html" title="Class for QPSK data using a root raised cosine transmit filter. " alt="" coords="2979,79,3106,104"/>
+<area shape="rect" id="node34" href="$fundtype_8h.html" title="Determine fundamental type when using builtin template. " alt="" coords="3921,225,4036,251"/>
+<area shape="rect" id="node35" href="$qpsk__ber__test_8h.html" title="A Class for doing BER test on QPSK. " alt="" coords="43,299,191,324"/>
+<area shape="rect" id="node38" href="$qpsk_8h.html" title="A QPSK receiver that can operate at exactly 2 samples/symbol. " alt="" coords="2152,152,2245,177"/>
+<area shape="rect" id="node6" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="3555,519,3698,544"/>
+<area shape="rect" id="node8" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="2073,445,2162,471"/>
+<area shape="rect" id="node11" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="2237,445,2339,471"/>
+<area shape="rect" id="node13" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="1112,445,1216,471"/>
+<area shape="rect" id="node16" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="1291,445,1443,471"/>
+<area shape="rect" id="node17" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1466,445,1641,471"/>
+<area shape="rect" id="node18" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="1665,445,1797,471"/>
+<area shape="rect" id="node19" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="1820,445,1998,471"/>
+<area shape="rect" id="node7" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="2766,592,2916,617"/>
+<area shape="rect" id="node9" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="2352,519,2478,544"/>
+<area shape="rect" id="node10" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="1851,519,1944,544"/>
+<area shape="rect" id="node12" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="2069,519,2176,544"/>
+<area shape="rect" id="node14" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="1110,519,1218,544"/>
+<area shape="rect" id="node23" href="$spuc__math_8h.html" title="Various standard math functions not available elsewhere. " alt="" coords="267,299,397,324"/>
+<area shape="rect" id="node25" href="$fir_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="3288,225,3363,251"/>
+<area shape="rect" id="node29" href="$fir__coeff_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="3362,299,3473,324"/>
+<area shape="rect" id="node30" href="$fir__interp_8h.html" title="template class fir_decim based on FIR class, created to support polyphase FIR interpolation ..." alt="" coords="3171,152,3287,177"/>
+<area shape="rect" id="node31" href="$root__raised__cosine_8h.html" title="Root Raised Cosine functions. " alt="" coords="3017,225,3194,251"/>
+<area shape="rect" id="node32" href="$lagrange_8h.html" title="Template Class for Lagrange interpolation using a FIR filter. " alt="" coords="2619,225,2735,251"/>
+<area shape="rect" id="node27" href="$quantiser_8h.html" title="........ " alt="" coords="3118,299,3237,324"/>
+<area shape="rect" id="node33" href="$quant_8h.html" title="spuc/quant.h" alt="" coords="2490,299,2588,324"/>
+<area shape="rect" id="node39" href="$delay_8h.html" title="Template class for Delay line. " alt="" coords="3650,299,3745,324"/>
+<area shape="rect" id="node40" href="$loop__filter_8h.html" title="Loop Filter for use in PLL circuits. " alt="" coords="877,299,998,324"/>
+<area shape="rect" id="node41" href="$nco_8h.html" title="NCO with 32 bit accumulator. " alt="" coords="2465,445,2551,471"/>
+<area shape="rect" id="node42" href="$a__d_8h.html" title="An A/D conversion class. " alt="" coords="1123,299,1210,324"/>
+<area shape="rect" id="node43" href="$dd__symbol_8h.html" title="Decision directed timing discriminator (QPSK) " alt="" coords="1234,299,1363,324"/>
+<area shape="rect" id="node44" href="$qpsk__quadricorrelator_8h.html" title="QPSK Quadricorrelator frequency discriminator. " alt="" coords="1388,299,1580,324"/>
+<area shape="rect" id="node45" href="$bpsk__quadricorrelator_8h.html" title="BPSK Quadricorrelator frequency discriminator. " alt="" coords="1604,299,1796,324"/>
+<area shape="rect" id="node46" href="$qpsk__rcfd_8h.html" title="QPSK Reduced complexity frequency discriminator. " alt="" coords="603,299,725,324"/>
+<area shape="rect" id="node47" href="$cp__afc_8h.html" title="Cross&#45;Product frequency discriminator. " alt="" coords="750,299,853,324"/>
+<area shape="rect" id="node48" href="$carrier__nco_8h.html" title="A specialization example of a sin/cosine look&#45;up NCO. " alt="" coords="1820,299,1951,324"/>
+<area shape="rect" id="node49" href="$nda__symbol_8h.html" title="Non&#45;decision aided timing discriminator (Gardiner&#39;s algorithm) " alt="" coords="2076,299,2212,324"/>
+<area shape="rect" id="node50" href="$qpsk__dd__phase_8h.html" title="Decision directed carrier phase discriminator for QPSK. " alt="" coords="421,299,579,324"/>
 </map>

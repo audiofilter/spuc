@@ -1,6 +1,5 @@
 <map id="butterworth_allpass.cpp" name="butterworth_allpass.cpp">
-<area shape="rect" id="node2" href="$butterworth__allpass_8h.html" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="187,79,367,104"/>
-<area shape="rect" id="node4" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="366,152,509,177"/>
-<area shape="rect" id="node7" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="157,152,292,177"/>
-<area shape="rect" id="node6" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="428,225,578,251"/>
+<area shape="rect" id="node2" href="$butterworth__allpass_8h.html" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="139,79,319,104"/>
+<area shape="rect" id="node4" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="212,152,355,177"/>
+<area shape="rect" id="node6" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="227,225,377,251"/>
 </map>

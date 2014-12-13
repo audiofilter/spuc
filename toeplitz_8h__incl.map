@@ -1,9 +1,23 @@
 <map id="toeplitz.h" name="toeplitz.h">
-<area shape="rect" id="node3" href="$vector_8h.html" title="spuc/vector.h" alt="" coords="165,225,265,251"/>
-<area shape="rect" id="node9" href="$matrix_8h.html" title="spuc/matrix.h" alt="" coords="178,79,279,104"/>
-<area shape="rect" id="node4" href="$vector__class_8h.html" title="spuc/vector_class.h" alt="" coords="121,299,259,324"/>
-<area shape="rect" id="node7" href="$vector__operators_8h.html" title="spuc/vector_operators.h" alt="" coords="284,299,448,324"/>
-<area shape="rect" id="node5" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="123,372,257,397"/>
-<area shape="rect" id="node10" href="$matrix__class_8h.html" title="spuc/matrix_class.h" alt="" coords="159,152,298,177"/>
-<area shape="rect" id="node11" href="$matrix__operators_8h.html" title="spuc/matrix_operators.h" alt="" coords="322,152,487,177"/>
+<area shape="rect" id="node3" href="$vector_8h.html" title="spuc/vector.h" alt="" coords="177,225,276,251"/>
+<area shape="rect" id="node8" href="$matrix_8h.html" title="spuc/matrix.h" alt="" coords="447,79,548,104"/>
+<area shape="rect" id="node4" href="$vector__class_8h.html" title="spuc/vector_class.h" alt="" coords="5,299,144,324"/>
+<area shape="rect" id="node6" href="$vector__operators_8h.html" title="spuc/vector_operators.h" alt="" coords="168,299,333,324"/>
+<area shape="rect" id="node9" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="1035,152,1149,177"/>
+<area shape="rect" id="node26" href="$matrix__class_8h.html" title="spuc/matrix_class.h" alt="" coords="217,152,356,177"/>
+<area shape="rect" id="node27" href="$matrix__operators_8h.html" title="spuc/matrix_operators.h" alt="" coords="431,152,595,177"/>
+<area shape="rect" id="node11" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="1864,299,2007,324"/>
+<area shape="rect" id="node14" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="487,225,576,251"/>
+<area shape="rect" id="node17" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="651,225,754,251"/>
+<area shape="rect" id="node19" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="1561,225,1665,251"/>
+<area shape="rect" id="node21" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="1790,225,1889,251"/>
+<area shape="rect" id="node22" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="829,225,981,251"/>
+<area shape="rect" id="node23" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1005,225,1179,251"/>
+<area shape="rect" id="node24" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="1203,225,1335,251"/>
+<area shape="rect" id="node25" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="1359,225,1537,251"/>
+<area shape="rect" id="node13" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="1763,372,1914,397"/>
+<area shape="rect" id="node15" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="881,299,1007,324"/>
+<area shape="rect" id="node16" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="431,299,523,324"/>
+<area shape="rect" id="node18" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="649,299,756,324"/>
+<area shape="rect" id="node20" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="1031,299,1139,324"/>
 </map>

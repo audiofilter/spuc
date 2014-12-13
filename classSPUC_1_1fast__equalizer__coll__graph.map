@@ -1,7 +1,3 @@
 <map id="SPUC::fast_equalizer" name="SPUC::fast_equalizer">
-<area shape="rect" id="node2" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; double \&gt;" alt="" coords="240,5,419,31"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l bool \&gt;" alt="" coords="257,55,402,93"/>
-<area shape="rect" id="node5" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::iir_allpass_variable\l_cascade\&lt; SPUC::complex,\l double \&gt; \&gt;" alt="" coords="236,117,423,183"/>
-<area shape="rect" id="node7" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l double \&gt;" alt="" coords="257,207,402,245"/>
-<area shape="rect" id="node9" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex \&gt;" alt="" coords="257,271,402,309"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; double \&gt;" alt="" coords="5,5,184,31"/>
 </map>

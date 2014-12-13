@@ -1,9 +1,11 @@
 <map id="SPUC::shelf_allpass1::set_coeffs" name="SPUC::shelf_allpass1::set_coeffs">
-<area shape="rect" id="node2" href="$namespaceSPUC.html#a01a6a72570c7cb6527596ffdd1d87ec1" title="SPUC::find_a" alt="" coords="228,31,330,56"/>
-<area shape="rect" id="node8" href="$classSPUC_1_1shelf__allpass1.html#a0e20e45ad591429a1d7d0fde8613ae31" title="SPUC::shelf_allpass1\l::reset" alt="" coords="204,80,354,119"/>
-<area shape="rect" id="node3" href="$namespaceSPUC.html#aa860e851a3089a51c5fe22f86be8de2c" title="SPUC::z_freqz_db" alt="" coords="402,31,534,56"/>
-<area shape="rect" id="node4" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="582,5,687,31"/>
-<area shape="rect" id="node6" href="$group__functions.html#ga1c5f2e9ef07dda594e874348960d6de2" title="Polar to rectangular conversion. " alt="" coords="587,55,682,80"/>
-<area shape="rect" id="node5" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="735,5,901,31"/>
-<area shape="rect" id="node7" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="775,55,861,80"/>
+<area shape="rect" id="node2" href="$namespaceSPUC.html#a01a6a72570c7cb6527596ffdd1d87ec1" title="SPUC::find_a" alt="" coords="228,29,330,55"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1allpass__1.html#ad34c7c15712f0bd792cd1e4c3c732a82" title="Initializes gain and delay. " alt="" coords="205,79,352,104"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1shelf__allpass1.html#a0e20e45ad591429a1d7d0fde8613ae31" title="SPUC::shelf_allpass1\l::reset" alt="" coords="204,128,354,167"/>
+<area shape="rect" id="node3" href="$namespaceSPUC.html#aa860e851a3089a51c5fe22f86be8de2c" title="SPUC::z_freqz_db" alt="" coords="416,29,547,55"/>
+<area shape="rect" id="node4" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="609,5,715,31"/>
+<area shape="rect" id="node6" href="$group__functions.html#ga1c5f2e9ef07dda594e874348960d6de2" title="Polar to rectangular conversion. " alt="" coords="614,55,710,80"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="763,5,928,31"/>
+<area shape="rect" id="node7" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="802,55,889,80"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1allpass__1.html#a54eea22f6492351d62a66c5e7d35e6be" title="Reset. " alt="" coords="402,135,561,160"/>
 </map>

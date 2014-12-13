@@ -1,3 +1,6 @@
 <map id="SPUC::qpsk::reset" name="SPUC::qpsk::reset">
-<area shape="rect" id="node2" href="$classSPUC_1_1loop__filter.html#acfde4da154f654fbea34558e83bff7cc" title="Reset. " alt="" coords="184,5,315,44"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1vco.html#ae33e8a8332f3bb4ef3fe567ceb43a707" title="SPUC::vco::reset" alt="" coords="217,5,341,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1fir.html#a0e06ae64ff448b1264097398e533342d" title="Reset. " alt="" coords="222,55,336,80"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1loop__filter.html#acfde4da154f654fbea34558e83bff7cc" title="Reset. " alt="" coords="214,104,345,143"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1vco.html#a14e3b5019a0ea59ced222a96c29dd45e" title="Set new frequency. " alt="" coords="184,167,374,192"/>
 </map>

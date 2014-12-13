@@ -1,3 +1,5 @@
 <map id="SPUC::running_average::average" name="SPUC::running_average::average">
-<area shape="rect" id="node2" href="$classSPUC_1_1running__average.html#a4468d91d1d467c6038e7ff8739c8901a" title="Clock in new input sample. " alt="" coords="219,5,385,44"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1running__average.html#a4468d91d1d467c6038e7ff8739c8901a" title="Clock in new input sample. " alt="" coords="219,24,385,63"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1delay.html#ac4c58c588242c5623e6f3ee9b52937d0" title="Get last tap. " alt="" coords="437,5,563,31"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1delay.html#a56f73f6b64bf61732f1881fa697b8763" title="Clock in new input sample. " alt="" coords="433,55,567,80"/>
 </map>

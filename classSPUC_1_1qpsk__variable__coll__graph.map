@@ -1,29 +1,24 @@
 <map id="SPUC::qpsk_variable&lt; Numeric &gt;" name="SPUC::qpsk_variable&lt; Numeric &gt;">
-<area shape="rect" id="node2" href="$classSPUC_1_1qpsk__discriminators.html" title="A Class incorporating several symbol and carrier discriminators for QPSK. " alt="" coords="1653,119,1837,145"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; long \&gt;" alt="" coords="1303,147,1467,173"/>
-<area shape="rect" id="node4" href="$classSPUC_1_1delay.html" title="SPUC::delay\&lt; SPUC::\lcomplex\&lt; long \&gt; \&gt;" alt="" coords="1308,9,1462,47"/>
-<area shape="rect" id="node5" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; long \&gt; \&gt;" alt="" coords="993,9,1172,47"/>
-<area shape="rect" id="node26" href="$classSPUC_1_1loop__filter.html" title="SPUC::loop_filter\&lt;\l Numeric \&gt;" alt="" coords="1679,231,1810,270"/>
-<area shape="rect" id="node8" href="$classSPUC_1_1resampler.html" title="SPUC::resampler\&lt; SPUC\l::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="1658,634,1832,673"/>
-<area shape="rect" id="node9" href="$classSPUC_1_1lagrange.html" title="SPUC::lagrange\&lt; SPUC\l::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="1299,690,1471,729"/>
-<area shape="rect" id="node10" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="275,877,488,915"/>
-<area shape="rect" id="node19" href="$classSPUC_1_1circ__buffer.html" title="SPUC::circ_buffer\&lt;\l SPUC::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="558,555,771,594"/>
-<area shape="rect" id="node21" href="$classSPUC_1_1fir.html" title="SPUC::fir\&lt; SPUC::complex\l\&lt; CNumeric \&gt;, Numeric \&gt;" alt="" coords="1293,799,1476,838"/>
-<area shape="rect" id="node25" href="$classSPUC_1_1cordic.html" title="SPUC::cordic\&lt; CNumeric \&gt;" alt="" coords="1293,1035,1477,1061"/>
-<area shape="rect" id="node34" href="$classSPUC_1_1delay.html" title="SPUC::delay\&lt; SPUC::\lcomplex\&lt; CNumeric \&gt; \&gt;" alt="" coords="795,1243,960,1282"/>
-<area shape="rect" id="node12" href="$classSPUC_1_1quantiser.html" title="SPUC::quantiser\&lt; SPUC\l::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="579,639,751,678"/>
-<area shape="rect" id="node18" href="$classSPUC_1_1allpass__1.html" title="SPUC::allpass_1\&lt; SPUC\l::complex\&lt; CNumeric \&gt;\l, float_type \&gt;" alt="" coords="998,514,1168,566"/>
-<area shape="rect" id="node13" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; CNumeric \&gt;" alt="" coords="984,590,1182,615"/>
-<area shape="rect" id="node17" href="$classSPUC_1_1iir__allpass1__halfband.html" title="SPUC::iir_allpass1\l_halfband\&lt; SPUC::complex\l\&lt; CNumeric \&gt; \&gt;" alt="" coords="1292,502,1477,554"/>
-<area shape="rect" id="node14" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l float_type \&gt;" alt="" coords="1011,934,1155,973"/>
-<area shape="rect" id="node29" href="$classSPUC_1_1lagrange.html" title="SPUC::lagrange\&lt; SPUC\l::complex\&lt; float_type \&gt; \&gt;" alt="" coords="1299,973,1470,1011"/>
-<area shape="rect" id="node16" href="$classSPUC_1_1timing__nco.html" title="A NCO for symbol recovery in a variable rate QPSK receiver. " alt="" coords="1320,641,1450,666"/>
-<area shape="rect" id="node20" href="$classSPUC_1_1agc.html" title="This is a simple sigma&#45;delta type AGC for the variable rate QPSK example. " alt="" coords="1701,1177,1788,1202"/>
-<area shape="rect" id="node22" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l Numeric \&gt;" alt="" coords="1011,819,1155,858"/>
-<area shape="rect" id="node24" href="$classSPUC_1_1sum__and__dump.html" title="SPUC::sum_and_dump\l\&lt; CNumeric \&gt;" alt="" coords="1664,1226,1825,1265"/>
-<area shape="rect" id="node27" href="$classSPUC_1_1unquantized__mixed__type.html" title="SPUC::unquantized_mixed\l_type\&lt; Numeric, double \&gt;" alt="" coords="1294,230,1475,269"/>
-<area shape="rect" id="node28" href="$classSPUC_1_1a__d.html" title="An A/D conversion class. " alt="" coords="1701,1289,1789,1314"/>
-<area shape="rect" id="node30" href="$classSPUC_1_1quantiser.html" title="SPUC::quantiser\&lt; SPUC\l::complex\&lt; float_type \&gt; \&gt;" alt="" coords="998,997,1168,1035"/>
-<area shape="rect" id="node31" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; float\l_type \&gt; \&gt;" alt="" coords="1005,1059,1161,1111"/>
-<area shape="rect" id="node33" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; float\l_type \&gt;" alt="" coords="1007,1135,1159,1174"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1qpsk__discriminators.html" title="A Class incorporating several symbol and carrier discriminators for QPSK. " alt="" coords="943,110,1126,135"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; long \&gt;" alt="" coords="592,61,756,86"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1delay.html" title="SPUC::delay\&lt; SPUC::\lcomplex\&lt; long \&gt; \&gt;" alt="" coords="598,161,751,199"/>
+<area shape="rect" id="node18" href="$classSPUC_1_1loop__filter.html" title="SPUC::loop_filter\&lt;\l Numeric \&gt;" alt="" coords="969,365,1100,403"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1resampler.html" title="SPUC::resampler\&lt; SPUC\l::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="948,659,1121,698"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1lagrange.html" title="SPUC::lagrange\&lt; SPUC\l::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="588,721,760,759"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1quantiser.html" title="SPUC::quantiser\&lt; SPUC\l::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="26,787,198,826"/>
+<area shape="rect" id="node12" href="$classSPUC_1_1allpass__1.html" title="SPUC::allpass_1\&lt; SPUC\l::complex\&lt; CNumeric \&gt;\l, Coeff \&gt;" alt="" coords="309,855,479,907"/>
+<area shape="rect" id="node15" href="$classSPUC_1_1fir.html" title="SPUC::fir\&lt; SPUC::complex\l\&lt; CNumeric \&gt;, Numeric \&gt;" alt="" coords="583,525,766,563"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; CNumeric \&gt;" alt="" coords="295,659,493,685"/>
+<area shape="rect" id="node11" href="$classSPUC_1_1iir__allpass1__halfband.html" title="SPUC::iir_allpass1\l_halfband\&lt; SPUC::complex\l\&lt; CNumeric \&gt; \&gt;" alt="" coords="582,833,767,885"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1timing__nco.html" title="A NCO for symbol recovery in a variable rate QPSK receiver. " alt="" coords="609,783,739,809"/>
+<area shape="rect" id="node13" href="$classSPUC_1_1circ__buffer.html" title="SPUC::circ_buffer\&lt;\l SPUC::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="5,878,218,917"/>
+<area shape="rect" id="node14" href="$classSPUC_1_1agc.html" title="This is a simple sigma&#45;delta type AGC for the variable rate QPSK example. " alt="" coords="991,722,1078,747"/>
+<area shape="rect" id="node16" href="$classSPUC_1_1sum__and__dump.html" title="SPUC::sum_and_dump\l\&lt; CNumeric \&gt;" alt="" coords="954,771,1115,810"/>
+<area shape="rect" id="node17" href="$classSPUC_1_1cordic.html" title="SPUC::cordic\&lt; CNumeric \&gt;" alt="" coords="943,834,1126,859"/>
+<area shape="rect" id="node19" href="$classSPUC_1_1unquantized__mixed__type.html" title="SPUC::unquantized_mixed\l_type\&lt; Numeric, Coeff \&gt;" alt="" coords="584,391,765,430"/>
+<area shape="rect" id="node20" href="$classSPUC_1_1a__d.html" title="An A/D conversion class. " alt="" coords="990,883,1078,909"/>
+<area shape="rect" id="node21" href="$classSPUC_1_1lagrange.html" title="SPUC::lagrange\&lt; SPUC\l::complex\&lt; float_type \&gt; \&gt;" alt="" coords="949,933,1120,971"/>
+<area shape="rect" id="node22" href="$classSPUC_1_1quantiser.html" title="SPUC::quantiser\&lt; SPUC\l::complex\&lt; float_type \&gt; \&gt;" alt="" coords="589,921,760,959"/>
+<area shape="rect" id="node23" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; float\l_type \&gt;" alt="" coords="598,983,750,1022"/>
+<area shape="rect" id="node24" href="$classSPUC_1_1delay.html" title="SPUC::delay\&lt; SPUC::\lcomplex\&lt; CNumeric \&gt; \&gt;" alt="" coords="952,995,1117,1034"/>
 </map>

@@ -1,6 +1,5 @@
 <map id="running_average.h" name="running_average.h">
-<area shape="rect" id="node3" href="$delay_8h.html" title="Template class for Delay line. " alt="" coords="137,79,232,104"/>
-<area shape="rect" id="node4" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="310,152,453,177"/>
-<area shape="rect" id="node7" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="152,152,286,177"/>
-<area shape="rect" id="node6" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="431,225,581,251"/>
+<area shape="rect" id="node3" href="$delay_8h.html" title="Template class for Delay line. " alt="" coords="165,79,260,104"/>
+<area shape="rect" id="node4" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="161,152,304,177"/>
+<area shape="rect" id="node6" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="221,225,372,251"/>
 </map>

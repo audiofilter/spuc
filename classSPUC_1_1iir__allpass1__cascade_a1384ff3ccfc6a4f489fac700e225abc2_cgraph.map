@@ -1,8 +1,10 @@
 <map id="SPUC::iir_allpass1_cascade::iir_allpass1_cascade" name="SPUC::iir_allpass1_cascade::iir_allpass1_cascade">
-<area shape="rect" id="node2" href="$group__iir.html#gaa77685faf91e6127672237ae391691a9" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="206,79,358,104"/>
-<area shape="rect" id="node3" href="$namespaceSPUC.html#abec337a0f2a5e1f166c944323308745e" title="SPUC::ellik" alt="" coords="406,79,495,104"/>
-<area shape="rect" id="node5" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="545,104,633,129"/>
-<area shape="rect" id="node6" href="$namespaceSPUC.html#a556b2fee49b0b73288c0eb19608cb740" title="SPUC::ellpj" alt="" coords="406,29,495,55"/>
-<area shape="rect" id="node4" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="546,55,633,80"/>
-<area shape="rect" id="node7" href="$namespaceSPUC.html#acea99b42e034ac8d81c35e330a7a7039" title="SPUC::ABS" alt="" coords="543,5,636,31"/>
+<area shape="rect" id="node2" href="$group__iir.html#ga814b9867605784c8fca64ad02dc1b672" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="206,56,358,81"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1allpass.html#a51c119a13094a83136e00b47f74dc6bc" title="SPUC::allpass::init" alt="" coords="216,136,348,161"/>
+<area shape="rect" id="node3" href="$namespaceSPUC.html#abec337a0f2a5e1f166c944323308745e" title="SPUC::ellik" alt="" coords="427,31,516,56"/>
+<area shape="rect" id="node5" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="588,5,676,31"/>
+<area shape="rect" id="node6" href="$namespaceSPUC.html#a556b2fee49b0b73288c0eb19608cb740" title="SPUC::ellpj" alt="" coords="427,80,517,105"/>
+<area shape="rect" id="node4" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="589,55,676,80"/>
+<area shape="rect" id="node7" href="$namespaceSPUC.html#acea99b42e034ac8d81c35e330a7a7039" title="SPUC::ABS" alt="" coords="586,104,679,129"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1allpass.html#acb27df9240bc9c9f5b99816b360c6c55" title="Set 1st order ALLPASS coefficients. " alt="" coords="406,129,538,168"/>
 </map>

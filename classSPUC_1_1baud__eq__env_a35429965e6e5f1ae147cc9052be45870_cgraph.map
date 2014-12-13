@@ -1,4 +1,5 @@
 <map id="SPUC::baud_eq_env::loop_init" name="SPUC::baud_eq_env::loop_init">
-<area shape="rect" id="node2" href="$classSPUC_1_1fir.html#a0d5ca6fbff1a06b5509829cfc1230525" title="Set tap weights. " alt="" coords="207,5,328,31"/>
-<area shape="rect" id="node3" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="224,55,312,80"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1mle.html#ac3024acc6c045e80de50837ba353939d" title="Copy channel impulse response. " alt="" coords="207,5,341,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1fir.html#a0d5ca6fbff1a06b5509829cfc1230525" title="Set tap weights. " alt="" coords="214,55,335,80"/>
+<area shape="rect" id="node4" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="230,104,318,129"/>
 </map>

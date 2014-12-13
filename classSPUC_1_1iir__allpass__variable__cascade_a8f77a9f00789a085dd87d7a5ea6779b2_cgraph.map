@@ -1,3 +1,4 @@
 <map id="SPUC::iir_allpass_variable_cascade::reset" name="SPUC::iir_allpass_variable_cascade::reset">
-<area shape="rect" id="node2" href="$classSPUC_1_1circ__buffer.html#a68b8a96870f2575e265187f774ac2489" title="SPUC::circ_buffer::\lreset" alt="" coords="233,5,368,44"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1allpass.html#a6bad6c9130d17c76c3f27e693136916b" title="Reset history. " alt="" coords="233,5,377,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1circ__buffer.html#a68b8a96870f2575e265187f774ac2489" title="SPUC::circ_buffer::\lreset" alt="" coords="237,55,372,93"/>
 </map>

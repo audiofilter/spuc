@@ -1,5 +1,6 @@
 <map id="SPUC::sim_qam::sim_qam" name="SPUC::sim_qam::sim_qam">
 <area shape="rect" id="node2" href="$group__fir.html#ga72f535b5b331341438bc8a905e012de5" title="SPUC::root_raised_cosine" alt="" coords="235,5,413,31"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1fir.html#a9d47e0874a067e34f01ffe1cf1e72564" title="SPUC::fir::settaps" alt="" coords="260,55,388,80"/>
 <area shape="rect" id="node3" href="$namespaceSPUC.html#a1dc648ad38d7dbd2e31f09e534686303" title="SPUC::root_raised_cosine_imp" alt="" coords="461,5,669,31"/>
 <area shape="rect" id="node4" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="717,5,803,31"/>
 </map>

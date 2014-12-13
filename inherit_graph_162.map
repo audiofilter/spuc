@@ -1,19 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l bool \&gt;" alt="" coords="187,5,332,44"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l Coeff \&gt;" alt="" coords="187,68,332,107"/>
-<area shape="rect" id="node4" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l complex\&lt; double \&gt; \&gt;" alt="" coords="185,131,334,169"/>
-<area shape="rect" id="node5" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l double \&gt;" alt="" coords="187,193,332,232"/>
-<area shape="rect" id="node6" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l float_type \&gt;" alt="" coords="187,256,332,295"/>
-<area shape="rect" id="node7" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l long \&gt;" alt="" coords="187,319,332,357"/>
-<area shape="rect" id="node8" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l Numeric \&gt;" alt="" coords="187,381,332,420"/>
-<area shape="rect" id="node9" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::allpass_1\&lt; Numeric,\l Coeff \&gt; \&gt;" alt="" coords="164,444,355,496"/>
-<area shape="rect" id="node10" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex \&gt;" alt="" coords="187,520,332,559"/>
-<area shape="rect" id="node11" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; CNumeric \&gt; \&gt;" alt="" coords="153,583,366,621"/>
-<area shape="rect" id="node12" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; float\l_type \&gt; \&gt;" alt="" coords="182,645,338,697"/>
-<area shape="rect" id="node13" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; long \&gt; \&gt;" alt="" coords="170,721,349,760"/>
-<area shape="rect" id="node14" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; Numeric \&gt; \&gt;" alt="" coords="158,784,361,823"/>
-<area shape="rect" id="node15" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::iir_2nd\&lt; Numeric,\l Coeff \&gt; \&gt;" alt="" coords="172,847,347,899"/>
-<area shape="rect" id="node16" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::iir_allpass_variable\l_cascade\&lt; complex\&lt; double\l \&gt;, double \&gt; \&gt;" alt="" coords="164,923,355,988"/>
-<area shape="rect" id="node17" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::iir_allpass_variable\l_cascade\&lt; SPUC::complex,\l double \&gt; \&gt;" alt="" coords="166,1012,354,1077"/>
-<area shape="rect" id="node18" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt; T \&gt;" alt="" coords="176,1101,343,1127"/>
+<area shape="rect" id="node1" href="$classSPUC_1_1spuc__fixed.html" title="A fast &amp; lightweight fixed&#45;point class. " alt="" coords="5,5,228,57"/>
 </map>

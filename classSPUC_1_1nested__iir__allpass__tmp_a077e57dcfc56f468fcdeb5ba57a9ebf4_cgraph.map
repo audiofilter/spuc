@@ -1,3 +1,5 @@
 <map id="SPUC::nested_iir_allpass_tmp::nested_iir_allpass_2" name="SPUC::nested_iir_allpass_tmp::nested_iir_allpass_2">
-<area shape="rect" id="node2" href="$classSPUC_1_1nested__iir__allpass__tmp.html#aee22de2ebd1793fb302d1cf2f1a631d8" title="reset " alt="" coords="233,5,406,44"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1nested__iir__allpass__tmp.html#aee22de2ebd1793fb302d1cf2f1a631d8" title="reset " alt="" coords="233,33,406,72"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1allpass__2nd.html#abdf887817f97be9e8208c1ef6dc5ec0e" title="SPUC::allpass_2nd::\lreset" alt="" coords="461,5,606,44"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1allpass__1.html#a54eea22f6492351d62a66c5e7d35e6be" title="Reset. " alt="" coords="454,68,613,93"/>
 </map>

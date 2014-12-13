@@ -1,5 +1,4 @@
 <map id="vector.h" name="vector.h">
-<area shape="rect" id="node2" href="$vector__class_8h.html" title="spuc/vector_class.h" alt="" coords="87,79,226,104"/>
-<area shape="rect" id="node6" href="$vector__operators_8h.html" title="spuc/vector_operators.h" alt="" coords="250,79,415,104"/>
-<area shape="rect" id="node3" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="89,152,224,177"/>
+<area shape="rect" id="node2" href="$vector__class_8h.html" title="spuc/vector_class.h" alt="" coords="5,79,144,104"/>
+<area shape="rect" id="node4" href="$vector__operators_8h.html" title="spuc/vector_operators.h" alt="" coords="168,79,333,104"/>
 </map>

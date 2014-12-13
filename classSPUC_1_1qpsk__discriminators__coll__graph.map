@@ -1,5 +1,4 @@
 <map id="SPUC::qpsk_discriminators" name="SPUC::qpsk_discriminators">
-<area shape="rect" id="node2" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; long \&gt;" alt="" coords="5,200,169,225"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1delay.html" title="SPUC::delay\&lt; SPUC::\lcomplex\&lt; long \&gt; \&gt;" alt="" coords="193,193,347,232"/>
-<area shape="rect" id="node4" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l SPUC::complex\&lt; long \&gt; \&gt;" alt="" coords="180,93,359,132"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1complex.html" title="SPUC::complex\&lt; long \&gt;" alt="" coords="5,12,169,37"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1delay.html" title="SPUC::delay\&lt; SPUC::\lcomplex\&lt; long \&gt; \&gt;" alt="" coords="193,5,347,44"/>
 </map>

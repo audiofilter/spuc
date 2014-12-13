@@ -1,4 +1,3 @@
 <map id="SPUC::qam_conv_decoder" name="SPUC::qam_conv_decoder">
-<area shape="rect" id="node2" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l long \&gt;" alt="" coords="5,93,150,132"/>
-<area shape="rect" id="node4" href="$classSPUC_1_1viterbi.html" title="A Viterbi decoder (for DVB) " alt="" coords="174,100,275,125"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1viterbi.html" title="A Viterbi decoder (for DVB) " alt="" coords="46,5,147,31"/>
 </map>

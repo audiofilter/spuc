@@ -1,20 +1,19 @@
 <map id="fft.cpp" name="fft.cpp">
-<area shape="rect" id="node2" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="818,152,932,177"/>
-<area shape="rect" id="node20" href="$spuc__math_8h.html" title="Various standard math functions not available elsewhere. " alt="" coords="1297,79,1426,104"/>
-<area shape="rect" id="node22" href="$fft_8h.html" title="fast fourier transform " alt="" coords="1451,79,1526,104"/>
-<area shape="rect" id="node23" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="1654,152,1789,177"/>
-<area shape="rect" id="node4" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="391,299,534,324"/>
-<area shape="rect" id="node7" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="711,225,799,251"/>
-<area shape="rect" id="node11" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="1375,225,1478,251"/>
-<area shape="rect" id="node13" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="823,225,927,251"/>
-<area shape="rect" id="node15" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="436,225,535,251"/>
-<area shape="rect" id="node16" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="1002,225,1153,251"/>
-<area shape="rect" id="node17" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1177,225,1352,251"/>
-<area shape="rect" id="node18" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="78,225,210,251"/>
-<area shape="rect" id="node19" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="234,225,412,251"/>
-<area shape="rect" id="node6" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="429,372,579,397"/>
-<area shape="rect" id="node9" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="879,299,1004,324"/>
-<area shape="rect" id="node10" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="711,299,804,324"/>
-<area shape="rect" id="node12" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="1374,299,1480,324"/>
-<area shape="rect" id="node14" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="1130,299,1238,324"/>
+<area shape="rect" id="node2" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="793,152,907,177"/>
+<area shape="rect" id="node20" href="$spuc__math_8h.html" title="Various standard math functions not available elsewhere. " alt="" coords="658,79,788,104"/>
+<area shape="rect" id="node22" href="$fft_8h.html" title="fast fourier transform " alt="" coords="812,79,887,104"/>
+<area shape="rect" id="node4" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="1281,299,1424,324"/>
+<area shape="rect" id="node7" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="667,225,755,251"/>
+<area shape="rect" id="node11" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="361,225,464,251"/>
+<area shape="rect" id="node13" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="488,225,592,251"/>
+<area shape="rect" id="node15" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="1561,225,1661,251"/>
+<area shape="rect" id="node16" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="830,225,981,251"/>
+<area shape="rect" id="node17" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1005,225,1180,251"/>
+<area shape="rect" id="node18" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="1204,225,1335,251"/>
+<area shape="rect" id="node19" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="1359,225,1537,251"/>
+<area shape="rect" id="node6" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="1113,372,1263,397"/>
+<area shape="rect" id="node9" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="565,299,691,324"/>
+<area shape="rect" id="node10" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="715,299,808,324"/>
+<area shape="rect" id="node12" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="99,299,206,324"/>
+<area shape="rect" id="node14" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="281,299,389,324"/>
 </map>

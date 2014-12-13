@@ -1,10 +1,12 @@
 <map id="SPUC::iir::realloc" name="SPUC::iir::realloc">
-<area shape="rect" id="node2" href="$classSPUC_1_1iir.html#ac02a1f5fd0a25669d1624011ef61cdb3" title="Reset history. " alt="" coords="192,5,305,31"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1iir.html#a9c8e941479288fbaff557121aeb43517" title="Set 2nd order IIR coefficients. " alt="" coords="176,55,320,80"/>
-<area shape="rect" id="node4" href="$classSPUC_1_1iir__coeff.html#a505d0536ed015dec3e785ab480f68c5a" title="SPUC::iir_coeff::convert\l_to_ab" alt="" coords="368,48,532,87"/>
-<area shape="rect" id="node5" href="$classSPUC_1_1iir__coeff.html#a348cb2d95cda7557974049a795b8f9d2" title="SPUC::iir_coeff::z\l_root_to_ab" alt="" coords="584,16,710,55"/>
-<area shape="rect" id="node8" href="$classSPUC_1_1iir__coeff.html#ab9ac695504e9f087cf0be193bf410c59" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="580,79,714,117"/>
-<area shape="rect" id="node6" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="790,23,896,48"/>
-<area shape="rect" id="node7" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="972,23,1137,48"/>
-<area shape="rect" id="node9" href="$group__misc.html#ga524a8736d3854dd53ada5c79d0192a49" title="SPUC::partial_convolve" alt="" coords="762,85,924,111"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1iir.html#ac02a1f5fd0a25669d1624011ef61cdb3" title="Reset history. " alt="" coords="192,9,305,35"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1iir.html#a9c8e941479288fbaff557121aeb43517" title="Set 2nd order IIR coefficients. " alt="" coords="176,61,320,87"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1iir__lpf1.html#a7e650af00a9140ca73a63a631a68fd6b" title="Reset. " alt="" coords="379,5,521,31"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1iir__coeff.html#a505d0536ed015dec3e785ab480f68c5a" title="SPUC::iir_coeff::convert\l_to_ab" alt="" coords="368,55,532,93"/>
+<area shape="rect" id="node11" href="$classSPUC_1_1iir__lpf1.html#a306f833225b286ed5d4dcdbf4aeeff5c" title="SPUC::iir_lpf1::set\l_coeff" alt="" coords="385,117,515,156"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1iir__coeff.html#ac4190849f997b69e43c7116465044743" title="SPUC::iir_coeff::z\l_root_to_ab" alt="" coords="584,24,710,63"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1iir__coeff.html#af29bbd69ed684eeb60013f85e0566e7e" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="580,87,714,125"/>
+<area shape="rect" id="node7" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="790,31,896,56"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="972,31,1137,56"/>
+<area shape="rect" id="node10" href="$group__misc.html#ga97612b3b25ac0f34e71255d59d41f466" title="SPUC::partial_convolve" alt="" coords="762,93,924,119"/>
 </map>

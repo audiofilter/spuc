@@ -1,8 +1,5 @@
 <map id="SPUC::mle&lt; Numeric &gt;" name="SPUC::mle&lt; Numeric &gt;">
-<area shape="rect" id="node6" href="$classSPUC_1_1fir.html" title="SPUC::fir\&lt; Numeric,\l Numeric \&gt;" alt="" coords="457,38,599,77"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l float_type \&gt;" alt="" coords="748,213,893,251"/>
-<area shape="rect" id="node5" href="$classSPUC_1_1fir__adapt.html" title="SPUC::fir_adapt\&lt; Numeric,\l Numeric \&gt;" alt="" coords="729,71,912,110"/>
-<area shape="rect" id="node7" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l Numeric \&gt;" alt="" coords="195,123,339,162"/>
-<area shape="rect" id="node9" href="$classSPUC_1_1base__type.html" title="SPUC::base_type\&lt; Numeric \&gt;" alt="" coords="428,101,628,126"/>
-<area shape="rect" id="node10" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l long \&gt;" alt="" coords="748,275,893,314"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1fir.html" title="SPUC::fir\&lt; Numeric,\l Numeric \&gt;" alt="" coords="80,92,221,131"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1fir__adapt.html" title="SPUC::fir_adapt\&lt; Numeric,\l Numeric \&gt;" alt="" coords="79,192,262,231"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1base__type.html" title="SPUC::base_type\&lt; Numeric \&gt;" alt="" coords="245,99,445,124"/>
 </map>

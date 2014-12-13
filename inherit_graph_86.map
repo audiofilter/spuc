@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classSPUC_1_1iir__hpf.html" title="Template Class for 1st Order high pass IIR filter from S&#45;domain transformation. " alt="" coords="5,5,172,44"/>
+<area shape="rect" id="node1" href="$classSPUC_1_1iir__lpf1.html" title="Template Class for 1st Order lowpass iir filter. " alt="" coords="5,5,175,44"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1iir__lpf.html" title="SPUC::iir_lpf\&lt; Numeric,\l Coeff \&gt;" alt="" coords="223,5,386,44"/>
 </map>

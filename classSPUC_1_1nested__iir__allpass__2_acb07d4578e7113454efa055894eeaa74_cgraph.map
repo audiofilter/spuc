@@ -1,5 +1,7 @@
 <map id="SPUC::nested_iir_allpass_2::init" name="SPUC::nested_iir_allpass_2::init">
-<area shape="rect" id="node2" href="$group__iir.html#gaa77685faf91e6127672237ae391691a9" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="226,79,378,104"/>
+<area shape="rect" id="node2" href="$group__iir.html#ga814b9867605784c8fca64ad02dc1b672" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="226,79,378,104"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1allpass__1.html#ad34c7c15712f0bd792cd1e4c3c732a82" title="Initializes gain and delay. " alt="" coords="228,128,375,153"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1allpass__2nd.html#ac0790610826e3981b8072eb43a20560c" title="SPUC::allpass_2nd::\lset_coeffs" alt="" coords="230,177,374,216"/>
 <area shape="rect" id="node3" href="$namespaceSPUC.html#abec337a0f2a5e1f166c944323308745e" title="SPUC::ellik" alt="" coords="426,79,515,104"/>
 <area shape="rect" id="node5" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="565,104,653,129"/>
 <area shape="rect" id="node6" href="$namespaceSPUC.html#a556b2fee49b0b73288c0eb19608cb740" title="SPUC::ellpj" alt="" coords="426,29,515,55"/>

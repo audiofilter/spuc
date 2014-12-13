@@ -1,7 +1,10 @@
 <map id="SPUC::sim_qam::tx_step" name="SPUC::sim_qam::tx_step">
-<area shape="rect" id="node2" href="$classSPUC_1_1noise.html#a83dee6e8872536e51da02ba7c25c994d" title="complex gaussian noise " alt="" coords="224,29,374,55"/>
-<area shape="rect" id="node5" href="$classSPUC_1_1vco.html#aa6d52c46f5f328a20c8e15cc46f5936d" title="return output with updated input " alt="" coords="237,79,361,104"/>
-<area shape="rect" id="node6" href="$classSPUC_1_1qam__tx.html#aabcf5e76e462c73ecb0ccecc167d5ba0" title="SPUC::qam_tx::clock" alt="" coords="225,128,372,153"/>
-<area shape="rect" id="node3" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="453,5,541,31"/>
-<area shape="rect" id="node4" href="$classSPUC_1_1noise.html#a140536d7a6b44da2a5f22263da222136" title="Uniform noise. " alt="" coords="422,55,571,80"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1noise.html#a83dee6e8872536e51da02ba7c25c994d" title="complex gaussian noise " alt="" coords="235,29,385,55"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1vco.html#aa6d52c46f5f328a20c8e15cc46f5936d" title="return output with updated input " alt="" coords="248,79,372,104"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1qam__tx.html#aabcf5e76e462c73ecb0ccecc167d5ba0" title="SPUC::qam_tx::clock" alt="" coords="237,128,384,153"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1lagrange.html#a11f42dff64a2965464d30980ead25208" title="Input new sample (do nothing else) " alt="" coords="233,177,387,203"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1lagrange.html#ad9f171d3356538848313718eb50c2d96" title="Rephase =&gt; recalculate coefficients and output for new offset (for upsampling) " alt="" coords="224,227,397,252"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1fir.html#a058e1e69ed3ba805c51e135a8b58f8cf" title="SPUC::fir::update" alt="" coords="248,276,373,301"/>
+<area shape="rect" id="node3" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="476,5,564,31"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1noise.html#a140536d7a6b44da2a5f22263da222136" title="Uniform noise. " alt="" coords="445,55,594,80"/>
 </map>

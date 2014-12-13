@@ -1,9 +1,10 @@
 <map id="SPUC::iir::iir" name="SPUC::iir::iir">
-<area shape="rect" id="node2" href="$classSPUC_1_1iir.html#a9c8e941479288fbaff557121aeb43517" title="Set 2nd order IIR coefficients. " alt="" coords="147,44,291,69"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1iir__coeff.html#a505d0536ed015dec3e785ab480f68c5a" title="SPUC::iir_coeff::convert\l_to_ab" alt="" coords="339,37,503,76"/>
-<area shape="rect" id="node4" href="$classSPUC_1_1iir__coeff.html#a348cb2d95cda7557974049a795b8f9d2" title="SPUC::iir_coeff::z\l_root_to_ab" alt="" coords="555,5,681,44"/>
-<area shape="rect" id="node7" href="$classSPUC_1_1iir__coeff.html#ab9ac695504e9f087cf0be193bf410c59" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="551,68,685,107"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1iir.html#a9c8e941479288fbaff557121aeb43517" title="Set 2nd order IIR coefficients. " alt="" coords="147,75,291,100"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1iir__coeff.html#a505d0536ed015dec3e785ab480f68c5a" title="SPUC::iir_coeff::convert\l_to_ab" alt="" coords="339,36,503,75"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1iir__lpf1.html#a306f833225b286ed5d4dcdbf4aeeff5c" title="SPUC::iir_lpf1::set\l_coeff" alt="" coords="356,99,486,137"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1iir__coeff.html#ac4190849f997b69e43c7116465044743" title="SPUC::iir_coeff::z\l_root_to_ab" alt="" coords="555,5,681,44"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1iir__coeff.html#af29bbd69ed684eeb60013f85e0566e7e" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="551,68,685,107"/>
 <area shape="rect" id="node5" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="761,12,867,37"/>
 <area shape="rect" id="node6" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="943,12,1108,37"/>
-<area shape="rect" id="node8" href="$group__misc.html#ga524a8736d3854dd53ada5c79d0192a49" title="SPUC::partial_convolve" alt="" coords="733,75,895,100"/>
+<area shape="rect" id="node8" href="$group__misc.html#ga97612b3b25ac0f34e71255d59d41f466" title="SPUC::partial_convolve" alt="" coords="733,75,895,100"/>
 </map>

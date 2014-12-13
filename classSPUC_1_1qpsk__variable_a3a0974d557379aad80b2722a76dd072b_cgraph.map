@@ -1,4 +1,5 @@
 <map id="SPUC::qpsk_variable::qpsk_variable" name="SPUC::qpsk_variable::qpsk_variable">
-<area shape="rect" id="node2" href="$classSPUC_1_1sum__and__dump.html#ae8aca287473cf9324a820c489507aafa" title="SPUC::sum_and_dump\l::set_exp" alt="" coords="212,5,374,44"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1qpsk__discriminators.html#a7b139ec4f6bd23cfa46484c329b707f5" title="SPUC::qpsk_discriminators\l::set_mode" alt="" coords="201,68,385,107"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1vco.html#a14e3b5019a0ea59ced222a96c29dd45e" title="Set new frequency. " alt="" coords="201,5,391,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1sum__and__dump.html#ae8aca287473cf9324a820c489507aafa" title="SPUC::sum_and_dump\l::set_exp" alt="" coords="215,55,377,93"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1qpsk__discriminators.html#a7b139ec4f6bd23cfa46484c329b707f5" title="SPUC::qpsk_discriminators\l::set_mode" alt="" coords="204,117,388,156"/>
 </map>

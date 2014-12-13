@@ -1,7 +1,5 @@
 <map id="SPUC::ofdm_data_encoder" name="SPUC::ofdm_data_encoder">
-<area shape="rect" id="node2" href="$classSPUC_1_1qam__mod.html" title="QAM Modulator for BPSK &#45; 64 QAM for 802.11A Data modulation. " alt="" coords="475,5,600,31"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l bool \&gt;" alt="" coords="195,199,339,237"/>
-<area shape="rect" id="node7" href="$classSPUC_1_1data__conv__encoder.html" title="Convolutional encoder for punctured encoding. " alt="" coords="446,124,629,149"/>
-<area shape="rect" id="node5" href="$classSPUC_1_1smart__array.html" title="SPUC::smart_array\&lt;\l long \&gt;" alt="" coords="195,60,339,99"/>
-<area shape="rect" id="node8" href="$classSPUC_1_1max__pn.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="210,133,324,159"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1qam__mod.html" title="QAM Modulator for BPSK &#45; 64 QAM for 802.11A Data modulation. " alt="" coords="5,92,130,117"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1data__conv__encoder.html" title="Convolutional encoder for punctured encoding. " alt="" coords="154,92,337,117"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1max__pn.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="189,5,302,31"/>
 </map>

@@ -1,5 +1,6 @@
 <map id="SPUC::fading_channel::fading_channel" name="SPUC::fading_channel::fading_channel">
 <area shape="rect" id="node2" href="$classSPUC_1_1fading__channel.html#ade00ff8e23c35e289f46b68a963f72a0" title="SPUC::fading_channel\l::generate_channel" alt="" coords="210,49,366,88"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1fir.html#a3859fbf7fdfa580cc154736e7484ea29" title="Set size of Filter. " alt="" coords="221,112,354,137"/>
 <area shape="rect" id="node3" href="$group__functions.html#ga05aa4ab6852e60a9202639b461596e38" title="complex exponential " alt="" coords="445,5,533,31"/>
 <area shape="rect" id="node6" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="643,56,731,81"/>
 <area shape="rect" id="node7" href="$classSPUC_1_1noise.html#a83dee6e8872536e51da02ba7c25c994d" title="complex gaussian noise " alt="" coords="414,107,564,132"/>

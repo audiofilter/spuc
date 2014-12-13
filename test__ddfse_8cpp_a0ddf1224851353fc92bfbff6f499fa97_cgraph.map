@@ -4,15 +4,23 @@
 <area shape="rect" id="node4" href="$classSPUC_1_1bpsk__ber__test.html#a49ac5114fc0e71d106fc5bdfaff76b60" title="SPUC::bpsk_ber_test\l::found_sync" alt="" coords="118,117,268,156"/>
 <area shape="rect" id="node5" href="$classSPUC_1_1baud__eq__env.html#ab015d8d7bffd08a00cd3c0d4eca49ab2" title="SPUC::baud_eq_env::\lloop_end" alt="" coords="116,180,270,219"/>
 <area shape="rect" id="node6" href="$classSPUC_1_1baud__eq__env.html#a35429965e6e5f1ae147cc9052be45870" title="SPUC::baud_eq_env::\lloop_init" alt="" coords="116,243,270,281"/>
-<area shape="rect" id="node9" href="$classSPUC_1_1noise.html#affc34237c0bfd2947dbe7af79301cdea" title="Change seed. " alt="" coords="114,417,273,443"/>
-<area shape="rect" id="node10" href="$classSPUC_1_1baud__eq__env.html#a8a89748ccb3953d23b3f1a146b8faf2d" title="SPUC::baud_eq_env::step" alt="" coords="104,368,283,393"/>
-<area shape="rect" id="node17" href="$classSPUC_1_1bpsk__ber__test.html#a677a2fcd3ed8309ec12431f5d393b8b7" title="SPUC::bpsk_ber_test\l::synchronize" alt="" coords="118,305,268,344"/>
-<area shape="rect" id="node7" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="566,263,654,288"/>
-<area shape="rect" id="node8" href="$classSPUC_1_1fir.html#a0d5ca6fbff1a06b5509829cfc1230525" title="Set tap weights. " alt="" coords="349,263,469,288"/>
-<area shape="rect" id="node11" href="$classSPUC_1_1max__pn.html#a77af51b51a948e99c878dcbea658efff" title="Get output (fast method) " alt="" coords="339,312,478,337"/>
-<area shape="rect" id="node12" href="$namespaceSPUC.html#af83ded758099fb4fddd4f51d9975dada" title="complex exponential " alt="" coords="364,411,454,436"/>
-<area shape="rect" id="node14" href="$classSPUC_1_1fading__channel.html#aad4101f65bd980c54d692f87e6b5c694" title="SPUC::fading_channel\l::update" alt="" coords="331,460,487,499"/>
-<area shape="rect" id="node15" href="$classSPUC_1_1noise.html#a83dee6e8872536e51da02ba7c25c994d" title="complex gaussian noise " alt="" coords="334,361,484,387"/>
-<area shape="rect" id="node13" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="567,411,653,436"/>
-<area shape="rect" id="node16" href="$classSPUC_1_1noise.html#a140536d7a6b44da2a5f22263da222136" title="Uniform noise. " alt="" coords="535,361,685,387"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1noise.html#affc34237c0bfd2947dbe7af79301cdea" title="Change seed. " alt="" coords="114,417,273,443"/>
+<area shape="rect" id="node11" href="$classSPUC_1_1baud__eq__env.html#a8a89748ccb3953d23b3f1a146b8faf2d" title="SPUC::baud_eq_env::step" alt="" coords="104,368,283,393"/>
+<area shape="rect" id="node25" href="$classSPUC_1_1bpsk__ber__test.html#a677a2fcd3ed8309ec12431f5d393b8b7" title="SPUC::bpsk_ber_test\l::synchronize" alt="" coords="118,305,268,344"/>
+<area shape="rect" id="node7" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="566,237,654,263"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1fir.html#a0d5ca6fbff1a06b5509829cfc1230525" title="Set tap weights. " alt="" coords="349,213,469,239"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1mle.html#ac3024acc6c045e80de50837ba353939d" title="Copy channel impulse response. " alt="" coords="342,263,476,288"/>
+<area shape="rect" id="node12" href="$classSPUC_1_1max__pn.html#a77af51b51a948e99c878dcbea658efff" title="Get output (fast method) " alt="" coords="339,312,478,337"/>
+<area shape="rect" id="node13" href="$namespaceSPUC.html#af83ded758099fb4fddd4f51d9975dada" title="complex exponential " alt="" coords="364,411,454,436"/>
+<area shape="rect" id="node15" href="$classSPUC_1_1fading__channel.html#aad4101f65bd980c54d692f87e6b5c694" title="SPUC::fading_channel\l::update" alt="" coords="331,460,487,499"/>
+<area shape="rect" id="node16" href="$classSPUC_1_1noise.html#a83dee6e8872536e51da02ba7c25c994d" title="complex gaussian noise " alt="" coords="334,361,484,387"/>
+<area shape="rect" id="node18" href="$classSPUC_1_1mle.html#add34ecd2f932046d6b9fe9f2035edfc6" title="Perform MLSD Sequence detection. " alt="" coords="347,523,470,548"/>
+<area shape="rect" id="node14" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="567,411,653,436"/>
+<area shape="rect" id="node17" href="$classSPUC_1_1noise.html#a140536d7a6b44da2a5f22263da222136" title="Uniform noise. " alt="" coords="535,361,685,387"/>
+<area shape="rect" id="node19" href="$classSPUC_1_1mle.html#adb6bcaf1dec55ce53c7b2ecbdb88c4c1" title="Generic Sequence detection allowing selection of type. " alt="" coords="538,523,682,548"/>
+<area shape="rect" id="node20" href="$classSPUC_1_1mle.html#aed0e4247138a82e0156b07cd6538c336" title="Allows selection of Equalizer type. " alt="" coords="733,497,878,523"/>
+<area shape="rect" id="node24" href="$classSPUC_1_1mle.html#a82332d6b6b04e9be2c358a3220e209a3" title="SPUC::mle::df_est" alt="" coords="740,547,871,572"/>
+<area shape="rect" id="node21" href="$classSPUC_1_1mle.html#af13de8b5b5d5c10b170965962a7f3b6d" title="Feedforward estimates. " alt="" coords="926,472,1085,497"/>
+<area shape="rect" id="node22" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="953,521,1058,547"/>
+<area shape="rect" id="node23" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="1133,521,1298,547"/>
 </map>

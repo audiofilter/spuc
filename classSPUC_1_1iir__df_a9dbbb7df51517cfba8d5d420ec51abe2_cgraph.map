@@ -1,3 +1,5 @@
 <map id="SPUC::iir_df::clock" name="SPUC::iir_df::clock">
-<area shape="rect" id="node2" href="$classSPUC_1_1iir__df.html#ae365a0a21fd16e424270cfa13324dced" title="SPUC::iir_df::update" alt="" coords="186,5,329,31"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1iir__df.html#ae365a0a21fd16e424270cfa13324dced" title="SPUC::iir_df::update" alt="" coords="186,31,329,56"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1fir.html#a058e1e69ed3ba805c51e135a8b58f8cf" title="SPUC::fir::update" alt="" coords="377,5,502,31"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1fir.html#a7575f5fc0d6f248dad2bafb6fa8260a4" title="SPUC::fir::iir" alt="" coords="392,55,487,80"/>
 </map>

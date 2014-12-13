@@ -1,3 +1,4 @@
 <map id="SPUC::iir_allpass1::clock" name="SPUC::iir_allpass1::clock">
-<area shape="rect" id="node2" href="$group__misc.html#ga3e75891aaf9af0725250646d50373de9" title="Templated round function template function that uses a class to allow template specialization. " alt="" coords="186,12,286,37"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1allpass__1.html#a87557e135305393db67ba98e737378a9" title="Shift inputs by one time sample and place new sample into array. " alt="" coords="186,5,346,31"/>
+<area shape="rect" id="node3" href="$group__misc.html#ga3e75891aaf9af0725250646d50373de9" title="Templated round function template function that uses a class to allow template specialization. " alt="" coords="216,55,316,80"/>
 </map>

@@ -1,28 +1,29 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$group__iir.html#ga3ca39dd578a66f4a95540ae493d8aa46" title="Calculate coefficients for IIR assuming butterworth frequency response. " alt="" coords="104,148,254,173"/>
-<area shape="rect" id="node14" href="$classSPUC_1_1iir__2nd.html#a1920e1b27ca7e5fc724065cc6d34e17c" title="Input new sample and calculate output. " alt="" coords="107,204,250,229"/>
-<area shape="rect" id="node15" href="$group__iir.html#ga99171db0d945a1cff36744d083425d52" title="Calculate coefficients for IIR assuming elliptic frequency response. " alt="" coords="118,253,239,279"/>
-<area shape="rect" id="node25" href="$classSPUC_1_1iir__coeff.html#abc5f28662749a0d4a793628051a0e4da" title="SPUC::iir_coeff::get\l_coeff_a" alt="" coords="110,303,248,341"/>
-<area shape="rect" id="node26" href="$classSPUC_1_1iir__2nd.html#a9214b392e5276b0bc77e52991f640914" title="Print out coefficients. " alt="" coords="109,365,248,391"/>
-<area shape="rect" id="node27" href="$classSPUC_1_1iir.html#a7ddbf3c1bdbf61e500fa4145f1011b3a" title="print coefficients " alt="" coords="124,415,233,440"/>
-<area shape="rect" id="node3" href="$namespaceSPUC.html#ae96995aa675cee5890eda51f6ec9b2e3" title="Calculate roots. " alt="" coords="310,56,457,81"/>
-<area shape="rect" id="node7" href="$classSPUC_1_1iir__coeff.html#afe628cb748a60dd84e49fc39e3f32929" title="Do bilinear transformation. " alt="" coords="302,116,465,141"/>
-<area shape="rect" id="node8" href="$classSPUC_1_1iir__coeff.html#a505d0536ed015dec3e785ab480f68c5a" title="SPUC::iir_coeff::convert\l_to_ab" alt="" coords="302,165,465,204"/>
-<area shape="rect" id="node4" href="$namespaceSPUC.html#af83ded758099fb4fddd4f51d9975dada" title="complex exponential " alt="" coords="943,229,1033,255"/>
+<area shape="rect" id="node2" href="$group__iir.html#ga3ca39dd578a66f4a95540ae493d8aa46" title="Calculate coefficients for IIR assuming butterworth frequency response. " alt="" coords="104,155,254,180"/>
+<area shape="rect" id="node14" href="$classSPUC_1_1iir__2nd.html#a1920e1b27ca7e5fc724065cc6d34e17c" title="Input new sample and calculate output. " alt="" coords="107,233,250,259"/>
+<area shape="rect" id="node15" href="$group__iir.html#ga99171db0d945a1cff36744d083425d52" title="Calculate coefficients for IIR assuming elliptic frequency response. " alt="" coords="118,283,239,308"/>
+<area shape="rect" id="node25" href="$classSPUC_1_1iir__coeff.html#abc5f28662749a0d4a793628051a0e4da" title="SPUC::iir_coeff::get\l_coeff_a" alt="" coords="110,332,248,371"/>
+<area shape="rect" id="node26" href="$classSPUC_1_1iir__2nd.html#a9214b392e5276b0bc77e52991f640914" title="Print out coefficients. " alt="" coords="109,395,248,420"/>
+<area shape="rect" id="node27" href="$classSPUC_1_1iir.html#a7ddbf3c1bdbf61e500fa4145f1011b3a" title="print coefficients " alt="" coords="124,464,233,489"/>
+<area shape="rect" id="node3" href="$namespaceSPUC.html#adecce989f843a4b41f05fb3cae210bb5" title="Calculate roots. " alt="" coords="310,56,457,81"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1iir__coeff.html#afe628cb748a60dd84e49fc39e3f32929" title="Do bilinear transformation. " alt="" coords="302,183,465,208"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1iir__coeff.html#a505d0536ed015dec3e785ab480f68c5a" title="SPUC::iir_coeff::convert\l_to_ab" alt="" coords="302,120,465,159"/>
+<area shape="rect" id="node4" href="$namespaceSPUC.html#af83ded758099fb4fddd4f51d9975dada" title="complex exponential " alt="" coords="943,180,1033,205"/>
 <area shape="rect" id="node6" href="$namespaceSPUC.html#a1face030d2537e2fd1cc05b69cfe7341" title="Type Specific functions. " alt="" coords="538,5,623,31"/>
-<area shape="rect" id="node5" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="1119,280,1205,305"/>
-<area shape="rect" id="node9" href="$classSPUC_1_1iir__coeff.html#a348cb2d95cda7557974049a795b8f9d2" title="SPUC::iir_coeff::z\l_root_to_ab" alt="" coords="517,169,644,208"/>
-<area shape="rect" id="node12" href="$classSPUC_1_1iir__coeff.html#ab9ac695504e9f087cf0be193bf410c59" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="513,107,648,145"/>
-<area shape="rect" id="node10" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="724,176,830,201"/>
-<area shape="rect" id="node11" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="906,176,1071,201"/>
-<area shape="rect" id="node13" href="$group__misc.html#ga524a8736d3854dd53ada5c79d0192a49" title="SPUC::partial_convolve" alt="" coords="696,113,858,139"/>
+<area shape="rect" id="node5" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="1119,231,1205,256"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1iir__coeff.html#ac4190849f997b69e43c7116465044743" title="SPUC::iir_coeff::z\l_root_to_ab" alt="" coords="517,107,644,145"/>
+<area shape="rect" id="node12" href="$classSPUC_1_1iir__coeff.html#af29bbd69ed684eeb60013f85e0566e7e" title="SPUC::iir_coeff::p2\l_to_poly" alt="" coords="513,169,648,208"/>
+<area shape="rect" id="node10" href="$group__misc.html#gaa34d42bf72769eb5b7389b2fea7a5a83" title="Templated Magnitude Squared function template function that uses a class to allow template specializa..." alt="" coords="724,113,830,139"/>
+<area shape="rect" id="node11" href="$classSPUC_1_1magsqr.html#a8765a92e382387fb6beb00b33495b5d3" title="SPUC::magsqr::magsqd" alt="" coords="906,113,1071,139"/>
+<area shape="rect" id="node13" href="$group__misc.html#ga97612b3b25ac0f34e71255d59d41f466" title="SPUC::partial_convolve" alt="" coords="696,176,858,201"/>
 <area shape="rect" id="node16" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="733,331,821,356"/>
-<area shape="rect" id="node17" href="$namespaceSPUC.html#a57924117c11305e97e4a8066fdc79dd9" title="SPUC::ellpk" alt="" coords="534,331,627,356"/>
-<area shape="rect" id="node18" href="$namespaceSPUC.html#a30eca0b1aa338de1172048eb0161be16" title="modulus from ratio of K/K&#39; " alt="" coords="531,232,630,257"/>
-<area shape="rect" id="node20" href="$namespaceSPUC.html#aa8d9a59ce99f79e2b249c8dc93a3911d" title="get roots in Lamda plane " alt="" coords="312,280,455,305"/>
-<area shape="rect" id="node22" href="$namespaceSPUC.html#ab6c7b3f2bab2634e6a71837c63d66fb8" title="calculate s plane poles and zeros " alt="" coords="327,432,440,457"/>
-<area shape="rect" id="node19" href="$group__functions.html#ga05aa4ab6852e60a9202639b461596e38" title="complex exponential " alt="" coords="733,229,820,255"/>
-<area shape="rect" id="node21" href="$namespaceSPUC.html#abec337a0f2a5e1f166c944323308745e" title="SPUC::ellik" alt="" coords="536,281,625,307"/>
-<area shape="rect" id="node23" href="$namespaceSPUC.html#a556b2fee49b0b73288c0eb19608cb740" title="SPUC::ellpj" alt="" coords="536,432,625,457"/>
-<area shape="rect" id="node24" href="$namespaceSPUC.html#acea99b42e034ac8d81c35e330a7a7039" title="SPUC::ABS" alt="" coords="731,432,823,457"/>
+<area shape="rect" id="node17" href="$namespaceSPUC.html#a57924117c11305e97e4a8066fdc79dd9" title="SPUC::ellpk" alt="" coords="534,333,627,359"/>
+<area shape="rect" id="node18" href="$namespaceSPUC.html#a30eca0b1aa338de1172048eb0161be16" title="modulus from ratio of K/K&#39; " alt="" coords="531,432,630,457"/>
+<area shape="rect" id="node20" href="$namespaceSPUC.html#aa8d9a59ce99f79e2b249c8dc93a3911d" title="get roots in Lamda plane " alt="" coords="312,384,455,409"/>
+<area shape="rect" id="node22" href="$namespaceSPUC.html#a0c228683e5bc5c19345ab4214e5204ea" title="calculate s plane poles and zeros " alt="" coords="327,232,440,257"/>
+<area shape="rect" id="node19" href="$group__functions.html#ga05aa4ab6852e60a9202639b461596e38" title="complex exponential " alt="" coords="733,432,820,457"/>
+<area shape="rect" id="node21" href="$namespaceSPUC.html#abec337a0f2a5e1f166c944323308745e" title="SPUC::ellik" alt="" coords="536,383,625,408"/>
+<area shape="rect" id="node23" href="$namespaceSPUC.html#a556b2fee49b0b73288c0eb19608cb740" title="SPUC::ellpj" alt="" coords="536,232,625,257"/>
+<area shape="rect" id="node24" href="$namespaceSPUC.html#acea99b42e034ac8d81c35e330a7a7039" title="SPUC::ABS" alt="" coords="731,281,823,307"/>
+<area shape="rect" id="node28" href="$classSPUC_1_1iir__lpf1.html#af47dd20d813860fc5fe9a6a6d9ad2db3" title="Print out coefficients. " alt="" coords="314,485,453,511"/>
 </map>

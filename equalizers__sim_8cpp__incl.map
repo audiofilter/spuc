@@ -1,36 +1,35 @@
 <map id="equalizers_sim.cpp" name="equalizers_sim.cpp">
-<area shape="rect" id="node4" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="1424,592,1538,617"/>
-<area shape="rect" id="node21" href="$noise_8h.html" title="Gaussian noise routine. " alt="" coords="1433,299,1529,324"/>
-<area shape="rect" id="node22" href="$baud__eq__env_8h.html" title="Class for doing a simulation of an equalizer running at 1 sample/symbol. " alt="" coords="1435,79,1579,104"/>
-<area shape="rect" id="node5" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="2509,739,2651,764"/>
-<area shape="rect" id="node8" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="1138,665,1227,691"/>
-<area shape="rect" id="node12" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="1251,665,1354,691"/>
-<area shape="rect" id="node14" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="1429,665,1534,691"/>
-<area shape="rect" id="node16" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="2441,665,2540,691"/>
-<area shape="rect" id="node17" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="1557,665,1709,691"/>
-<area shape="rect" id="node18" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1733,665,1907,691"/>
-<area shape="rect" id="node19" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="1931,665,2063,691"/>
-<area shape="rect" id="node20" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="2087,665,2265,691"/>
-<area shape="rect" id="node7" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="1945,812,2095,837"/>
-<area shape="rect" id="node10" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="1488,739,1614,764"/>
-<area shape="rect" id="node11" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="1038,739,1130,764"/>
-<area shape="rect" id="node13" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="1205,739,1312,764"/>
-<area shape="rect" id="node15" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="1638,739,1746,764"/>
-<area shape="rect" id="node25" href="$spuc__math_8h.html" title="Various standard math functions not available elsewhere. " alt="" coords="963,519,1093,544"/>
-<area shape="rect" id="node26" href="$max__pn_8h.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="1393,225,1505,251"/>
-<area shape="rect" id="node27" href="$bpsk__ber__test_8h.html" title="A Class for simulating a BPSK system. " alt="" coords="1682,152,1830,177"/>
-<area shape="rect" id="node29" href="$fading__channel_8h.html" title="A Class for simulating a FIR channel model. " alt="" coords="1063,225,1217,251"/>
-<area shape="rect" id="node42" href="$mle_8h.html" title="A Configurable Maximum Likelihood Sequence Estimator Class. " alt="" coords="758,152,844,177"/>
-<area shape="rect" id="node30" href="$fir_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="632,299,707,324"/>
-<area shape="rect" id="node32" href="$quantiser_8h.html" title="........ " alt="" coords="1006,372,1125,397"/>
-<area shape="rect" id="node37" href="$smart__array_8h.html" title="wrapper for boost shared array that keeps track of number of elements " alt="" coords="354,519,489,544"/>
-<area shape="rect" id="node39" href="$fir__coeff_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="366,445,477,471"/>
-<area shape="rect" id="node41" href="$mixed__type_8h.html" title="Determine resultant type when mixing two types in math operations. " alt="" coords="603,372,736,397"/>
-<area shape="rect" id="node33" href="$quantize_8h.html" title="Templated Quantize function. " alt="" coords="2424,445,2539,471"/>
-<area shape="rect" id="node34" href="$quantized__type_8h.html" title="Determine quantized version of particular type, i.e complex&lt;double&gt; &#45;&gt; complex&lt;long&gt;, etc. " alt="" coords="1943,739,2097,764"/>
-<area shape="rect" id="node35" href="$quantizer_8h.html" title="spuc/quantizer.h" alt="" coords="2422,519,2541,544"/>
-<area shape="rect" id="node36" href="$real__quantize_8h.html" title="Templated quantize function. " alt="" coords="2340,739,2484,764"/>
-<area shape="rect" id="node40" href="$qnoise_8h.html" title="class to add quantization noise to signal " alt="" coords="632,519,736,544"/>
-<area shape="rect" id="node43" href="$delay_8h.html" title="Template class for Delay line. " alt="" coords="246,445,341,471"/>
-<area shape="rect" id="node44" href="$fir__adapt_8h.html" title="template class fir_adapt Based on FIR class, created to support LMS adaptive filtering ..." alt="" coords="534,225,650,251"/>
+<area shape="rect" id="node4" href="$complex_8h.html" title="spuc/complex.h" alt="" coords="1296,592,1410,617"/>
+<area shape="rect" id="node21" href="$noise_8h.html" title="Gaussian noise routine. " alt="" coords="540,299,636,324"/>
+<area shape="rect" id="node22" href="$baud__eq__env_8h.html" title="Class for doing a simulation of an equalizer running at 1 sample/symbol. " alt="" coords="701,79,845,104"/>
+<area shape="rect" id="node5" href="$spuc__defines_8h.html" title="spuc/spuc_defines.h" alt="" coords="2471,739,2614,764"/>
+<area shape="rect" id="node8" href="$conj_8h.html" title="Templated conjugate function. " alt="" coords="1216,665,1304,691"/>
+<area shape="rect" id="node12" href="$signbit_8h.html" title="Templated signbit function. " alt="" coords="1089,665,1191,691"/>
+<area shape="rect" id="node14" href="$magsq_8h.html" title="Templated Magnitude Squared function. " alt="" coords="960,665,1064,691"/>
+<area shape="rect" id="node16" href="$builtin_8h.html" title="Wrapper around built&#45;in types to allow custom manipulations. " alt="" coords="2364,665,2463,691"/>
+<area shape="rect" id="node17" href="$complex__class_8h.html" title="Spuc template complex class. " alt="" coords="1379,665,1531,691"/>
+<area shape="rect" id="node18" href="$complex__functions_8h.html" title="spuc/complex_functions.h" alt="" coords="1554,665,1729,691"/>
+<area shape="rect" id="node19" href="$complex__io_8h.html" title="spuc/complex_io.h" alt="" coords="1753,665,1885,691"/>
+<area shape="rect" id="node20" href="$complex__operators_8h.html" title="spuc/complex_operators.h" alt="" coords="1908,665,2086,691"/>
+<area shape="rect" id="node7" href="$spuc__typedefs_8h.html" title="spuc/spuc_typedefs.h" alt="" coords="2142,812,2292,837"/>
+<area shape="rect" id="node10" href="$base__type_8h.html" title="Determine base class for complex, builtin, sint, etc, classes. " alt="" coords="1289,739,1415,764"/>
+<area shape="rect" id="node11" href="$conjr_8h.html" title="spuc/conjr.h" alt="" coords="1172,739,1265,764"/>
+<area shape="rect" id="node13" href="$signbitr_8h.html" title="spuc/signbitr.h" alt="" coords="940,739,1047,764"/>
+<area shape="rect" id="node15" href="$magsqr_8h.html" title="spuc/magsqr.h" alt="" coords="809,739,917,764"/>
+<area shape="rect" id="node25" href="$spuc__math_8h.html" title="Various standard math functions not available elsewhere. " alt="" coords="758,519,887,544"/>
+<area shape="rect" id="node26" href="$max__pn_8h.html" title="Maximal Length Pseudorandom sequence generator. " alt="" coords="353,225,465,251"/>
+<area shape="rect" id="node27" href="$bpsk__ber__test_8h.html" title="A Class for simulating a BPSK system. " alt="" coords="229,152,377,177"/>
+<area shape="rect" id="node29" href="$fading__channel_8h.html" title="A Class for simulating a FIR channel model. " alt="" coords="696,225,851,251"/>
+<area shape="rect" id="node41" href="$mle_8h.html" title="A Configurable Maximum Likelihood Sequence Estimator Class. " alt="" coords="1441,152,1527,177"/>
+<area shape="rect" id="node30" href="$fir_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="1007,299,1081,324"/>
+<area shape="rect" id="node32" href="$quantiser_8h.html" title="........ " alt="" coords="1081,372,1199,397"/>
+<area shape="rect" id="node38" href="$fir__coeff_8h.html" title="Template Class for Modeling a Finite Impulse Response filter. " alt="" coords="928,445,1040,471"/>
+<area shape="rect" id="node40" href="$mixed__type_8h.html" title="Determine resultant type when mixing two types in math operations. " alt="" coords="246,592,378,617"/>
+<area shape="rect" id="node33" href="$quantize_8h.html" title="Templated Quantize function. " alt="" coords="2420,445,2535,471"/>
+<area shape="rect" id="node34" href="$quantized__type_8h.html" title="Determine quantized version of particular type, i.e complex&lt;double&gt; &#45;&gt; complex&lt;long&gt;, etc. " alt="" coords="2140,739,2295,764"/>
+<area shape="rect" id="node35" href="$quantizer_8h.html" title="spuc/quantizer.h" alt="" coords="2418,519,2537,544"/>
+<area shape="rect" id="node36" href="$real__quantize_8h.html" title="Templated quantize function. " alt="" coords="1972,739,2116,764"/>
+<area shape="rect" id="node39" href="$qnoise_8h.html" title="class to add quantization noise to signal " alt="" coords="911,519,1014,544"/>
+<area shape="rect" id="node42" href="$delay_8h.html" title="Template class for Delay line. " alt="" coords="2094,445,2189,471"/>
+<area shape="rect" id="node43" href="$fir__adapt_8h.html" title="template class fir_adapt Based on FIR class, created to support LMS adaptive filtering ..." alt="" coords="1115,225,1231,251"/>
 </map>

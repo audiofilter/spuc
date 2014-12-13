@@ -1,3 +1,5 @@
 <map id="SPUC::nested_shelf_allpass_2::init" name="SPUC::nested_shelf_allpass_2::init">
-<area shape="rect" id="node2" href="$group__iir.html#ga9ce6556a2c9e97df42a3ad54a1b8c9cd" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="195,12,376,37"/>
+<area shape="rect" id="node2" href="$group__iir.html#gacba754c785cd34cff5ad55f0363ce780" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="195,5,376,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1allpass__1.html#ad34c7c15712f0bd792cd1e4c3c732a82" title="Initializes gain and delay. " alt="" coords="212,55,359,80"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1allpass__2nd.html#ac0790610826e3981b8072eb43a20560c" title="SPUC::allpass_2nd::\lset_coeffs" alt="" coords="213,104,358,143"/>
 </map>

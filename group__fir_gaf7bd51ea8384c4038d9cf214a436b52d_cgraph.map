@@ -1,7 +1,7 @@
 <map id="SPUC::create_remez_lpfir" name="SPUC::create_remez_lpfir">
-<area shape="rect" id="node2" href="$classSPUC_1_1remez__fir.html#abc180eb8d8eb5e19ea76fe2faf06ba02" title="SPUC::remez_fir::remez" alt="" coords="201,31,366,56"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1remez__fir.html#a236490b13685bbd71121d0451a0687fb" title="SPUC::remez_fir::remez" alt="" coords="201,31,366,56"/>
 <area shape="rect" id="node6" href="$classSPUC_1_1fir__coeff.html#ac139e40e6e8792883427b0d529c83076" title="Set tap weights. " alt="" coords="205,80,362,105"/>
 <area shape="rect" id="node3" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="636,5,722,31"/>
-<area shape="rect" id="node4" href="$group__fir.html#ga88dc2b72ba865110ff2cfd89136a47d9" title="Calculate coefficients for FIR using frequency sampling IDFT. " alt="" coords="414,31,588,56"/>
-<area shape="rect" id="node5" href="$namespaceSPUC.html#a8197c0ae85b86b1d45647f064c656205" title="calculates fir filter coefficients based on frequency sampling design using IDFT " alt="" coords="449,80,554,105"/>
+<area shape="rect" id="node4" href="$group__fir.html#ga6ad47eafbd11f1b289c0785546c7aa84" title="Calculate coefficients for FIR using frequency sampling IDFT. " alt="" coords="414,31,588,56"/>
+<area shape="rect" id="node5" href="$namespaceSPUC.html#a3630d315f00afed77734b53223358091" title="calculates fir filter coefficients based on frequency sampling design using IDFT " alt="" coords="449,80,554,105"/>
 </map>

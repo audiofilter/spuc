@@ -1,3 +1,6 @@
 <map id="SPUC::iir_delay_allpass1::clock" name="SPUC::iir_delay_allpass1::clock">
-<area shape="rect" id="node2" href="$group__misc.html#ga3e75891aaf9af0725250646d50373de9" title="Templated round function template function that uses a class to allow template specialization. " alt="" coords="225,12,325,37"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1delay.html#ab99da28ef4995749f7f4178290e2c6e0" title="Get delay at tap i. " alt="" coords="235,5,375,31"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1allpass__1.html#a87557e135305393db67ba98e737378a9" title="Shift inputs by one time sample and place new sample into array. " alt="" coords="225,55,385,80"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1delay.html#a56f73f6b64bf61732f1881fa697b8763" title="Clock in new input sample. " alt="" coords="238,104,372,129"/>
+<area shape="rect" id="node5" href="$group__misc.html#ga3e75891aaf9af0725250646d50373de9" title="Templated round function template function that uses a class to allow template specialization. " alt="" coords="255,153,355,179"/>
 </map>

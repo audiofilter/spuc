@@ -1,6 +1,11 @@
 <map id="SPUC::sim_qpsk::loop_init" name="SPUC::sim_qpsk::loop_init">
-<area shape="rect" id="node2" href="$classSPUC_1_1qpsk__ber__test.html#af18a951921f5ba05aa302b92267b2ad7" title="SPUC::qpsk_ber_test\l::reset" alt="" coords="235,5,384,44"/>
-<area shape="rect" id="node4" href="$classSPUC_1_1quad__data.html#a7c48cc03b9d71c4e6f10412e51b80d79" title="SPUC::quad_data::set\l_initial_offset" alt="" coords="233,68,387,107"/>
-<area shape="rect" id="node5" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="266,131,354,156"/>
-<area shape="rect" id="node3" href="$classSPUC_1_1max__pn.html#a6d44417e66bb9804b74270587c96696f" title="Reset. " alt="" coords="435,12,585,37"/>
+<area shape="rect" id="node2" href="$classSPUC_1_1qpsk__ber__test.html#af18a951921f5ba05aa302b92267b2ad7" title="SPUC::qpsk_ber_test\l::reset" alt="" coords="235,20,384,59"/>
+<area shape="rect" id="node4" href="$classSPUC_1_1qpsk.html#ae4b051431886aa4b78a1456304e62ba4" title="SPUC::qpsk::reset" alt="" coords="244,104,375,129"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1quad__data.html#a7c48cc03b9d71c4e6f10412e51b80d79" title="SPUC::quad_data::set\l_initial_offset" alt="" coords="233,153,387,192"/>
+<area shape="rect" id="node10" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="266,216,354,241"/>
+<area shape="rect" id="node3" href="$classSPUC_1_1max__pn.html#a6d44417e66bb9804b74270587c96696f" title="Reset. " alt="" coords="454,5,604,31"/>
+<area shape="rect" id="node5" href="$classSPUC_1_1vco.html#ae33e8a8332f3bb4ef3fe567ceb43a707" title="SPUC::vco::reset" alt="" coords="468,55,591,80"/>
+<area shape="rect" id="node6" href="$classSPUC_1_1fir.html#a0e06ae64ff448b1264097398e533342d" title="Reset. " alt="" coords="472,104,586,129"/>
+<area shape="rect" id="node7" href="$classSPUC_1_1loop__filter.html#acfde4da154f654fbea34558e83bff7cc" title="Reset. " alt="" coords="464,153,595,192"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1vco.html#a14e3b5019a0ea59ced222a96c29dd45e" title="Set new frequency. " alt="" coords="435,216,624,241"/>
 </map>

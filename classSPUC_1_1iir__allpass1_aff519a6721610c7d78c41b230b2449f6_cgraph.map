@@ -1,9 +1,11 @@
 <map id="SPUC::iir_allpass1::iir_allpass1" name="SPUC::iir_allpass1::iir_allpass1">
-<area shape="rect" id="node2" href="$group__iir.html#gaa77685faf91e6127672237ae391691a9" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="186,79,338,104"/>
-<area shape="rect" id="node8" href="$classSPUC_1_1iir__allpass1.html#ab2b9b3d10f4a4525ecb4040293079479" title="reset " alt="" coords="195,128,328,167"/>
-<area shape="rect" id="node3" href="$namespaceSPUC.html#abec337a0f2a5e1f166c944323308745e" title="SPUC::ellik" alt="" coords="386,79,475,104"/>
-<area shape="rect" id="node5" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="525,104,613,129"/>
-<area shape="rect" id="node6" href="$namespaceSPUC.html#a556b2fee49b0b73288c0eb19608cb740" title="SPUC::ellpj" alt="" coords="386,29,475,55"/>
-<area shape="rect" id="node4" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="526,55,613,80"/>
-<area shape="rect" id="node7" href="$namespaceSPUC.html#acea99b42e034ac8d81c35e330a7a7039" title="SPUC::ABS" alt="" coords="523,5,616,31"/>
+<area shape="rect" id="node2" href="$group__iir.html#ga814b9867605784c8fca64ad02dc1b672" title="Calculate Allpass coefficients for halfband bireciprocal wave filter. " alt="" coords="186,31,338,56"/>
+<area shape="rect" id="node8" href="$classSPUC_1_1allpass__1.html#ad34c7c15712f0bd792cd1e4c3c732a82" title="Initializes gain and delay. " alt="" coords="188,80,335,105"/>
+<area shape="rect" id="node9" href="$classSPUC_1_1iir__allpass1.html#ab2b9b3d10f4a4525ecb4040293079479" title="reset " alt="" coords="195,129,328,168"/>
+<area shape="rect" id="node3" href="$namespaceSPUC.html#abec337a0f2a5e1f166c944323308745e" title="SPUC::ellik" alt="" coords="421,31,510,56"/>
+<area shape="rect" id="node5" href="$group__functions.html#ga6df774210440ba09fc08cd3e3b09fe9c" title="sqrt " alt="" coords="595,5,683,31"/>
+<area shape="rect" id="node6" href="$namespaceSPUC.html#a556b2fee49b0b73288c0eb19608cb740" title="SPUC::ellpj" alt="" coords="420,80,510,105"/>
+<area shape="rect" id="node4" href="$group__functions.html#ga127d448eb6f379770e6b6881f4482c27" title="SPUC::cos" alt="" coords="596,55,682,80"/>
+<area shape="rect" id="node7" href="$namespaceSPUC.html#acea99b42e034ac8d81c35e330a7a7039" title="SPUC::ABS" alt="" coords="593,104,685,129"/>
+<area shape="rect" id="node10" href="$classSPUC_1_1allpass__1.html#a54eea22f6492351d62a66c5e7d35e6be" title="Reset. " alt="" coords="386,136,545,161"/>
 </map>
