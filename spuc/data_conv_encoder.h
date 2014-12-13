@@ -22,7 +22,7 @@
 #include <cmath>
 #include <spuc/complex.h>
 #include <spuc/max_pn.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief Convolutional encoder for punctured encoding

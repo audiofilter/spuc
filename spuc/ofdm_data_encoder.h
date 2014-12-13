@@ -24,7 +24,7 @@
 #include <spuc/bit_scrambler.h>
 #include <spuc/data_conv_encoder.h>
 #include <spuc/qam_mod.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief  OFDM/802.11A/G Data Encoder 

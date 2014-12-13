@@ -21,7 +21,7 @@
 #include <spuc/spuc_types.h>
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
-#include <spuc/smart_array.h>
+#include <vector>
 #include <spuc/iir_allpass_variable_cascade.h>
 namespace SPUC {
 

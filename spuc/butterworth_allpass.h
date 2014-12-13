@@ -21,7 +21,7 @@
 #include <spuc/spuc_types.h>
 #include <spuc/spuc_defines.h>
 #include <cmath>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief Calculate Allpass coefficients for halfband bireciprocal wave filter

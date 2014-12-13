@@ -23,7 +23,7 @@
 #include <spuc/complex.h>
 #include <spuc/viterbi.h>
 #include <spuc/delay.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief QAM convolutional decoder

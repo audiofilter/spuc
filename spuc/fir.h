@@ -22,7 +22,7 @@
 #include <spuc/base_type.h>
 #include <typeinfo>
 #include <spuc/quantiser.h>
-#include <spuc/smart_array.h>
+#include <vector>
 #include <spuc/fir_coeff.h>
 #include <spuc/mixed_type.h>
 namespace SPUC {

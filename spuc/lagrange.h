@@ -25,7 +25,7 @@
 #include <spuc/quant.h>
 #include <spuc/quantiser.h>
 #include <spuc/mixed_type.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief  Template Class for Lagrange interpolation using a FIR  filter. 

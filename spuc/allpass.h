@@ -24,7 +24,7 @@
 #include <spuc/complex.h>
 #include <spuc/spuc_math.h>
 #include <spuc/allpass_1.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief  Template Class for allpass filter consisting of

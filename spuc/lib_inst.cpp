@@ -20,7 +20,7 @@
 #include <iostream>
 #include <fstream>
 #include <spuc/complex.h>
-#include <spuc/smart_array.h>
+#include <vector>
 #include <spuc/fir.h>
 namespace SPUC {
 

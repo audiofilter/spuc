@@ -19,7 +19,7 @@
 // from directory: spuc_src
 #include <spuc/elliptic_iir.h>
 #include <spuc/elliptic_allpass.h>
-#include <spuc/smart_array.h>
+#include <vector>
 #define MINFP 0.005
 namespace SPUC {
 void elliptic_allpass(std::vector<float_type>& a0, std::vector<float_type>& a1, float_type fp, int L) {

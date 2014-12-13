@@ -23,7 +23,7 @@
 #include <iostream>
 #include <fstream>
 #include <spuc/idft.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 void idft(std::vector<complex<float_type> > y, int n)
 {

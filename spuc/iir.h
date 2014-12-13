@@ -26,7 +26,7 @@
 #include <spuc/iir_coeff.h>
 #include <spuc/quantiser.h>
 #include <iostream>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief  Template Class for iir filter

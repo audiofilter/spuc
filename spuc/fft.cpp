@@ -22,7 +22,7 @@
 #include <iostream>
 #include <fstream>
 #include <spuc/fft.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 /* *************************************************************************
 fft - In-place radix 2 decimation in time inverse FFT

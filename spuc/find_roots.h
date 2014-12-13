@@ -21,7 +21,7 @@
 #include <spuc/spuc_types.h>
 #include <cmath>
 #include <spuc/complex.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief Calculate the complex roots of a polynomial equation

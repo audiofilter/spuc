@@ -22,7 +22,7 @@
 #include <spuc/complex.h>
 #include <spuc/spuc_defines.h>
 #include <spuc/spuc_math.h>
-#include <spuc/smart_array.h>
+#include <vector>
 #define RTD  2.0/PI  // radian to decimal conversion factor 
 namespace SPUC {
 //! \file

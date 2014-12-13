@@ -21,7 +21,7 @@
 #include <spuc/spuc_types.h>
 #include <cmath>
 #include <spuc/complex.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief  Soft-decision QAM Demapper (used in 802.11A)

@@ -19,7 +19,7 @@
 */
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
-#include <spuc/smart_array.h>
+#include <vector>
 #include <spuc/qnoise.h>
 namespace SPUC {
 //! \file

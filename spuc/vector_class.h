@@ -1,6 +1,6 @@
 #ifndef SPUC_VECTOR_CLASS
 #define SPUC_VECTOR_CLASS
-#include <spuc/smart_array.h>
+#include <vector>
 
 /*
     Copyright (C) 2014 Tony Kirke

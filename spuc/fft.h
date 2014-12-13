@@ -20,7 +20,7 @@
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief fast fourier transform

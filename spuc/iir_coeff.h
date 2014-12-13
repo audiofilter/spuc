@@ -21,7 +21,7 @@
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
 #include <spuc/spuc_math.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //!
 //!  \file

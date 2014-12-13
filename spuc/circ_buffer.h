@@ -19,7 +19,7 @@
 */
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief Circular Buffer

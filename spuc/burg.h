@@ -19,7 +19,7 @@
 */
 // from directory: spuc_template_array_functions
 #include <spuc/spuc_types.h>
-#include <spuc/smart_array.h>
+#include <vector>
 #include <spuc/magsq.h>
 #include <cmath>
 namespace SPUC {

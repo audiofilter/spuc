@@ -19,7 +19,7 @@
 */
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
-#include <spuc/smart_array.h>
+#include <vector>
 #define BANDPASS 1
 #define DIFFERENTIATOR 2
 #define HILBERT 3

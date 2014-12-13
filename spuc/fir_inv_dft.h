@@ -19,7 +19,7 @@
 */
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
-#include <spuc/smart_array.h>
+#include <vector>
 namespace SPUC {
 //! \file
 //! \brief Calculate coefficients for FIR using frequency sampling IDFT
