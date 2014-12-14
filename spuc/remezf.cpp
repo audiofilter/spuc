@@ -29,7 +29,7 @@ namespace SPUC {
 template <float_type Des_function(float_type),
           float_type Weight_function(float_type)>
 void remez_function(std::vector<float_type>& r_fir, int numtaps, int numband,
-                    int r, std::vector<float_type> bands, int type) {
+                    int r, std::vector<float_type>& bands, int type) {
   float_type floor(float_type x);
   int j = 0;
   int k;

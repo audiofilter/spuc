@@ -24,8 +24,8 @@
 #include <spuc/remez_fir.h>
 namespace SPUC {
 void create_remez_fir(fir_coeff<float_type>& remezfir, int jtype, int nbands,
-                      std::vector<float_type> edge, std::vector<float_type> fx,
-                      std::vector<float_type> wtx) {
+                      std::vector<float_type>& edge, std::vector<float_type>& fx,
+                      std::vector<float_type>& wtx) {
   bool ok;
   long nfilt = remezfir.num_taps;
   remez_fir Remz;

@@ -83,8 +83,8 @@ class nested_shelf_allpass_2 {
     // std::cout << "kb = " << kb << " kc = " << kc << "\n";
   }
   void print() {
-    std::cout << "A0 " << A0.a << " " << A0.b << "\n";
-    std::cout << "A1 " << A1.a << " " << A1.b << "\n";
+    std::cout << "A0 " << A0.get_a() << " " << A0.get_b() << "\n";
+    std::cout << "A1 " << A1.get_a() << " " << A1.get_b() << "\n";
     std::cout << "D0 " << D0.get_coefficient() << "\n";
   }
   void change(Coeff k) {
