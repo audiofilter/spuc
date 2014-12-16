@@ -15,8 +15,7 @@ namespace SPUC {
 //! \brief frequency transfer function at freq with iir A and B equations
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-complex<float_type> ptr_freqz_point(T* b, T* a, float_type freq, int N) {
+template <class T> complex<float_type> ptr_freqz_point(T* b, T* a, float_type freq, int N) {
   int i;
   complex<float_type> z(1, 0);
   complex<float_type> z_inc = complex<float_type>(cos(freq), sin(freq));
@@ -33,8 +32,7 @@ complex<float_type> ptr_freqz_point(T* b, T* a, float_type freq, int N) {
 //! \brief frequency magnitude function at freq with fir x
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-float_type ptr_freqz_mag_point(T* x, float_type freq, int N) {
+template <class T> float_type ptr_freqz_mag_point(T* x, float_type freq, int N) {
   int i;
   complex<float_type> z(1, 0);
   complex<float_type> z_inc = expj(freq);
@@ -48,8 +46,7 @@ float_type ptr_freqz_mag_point(T* x, float_type freq, int N) {
 //! \brief frequency transfer function at freq for 1st order allpass
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-complex<float_type> ptr_freqz_point(T a, float_type freq) {
+template <class T> complex<float_type> ptr_freqz_point(T a, float_type freq) {
   complex<float_type> z(1, 0);
   complex<float_type> z_inc = complex<float_type>(cos(freq), sin(freq));
   complex<float_type> nom;
@@ -61,8 +58,7 @@ complex<float_type> ptr_freqz_point(T a, float_type freq) {
 //! \brief frequency transfer function over "pts" points for IIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-void freqz(complex<float_type>* f, T* b, T* a, int N, int pts) {
+template <class T> void freqz(complex<float_type>* f, T* b, T* a, int N, int pts) {
   int i, j;
   complex<float_type> z;
   complex<float_type> z_inc;
@@ -88,8 +84,7 @@ void freqz(complex<float_type>* f, T* b, T* a, int N, int pts) {
 //! \brief frequency magnitude function over "pts" points for IIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-void ptr_freqz_mag(float_type* f, T* b, T* a, int N, int pts) {
+template <class T> void ptr_freqz_mag(float_type* f, T* b, T* a, int N, int pts) {
   int i, j;
   complex<float_type> z;
   complex<float_type> z_inc;
@@ -115,8 +110,7 @@ void ptr_freqz_mag(float_type* f, T* b, T* a, int N, int pts) {
 //! \brief frequency magnitude function over "pts" points for FIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-void ptr_freqz_fir(complex<float_type>* f, T* x, int N, int pts) {
+template <class T> void ptr_freqz_fir(complex<float_type>* f, T* x, int N, int pts) {
   int i, j;
   complex<float_type> z;
   complex<float_type> z_inc;

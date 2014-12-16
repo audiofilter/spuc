@@ -1,22 +1,7 @@
 #ifndef SPUC_BPE
 #define SPUC_BPE
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -34,12 +19,11 @@ namespace SPUC {
 //!  <I>Notes:</I>
 //!   Note that the BPE only cares about the phase of a vector, and not on the
 //!    actual vector magnitude.  This results in a degradation of the average
-//bpe
+// bpe
 //!    vector magnitude as Eb/No decreases.
 //! \author Tony Kirke
 //! \ingroup real_double_templates comm
-template <class Numeric, class Coeff = double>
-class bpe {
+template <class Numeric, class Coeff = double> class bpe {
   std::vector<complex<Numeric> > bit;  //! array containing previous inputs
   int quad_prev;                       //! Previous quadrant
   int oqtstate;                        //! quadrant cross-over indicator
@@ -67,8 +51,7 @@ class bpe {
 
     complex<Coeff> vx(0, 0);
 
-    for (i = 0; i < nbpe; i++)
-      vx += polar(1 / (float_type)nbpe, fq_angle(bit[i]));
+    for (i = 0; i < nbpe; i++) vx += polar(1 / (float_type)nbpe, fq_angle(bit[i]));
     out_angle4 = arg(vx);
     if (out_angle4 <= 0.) out_angle4 += TWOPI;
 

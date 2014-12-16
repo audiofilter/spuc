@@ -1,20 +1,5 @@
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/cfft.h>
@@ -28,8 +13,7 @@ namespace SPUC {
  * scalings for the forward transform; scalei1 and scalei2 are
  * the same for the inverse transform.
  */
-cfft::cfft(int size, float_type scalef1, float_type scalef2, float_type scalei1,
-           float_type scalei2) {
+cfft::cfft(int size, float_type scalef1, float_type scalef2, float_type scalei1, float_type scalei2) {
   int i, j, k;
   float_type t;
 
@@ -75,7 +59,7 @@ cfft::cfft(int size, float_type scalef1, float_type scalef2, float_type scalei1,
       t = float_type(bitrev[i << 1]) * PI / float_type(k);
       ww = CPLX(cos(t), sin(t));
       w[i] = conj(ww);  // force limiting of imag part if applic.
-      // cout << w[i] << "\n";
+                        // cout << w[i] << "\n";
     }
   }
 }
@@ -148,9 +132,7 @@ void cfft::fft_func(CPLX *buf, int iflag) {
     }
     buf0 = buf;
     for (j = 0; buf0 < bufe; ++j) {
-      if (iflag) {
-        zw = conj(w[j]);
-      } else {
+      if (iflag) { zw = conj(w[j]); } else {
         zw = w[j]; /* get w-factor */
       }
       buf2 = buf0 + k;

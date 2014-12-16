@@ -1,22 +1,7 @@
 #ifndef SPUC_BAUD_EQ_ENV
 #define SPUC_BAUD_EQ_ENV
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_complex_templates
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -33,15 +18,14 @@
 namespace SPUC {
 //! \file
 //! \brief  Class for doing a simulation of an equalizer running at 1
-//sample/symbol
+// sample/symbol
 //
 //! \brief  Class for doing a simulation of an equalizer running at 1
-//sample/symbol
+// sample/symbol
 //
 //! \author Tony Kirke
 //! \ingroup complex_templates sim equalizers
-template <class Numeric>
-class baud_eq_env {
+template <class Numeric> class baud_eq_env {
  public:
   bpsk_ber_test* BER_mon;
   max_pn* tx_data_source;
@@ -76,8 +60,7 @@ class baud_eq_env {
     n = new noise;
 #endif
   }
-  void loop_init(long equalizer_type, long data_delay,
-                 float_type delay_spread) {
+  void loop_init(long equalizer_type, long data_delay, float_type delay_spread) {
     long mlse_len;
     int i;
     fir<Numeric, Numeric> cir(paths);
@@ -94,9 +77,7 @@ class baud_eq_env {
     multipaths->exp_decay.coeff[0] = 0.9;
     multipaths->exp_decay.coeff[1] = 0.1;
     // Copy from multipaths (change type if necessary!!!!!!!!!)
-    for (i = 0; i < paths; i++) {
-      cir.settap(i, multipaths->exp_decay.coeff[i]);
-    }
+    for (i = 0; i < paths; i++) { cir.settap(i, multipaths->exp_decay.coeff[i]); }
 
 #ifndef NEWNOISE
     n = new noise;

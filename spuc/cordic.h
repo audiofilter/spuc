@@ -1,22 +1,7 @@
 #ifndef SPUC_CORDIC
 #define SPUC_CORDIC
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -38,8 +23,7 @@ namespace SPUC {
 //! \image html cordic.png
 //! \ingroup real_templates misc
 //! \image html cordic.gif
-template <class Numeric>
-class cordic {
+template <class Numeric> class cordic {
  public:
   std::vector<float_type> arctan_lut;
   std::vector<complex<Numeric> > stage;
@@ -49,8 +33,7 @@ class cordic {
   cordic(int n = 7) : arctan_lut(n + 2), stage(n + 2), stages(n) {
     SPUC_ASSERT(n < 0);
     int i;
-    for (i = 0; i <= stages; i++)
-      arctan_lut[i] = atan(1.0 / (float_type)(1 << i));
+    for (i = 0; i <= stages; i++) arctan_lut[i] = atan(1.0 / (float_type)(1 << i));
   }
   //! Returns magnitude through CORDIC vectoring
   Numeric vector_mag(complex<Numeric> in) { return (cordic_vector(in)); }
@@ -72,22 +55,17 @@ class cordic {
     if (angle > PI) {
       stage[0] = -shift_in;
       angle -= PI;
-    } else {
-      stage[0] = shift_in;
-    }
+    } else { stage[0] = shift_in; }
     if (angle > PI / 2) {
       stage[1] = complex<Numeric>(-imag(stage[0]), real(stage[0]));
       angle -= PI / 2;
-    } else {
-      stage[1] = stage[0];
-    }
+    } else { stage[1] = stage[0]; }
     // Subsequent rotations, with right shifts
     for (i = 0; i <= stages; i++) {
       long sign = (angle < 0) ? -1 : 1;
       complex<Numeric> shift_stage = (stage[i + 1] >> i);
-      stage[i + 2] =
-          complex<Numeric>(real(stage[i + 1]) - sign * (imag(shift_stage)),
-                           imag(stage[i + 1]) + sign * (real(shift_stage)));
+      stage[i + 2] = complex<Numeric>(real(stage[i + 1]) - sign * (imag(shift_stage)),
+                                      imag(stage[i + 1]) + sign * (real(shift_stage)));
       angle -= sign * arctan_lut[i];
     }
     return (stage[stages]);
@@ -130,8 +108,7 @@ class cordic {
       //	  long sign = (stage[i].im < 0) ? -1 : 1;
       complex<Numeric> shift_stage = (stage[i + 1] >> i);
       stage[i + 1] =
-          complex<Numeric>(real(stage[i]) - sign * (imag(shift_stage)),
-                           imag(stage[i]) + sign * (real(shift_stage)));
+          complex<Numeric>(real(stage[i]) - sign * (imag(shift_stage)), imag(stage[i]) + sign * (real(shift_stage)));
       vector_angle -= sign * arctan_lut[i];
     }
     return (real(stage[stages]));

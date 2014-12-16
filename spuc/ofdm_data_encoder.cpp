@@ -1,20 +1,5 @@
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/spuc_defines.h>
@@ -31,9 +16,7 @@ namespace SPUC {
 void ofdm_data_encoder::interleave(const std::vector<bool>& data_in) {
   int k;
   for (int i = 0; i < coded_bits_per_frame; i++) {
-    k = 16 * i -
-        (coded_bits_per_frame - 1) *
-            (long)floor(16.0 * i / coded_bits_per_frame);
+    k = 16 * i - (coded_bits_per_frame - 1) * (long)floor(16.0 * i / coded_bits_per_frame);
 #ifdef NO_INT
     interleaver_out[i] = data_in[i];
 #else
@@ -55,9 +38,7 @@ void ofdm_data_encoder::get_data_frame() {
 
   raw_bits_this_frame = 0;
   for (j = 0; j < coded_bits_per_frame; j++) {
-    if (no_conv) {
-      data_enc = CONV.get_data();
-    } else {
+    if (no_conv) { data_enc = CONV.get_data(); } else {
       data_enc = CONV.conv_encoder(enc_rate);
     }
     interleaver_in[j] = data_enc;
@@ -68,14 +49,10 @@ void ofdm_data_encoder::get_data_frame() {
 
   int bitc = 0;
   for (j = 0; j < Carriers; j++) {
-    for (i = 0; i < tx_bits_per_symbol; i++) {
-      serial_to_word_input(interleaver_out[bitc++]);
-    }
+    for (i = 0; i < tx_bits_per_symbol; i++) { serial_to_word_input(interleaver_out[bitc++]); }
     pre_mod[j] = serial_to_word_output();
   }
 }
-void ofdm_data_encoder::serial_to_word_input(bool in) {
-  serial = (serial << 1) | (long)in;
-}
+void ofdm_data_encoder::serial_to_word_input(bool in) { serial = (serial << 1) | (long)in; }
 long ofdm_data_encoder::serial_to_word_output(void) { return (serial); }
 }  // namespace SPUC

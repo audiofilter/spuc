@@ -1,20 +1,5 @@
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <cmath>
@@ -82,7 +67,7 @@ std::vector<float_type> hanning(long nf) {
 //:
 //!  \ingroup fir
 //! \brief Blackman Window	\f$ w[x] = 0.42 - 0.5*cos(2*\pi*x/nf) +
-//0.08*cos(2*\pi*x/nf)\f$
+// 0.08*cos(2*\pi*x/nf)\f$
 std::vector<float_type> blackman(long nf) {
   // nf = filter length in samples
   // alpha = constant of window
@@ -93,8 +78,7 @@ std::vector<float_type> blackman(long nf) {
   for (int i = 0; i < nf; i++) {
     xi = i;
     if (odd) xi += 0.5;
-    w[i] =
-        0.42 - 0.5 * ::cos(TWOPI * xi / nf) + 0.08 * ::cos(2 * TWOPI * xi / nf);
+    w[i] = 0.42 - 0.5 * ::cos(TWOPI * xi / nf) + 0.08 * ::cos(2 * TWOPI * xi / nf);
   }
   return (w);
 }
@@ -123,8 +107,7 @@ std::vector<float_type> kaiser(long nf, float_type beta) {
 
 //!  \ingroup fir
 //!  \brief dolph chebyshev window design
-std::vector<float_type> cheby(long nf, long n, long ieo, float_type dp,
-                              float_type df, float_type x0) {
+std::vector<float_type> cheby(long nf, long n, long ieo, float_type dp, float_type df, float_type x0) {
   /*! parameters
         - nf = filter length in samples
         - w = window array of size n
@@ -157,9 +140,7 @@ std::vector<float_type> cheby(long nf, long n, long ieo, float_type dp,
     xi = i - 1;
     f = xi / fnf;
     x = alpha * ::cos(TWOPI * f) + beta;
-    if ((fabs(x) - 1.) > 0) {
-      p = dp * ::cos(c2 * acos(x));
-    } else {
+    if ((fabs(x) - 1.) > 0) { p = dp * ::cos(c2 * acos(x)); } else {
       p = dp * cosh(c2 * coshin(x));
     }
     pie = complex<float_type>(0.0, p);
@@ -179,9 +160,8 @@ std::vector<float_type> cheby(long nf, long n, long ieo, float_type dp,
       for (j = 1; j < nf + 1; j++) {
         xj = j - 1;
         //	  sum += real(pie[j])*cos(twn*xj*xi) +
-        //imag(pie[j])*sin(twn*xj*xi);
-        sum +=
-            real(pie) * ::cos(twn * xj * xi) + imag(pie) * sin(twn * xj * xi);
+        // imag(pie[j])*sin(twn*xj*xi);
+        sum += real(pie) * ::cos(twn * xj * xi) + imag(pie) * sin(twn * xj * xi);
       }
       w[i] = sum;
     }
@@ -194,8 +174,7 @@ std::vector<float_type> cheby(long nf, long n, long ieo, float_type dp,
 //! \brief chebyshev window
 //! subroutine to generate chebyshev window parameters when
 //! one of the three parameters nf,dp and df is unspecified???
-void chebc(float_type nf, float_type dp, float_type df, float_type n,
-           float_type x0) {
+void chebc(float_type nf, float_type dp, float_type df, float_type n, float_type x0) {
   //
   // nf = filter length (in samples)
   // dp = filter ripple (absolute scale)

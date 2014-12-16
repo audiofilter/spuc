@@ -1,22 +1,7 @@
 #ifndef SPUC_LMS_DFE
 #define SPUC_LMS_DFE
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_utemplates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -37,8 +22,7 @@ namespace SPUC {
 //! \ingroup double_utemplates comm
 //! \image html lms_dfe.gif
 //! \image latex lms_dfe.eps
-template <class Numeric, class Coeff = double>
-class lms_dfe {
+template <class Numeric, class Coeff = double> class lms_dfe {
  public:
   typedef typename base_type<Numeric>::btype real_type;
   //! Feedforward FIR section
@@ -51,8 +35,7 @@ class lms_dfe {
 
  public:
   //! Constructor with feedforward size, feedback size and gain
-  lms_dfe(char inf = 16, char inb = 0, real_type gain = 0, Numeric mid_val = 1)
-      : u(gain) {
+  lms_dfe(char inf = 16, char inb = 0, real_type gain = 0, Numeric mid_val = 1) : u(gain) {
     mid_tap = mid_val;
     ff.set_size(inf);
     ff.set_gain(gain);
@@ -60,9 +43,7 @@ class lms_dfe {
       fb.set_size(inb);
       fb.set_gain(gain);
       ff.coeff[inf - 1] = mid_tap;
-    } else {
-      ff.coeff[inf / 2] = mid_tap;
-    }
+    } else { ff.coeff[inf / 2] = mid_tap; }
   }
   ~lms_dfe() {}
   void reset() {
@@ -71,9 +52,7 @@ class lms_dfe {
       if (fb.num_taps > 0) {
         fb.reset();
         ff.settap(ff.num_taps - 1, mid_tap);
-      } else {
-        ff.settap(ff.num_taps / 2, mid_tap);
-      }
+      } else { ff.settap(ff.num_taps / 2, mid_tap); }
     }
   }
   void set_ff_tap(long i, Numeric x) { ff.coeff[i] = x; }

@@ -1,22 +1,7 @@
 #ifndef SPUC_FREQZ
 #define SPUC_FREQZ
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_template_array_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -32,9 +17,7 @@ namespace SPUC {
 //! \brief frequency transfer function at freq with iir A and B equations
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-complex<float_type> freqz_point(std::vector<T> b, std::vector<T> a,
-                                float_type freq, int N) {
+template <class T> complex<float_type> freqz_point(std::vector<T> b, std::vector<T> a, float_type freq, int N) {
   int i;
   complex<float_type> z(1, 0);
   complex<float_type> z_inc = complex<float_type>(cos(freq), sin(freq));
@@ -51,8 +34,7 @@ complex<float_type> freqz_point(std::vector<T> b, std::vector<T> a,
 //! \brief frequency magnitude function at freq with fir x
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-float_type freqz_mag_point(std::vector<T> x, float_type freq, int N) {
+template <class T> float_type freqz_mag_point(std::vector<T> x, float_type freq, int N) {
   int i;
   complex<float_type> z(1, 0);
   complex<float_type> z_inc = expj(freq);
@@ -66,8 +48,7 @@ float_type freqz_mag_point(std::vector<T> x, float_type freq, int N) {
 //! \brief frequency transfer function at freq for 1st order allpass
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-complex<float_type> freqz_point(T a, float_type freq) {
+template <class T> complex<float_type> freqz_point(T a, float_type freq) {
   complex<float_type> z(1, 0);
   complex<float_type> z_inc = complex<float_type>(cos(freq), sin(freq));
   complex<float_type> nom;
@@ -79,9 +60,7 @@ complex<float_type> freqz_point(T a, float_type freq) {
 //! \brief frequency transfer function over "pts" points for IIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-std::vector<complex<float_type> > freqz(std::vector<T> b, std::vector<T> a,
-                                        int pts) {
+template <class T> std::vector<complex<float_type> > freqz(std::vector<T> b, std::vector<T> a, int pts) {
   int i, j;
   int N = b.len();
   complex<float_type> z;
@@ -110,9 +89,7 @@ std::vector<complex<float_type> > freqz(std::vector<T> b, std::vector<T> a,
 //! \brief frequency magnitude function over "pts" points for IIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-std::vector<complex<float_type> > freqz_mag(std::vector<T> b, std::vector<T> a,
-                                            int pts) {
+template <class T> std::vector<complex<float_type> > freqz_mag(std::vector<T> b, std::vector<T> a, int pts) {
   int i, j;
   int N = b.len();
   complex<float_type> z;
@@ -142,8 +119,7 @@ std::vector<complex<float_type> > freqz_mag(std::vector<T> b, std::vector<T> a,
 //! \brief frequency magnitude function over "pts" points for FIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T>
-std::vector<complex<float_type> > freqz_fir(std::vector<T> x, int pts) {
+template <class T> std::vector<complex<float_type> > freqz_fir(std::vector<T> x, int pts) {
   int i, j;
   int N = x.len();
   complex<float_type> z;

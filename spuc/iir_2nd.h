@@ -1,22 +1,7 @@
 #ifndef SPUC_IIR_2ND
 #define SPUC_IIR_2ND
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -37,8 +22,7 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \image html iir_2nd.png
 //! \ingroup double_templates iir
-template <class Numeric, class Coeff = float_type>
-class iir_2nd {
+template <class Numeric, class Coeff = float_type> class iir_2nd {
  protected:  // should be protected:
   long round_bits;
   Coeff b0, b1, b2;
@@ -52,15 +36,13 @@ class iir_2nd {
   typedef typename mixed_type<Numeric, Coeff>::dtype sum_type;
 
  public:
-  iir_2nd(Coeff B0, Coeff B1, Coeff B2, Coeff A1, Coeff A2, long b = 0)
-      : b0(B0), b1(B1), b2(B2), a1(A1), a2(A2), Q(b) {
+  iir_2nd(Coeff B0, Coeff B1, Coeff B2, Coeff A1, Coeff A2, long b = 0) : b0(B0), b1(B1), b2(B2), a1(A1), a2(A2), Q(b) {
     reset();
     round_bits = b;
     fb0 = fb1 = fb2 = (Numeric)0;
     //	scale = (Numeric)(1<<round_bits);
   }
-  iir_2nd(Coeff A1 = 0, Coeff A2 = 0)
-      : b0(1), b1(2), b2(1), a1(A1), a2(A2), Q(0) {
+  iir_2nd(Coeff A1 = 0, Coeff A2 = 0) : b0(1), b1(2), b2(1), a1(A1), a2(A2), Q(0) {
     reset();
     round_bits = 0;
     fb0 = fb1 = fb2 = (Numeric)0;

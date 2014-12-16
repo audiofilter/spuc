@@ -1,22 +1,7 @@
 #ifndef SPUC_FIR_COEFF
 #define SPUC_FIR_COEFF
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <vector>
@@ -33,8 +18,7 @@ namespace SPUC {
 //! \ingroup templates fir
 //! \image html fir.gif
 //! \image latex fir.eps
-template <class Numeric>
-class fir_coeff {
+template <class Numeric> class fir_coeff {
  public:
   std::vector<Numeric> coeff;
 
@@ -87,8 +71,7 @@ class fir_coeff {
     for (int i = 0; i < num_taps; i++) std::cout << coeff[i] << ",";
     std::cout << "\n";
   }
-  template <class N>
-  friend std::vector<N> get_taps(fir_coeff<N> x);
+  template <class N> friend std::vector<N> get_taps(fir_coeff<N> x);
   void settap(std::vector<Numeric> z) {
     for (int i = 0; i < num_taps; i++) coeff[i] = z[i];
   }
@@ -106,8 +89,7 @@ class fir_coeff {
   }
 };
 
-template <class T>
-std::vector<T> get_taps(fir_coeff<T> f) {
+template <class T> std::vector<T> get_taps(fir_coeff<T> f) {
   long N = f.num_taps;
   std::vector<T> V(N);
   for (int i = 0; i < N; i++) V[i] = f.coeff[i];

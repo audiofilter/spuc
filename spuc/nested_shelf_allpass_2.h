@@ -1,22 +1,7 @@
 #ifndef SPUC_NESTED_SHELF_ALLPASS_2
 #define SPUC_NESTED_SHELF_ALLPASS_2
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/quant.h>
@@ -24,8 +9,7 @@
 #include <spuc/butterworth_allpass.h>
 namespace SPUC {
 // from directory: spuc_double_templates
-template <class Numeric, class Coeff = float_type>
-class nested_shelf_allpass_2 {
+template <class Numeric, class Coeff = float_type> class nested_shelf_allpass_2 {
  protected:
   //! The 2 1st order allpass filters
   int Delay;
@@ -57,8 +41,7 @@ class nested_shelf_allpass_2 {
   }
   void set_hpf(bool h) { hpf = h; }
   //
-  void init(float_type fp, float_type k, float_type low_gain,
-            float_type high_gain) {
+  void init(float_type fp, float_type k, float_type low_gain, float_type high_gain) {
     std::vector<float_type> c0(1);
     std::vector<float_type> c1(1);
     butterworth_allpass(c0, c1, 2);  // ignore fp for butterworth func
@@ -108,9 +91,7 @@ class nested_shelf_allpass_2 {
     dly_input = D0.clock(input);
     out1 = A1.clock(dly_input);
 
-    if (hpf) {
-      sumx = kb * (out0 - out1) + kc * (out0 + out1);
-    } else {
+    if (hpf) { sumx = kb * (out0 - out1) + kc * (out0 + out1); } else {
       sumx = kb * (out0 + out1) + kc * (out0 - out1);
     }
     return (round(sumx, 1));

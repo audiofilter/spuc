@@ -1,22 +1,7 @@
 #ifndef SPUC_IIR_DF
 #define SPUC_IIR_DF
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/fir.h>
@@ -37,8 +22,7 @@ namespace SPUC {
 //!  IIR function implemented with FIR class using special iir function
 //! \author Tony Kirke
 //!  \ingroup double_templates iir
-template <class Numeric, class Coeff = float_type>
-class iir_df {
+template <class Numeric, class Coeff = float_type> class iir_df {
  public:
   fir<Numeric, Coeff> poles;
   fir<Numeric, Coeff> zeros;
@@ -61,8 +45,7 @@ class iir_df {
     err = poles.read_taps(filep);
     err += zeros.read_taps(filez);
   }
-  iir_df<Numeric, Coeff>(const iir_df<Numeric, Coeff>& cp)
-      : poles(cp.poles.num_taps), zeros(cp.zeros.num_taps) {
+  iir_df<Numeric, Coeff>(const iir_df<Numeric, Coeff>& cp) : poles(cp.poles.num_taps), zeros(cp.zeros.num_taps) {
     int i;
     for (i = 0; i < cp.poles.num_taps; i++) poles.coeff[i] = cp.poles.coeff[i];
     for (i = 0; i < cp.zeros.num_taps; i++) zeros.coeff[i] = cp.zeros.coeff[i];

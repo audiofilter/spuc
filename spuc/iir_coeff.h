@@ -1,22 +1,7 @@
 #ifndef SPUC_IIR_COEFF
 #define SPUC_IIR_COEFF
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -57,10 +42,8 @@ class iir_coeff {
   void z_root_to_ab(std::vector<complex<float_type> >& z);
   void pz_to_ap();
   void ab_to_tf();
-  std::vector<float_type> p2_to_poly(
-      const std::vector<complex<float_type> >& ab);
-  std::vector<float_type> pz_to_poly(
-      const std::vector<complex<float_type> >& z);
+  std::vector<float_type> p2_to_poly(const std::vector<complex<float_type> >& ab);
+  std::vector<float_type> pz_to_poly(const std::vector<complex<float_type> >& z);
   complex<float_type> get_root(long i);
   complex<float_type> get_zero(long i);
   float_type get_a(long i);

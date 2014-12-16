@@ -1,22 +1,7 @@
 #ifndef SPUC_IIR_ALLPASS1_CASCADE
 #define SPUC_IIR_ALLPASS1_CASCADE
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -31,15 +16,14 @@ namespace SPUC {
 //! \brief  Template Class for iir filter
 //
 //! \brief  Template Class for iir filter consisting of 1st order allpass
-//sections
+// sections
 //
 //! This is a halfband IIR filter with two branches of cascades of
 //! 1st order allpass sections
 //! \author Tony Kirke
 //! \image html iir_allpass1_cascade.png
 //! \ingroup double_templates iir
-template <class Numeric, class Coeff = float_type>
-class iir_allpass1_cascade {
+template <class Numeric, class Coeff = float_type> class iir_allpass1_cascade {
  public:
   long stages;
   allpass<Numeric, Coeff> A0;
@@ -78,17 +62,13 @@ class iir_allpass1_cascade {
       }
 #ifdef DEBUG
       std::cout << "fp = " << fp << ", Stages = " << stages << "\n";
-      for (int i = 0; i < j; i++)
-        std::cout << "a0[" << i << "]= " << a0[i] << " ";
+      for (int i = 0; i < j; i++) std::cout << "a0[" << i << "]= " << a0[i] << " ";
       std::cout << "\n";
-      for (int i = 0; i < j; i++)
-        std::cout << "a0c[" << i << "]= " << a0c[i] << " ";
+      for (int i = 0; i < j; i++) std::cout << "a0c[" << i << "]= " << a0c[i] << " ";
       std::cout << "\n";
-      for (int i = 0; i < k; i++)
-        std::cout << "a1[" << i << "]= " << a1[i] << " ";
+      for (int i = 0; i < k; i++) std::cout << "a1[" << i << "]= " << a1[i] << " ";
       std::cout << "\n";
-      for (int i = 0; i < k; i++)
-        std::cout << "a1c[" << i << "]= " << a1c[i] << " ";
+      for (int i = 0; i < k; i++) std::cout << "a1c[" << i << "]= " << a1c[i] << " ";
       std::cout << "\n";
 #endif
       A0.init(a0c, j);

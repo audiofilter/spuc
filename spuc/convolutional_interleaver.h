@@ -1,22 +1,7 @@
 #ifndef SPUC_CONVOLUTIONAL_INTERLEAVER
 #define SPUC_CONVOLUTIONAL_INTERLEAVER
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/delay.h>
@@ -31,8 +16,7 @@ namespace SPUC {
 //! \ingroup templates interl
 //!  \class convolutional_interleaver comm/conv_interleaver.h
 //!  \endcode
-template <class T>
-class convolutional_interleaver {
+template <class T> class convolutional_interleaver {
  public:
   //! convolutional_interleaver constructor
   convolutional_interleaver(void) {
@@ -55,9 +39,7 @@ class convolutional_interleaver {
     cols = in_cols;
     input_length = 0;
     if (rows > MAXINTLVR) rows = MAXINTLVR;
-    for (i = 0; i < rows; i++) {
-      D[i].set_size(i * cols);
-    }
+    for (i = 0; i < rows; i++) { D[i].set_size(i * cols); }
     wr_sel = 0;
     rd_sel = 0;
   }
@@ -86,40 +68,32 @@ class convolutional_interleaver {
 //
 // Convolutional Interleaver
 //
-template <class T>
-convolutional_interleaver<T>::convolutional_interleaver(int in_rows,
-                                                        int in_cols) {
+template <class T> convolutional_interleaver<T>::convolutional_interleaver(int in_rows, int in_cols) {
   int i;
   rows = in_rows;
   cols = in_cols;
   input_length = 0;
   if (rows > MAXINTLVR) rows = MAXINTLVR;
-  for (i = 0; i < rows; i++) {
-    D[i].set_size(i * cols);
-  }
+  for (i = 0; i < rows; i++) { D[i].set_size(i * cols); }
   rd_sel = wr_sel = 0;
 }
 
-template <class T>
-T convolutional_interleaver<T>::interleave(const T input) {
+template <class T> T convolutional_interleaver<T>::interleave(const T input) {
   interleave_write(input);
   return (interleave_read());
 }
-template <class T>
-void convolutional_interleaver<T>::interleave_write(const T input) {
+template <class T> void convolutional_interleaver<T>::interleave_write(const T input) {
   D[wr_sel].input(input);
   wr_sel++;
   wr_sel = wr_sel % rows;
 }
-template <class T>
-T convolutional_interleaver<T>::interleave_read(void) {
+template <class T> T convolutional_interleaver<T>::interleave_read(void) {
   T outp = D[rd_sel].last();
   rd_sel++;
   rd_sel = rd_sel % rows;
   return (outp);
 }
-template <class T>
-T convolutional_interleaver<T>::deinterleave(const T input) {
+template <class T> T convolutional_interleaver<T>::deinterleave(const T input) {
   // not using rd_sel yet!
   T outp = D[rows - 1 - wr_sel].update(input);
   wr_sel++;

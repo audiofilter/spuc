@@ -1,20 +1,5 @@
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/equalizer.h>
@@ -23,12 +8,7 @@
 namespace SPUC {
 
 const int AP_ORDER = 4;  // was 4
-equalizer::equalizer(int BANDS)
-    : S_All(BANDS - 1),
-      fil_out(BANDS - 1),
-      eq(BANDS),
-      levels(BANDS),
-      gains(BANDS) {
+equalizer::equalizer(int BANDS) : S_All(BANDS - 1), fil_out(BANDS - 1), eq(BANDS), levels(BANDS), gains(BANDS) {
   num_bands = BANDS;
   reset();
   lev_gain = 0.75;
@@ -46,14 +26,10 @@ void equalizer::reset() {
   }
 }
 
-void equalizer::adjust_level(int filt_num, double gain) {
-  gains[filt_num] = gain;
-}
+void equalizer::adjust_level(int filt_num, double gain) { gains[filt_num] = gain; }
 
 void equalizer::update_levels() {
-  for (int i = 0; i < num_bands; i++) {
-    levels[i] = lev_gain * levels[i] + (1 - lev_gain) * magsq(eq[i]);
-  }
+  for (int i = 0; i < num_bands; i++) { levels[i] = lev_gain * levels[i] + (1 - lev_gain) * magsq(eq[i]); }
 }
 void equalizer::get_gains(float* lx) {
   for (int i = 0; i < num_bands; i++) lx[i] = gains[i];

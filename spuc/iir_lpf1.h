@@ -1,22 +1,7 @@
 #ifndef SPUC_IIR_LPF1
 #define SPUC_IIR_LPF1
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -35,8 +20,7 @@ namespace SPUC {
 //!   Note: Not normalized
 //! \author Tony Kirke
 //! \ingroup double_templates iir
-template <class Numeric, class Coeff = float_type>
-class iir_lpf1 {
+template <class Numeric, class Coeff = float_type> class iir_lpf1 {
  protected:
   Coeff gain;
   Numeric out;
@@ -45,9 +29,7 @@ class iir_lpf1 {
   quantiser<Numeric> Q;
 
  public:
-  iir_lpf1(Coeff A = 0, long b = 0) : gain(A), Q(b) {
-    previous_in = previous_out = out = (Numeric)0;
-  }
+  iir_lpf1(Coeff A = 0, long b = 0) : gain(A), Q(b) { previous_in = previous_out = out = (Numeric)0; }
   void set_coeff(Coeff A) { gain = A; }
   void set_round_bits(long x) { Q.set_bits(x); }
   //! Constructor reading coefficient from a file.

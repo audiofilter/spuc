@@ -1,22 +1,7 @@
 #ifndef SPUC_MLE
 #define SPUC_MLE
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -38,14 +23,13 @@ namespace SPUC {
 //! \ingroup templates equalizers
 //! \author Tony Kirke
 //! \ingroup templates comm
-template <class Numeric>
-class mle {
+template <class Numeric> class mle {
  public:
-  const long mlsd_span;   //! number of bits spanned by MLSD part of equaliser
-  const long dfe_span;    //! Number of bits spanned by DFE part of equaliser
-  const long n_states;    //! Number of states
-  const long n_branches;  //! Number of branches
-  Numeric fb_est;         //! Feedback estimator for RSDFSE
+  const long mlsd_span;              //! number of bits spanned by MLSD part of equaliser
+  const long dfe_span;               //! Number of bits spanned by DFE part of equaliser
+  const long n_states;               //! Number of states
+  const long n_branches;             //! Number of branches
+  Numeric fb_est;                    //! Feedback estimator for RSDFSE
   fir_adapt<Numeric, Numeric> cfir;  //! Channel impulse response
   std::vector<Numeric> cir_mlsd;
   std::vector<Numeric> cir_dfe;
@@ -56,11 +40,11 @@ class mle {
   std::vector<long> tmp_path;          // Temporary variable
   std::vector<float_type> tmp_weight;  // Temporary variable
   std::vector<long> path_symbol;
-  long phase_states;     //! Phase states for MLSD_CPM (not implemented)
-  long total_states;     //! for CPM total = n_states*phase_states! (not
-                         //implemented)
+  long phase_states;  //! Phase states for MLSD_CPM (not implemented)
+  long total_states;  //! for CPM total = n_states*phase_states! (not
+  // implemented)
   float_type phase_inc;  //! phase increment for MLSD_CPM (should divide evenly
-                         //into 360 degrees) (not implemented)
+  // into 360 degrees) (not implemented)
 
   //! Constructor (default to MLSE with no feedback)
   //! q=1 Binary, q=2 Quaternary

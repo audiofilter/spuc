@@ -1,22 +1,5 @@
 #ifndef SPUC_SPUC_DEFINES
 #define SPUC_SPUC_DEFINES
-
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
 // from directory: spuc_include
 #include <cmath>  // for floor
 #ifdef USE_ASSERT
@@ -27,7 +10,7 @@
 #endif
 #include <spuc/spuc_typedefs.h>
 namespace SPUC {
-//! Copyright (c) 1993-2005 Tony Kirke
+//! Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 //! \author = Tony Kirke
 //
 /*! \mainpage
@@ -192,31 +175,16 @@ namespace SPUC {
 
 // one-line functions
 #ifndef MAX
-template <typename T>
-T MAX(T a, T b) {
-  return a < b ? b : a;
-}
+template <typename T> T MAX(T a, T b) { return a < b ? b : a; }
 #endif
 #ifndef MIN
-template <typename T>
-T MIN(T a, T b) {
-  return a < b ? a : b;
-}
+template <typename T> T MIN(T a, T b) { return a < b ? a : b; }
 #endif
 #ifndef ABS
-template <typename T>
-T ABS(T a) {
-  return a < 0 ? -a : a;
-}
+template <typename T> T ABS(T a) { return a < 0 ? -a : a; }
 #endif
-template <typename T>
-T SQR(T a) {
-  return a * a;
-}
-template <typename T>
-T SGN(T a) {
-  return a < 0 ? -(T)1 : (T)1;
-}
+template <typename T> T SQR(T a) { return a * a; }
+template <typename T> T SGN(T a) { return a < 0 ? -(T)1 : (T)1; }
 // macros
 
 //#define MAX(x,y)	((x) >= (y) ? (x) : (y))

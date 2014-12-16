@@ -1,20 +1,5 @@
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/spuc_defines.h>
@@ -28,8 +13,7 @@
 #include <iostream>
 #include <spuc/qnoise.h>
 namespace SPUC {
-iir_coeff::iir_coeff(long ord)
-    : poles((ord + 1) / 2), zeros((ord + 1) / 2), a_tf(ord + 1), b_tf(ord + 1) {
+iir_coeff::iir_coeff(long ord) : poles((ord + 1) / 2), zeros((ord + 1) / 2), a_tf(ord + 1), b_tf(ord + 1) {
   // amax - attenuation at cutoff
   order = ord;
   n2 = (order + 1) / 2;
@@ -89,8 +73,7 @@ void iir_coeff::z_root_to_ab(std::vector<complex<float_type> >& z) {
   state = 3;  // in Z-domain 2nd order A/B coefficients
 }
 // Takes poles or zeros and creates a polynomial transfer function
-std::vector<float_type> iir_coeff::pz_to_poly(
-    const std::vector<complex<float_type> >& z) {
+std::vector<float_type> iir_coeff::pz_to_poly(const std::vector<complex<float_type> >& z) {
   std::vector<float_type> p2(3);
   std::vector<float_type> p(order + 1);
   std::vector<float_type> tf(order + 1);
@@ -115,8 +98,7 @@ std::vector<float_type> iir_coeff::pz_to_poly(
 // where a and b are packed into a complex float_type as
 // complex<float_type>(a,b)
 // and convolves them all together as 1 polynomial
-std::vector<float_type> iir_coeff::p2_to_poly(
-    const std::vector<complex<float_type> >& ab) {
+std::vector<float_type> iir_coeff::p2_to_poly(const std::vector<complex<float_type> >& ab) {
   std::vector<float_type> tf;
   std::vector<float_type> p2(3);
   std::vector<float_type> p(order + 1);
@@ -136,16 +118,12 @@ std::vector<float_type> iir_coeff::p2_to_poly(
     p2[2] = imag(ab[j]);
     tf = partial_convolve(p, p2, m, 3);
     m += 2;
-    for (int i = 0; i < m; i++) {
-      p[i] = tf[i];
-    }
+    for (int i = 0; i < m; i++) { p[i] = tf[i]; }
   }
   return tf;
 }
 float_type iir_coeff::get_a(long i) {
-  if (i < order + 1) {
-    return (a_tf[i]);
-  } else {
+  if (i < order + 1) { return (a_tf[i]); } else {
     return (0);
   }
 }
@@ -155,9 +133,7 @@ float_type iir_coeff::get_coeff_a(long i) {
       return (real(poles[i / 2]));
     else
       return (imag(poles[i / 2]));
-  } else {
-    return (0);
-  }
+  } else { return (0); }
 }
 float_type iir_coeff::get_coeff_b(long i) {
   if (i < order) {
@@ -165,14 +141,10 @@ float_type iir_coeff::get_coeff_b(long i) {
       return (real(zeros[i / 2]));
     else
       return (imag(zeros[i / 2]));
-  } else {
-    return (0);
-  }
+  } else { return (0); }
 }
 float_type iir_coeff::get_b(long i) {
-  if (i < order + 1) {
-    return (b_tf[i]);
-  } else {
+  if (i < order + 1) { return (b_tf[i]); } else {
     return (0);
   }
 }
@@ -223,9 +195,7 @@ void iir_coeff::pz_to_ap() {
   d2 = convolve(fa, a_tf);
 
   // B*B - A*fliplr(A)
-  for (j = 0; j < m; j++) {
-    r[j] = p2[j] - d2[j];
-  }
+  for (j = 0; j < m; j++) { r[j] = p2[j] - d2[j]; }
 
   // Appendix IEEE assp-34, no 2, april 1986, page 360
   q[0] = sqrt(r[0]);
@@ -243,9 +213,7 @@ void iir_coeff::pz_to_ap() {
 
   np = nq = 0;
   for (j = 0; j < m; j++) {
-    if (magsq(rq[j]) >= (float_type)1.0) {
-      h1[nq++] = rq[j];
-    } else {
+    if (magsq(rq[j]) >= (float_type)1.0) { h1[nq++] = rq[j]; } else {
       h2[np++] = rq[j];
     }
   }

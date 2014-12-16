@@ -1,22 +1,7 @@
 #ifndef SPUC_FARROW
 #define SPUC_FARROW
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -24,10 +9,10 @@
 namespace SPUC {
 //! \file
 //! \brief  Template Class for Farrow implementation of a ploynomial
-//interpolation using a FIR  filter.
+// interpolation using a FIR  filter.
 //
 //! \brief  Template Class for Farrow implementation of a ploynomial
-//interpolation using a FIR  filter.
+// interpolation using a FIR  filter.
 //
 //!   Farrow implementation of a polynomial interpolation
 //!   This covers 3 (orders) cases of interpolation
@@ -42,8 +27,7 @@ namespace SPUC {
 //! \author Tony Kirke
 //! \image html farrow.png
 //!  \ingroup templates fir interpolation
-template <class Numeric>
-class farrow {
+template <class Numeric> class farrow {
  public:
   long num_taps;
   std::vector<Numeric> coeff;
@@ -118,7 +102,7 @@ class farrow {
     return (output);
   }
   //! Rephase => recalculate coefficients and output for new offset (for
-  //upsampling)
+  // upsampling)
   Numeric rephase(float_type offset) {
     if (num_taps == 1)
       return (z[0]);
@@ -154,8 +138,7 @@ class farrow {
   void calculate_coeff4(void) {
     coeff[3] = -z[3] + ((Numeric)3) * z[2] - ((Numeric)3) * z[1] + z[0];
     coeff[2] = ((Numeric)3) * z[3] - ((Numeric)6) * z[2] + ((Numeric)3) * z[1];
-    coeff[1] =
-        ((Numeric)-2) * z[3] - ((Numeric)3) * z[2] + ((Numeric)6) * z[1] - z[0];
+    coeff[1] = ((Numeric)-2) * z[3] - ((Numeric)3) * z[2] + ((Numeric)6) * z[1] - z[0];
     coeff[0] = ((Numeric)6) * z[2];
   }
 };

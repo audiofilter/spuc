@@ -1,22 +1,7 @@
 #ifndef SPUC_SIM_QAM
 #define SPUC_SIM_QAM
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -42,8 +27,7 @@ namespace SPUC {
 //! gaussian noise, and a BER tester
 //! \author Tony Kirke
 //!  \ingroup real_templates sim
-template <class Numeric>
-class sim_qam {
+template <class Numeric> class sim_qam {
  public:
   typedef typename fundtype<Numeric>::ftype CNumeric;
   typedef complex<CNumeric> complex_type;
@@ -90,11 +74,7 @@ class sim_qam {
   // Constructor!
   //---------------------------------------------------------------------------
   sim_qam(float_type rc_alpha = 0.25)
-      : over(4),
-        alpha(rc_alpha),
-        interp(4),
-        rx_filter(12 * 4 + 1),
-        TX(12, 4, 0, 0, rc_alpha) {
+      : over(4), alpha(rc_alpha), interp(4), rx_filter(12 * 4 + 1), TX(12, 4, 0, 0, rc_alpha) {
     snr = 10.0;
     base = complex<float_type>(0, 0);
     count = 0;
@@ -111,19 +91,15 @@ class sim_qam {
     rx_filter.settaps(fir_c);
 
     float_type scale = (1.0 / float_type(over));
-    for (int j = 0; j < rx_filter.num_taps; j++) {
-      rx_filter.coeff[j] *= scale;
-    }
+    for (int j = 0; j < rx_filter.num_taps; j++) { rx_filter.coeff[j] *= scale; }
     channel_pwr = 1.0;
   }
   //---------------------------------------------------------------------------
   // Initialize pointers
   //---------------------------------------------------------------------------
-  void loop_init(long rate, long conv_rate, float_type carrier_off = 0,
-                 float_type time_off = 0) {
+  void loop_init(long rate, long conv_rate, float_type carrier_off = 0, float_type time_off = 0) {
     output_delay = 0;
-    var = sqrt(0.5 * (float_type)over) *
-          pow(10.0, -0.05 * snr);  // Unfiltered noise std dev
+    var = sqrt(0.5 * (float_type)over) * pow(10.0, -0.05 * snr);  // Unfiltered noise std dev
 
     TX.loop_init(rate, conv_rate);
 
@@ -160,9 +136,7 @@ class sim_qam {
         interp.input(TX.clock());
       }
       base = TX.data_level * interp.rephase(time_offset);
-    } else {
-      base = TX.data_level * TX.clock();
-    }
+    } else { base = TX.data_level * TX.clock(); }
     // Apply Frequency offset
     if (enable_freq_offset) {
       complex<float_type> rot = freq_offset->clock();

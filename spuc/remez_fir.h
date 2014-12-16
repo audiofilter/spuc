@@ -1,22 +1,7 @@
 #ifndef SPUC_REMEZ_FIR
 #define SPUC_REMEZ_FIR
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <vector>
@@ -57,34 +42,22 @@ class remez_fir {
   remez_fir() {}
 
  private:
-  static void createDenseGrid(int r, int numtaps, int numband,
-                              std::vector<float_type>& bands,
-                              const std::vector<float_type>& des,
-                              const std::vector<float_type>& weight,
-                              int gridSize, std::vector<float_type>& grid,
-                              std::vector<float_type>& d,
-                              std::vector<float_type>& w, int symmetry);
+  static void createDenseGrid(int r, int numtaps, int numband, std::vector<float_type>& bands,
+                              const std::vector<float_type>& des, const std::vector<float_type>& weight, int gridSize,
+                              std::vector<float_type>& grid, std::vector<float_type>& d, std::vector<float_type>& w,
+                              int symmetry);
 
-  static std::vector<float_type> calc_d(int r,
-                                        const std::vector<float_type>& x);
-  static std::vector<float_type> calc_y(int r, const std::vector<int>& ext,
-                                        const std::vector<float_type>& des,
-                                        const std::vector<float_type>& w,
-                                        const std::vector<float_type>& d);
-  static float_type gee(float_type freq, int r,
-                        const std::vector<float_type>& ad,
-                        const std::vector<float_type>& x,
+  static std::vector<float_type> calc_d(int r, const std::vector<float_type>& x);
+  static std::vector<float_type> calc_y(int r, const std::vector<int>& ext, const std::vector<float_type>& des,
+                                        const std::vector<float_type>& w, const std::vector<float_type>& d);
+  static float_type gee(float_type freq, int r, const std::vector<float_type>& ad, const std::vector<float_type>& x,
                         const std::vector<float_type>& y);
-  static void search(int r, std::vector<int>& ext, int gridSize,
-                     const std::vector<float_type>& e);
-  static bool isDone(int r, const std::vector<int>& ext,
-                     const std::vector<float_type>& e);
+  static void search(int r, std::vector<int>& ext, int gridSize, const std::vector<float_type>& e);
+  static bool isDone(int r, const std::vector<int>& ext, const std::vector<float_type>& e);
 
  public:
-  static bool remez(std::vector<float_type>& filt, int n, int numband,
-                    std::vector<float_type>& bands,
-                    const std::vector<float_type>& des,
-                    const std::vector<float_type>& weight, int type);
+  static bool remez(std::vector<float_type>& filt, int n, int numband, std::vector<float_type>& bands,
+                    const std::vector<float_type>& des, const std::vector<float_type>& weight, int type);
 };
 }  // namespace SPUC
 #endif

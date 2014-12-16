@@ -1,28 +1,12 @@
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <cmath>
 #include <spuc/spuc_defines.h>
 #include <spuc/root_raised_cosine_imp.h>
 namespace SPUC {
-float_type root_raised_cosine_imp(float_type alpha, float_type xin,
-                                  float_type rate, long num_taps)
+float_type root_raised_cosine_imp(float_type alpha, float_type xin, float_type rate, long num_taps)
 //-----------------------------------------------------------------------
 //       Calculates the square root raised cosine pulse shape given the
 //		excess bandwidth value beta and the index.
@@ -48,8 +32,7 @@ float_type root_raised_cosine_imp(float_type alpha, float_type xin,
     if (alpha == 1) return (-1);
     x3 = (1 - alpha) * x1;
     x2 = (1 + alpha) * x1;
-    nom = sin(x2) * (1 + alpha) * PI -
-          cos(x3) * ((1 - alpha) * PI * rate) / (4 * alpha * xindx) +
+    nom = sin(x2) * (1 + alpha) * PI - cos(x3) * ((1 - alpha) * PI * rate) / (4 * alpha * xindx) +
           sin(x3) * rate * rate / (4 * alpha * xindx * xindx);
     denom = -32 * PI * alpha * alpha * xindx / rate;
   }

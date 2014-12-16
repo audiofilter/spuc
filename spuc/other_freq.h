@@ -1,30 +1,14 @@
 #ifndef SPUC_OTHER_FREQ
 #define SPUC_OTHER_FREQ
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_functions
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
 #include <spuc/spuc_math.h>
 namespace SPUC {
 
-template <typename T>
-void other_freq(T& AP, int pts, double* w, int freq_off, double inc) {
+template <typename T> void other_freq(T& AP, int pts, double* w, int freq_off, double inc) {
   double d[pts];
 #ifdef MONO_ONLY
   double imp = 1;
@@ -66,8 +50,7 @@ void other_freq(T& AP, int pts, double* w, int freq_off, double inc) {
   }
 }
 
-template <typename T>
-void fir_freq(T& MF, int pts, double* w, int freq_off, double inc) {
+template <typename T> void fir_freq(T& MF, int pts, double* w, int freq_off, double inc) {
   double t;
   double w_inc = inc * PI / (float)pts;
   complex<double> z_inc, nom;
@@ -88,8 +71,7 @@ void fir_freq(T& MF, int pts, double* w, int freq_off, double inc) {
     w[i] = t;
   }
 }
-void cic_freq(int rate, int order, int pts, double* w, int freq_off,
-              double inc);
+void cic_freq(int rate, int order, int pts, double* w, int freq_off, double inc);
 
 /*
  template <typename T> void filt_freq(T& MF, int pts, int bits, double* w,
@@ -114,9 +96,7 @@ double inc) {
 }
 */
 
-template <typename T>
-void iir_freq(T& MF, bool hpf, int pts, int bits, double* w, int freq_off,
-              double inc) {
+template <typename T> void iir_freq(T& MF, bool hpf, int pts, int bits, double* w, int freq_off, double inc) {
   double h0;
   MF.quantize(bits);
   h0 = MF.freqz_mag(0);
@@ -138,8 +118,7 @@ void iir_freq(T& MF, bool hpf, int pts, int bits, double* w, int freq_off,
   }
 }
 
-template <typename T>
-void other_freq(T& AP, int pts, double* w) {
+template <typename T> void other_freq(T& AP, int pts, double* w) {
   double d[pts];
   double imp = 1;
   double dsum = 0;
@@ -169,8 +148,7 @@ void other_freq(T& AP, int pts, double* w) {
   }
 }
 
-template <typename T>
-void filt_freq(T& MF, int pts, int bits, double* w) {
+template <typename T> void filt_freq(T& MF, int pts, int bits, double* w) {
   double h0;
   MF.quantize(bits);
   h0 = MF.freqz_mag(0);

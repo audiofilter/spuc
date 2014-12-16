@@ -1,40 +1,24 @@
 #ifndef SPUC_RUNNING_SUM
 #define SPUC_RUNNING_SUM
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/delay.h>
 namespace SPUC {
 //! \file
 //! \brief template class running average filter consisting of a delay line,
-//adder and subtractor
+// adder and subtractor
 //
 //! \brief template class running average filter consisting of a delay line,
-//adder and subtractor
+// adder and subtractor
 //
 //! \author Tony Kirke
 //! \image html running_sum.png
 //! \ingroup templates fir
 //! \image html running_sum.gif
 //! \image latex running_sum.eps
-template <class Numeric>
-class running_sum {
+template <class Numeric> class running_sum {
  protected:
   Numeric result;
   delay<Numeric> z;

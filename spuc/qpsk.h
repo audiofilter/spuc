@@ -1,22 +1,7 @@
 #ifndef SPUC_QPSK
 #define SPUC_QPSK
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <spuc/spuc_defines.h>
@@ -55,8 +40,7 @@ namespace SPUC {
 //! \ingroup real_templates comm examples
 //! \image html qpsk.gif
 //! \image latex qpsk.eps
-template <class Numeric>
-class qpsk {
+template <class Numeric> class qpsk {
  public:
   typedef typename fundtype<Numeric>::ftype CNumeric;
 
@@ -103,11 +87,7 @@ class qpsk {
   Numeric carrier_loop() { return (carrier_loop_out); }
   Numeric symbol_loop() { return (symbol_loop_out); }
   bool symclk(void) { return (symbol_clk_pls); }
-  qpsk(void)
-      : rcv_sqrt_rc(9),
-        final_baseband_delay(2),
-        hard_decision_delay(2),
-        timing_disc_delay(3) {
+  qpsk(void) : rcv_sqrt_rc(9), final_baseband_delay(2), hard_decision_delay(2), timing_disc_delay(3) {
     //! alpha = 0.35 root raised cosine fir
     fir_coeff<long> fir_c(rcv_sqrt_rc.num_taps);
     root_raised_cosine_quantized(fir_c, 0.35, 2, 8, -0.2);
@@ -181,9 +161,7 @@ class qpsk {
         //! Matched Filter out
         final_baseband = mf_out;
         //! Symbol discriminator
-        if (!nda)
-          timing_error =
-              dd_symbol(prev_sym, mf_out, hard_decision_prev, decision);
+        if (!nda) timing_error = dd_symbol(prev_sym, mf_out, hard_decision_prev, decision);
         //! Carrier discriminator
         carrier_error = qpsk_dd_phase(mf_out, decision);
         //! Symbol + timing loop filters

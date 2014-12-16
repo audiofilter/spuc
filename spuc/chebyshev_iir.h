@@ -1,22 +1,7 @@
 #ifndef SPUC_CHEBYSHEV_IIR
 #define SPUC_CHEBYSHEV_IIR
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
 #include <spuc/spuc_defines.h>
@@ -30,10 +15,8 @@ namespace SPUC {
 //! \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //! \ingroup functions iir
-void chebyshev_iir(iir_coeff& cheb, float_type fcd, bool lpf,
-                   float_type ripple);
-void chebyshev_s(std::vector<complex<float_type> >& poles,
-                 std::vector<complex<float_type> >& zeros, bool lpf,
+void chebyshev_iir(iir_coeff& cheb, float_type fcd, bool lpf, float_type ripple);
+void chebyshev_s(std::vector<complex<float_type> >& poles, std::vector<complex<float_type> >& zeros, bool lpf,
                  float_type wp, float_type epi, long n, long n2);
 }  // namespace SPUC
 #endif

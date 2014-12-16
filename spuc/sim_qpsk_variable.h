@@ -1,22 +1,7 @@
 #ifndef SPUC_SIM_QPSK_VARIABLE
 #define SPUC_SIM_QPSK_VARIABLE
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -38,8 +23,7 @@ namespace SPUC {
 //! Based on sim_qpsk with some minor changes.
 //! \author Tony Kirke
 //! \ingroup real_templates sim examples
-template <class Numeric>
-class sim_qpsk_variable {
+template <class Numeric> class sim_qpsk_variable {
  public:
   typedef typename fundtype<Numeric>::ftype CNumeric;
   typedef complex<CNumeric> complex_type;
@@ -101,13 +85,11 @@ class sim_qpsk_variable {
     //  void root_raised_cosine(fir<float_type> rcfir, float_type alpha, int
     //  rate);
     actual_over = actual;
-    total_over = (int)actual_over;  // Nearest integer oversampling rate
-    tx_time_inc = total_over /
-                  actual_over;  // Timing Inc (in 1/total_over samples) for tx
+    total_over = (int)actual_over;           // Nearest integer oversampling rate
+    tx_time_inc = total_over / actual_over;  // Timing Inc (in 1/total_over samples) for tx
     dec_rate_log = (int)floor(log(actual_over / 2.0) / log(2.0));
     resample_over = actual_over / (1 << dec_rate_log);
-    var = sqrt(0.5 * actual_over) *
-          pow(10.0, -0.05 * snr);  // Unfiltered noise std dev
+    var = sqrt(0.5 * actual_over) * pow(10.0, -0.05 * snr);  // Unfiltered noise std dev
     BER_mon = new qpsk_ber_test;
     tx_data_source = new quad_data<float_type>(total_over);
     freq_offset = new vco<float_type>;
@@ -135,12 +117,9 @@ class sim_qpsk_variable {
 
 // QPSK Receiver Setup
 #ifndef NOTIME
-    resample_over *=
-        1.0001;  // 100 ppm timing error (internal clock faster than reference)
+    resample_over *= 1.0001;  // 100 ppm timing error (internal clock faster than reference)
 #endif
-    symbol_nco_word = (long)floor(
-        resample_over *
-        (1 << 14));  // This should be related to total_over + offset
+    symbol_nco_word = (long)floor(resample_over * (1 << 14));  // This should be related to total_over + offset
     RECEIVER->rate_change.symbol_nco.reset_frequency(symbol_nco_word);
     // Change Carrier loop gain (from default) based on oversampling rate.
     RECEIVER->carrier_loop_filter.k0 -= dec_rate_log;

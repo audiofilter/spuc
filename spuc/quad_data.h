@@ -1,22 +1,7 @@
 #ifndef SPUC_QUAD_DATA
 #define SPUC_QUAD_DATA
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -40,8 +25,7 @@ namespace SPUC {
 //!  \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //!  \ingroup real_templates comm
-template <class Numeric>
-class quad_data {
+template <class Numeric> class quad_data {
  public:
   typedef typename fundtype<Numeric>::ftype CNumeric;
   fir_interp<complex<CNumeric>, Numeric> rcfir;
@@ -52,16 +36,10 @@ class quad_data {
   complex<CNumeric> data;
   lagrange<complex<CNumeric> > interp;
   float_type prev_timing_offset;
-  void set_initial_offset(float_type timing_init) {
-    prev_timing_offset = timing_init;
-  }
+  void set_initial_offset(float_type timing_init) { prev_timing_offset = timing_init; }
 
   quad_data(int total_over)
-      : rcfir(12 * total_over + 1),
-        pn_i(0x006d, 63, -1),
-        pn_q(0x074d, 1023, -1),
-        data(1, 1),
-        interp(4) {
+      : rcfir(12 * total_over + 1), pn_i(0x006d, 63, -1), pn_q(0x074d, 1023, -1), data(1, 1), interp(4) {
     over = total_over;
     rcfir.set_rate(over);
     rcfir.set_automatic();

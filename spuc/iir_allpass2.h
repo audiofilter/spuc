@@ -1,22 +1,7 @@
 #ifndef SPUC_IIR_ALLPASS2
 #define SPUC_IIR_ALLPASS2
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/quant.h>
@@ -24,10 +9,10 @@
 namespace SPUC {
 //! \file
 //! \brief  Template Class for IIR filter using sum of 2nd Order Allpass
-//sections
+// sections
 //
 //! \brief  Template Class for IIR filter using sum of 2nd Order Allpass
-//sections
+// sections
 //
 //! The filter is a combination of 2 2nd order Allpass sections
 //! This class needs the allpass_2nd class
@@ -35,8 +20,7 @@ namespace SPUC {
 //!  \ingroup double_templates iir
 //! \image html allpass_iir.gif
 //! \image latex allpass_iir.eps
-template <class Numeric, class Coeff = float_type>
-class iir_allpass2 {
+template <class Numeric, class Coeff = float_type> class iir_allpass2 {
  protected:
   allpass_2nd<Numeric, Coeff> A0, A1;
 

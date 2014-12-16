@@ -13,8 +13,7 @@
 namespace SPUC {
 
 /// A faster version of the older systemc spuc_uint
-template <int I_>
-class spuc_uint {
+template <int I_> class spuc_uint {
  public:
   typedef typename int_type_size<NEXT_INT_SIZE<I_>::val>::uint_type val_type;
   typedef uint64_t max_val_type;
@@ -39,10 +38,7 @@ class spuc_uint {
   spuc_uint(const uint64_t &a) { val = a & UMask<I_>::val; }
 
   /// from another spuc_uint<>
-  template <int I_1>
-  spuc_uint(const spuc_uint<I_1> &a) {
-    val = a.val;
-  }
+  template <int I_1> spuc_uint(const spuc_uint<I_1> &a) { val = a.val; }
 
   // for now
   val_type getVal() const { return (val); }
@@ -85,8 +81,7 @@ class spuc_uint {
 
   /// assignment operator from another size, use copy constructor, then copy
   /// val;
-  template <int I_1>
-  spuc_uint<I_> &operator=(const spuc_uint<I_1> &a) {
+  template <int I_1> spuc_uint<I_> &operator=(const spuc_uint<I_1> &a) {
     spuc_uint<I_> temp(a);
     val = temp.getVal();
     return *this;
@@ -148,20 +143,17 @@ class spuc_uint {
     return *this;
   }
 
-  template <int I_1>
-  spuc_uint &operator+=(const spuc_uint<I_1> &a) {
+  template <int I_1> spuc_uint &operator+=(const spuc_uint<I_1> &a) {
     val += a.val;
     return *this;
   }
 
-  template <int I_1>
-  spuc_uint &operator-=(const spuc_uint<I_1> &a) {
+  template <int I_1> spuc_uint &operator-=(const spuc_uint<I_1> &a) {
     *this += (-a);  // re-use +=
     return *this;
   }
 
-  template <int I_1>
-  spuc_uint &operator*=(const spuc_uint<I_1> &b) {
+  template <int I_1> spuc_uint &operator*=(const spuc_uint<I_1> &b) {
     val *= b.val;
     return *this;
   }
@@ -324,18 +316,15 @@ class spuc_uint {
     return *this;
   }
 
-  template <typename T>
-  spuc_uint &operator&=(const T &l) {
+  template <typename T> spuc_uint &operator&=(const T &l) {
     val &= l;
     return *this;
   }
-  template <typename T>
-  spuc_uint &operator|=(const T &l) {
+  template <typename T> spuc_uint &operator|=(const T &l) {
     val |= l;
     return *this;
   }
-  template <typename T>
-  spuc_uint &operator^=(const T &l) {
+  template <typename T> spuc_uint &operator^=(const T &l) {
     val ^= l;
     return *this;
   }

@@ -1,20 +1,5 @@
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/complex.h>
@@ -31,18 +16,14 @@
 #include <spuc/qpsk_discriminators.h>
 namespace SPUC {
 
-void qpsk_discriminators::update(complex<long> data_in,
-                                 complex<long> decision_in, int sym_pls) {
+void qpsk_discriminators::update(complex<long> data_in, complex<long> decision_in, int sym_pls) {
   data = data_in;
   prev_sym = timing_disc_delay.input(data);
   prev_sam = timing_disc_delay.checkback(1);
   decision = decision_in;
-  if (sym_pls) {
-    hard_decision_prev = hard_decision_delay.input(decision);
-  }
+  if (sym_pls) { hard_decision_prev = hard_decision_delay.input(decision); }
 }
-void qpsk_discriminators::sample(complex<long> fmf_in, complex<long> data_in,
-                                 complex<long> decision_in, int sym_pls) {
+void qpsk_discriminators::sample(complex<long> fmf_in, complex<long> data_in, complex<long> decision_in, int sym_pls) {
   fmf = fmf_in;
   update(data_in, decision_in, sym_pls);
 }
@@ -71,9 +52,7 @@ long qpsk_discriminators::nda_timing_disc() {
 //*******************************************************************************
 // Decision directed symbol timing Discriminator
 //*******************************************************************************
-long qpsk_discriminators::dd_timing_disc(void) {
-  return (dd_symbol(prev_sym, data, hard_decision_prev, decision));
-}
+long qpsk_discriminators::dd_timing_disc(void) { return (dd_symbol(prev_sym, data, hard_decision_prev, decision)); }
 //*******************************************************************************
 // Symbol lock detector
 //*******************************************************************************
@@ -87,9 +66,7 @@ long qpsk_discriminators::symbol_lock_out() {
 //*******************************************************************************
 long qpsk_discriminators::pll_disc() {
   complex<long> ldata = saturate(data, 4);
-  if (bpsk_mode) {
-    return (bpsk_dd_phase(ldata, decision));
-  } else {
+  if (bpsk_mode) { return (bpsk_dd_phase(ldata, decision)); } else {
     return (qpsk_dd_phase(ldata, decision));
   }
 }

@@ -1,22 +1,7 @@
 #ifndef SPUC_BASE_TYPE
 #define SPUC_BASE_TYPE
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_traits
 #include <spuc/spuc_typedefs.h>
 #ifdef USE_STD_COMPLEX
@@ -33,19 +18,16 @@ namespace SPUC {
 //! \brief Determine base class for complex, builtin, sint, etc, classes
 //! \author Tony Kirke
 //! \ingroup traits traits
-template <typename T>
-class base_type {
+template <typename T> class base_type {
  public:
   typedef T btype;
 };
-template <typename T>
-class base_type<complex<T> > {
+template <typename T> class base_type<complex<T> > {
  public:
   typedef T btype;
 };
 #ifndef NO_BUILTIN
-template <typename T>
-class base_type<builtin<T> > {
+template <typename T> class base_type<builtin<T> > {
  public:
   typedef T btype;
 };

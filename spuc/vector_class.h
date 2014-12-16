@@ -2,25 +2,9 @@
 #define SPUC_VECTOR_CLASS
 #include <vector>
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 namespace SPUC {
-template <class T>
-class vector {
+template <class T> class vector {
  public:
   vector() { ; }
   vector(int size) { resize(size); }
@@ -34,14 +18,10 @@ class vector {
   inline int size() const { return data.size(); }
 
   inline void reset() {
-    for (int i = 0; i < data.size(); i++) {
-      data[i] = T(0);
-    }
+    for (int i = 0; i < data.size(); i++) { data[i] = T(0); }
   }
   inline void ones() {
-    for (int i = 0; i < data.size(); i++) {
-      data[i] = T(1);
-    }
+    for (int i = 0; i < data.size(); i++) { data[i] = T(1); }
   }
 
   inline T operator[](int i) const { return data[i]; }

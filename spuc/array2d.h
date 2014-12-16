@@ -1,22 +1,5 @@
 #ifndef SPUC_ARRAY2D
 #define SPUC_ARRAY2D
-
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <cstdlib>
@@ -75,8 +58,7 @@ namespace SPUC {
         an internal array storage no longer has any references
         to it, it is destoryed.
 */
-template <class T>
-class array2d {
+template <class T> class array2d {
  private:
   T** v_;
   int m_;
@@ -128,9 +110,7 @@ class array2d {
         be reflected in B.  For an indepent copy of A, use
         array2d B(A.copy()), or B = A.copy(), instead.
 */
-template <class T>
-array2d<T>::array2d(const array2d<T>& A)
-    : v_(A.v_), m_(A.m_), n_(A.n_), ref_count_(A.ref_count_) {
+template <class T> array2d<T>::array2d(const array2d<T>& A) : v_(A.v_), m_(A.m_), n_(A.n_), ref_count_(A.ref_count_) {
   (*ref_count_)++;
 }
 
@@ -145,9 +125,7 @@ array2d<T>::array2d(const array2d<T>& A)
         @param m the first (row) dimension of the new matrix.
         @param n the second (column) dimension of the new matrix.
 */
-template <class T>
-array2d<T>::array2d(int m, int n)
-    : v_(0), m_(m), n_(n), ref_count_(0) {
+template <class T> array2d<T>::array2d(int m, int n) : v_(0), m_(m), n_(n), ref_count_(0) {
   initialize_(m, n);
   ref_count_ = new int;
   *ref_count_ = 1;
@@ -162,9 +140,7 @@ array2d<T>::array2d(int m, int n)
         @param n the second (column) dimension of the new matrix.
         @param val the constant value to set all elements of the new array to.
 */
-template <class T>
-array2d<T>::array2d(int m, int n, const T& val)
-    : v_(0), m_(m), n_(n), ref_count_(0) {
+template <class T> array2d<T>::array2d(int m, int n, const T& val) : v_(0), m_(m), n_(n), ref_count_(0) {
   initialize_(m, n);
   set_(val);
   ref_count_ = new int;
@@ -184,9 +160,7 @@ array2d<T>::array2d(int m, int n, const T& val)
         @param a the one dimensional C array to use as data storage for
                 the array.
 */
-template <class T>
-array2d<T>::array2d(int m, int n, T* a)
-    : v_(0), m_(m), n_(n), ref_count_(0) {
+template <class T> array2d<T>::array2d(int m, int n, T* a) : v_(0), m_(m), n_(n), ref_count_(0) {
   T* p = a;
   v_ = new T* [m];
   for (int i = 0; i < m; i++) {
@@ -208,8 +182,7 @@ array2d<T>::array2d(int m, int n, T* a)
         the row dimension, but the not column, since
         this is just a C pointer.
 */
-template <class T>
-inline T* array2d<T>::operator[](int i) {
+template <class T> inline T* array2d<T>::operator[](int i) {
 #ifdef SPUC_BOUNDS_CHECK
   assert(i >= 0);
   assert(i < m_);
@@ -218,16 +191,12 @@ inline T* array2d<T>::operator[](int i) {
   return v_[i];
 }
 
-template <class T>
-inline const T* array2d<T>::operator[](int i) const {
-  return v_[i];
-}
+template <class T> inline const T* array2d<T>::operator[](int i) const { return v_[i]; }
 
 /**
         Assign all elemnts of A to a constant scalar.
 */
-template <class T>
-array2d<T>& array2d<T>::operator=(const T& a) {
+template <class T> array2d<T>& array2d<T>::operator=(const T& a) {
   set_(a);
   return *this;
 }
@@ -237,8 +206,7 @@ array2d<T>& array2d<T>::operator=(const T& a) {
         to create a new array that does not share data.
 
 */
-template <class T>
-array2d<T> array2d<T>::copy() const {
+template <class T> array2d<T> array2d<T>::copy() const {
   array2d A(m_, n_);
   copy_(A.begin_(), begin_(), m_ * n_);
 
@@ -268,8 +236,7 @@ array2d<T> array2d<T>::copy() const {
         B are made.
 
 */
-template <class T>
-array2d<T>& array2d<T>::inject(const array2d& A) {
+template <class T> array2d<T>& array2d<T>::inject(const array2d& A) {
   if (A.m_ == m_ && A.n_ == n_) copy_(begin_(), A.begin_(), m_ * n_);
 
   return *this;
@@ -285,13 +252,10 @@ array2d<T>& array2d<T>::inject(const array2d& A) {
 
         @return The new referenced array: in B.ref(A), it returns B.
 */
-template <class T>
-array2d<T>& array2d<T>::ref(const array2d<T>& A) {
+template <class T> array2d<T>& array2d<T>::ref(const array2d<T>& A) {
   if (this != &A) {
     (*ref_count_)--;
-    if (*ref_count_ < 1) {
-      destroy_();
-    }
+    if (*ref_count_ < 1) { destroy_(); }
 
     m_ = A.m_;
     n_ = A.n_;
@@ -306,48 +270,29 @@ array2d<T>& array2d<T>::ref(const array2d<T>& A) {
 /**
         B = A is shorthand notation for B.ref(A).
 */
-template <class T>
-array2d<T>& array2d<T>::operator=(const array2d<T>& A) {
-  return ref(A);
-}
+template <class T> array2d<T>& array2d<T>::operator=(const array2d<T>& A) { return ref(A); }
 
 /**
         @return the size of the first dimension of the array, i.e.
         the number of rows.
 */
-template <class T>
-inline int array2d<T>::dim1() const {
-  return m_;
-}
-template <class T>
-inline int array2d<T>::rows() const {
-  return m_;
-}
+template <class T> inline int array2d<T>::dim1() const { return m_; }
+template <class T> inline int array2d<T>::rows() const { return m_; }
 
 /**
         @return the size of the second dimension of the array, i.e.
         the number of columns.
 */
-template <class T>
-inline int array2d<T>::dim2() const {
-  return n_;
-}
-template <class T>
-inline int array2d<T>::cols() const {
-  return n_;
-}
+template <class T> inline int array2d<T>::dim2() const { return n_; }
+template <class T> inline int array2d<T>::cols() const { return n_; }
 
 /**
         @return the number of arrays that share the same storage area
         as this one.  (Must be at least one.)
 */
-template <class T>
-inline int array2d<T>::ref_count() const {
-  return *ref_count_;
-}
+template <class T> inline int array2d<T>::ref_count() const { return *ref_count_; }
 
-template <class T>
-array2d<T>::~array2d() {
+template <class T> array2d<T>::~array2d() {
   (*ref_count_)--;
 
   if (*ref_count_ < 1) destroy_();
@@ -355,8 +300,7 @@ array2d<T>::~array2d() {
 
 /* private internal functions */
 
-template <class T>
-void array2d<T>::initialize_(int m, int n) {
+template <class T> void array2d<T>::initialize_(int m, int n) {
   T* p = new T[m * n];
   v_ = new T* [m];
   for (int i = 0; i < m; i++) {
@@ -367,22 +311,19 @@ void array2d<T>::initialize_(int m, int n) {
   n_ = n;
 }
 
-template <class T>
-void array2d<T>::set_(const T& a) {
+template <class T> void array2d<T>::set_(const T& a) {
   T* begin = &v_[0][0];
   T* end = begin + m_ * n_;
 
   for (T* p = begin; p < end; p++) *p = a;
 }
 
-template <class T>
-void array2d<T>::copy_(T* p, const T* q, int len) const {
+template <class T> void array2d<T>::copy_(T* p, const T* q, int len) const {
   T* end = p + len;
   while (p < end) *p++ = *q++;
 }
 
-template <class T>
-void array2d<T>::destroy_() {
+template <class T> void array2d<T>::destroy_() {
   if (v_ != 0) {
     delete[](v_[0]);
     delete[](v_);
@@ -394,25 +335,17 @@ void array2d<T>::destroy_() {
 /**
         @returns location of first element, i.e. A[0][0] (mutable).
 */
-template <class T>
-const T* array2d<T>::begin_() const {
-  return &(v_[0][0]);
-}
+template <class T> const T* array2d<T>::begin_() const { return &(v_[0][0]); }
 
 /**
         @returns location of first element, i.e. A[0][0] (mutable).
 */
-template <class T>
-T* array2d<T>::begin_() {
-  return &(v_[0][0]);
-}
+template <class T> T* array2d<T>::begin_() { return &(v_[0][0]); }
 
 /**
         Create a null (0x0) array.
 */
-template <class T>
-array2d<T>::array2d()
-    : v_(0), m_(0), n_(0) {
+template <class T> array2d<T>::array2d() : v_(0), m_(0), n_(0) {
   ref_count_ = new int;
   *ref_count_ = 1;
 }

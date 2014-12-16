@@ -1,20 +1,5 @@
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <iostream>
@@ -34,8 +19,7 @@ void bpsk_ber_test::ber_results(long received) {
       std::cout << "Symbols = " << received;
       std::cout << " Errors = " << errors;
       std::cout << " BER = " << (float_type)errors / (float_type)received;
-      std::cout << " Elpsd Time = " << difftime(time(NULL), start_time) / 60.0
-                << "(min)\n";
+      std::cout << " Elpsd Time = " << difftime(time(NULL), start_time) / 60.0 << "(min)\n";
       std::cout.flush();
     }
     modc <<= 1;
@@ -51,8 +35,7 @@ void bpsk_ber_test::ber_results(long received) {
       std::cout << "Symbols = " << received;
       std::cout << " Errors = " << errors;
       std::cout << " BER = " << (float_type)errors / (float_type)received;
-      std::cout << " Elpsd Time = " << difftime(time(NULL), start_time) / 60.0
-                << "(min)\n";
+      std::cout << " Elpsd Time = " << difftime(time(NULL), start_time) / 60.0 << "(min)\n";
     }
     std::cin.get();
   }
@@ -101,11 +84,8 @@ void bpsk_ber_test::final_results(long received) {
     std::cout << "Symbols = " << received;
     std::cout << " Errors = " << errors;
     std::cout << " BER = " << (float_type)errors / (float_type)received;
-    std::cout << " Elpsd Time = " << difftime(time(NULL), start_time) / 60.0
-              << "(min)\n";
-  } else {
-    std::cout << "Synchronization with reference PN not found!\n";
-  }
+    std::cout << " Elpsd Time = " << difftime(time(NULL), start_time) / 60.0 << "(min)\n";
+  } else { std::cout << "Synchronization with reference PN not found!\n"; }
 }
 //
 // Tracks the number of errors since last invocation and

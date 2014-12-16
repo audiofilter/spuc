@@ -1,45 +1,11 @@
 #ifndef SPUC_SPUC_TYPEDEFS
 #define SPUC_SPUC_TYPEDEFS
-
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-// from directory: spuc_include
 #ifdef USE_STD_COMPLEX
 #include <complex>
 using std::complex;
 #endif
 namespace SPUC {
-
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_include
 typedef long natural;
 
@@ -59,27 +25,18 @@ typedef float float_type;
 
 // Class Declarations
 class bit;
-template <class T>
-class conjr;
-template <class T>
-class magsqr;
-template <class T>
-class signbitr;
-template <class T>
-class quantizer;
+template <class T> class conjr;
+template <class T> class magsqr;
+template <class T> class signbitr;
+template <class T> class quantizer;
 
-template <class T>
-class builtin;
+template <class T> class builtin;
 #ifndef USE_STD_COMPLEX
-template <typename T>
-T conj(T in);
-template <class T>
-class complex;
+template <typename T> T conj(T in);
+template <class T> class complex;
 #endif
-template <class T>
-class matrix;
-template <class T>
-class vector;
+template <class T> class matrix;
+template <class T> class vector;
 
 // Shortcut Typedefs
 typedef builtin<float> Float;

@@ -1,22 +1,7 @@
 #ifndef SPUC_CIRC_BUFFER
 #define SPUC_CIRC_BUFFER
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <vector>
@@ -29,8 +14,7 @@ namespace SPUC {
 //!  \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //! \ingroup templates misc
-template <class T>
-class circ_buffer {
+template <class T> class circ_buffer {
  protected:
   std::vector<T> buf;
   int len;
@@ -66,31 +50,24 @@ class circ_buffer {
   T check(int l) { return (buf[(ptr + len - l - 1) % len]); }
 };
 
-template <class T>
-circ_buffer<T>::circ_buffer(const circ_buffer<T>& A)
-    : buf(A.len) {
+template <class T> circ_buffer<T>::circ_buffer(const circ_buffer<T>& A) : buf(A.len) {
   len = A.len;
   ptr = A.ptr;
   for (int i = 0; i < len; i++) buf[i] = A.buf[i];
 }
 // copy constructor
-template <class T>
-circ_buffer<T>::circ_buffer(int len1)
-    : buf(len1) {
+template <class T> circ_buffer<T>::circ_buffer(int len1) : buf(len1) {
   len = len1;
   ptr = len - 1;
 }
 
-template <class T>
-circ_buffer<T>::circ_buffer(int len1, T init_value)
-    : buf(len1) {
+template <class T> circ_buffer<T>::circ_buffer(int len1, T init_value) : buf(len1) {
   len = len1;
   ptr = len - 1;
   for (int i = 0; i < len; i++) buf[i] = init_value;
 }
 
-template <class T>
-circ_buffer<T> circ_buffer<T>::operator=(circ_buffer<T>& A) {
+template <class T> circ_buffer<T> circ_buffer<T>::operator=(circ_buffer<T>& A) {
   if (this->len != A.size()) {
     // create room for A
     len = A.size();

@@ -1,37 +1,21 @@
 #ifndef SPUC_FIR_INTERP
 #define SPUC_FIR_INTERP
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/fir.h>
 namespace SPUC {
 //! \file
 //! \brief template class fir_decim based on FIR class, created to support
-//polyphase FIR interpolation
+// polyphase FIR interpolation
 //
 //! \brief template class fir_decim based on FIR class
 //
 //!  created to support polyphase FIR interpolation
 //! \author Tony Kirke
 //! \ingroup double_templates fir interpolation
-template <class Numeric, class Coeff = float_type>
-class fir_interp : public fir<Numeric, Coeff> {
+template <class Numeric, class Coeff = float_type> class fir_interp : public fir<Numeric, Coeff> {
   using fir<Numeric, Coeff>::num_taps;
   using fir<Numeric, Coeff>::coeff;
   using fir<Numeric, Coeff>::z;
@@ -64,11 +48,9 @@ class fir_interp : public fir<Numeric, Coeff> {
   }
 
   //! Constructor
-  fir_interp<Numeric, Coeff>(const char* i)
-      : fir<Numeric, Coeff>(i), phase(0), auto_mode(1) {}
+  fir_interp<Numeric, Coeff>(const char* i) : fir<Numeric, Coeff>(i), phase(0), auto_mode(1) {}
   fir_interp<Numeric, Coeff>(void) : phase(0), auto_mode(1) {}
-  fir_interp<Numeric, Coeff>(long n)
-      : fir<Numeric, Coeff>(n), phase(0), auto_mode(1) {}
+  fir_interp<Numeric, Coeff>(long n) : fir<Numeric, Coeff>(n), phase(0), auto_mode(1) {}
   void reset() {
     fir<Numeric, Coeff>::reset();
     phase = 0;

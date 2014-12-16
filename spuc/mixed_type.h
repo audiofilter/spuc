@@ -1,22 +1,7 @@
 #ifndef SPUC_MIXED_TYPE
 #define SPUC_MIXED_TYPE
 
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
+// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_traits
 #include <spuc/spuc_types.h>
 namespace SPUC {
@@ -45,27 +30,23 @@ namespace SPUC {
 // complex<double> + complex<double> = complex<double>
 // complex<double> + complex<long>   = complex<double>
 // complex<long>   + complex<long>   = complex<long>
-template <typename T, typename D = double>
-class mixed_type {
+template <typename T, typename D = double> class mixed_type {
  public:
   typedef double dtype;
 };
-#define MIXED_MACRO(T1, T2, RESULT) \
-  template <>                       \
-  class mixed_type<T1, T2> {        \
-   public:                          \
-    typedef RESULT dtype;           \
+#define MIXED_MACRO(T1, T2, RESULT)      \
+  template <> class mixed_type<T1, T2> { \
+   public:                               \
+    typedef RESULT dtype;                \
   };
-#define DMIXED_MACRO(T1, T2, RESULT) \
-  template <>                        \
-  class mixed_type<T1, T2> {         \
-   public:                           \
-    typedef RESULT dtype;            \
-  };                                 \
-  template <>                        \
-  class mixed_type<T2, T1> {         \
-   public:                           \
-    typedef RESULT dtype;            \
+#define DMIXED_MACRO(T1, T2, RESULT)     \
+  template <> class mixed_type<T1, T2> { \
+   public:                               \
+    typedef RESULT dtype;                \
+  };                                     \
+  template <> class mixed_type<T2, T1> { \
+   public:                               \
+    typedef RESULT dtype;                \
   };
 //----------------------------------------------------------
 MIXED_MACRO(long, long, long)

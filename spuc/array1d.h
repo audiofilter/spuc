@@ -1,22 +1,5 @@
 #ifndef SPUC_ARRAY1D
 #define SPUC_ARRAY1D
-
-/*
-    Copyright (C) 2014 Tony Kirke
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <cstdlib>
@@ -75,8 +58,7 @@ namespace SPUC {
         an internal array storage no longer has any references
         to it, it is destoryed.
 */
-template <class T>
-class array1d {
+template <class T> class array1d {
  private:
   T* v_;
   int n_;
@@ -128,9 +110,7 @@ class array1d {
         (Reference count is also zero.)
 */
 
-template <class T>
-array1d<T>::array1d()
-    : v_(0), n_(0), ref_count_(0) {
+template <class T> array1d<T>::array1d() : v_(0), n_(0), ref_count_(0) {
   ref_count_ = new int;
   *ref_count_ = 1;
 }
@@ -141,9 +121,7 @@ array1d<T>::array1d()
         be reflected in B.  For an indepent copy of A, use
         array1d B(A.copy()), or B = A.copy(), instead.
 */
-template <class T>
-array1d<T>::array1d(const array1d<T>& A)
-    : v_(A.v_), n_(A.n_), ref_count_(A.ref_count_) {
+template <class T> array1d<T>::array1d(const array1d<T>& A) : v_(A.v_), n_(A.n_), ref_count_(A.ref_count_) {
   (*ref_count_)++;
 }
 
@@ -158,9 +136,7 @@ array1d<T>::array1d(const array1d<T>& A)
 
         @param n the dimension (length) of the new matrix.
 */
-template <class T>
-array1d<T>::array1d(int n)
-    : v_(0), n_(n), ref_count_(0) {
+template <class T> array1d<T>::array1d(int n) : v_(0), n_(n), ref_count_(0) {
   initialize_(n);
   ref_count_ = new int;
   *ref_count_ = 1;
@@ -174,9 +150,7 @@ array1d<T>::array1d(int n)
         @param n the dimension (length) of the new matrix.
         @param val the constant value to set all elements of the new array to.
 */
-template <class T>
-array1d<T>::array1d(int n, const T& val)
-    : v_(0), n_(n), ref_count_(0) {
+template <class T> array1d<T>::array1d(int n, const T& val) : v_(0), n_(n), ref_count_(0) {
   initialize_(n);
   set_(val);
   ref_count_ = new int;
@@ -192,9 +166,7 @@ array1d<T>::array1d(int n, const T& val)
         @param a the one dimensional C array to use as data storage for
                 the array.
 */
-template <class T>
-array1d<T>::array1d(int n, T* a)
-    : v_(a), n_(n), ref_count_(0) {
+template <class T> array1d<T>::array1d(int n, T* a) : v_(a), n_(n), ref_count_(0) {
   ref_count_ = new int;
   *ref_count_ = 2; /* this avoid destorying original data. */
 }
@@ -204,8 +176,7 @@ array1d<T>::array1d(int n, T* a)
         A[0]. If SPUC_BOUNDS_CHECK is defined, then the index is
         checked that it falls within the array bounds.
 */
-template <class T>
-inline T& array1d<T>::operator[](int i) {
+template <class T> inline T& array1d<T>::operator[](int i) {
 #ifdef SPUC_BOUNDS_CHECK
   assert(i >= 0);
   assert(i < n_);
@@ -218,8 +189,7 @@ inline T& array1d<T>::operator[](int i) {
         A[0]. If SPUC_BOUNDS_CHECK is defined, then the index is
         checked that it fall within the array bounds.
 */
-template <class T>
-inline const T& array1d<T>::operator[](int i) const {
+template <class T> inline const T& array1d<T>::operator[](int i) const {
 #ifdef SPUC_BOUNDS_CHECK
   assert(i >= 0);
   assert(i < n_);
@@ -230,8 +200,7 @@ inline const T& array1d<T>::operator[](int i) const {
 /**
         Assign all elemnts of A to a constant scalar.
 */
-template <class T>
-array1d<T>& array1d<T>::operator=(const T& a) {
+template <class T> array1d<T>& array1d<T>::operator=(const T& a) {
   set_(a);
   return *this;
 }
@@ -241,8 +210,7 @@ array1d<T>& array1d<T>::operator=(const T& a) {
         to create a new array that does not share data.
 
 */
-template <class T>
-array1d<T> array1d<T>::copy() const {
+template <class T> array1d<T> array1d<T>::copy() const {
   array1d A(n_);
   copy_(A.begin_(), begin_(), n_);
 
@@ -272,8 +240,7 @@ array1d<T> array1d<T>::copy() const {
         B are made.
 
 */
-template <class T>
-array1d<T>& array1d<T>::inject(const array1d& A) {
+template <class T> array1d<T>& array1d<T>::inject(const array1d& A) {
   if (A.n_ == n_) copy_(begin_(), A.begin_(), n_);
 
   return *this;
@@ -289,13 +256,10 @@ array1d<T>& array1d<T>::inject(const array1d& A) {
 
         @return The new referenced array: in B.ref(A), it returns B.
 */
-template <class T>
-array1d<T>& array1d<T>::ref(const array1d<T>& A) {
+template <class T> array1d<T>& array1d<T>::ref(const array1d<T>& A) {
   if (this != &A) {
     (*ref_count_)--;
-    if (*ref_count_ < 1) {
-      destroy_();
-    }
+    if (*ref_count_ < 1) { destroy_(); }
 
     n_ = A.n_;
     v_ = A.v_;
@@ -309,45 +273,29 @@ array1d<T>& array1d<T>::ref(const array1d<T>& A) {
 /**
         B = A is shorthand notation for B.ref(A).
 */
-template <class T>
-array1d<T>& array1d<T>::operator=(const array1d<T>& A) {
-  return ref(A);
-}
+template <class T> array1d<T>& array1d<T>::operator=(const array1d<T>& A) { return ref(A); }
 
 /**
         @return the dimension (number of elements) of the array.
         This is equivalent to dim() and dim1().
 */
-template <class T>
-inline int array1d<T>::dim1() const {
-  return n_;
-}
+template <class T> inline int array1d<T>::dim1() const { return n_; }
 
-template <class T>
-inline int array1d<T>::length() const {
-  return n_;
-}
+template <class T> inline int array1d<T>::length() const { return n_; }
 
 /**
         @return the dimension (number of elements) of the array.
         This is equivalent to dim1() and dim1().
 */
-template <class T>
-inline int array1d<T>::dim() const {
-  return n_;
-}
+template <class T> inline int array1d<T>::dim() const { return n_; }
 
 /**
         @return the number of arrays that share the same storage area
         as this one.  (Must be at least one.)
 */
-template <class T>
-inline int array1d<T>::ref_count() const {
-  return *ref_count_;
-}
+template <class T> inline int array1d<T>::ref_count() const { return *ref_count_; }
 
-template <class T>
-array1d<T>::~array1d() {
+template <class T> array1d<T>::~array1d() {
   (*ref_count_)--;
 
   if (*ref_count_ < 1) destroy_();
@@ -355,31 +303,25 @@ array1d<T>::~array1d() {
 
 /* private internal functions */
 
-template <class T>
-void array1d<T>::initialize_(int n) {
+template <class T> void array1d<T>::initialize_(int n) {
   v_ = new T[n];
   n_ = n;
 }
 
-template <class T>
-void array1d<T>::set_(const T& a) {
+template <class T> void array1d<T>::set_(const T& a) {
   T* begin = &(v_[0]);
   T* end = begin + n_;
 
   for (T* p = begin; p < end; p++) *p = a;
 }
 
-template <class T>
-void array1d<T>::copy_(T* p, const T* q, int len) const {
+template <class T> void array1d<T>::copy_(T* p, const T* q, int len) const {
   T* end = p + len;
   while (p < end) *p++ = *q++;
 }
 
-template <class T>
-void array1d<T>::destroy_() {
-  if (v_ != 0) {
-    delete[](v_);
-  }
+template <class T> void array1d<T>::destroy_() {
+  if (v_ != 0) { delete[](v_); }
 
   if (*ref_count_ != 0) delete ref_count_;
 }
@@ -387,27 +329,19 @@ void array1d<T>::destroy_() {
 /**
         @returns location of first element, i.e. A[0] (mutable).
 */
-template <class T>
-const T* array1d<T>::begin_() const {
-  return &(v_[0]);
-}
+template <class T> const T* array1d<T>::begin_() const { return &(v_[0]); }
 
 /**
         @returns location of first element, i.e. A[0] (mutable).
 */
-template <class T>
-T* array1d<T>::begin_() {
-  return &(v_[0]);
-}
+template <class T> T* array1d<T>::begin_() { return &(v_[0]); }
 
-template <class T>
-array1d<T> array1d<T>::mid(int s, int nr) const {
+template <class T> array1d<T> array1d<T>::mid(int s, int nr) const {
   array1d A(nr);
   for (int i = 0; i < nr; i++) A[i] = v_[s + i];
   return A;
 }
-template <class T>
-void array1d<T>::replace_mid(int s, const array1d<T>& v) const {
+template <class T> void array1d<T>::replace_mid(int s, const array1d<T>& v) const {
   for (int i = 0; i < v.dim(); i++) v_[s + i] = v[i];
 }
 }  // namespace SPUC
