@@ -141,6 +141,7 @@ SET_TARGET_PROPERTIES(spuc_types PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib"
 
 
 option(SPUC_BUILD_EXAMPLES "Build examples" OFF)
+option(SPUC_GRAHPIC_EXAMPLES "Build more examples - requires boost, gl, etc" OFF)
 
 if (SPUC_BUILD_EXAMPLES)
 MESSAGE(STATUS "building examples")
@@ -149,3 +150,10 @@ else()
 MESSAGE(STATUS "Not building examples - enable with cmake -DSPUC_BUILD_EXAMPLES=ON")
 endif()
 
+if (SPUC_GRAPHIC_EXAMPLES)
+MESSAGE(STATUS "building more examples")
+add_subdirectory(graphic_examples)
+add_subdirectory(cpplot)
+else()
+MESSAGE(STATUS "Not building more examples - enable with cmake -DSPUC_GRAPHIC_EXAMPLES=ON")
+endif()

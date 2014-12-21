@@ -23,7 +23,7 @@ int main(int argv, char* argc[]) {
 	ofstream resf("mlse.dat");
 	ofstream reff("refmlse.dat");
 	ofstream rawf("raw.dat");
-	delay <bool> delayed_ref(33);
+	delay <bool> delayed_ref(34);
 	tx_fir.settap(0,1.0);
 	tx_fir.settap(1,-1.5);
 	tx_fir.settap(2,0.5);
