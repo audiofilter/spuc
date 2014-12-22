@@ -17,32 +17,24 @@ if (GCC_VERSION VERSION_GREATER 4.8 OR GCC_VERSION VERSION_EQUAL 4.8)
 endif()
 
 SET(TARGETS
-test_cic
-test_auto_corr
+#test_cic
+#test_auto_corr
 test_ddfse
-test_elliptic_allpass
-test_filters
-test_fir2
+#test_elliptic_allpass
+#test_filters
+#test_fir2
 
-#test_spuc_int
-#test_spuc_int_types
-#test_spuc_fixed
-#test_spuc_fixed_types
-#test_speed
-
-test_iir2nd
+#test_iir2nd
 test_iir
-test_interp
+#test_interp
 
-test_notch
-test_dump
-test_mlse
+#test_notch
+#test_dump
+#test_mlse
 test_roots
 
-test_q
+#test_q
 test_rls
-#test_sint2
-#test_sint
 test_cmat
 )
 

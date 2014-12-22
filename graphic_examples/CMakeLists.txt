@@ -36,7 +36,7 @@ FOREACH(mod ${TARGETS})
 	SET(SRC test_${mod}.cpp)
 	ADD_EXECUTABLE(${mod}  ${SRC})
 	TARGET_LINK_LIBRARIES(${mod} spuc spuc_filt spuc_types cpplot)
-	SET(EXECUTABLE_OUTPUT_PATH ..)
+	SET(EXECUTABLE_OUTPUT_PATH ../..)
 	INSTALL(TARGETS ${mod} DESTINATION "$ENV{HOME}/bin")
 ENDFOREACH(mod ${EXTS})
 
