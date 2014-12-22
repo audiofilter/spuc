@@ -53,3 +53,6 @@ Travis is being used to display the build integrity and uses Clang on Mac OSX 10
 
 ![QPSK BER](BER.png "QPSK BER example")
 
+
+![Demo App in SPUC filter](app.png "Filter example using QT")
+
