@@ -51,3 +51,5 @@ There is also an example that display BER for an MLSE Equalizer as noise is adde
 
 Travis is being used to display the build integrity and uses Clang on Mac OSX 10.9. However, this should also work fine with GCC 4.8
 
+![QPSK BER](BER.png "QPSK BER example")
+

@@ -40,3 +40,9 @@ FOREACH(mod ${TARGETS})
 	INSTALL(TARGETS ${mod} DESTINATION "$ENV{HOME}/bin")
 ENDFOREACH(mod ${EXTS})
 
+
+ADD_EXECUTABLE(qpsk_ber qpsk_ber.cpp)
+TARGET_LINK_LIBRARIES(qpsk_ber spuc spuc_filt spuc_types cpplot)
+
+ADD_EXECUTABLE(qpsk_scatter qpsk_scatter.cpp)
+TARGET_LINK_LIBRARIES(qpsk_scatter spuc spuc_filt spuc_types cpplot)
