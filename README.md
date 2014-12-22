@@ -43,5 +43,11 @@ Since the code on sourceforge, has not compiled for modern compilers for several
 
 For now this is merely an update and is lacking in other documentation and / or examples.
 
+In addition to very very basic examples, there are some in graphic_examples that can be compiled and display data using OpenGL
+For this purpose the cpplot project files are added as a subdirectory.
+This should work fine on a Mac if you have Boost installed.
+The examples display impulse responses for various filters.
+There is also an example that display BER for an MLSE Equalizer as noise is added to the input.
+
 Travis is being used to display the build integrity and uses Clang on Mac OSX 10.9. However, this should also work fine with GCC 4.8
 
