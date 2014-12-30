@@ -16,10 +16,7 @@ For a lite-weight version please checkout spuclib instead as it does not have th
 
 Nor does spuclib have the examples or the python extensions available in audiofilter/pyspuc
 
-More documentation pages here (out of date)
-
-http://audiofilter.github.io/spuc/
-[http://audiofilter.github.io/spuc/]
+Library documentation pages here : http://audiofilter.github.io/spuc/
 
 ----
 ### Various Sub-projects also on Github
@@ -42,8 +39,6 @@ SPUC_FILTER - Demo of QT based GUI filter design based on SPUCLIB
 
 ----
 
-================================================================================
-
 ### Background Info
 
 Since the code on sourceforge, has not compiled for modern compilers for several years, this update fixes compiler errors and other bugs found in more real-life testing. Also various parts have been updated/upgraded.
@@ -60,7 +55,6 @@ Travis is being used to display the build integrity and uses Clang on Mac OSX 10
 
 ----
 
-================================================================================
 
 ### More Library Information (more details on http://audiofilter.github.io/spuc/ )
 
@@ -102,7 +96,7 @@ In addition to digital filtering this library handles resampling using
 
 ================================================================================
 
-### Equalizers
+#### Equalizers
 
 * FIR Adaptive filters
 	* FIR only
@@ -117,7 +111,7 @@ In addition to digital filtering this library handles resampling using
 
 ================================================================================
 
-### Digital Communication Building Blocks
+#### Digital Communication Building Blocks
 
 * Phase lock loops + various discriminators
 	* For carrier frequency acquistion and tracking
