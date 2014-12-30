@@ -56,7 +56,7 @@ Travis is being used to display the build integrity and uses Clang on Mac OSX 10
 ----
 
 
-### More Library Information (more details on http://audiofilter.github.io/spuc/ )
+### Information (details on http://audiofilter.github.io/spuc/ )
 
 SPUC was originally written since early C++ had no complex class as part of a standard. In addition we needed a complex class to support handling fixed-point data types to model real hardware in digital communication ASICs.
 After that many filtering classes and functions were added. This allowed trading off stopband and cut-off without having to go to Matlab to recalculate coefficients. So of the filter types supported are
@@ -127,19 +127,14 @@ In addition to digital filtering this library handles resampling using
 
 
 
-
-
-
-
-
 ----
-### Examples - QPSK BER
+### Examples - QPSK BER Simulation for various SNR ratios in AWGN
 
 ![QPSK BER](BER.png "QPSK BER example")
 
 
 ----
-### A QT App for filter design
+### A QT App for filter design - Use mouse to shape filters
 
 ![Demo App in SPUC filter](app.png "Filter example using QT")
 
