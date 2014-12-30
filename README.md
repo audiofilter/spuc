@@ -144,3 +144,18 @@ In addition to digital filtering this library handles resampling using
 ![Demo App in SPUC filter](app.png "Filter example using QT")
 
 
+-----
+### Requirements
+* cmake
+* boost for graphic examples 
+
+### Building
+
+```sh
+mkdir build
+cd build
+cmake ..
+make
+```
+
+Extra switches to CMake enable the various examples to be built
