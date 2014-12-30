@@ -1,5 +1,5 @@
 SPUC - Signal Processing Using C++
-=================
+================================================================================
 
 ### Build status - Mac Os X, clang
 [![Build Status](https://travis-ci.org/audiofilter/spuc.png)](https://travis-ci.org/audiofilter/spuc)
@@ -21,6 +21,7 @@ More documentation pages here (out of date)
 http://audiofilter.github.io/spuc/
 [http://audiofilter.github.io/spuc/]
 
+----
 ### Various Sub-projects also on Github
 
 PYSPUC - python bindings for spuclib
@@ -39,6 +40,12 @@ SPUC_FILTER - Demo of QT based GUI filter design based on SPUCLIB
 [![Build Status](https://travis-ci.org/audiofilter/spuc_filter.png)](https://travis-ci.org/audiofilter/spuc_filter)
 
 
+----
+
+================================================================================
+
+### Background Info
+
 Since the code on sourceforge, has not compiled for modern compilers for several years, this update fixes compiler errors and other bugs found in more real-life testing. Also various parts have been updated/upgraded.
 
 For now this is merely an update and is lacking in other documentation and / or examples.
@@ -51,8 +58,95 @@ There is also an example that display BER for an MLSE Equalizer as noise is adde
 
 Travis is being used to display the build integrity and uses Clang on Mac OSX 10.9. However, this should also work fine with GCC 4.8
 
+----
+
+================================================================================
+
+### More Library Information (more details on http://audiofilter.github.io/spuc/ )
+
+SPUC was originally written since early C++ had no complex class as part of a standard. In addition we needed a complex class to support handling fixed-point data types to model real hardware in digital communication ASICs.
+After that many filtering classes and functions were added. This allowed trading off stopband and cut-off without having to go to Matlab to recalculate coefficients. So of the filter types supported are
+
+* Butterworth
+* Chebyshev
+* Elliptic
+* Maximally flat FIR
+* Remez Equiripple
+* Raised Cosine FIR
+* Gaussian FIR
+* CIC
+* Notch filter
+* Cut/Boost Filter
+* Halfband/Subband IIR filters
+	   
+Digital Filter types are either FIR or IIR Filters. To separate filter design from filter usage, there are typically different classes involved rather than putting everything into one class.
+
+Thus there is 
+
+* a FIR coefficient class and an IIR coefficient class
+* Separate functions that calculate coefficients for the Classic IIR Filters:
+	* Butterworth
+	* Chebyshev			
+	* Elliptic
+* Separate functions that calculate coefficients for the various FIR Filters as noted above
+
+Then typically separate classes that can implement these filters
+
+* For IIR filters design can be broken down to biquad sections which is what is typically used in hard-ware
+
+In addition to digital filtering this library handles resampling using
+
+* Polyphase filtering approach
+* Cascaded Integrate Comb filters (or CIC filters)
+* Irrational resampling with Farrow & Lagrange based filters
+
+================================================================================
+
+### Equalizers
+
+* FIR Adaptive filters
+	* FIR only
+	* FIR with Decision Feedback Estimator
+
+* Recursive Least Squares Estimator
+
+* Maximum Likelihood Sequence Estimators
+	* MLSD
+	* DDFSE
+	* RSDFSE
+
+================================================================================
+
+### Digital Communication Building Blocks
+
+* Phase lock loops + various discriminators
+	* For carrier frequency acquistion and tracking
+	* For Symbol timing synchronization
+
+* Cordic processor
+* QPSK, QAM Single Carrier Modulators/Demodulators
+* OFDM 
+* Convolutional Encoder + Viterbi Decoder
+
+* Fading Channel
+
+
+
+
+
+
+
+
+
+----
+### Examples - QPSK BER
+
 ![QPSK BER](BER.png "QPSK BER example")
 
 
+----
+### A QT App for filter design
+
 ![Demo App in SPUC filter](app.png "Filter example using QT")
+
 
