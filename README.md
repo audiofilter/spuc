@@ -134,7 +134,9 @@ In addition to digital filtering this library handles resampling using
 
 
 ----
-### A QT App for filter design - Use mouse to shape filters
+### A QT App for filter design - Use mouse to shape filters 
+
+http://github.com/audiofilter/spuc_filter
 
 ![Demo App in SPUC filter](app.png "Filter example using QT")
 
