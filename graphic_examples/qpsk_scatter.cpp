@@ -62,7 +62,8 @@ int main(int argc, char *argv[])
 				double gy = scatter_gain*imag(Environment.RECEIVER.final_baseband);
 				vertex(gx,gy);
 				axis(-2,2,-2,2);
-				boost::this_thread::sleep(boost::posix_time::milliseconds(1));
+				std::chrono::milliseconds msec(10);
+				std::this_thread::sleep_for(msec);
 				symbols++;
 			}  				 
 		} while (symbols < num);

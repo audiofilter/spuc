@@ -31,8 +31,8 @@ Version:0.3.13
 #define _CPPLOT_PATCH_HPP_
 namespace cpplot {
     class Patch;
-    typedef boost::shared_ptr<Patch> patch_t;
-    class Patch : public drawing_t_t, public boost::enable_shared_from_this<Patch> {
+    typedef std::shared_ptr<Patch> patch_t;
+    class Patch : public drawing_t_t, public std::enable_shared_from_this<Patch> {
         public:
             enum types {_2D, _3D} type; ///< View type
             std::vector< std::vector<int> > faces; ///< Face data container
@@ -56,7 +56,6 @@ namespace cpplot {
                     LineStyle("-"),
                     LineWidth(1)
                 {}
-			virtual ~Patch() { ; }
 
             void clear(); ///< Clear all data
 
@@ -88,7 +87,7 @@ namespace cpplot {
         private:
             void draw2d(); ///< Draw 2D patch
             void draw3d(); ///< Draw 3D patch
-            boost::mutex data_mutex; ///< Protects the data when reading/writing
+            std::mutex data_mutex; ///< Protects the data when reading/writing
     };
 }
 #endif

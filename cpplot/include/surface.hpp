@@ -35,8 +35,8 @@ namespace cpplot {
      * The surface_t is a shared pointer that will keep the
      * Surface object it's pointing to alive and available.
      */
-    typedef boost::shared_ptr<Surface> surface_t;
-    class Surface : public drawing_t_t, public boost::enable_shared_from_this<Surface> {
+    typedef std::shared_ptr<Surface> surface_t;
+    class Surface : public drawing_t_t, public std::enable_shared_from_this<Surface> {
         public:
             dmat XData,YData,ZData,CDataIndex; ///< Datacontainers for the plot
             tcmat CData; ///< Color data container
@@ -64,7 +64,7 @@ namespace cpplot {
                     NContour(10),
                     type(_2D)
                 {}
-			virtual ~Surface() { ; }
+
             void clear(); ///< Clear all data
 
             /**
@@ -118,7 +118,7 @@ namespace cpplot {
             void draw3d(); ///< Draw a 3D surface
             void contourc(const dvec& x, const dvec& y, const dmat& Z, const dvec& v, dmat& C); ///< Generate contour structure
             void draw_contour(); ///< Draw contour
-            boost::mutex data_mutex; ///< Protects the data when reading/writing
+            std::mutex data_mutex; ///< Protects the data when reading/writing
 
             // contour
             /**

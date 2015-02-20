@@ -51,7 +51,7 @@ namespace cpplot {
     layer_t figure_t_t::layer(const std::string name, const bool visible) {
         cl = layers[name];
         if(cl == NULL) {
-            boost::shared_ptr<layer_t_t> p(new layer_t_t(shared_from_this(), name, visible));
+            std::shared_ptr<layer_t_t> p(new layer_t_t(shared_from_this(), name, visible));
             layers[name] = cl = p;
         }
         return cl;
@@ -86,10 +86,9 @@ namespace cpplot {
 
     void figure_t_t::draw_layer_list() {
         if(layers.size() <= 1) return;
-        int l,t,w,h,r;
+        int l,w,h,r;
         std::string s;
         l = 1;
-        t = 1;
         w = 20;//button_width;
         h = 20;//button_height;
         r = 3;
@@ -138,9 +137,8 @@ namespace cpplot {
     // events (mouse)
     void figure_t_t::mouse(const int button, const int state, const int x, const int y) {
         // Layer list click
-        int l,t,w,h;
+        int l,w,h;
         l = 1;
-        t = 1;
         w = 20;//button_width;
         h = 20;//button_height;
 
@@ -152,12 +150,12 @@ namespace cpplot {
                     //Toggle visibility
                     p->second->toggle_visibility();
                     //double click to focus layer
-                    if(p->second->time_clicked.elapsed() < 0.2) {
+                    if(std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - p->second->time_clicked).count() < 200) {
                         for(layers_t::iterator k = layers.begin(); k != layers.end(); ++k) { k->second->set_visibility(false); }
                         p->second->set_visibility(true);
                         //cout <<"!!"<<endl;
                     }
-                    p->second->time_clicked.restart();
+                    p->second->time_clicked = std::chrono::steady_clock::now();
 
                     return;
                 }

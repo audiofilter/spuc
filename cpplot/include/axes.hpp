@@ -31,6 +31,7 @@ Version:0.3.13
 #define _CPPLOT_AXES_HPP_
 
 #include "cpplot_common.hpp"
+#include <cassert>
 
 namespace cpplot {
     /**
@@ -39,11 +40,11 @@ namespace cpplot {
      * Axes are kept by layers, and in turn keep track of, and create, all
      * its childred so call drawings (lines, surfaces, etc..)
      */
-    class axes_t_t : public boost::enable_shared_from_this<axes_t_t>, public boost::noncopyable {
+    class axes_t_t : public std::enable_shared_from_this<axes_t_t> {
         public:
             std::vector<std::vector<float> > cmap; ///< Colormap data container
         private:
-            boost::mutex children_mutex; ///< Protects the list of drawings from collisions on multithreaded read/write
+            std::mutex children_mutex; ///< Protects the list of drawings from collisions on multithreaded read/write
             layer_t layer; ///< Pointer to the layer to which the axes belongs
             axes_t color_bar_axes; ///< Pointer to an optional bar with color legend
             int window_h(); ///< Obtain the figure height
@@ -160,11 +161,11 @@ namespace cpplot {
              * inherit drawing_t_t.
              */
             template<typename T>
-            boost::shared_ptr<T> add() {
-                boost::shared_ptr<T> p(new T(shared_from_this()));
-                co = boost::dynamic_pointer_cast<drawing_t_t, T>(p);
+            std::shared_ptr<T> add() {
+                std::shared_ptr<T> p(new T(shared_from_this()));
+                co = std::dynamic_pointer_cast<drawing_t_t, T>(p);
                 assert(co);
-                boost::mutex::scoped_lock l(children_mutex);
+                std::unique_lock<std::mutex> l(children_mutex);
                 children.push_back(co);
                 return p;
             }
@@ -175,15 +176,15 @@ namespace cpplot {
              * object has yet been created, a new one will be created, added and returned.
              */
             template<typename T>
-            boost::shared_ptr<T> gco() {
+            std::shared_ptr<T> gco() {
                 if(!co) return add<T>();
-                boost::shared_ptr<T> ptr = boost::dynamic_pointer_cast<T, drawing_t_t>(co);
+                std::shared_ptr<T> ptr = std::dynamic_pointer_cast<T, drawing_t_t>(co);
                 return ptr ? ptr : add<T>();
             }
 
             /// Clear the figure
             axes_t clear() {
-                boost::mutex::scoped_lock l(children_mutex);
+                std::unique_lock<std::mutex> l(children_mutex);
                 co.reset(); children.clear(); return shared_from_this();
             }
 

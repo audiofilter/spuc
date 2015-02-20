@@ -33,7 +33,7 @@ int main(int argc,char* argv[])
 	for(int i=0;i<n;++i) x[i]=i;
 
 	plot(x,y);
-	while(true) boost::this_thread::yield();
+	while(true) std::this_thread::yield();
 
   return 0;
  }

@@ -139,9 +139,8 @@ INSTALL(TARGETS spuc DESTINATION "/usr/local/lib")
 SET_TARGET_PROPERTIES(spuc PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 SET_TARGET_PROPERTIES(spuc_types PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 
-
 option(SPUC_BUILD_EXAMPLES "Build examples" OFF)
-option(SPUC_GRAHPIC_EXAMPLES "Build more examples - requires boost, gl, etc" OFF)
+option(SPUC_GRAHPIC_EXAMPLES "Build more examples - requires gl, etc" OFF)
 
 if (SPUC_BUILD_EXAMPLES)
 MESSAGE(STATUS "building examples")

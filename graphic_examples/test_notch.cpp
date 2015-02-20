@@ -22,6 +22,6 @@ int main(int argc, char *argv[])
 		x[i] = i;
   };
 	plot(x,y);
-	while(true) boost::this_thread::yield();
+	while(true) std::this_thread::yield();
   return(1);
 }

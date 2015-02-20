@@ -23,7 +23,7 @@ int main(int argc,char* argv[])
 		imp *= -1;
   }
 	plot(x,y);
-	while(true) boost::this_thread::yield();
+	while(true) std::this_thread::yield();
 
   return 0;
 }

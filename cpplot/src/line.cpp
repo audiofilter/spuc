@@ -51,7 +51,7 @@ namespace cpplot {
         {}
     figure_t Line::gcf() { return ca->gcl()->gcf(); }
     void Line::clear() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         XData.clear();
         YData.clear();
         ZData.clear();
@@ -66,11 +66,10 @@ namespace cpplot {
     }
 
     void Line::draw() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         if(XData.size() == 0) return;
 
         float xx,yy;// transformed coordinates
-        float r;//marker size
         float rx,ry;
         std::vector<float> rgb = ColorSpec2RGB(Color);
         glColor3f(rgb[0],rgb[1],rgb[2]);
@@ -116,7 +115,6 @@ namespace cpplot {
             if(Marker != "none") {// Marker //
 
                 // Scale with window size
-                r  = MarkerSize/500.0;
                 rx = MarkerSize/gcf()->window_w;
                 ry = MarkerSize/gcf()->window_h;
 
@@ -302,7 +300,7 @@ namespace cpplot {
     }
 
     std::pair<double, double> Line::min_max(const dvec& data, math::scale scale_ = math::linear_scale) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         std::pair<double, double> mm(std::numeric_limits<double>::max(), -std::numeric_limits<double>::max());
         if(scale_ == math::linear_scale) {//linear_scale
             for(dvec::const_iterator i = data.begin(); i != data.end(); ++i) {
@@ -358,7 +356,7 @@ namespace cpplot {
     /// vertex
     line_t  Line::vertex(const double x, const double y) {
         if(!(XData.size() == max_capacity && stop_at_max_)) {
-            boost::mutex::scoped_lock l(data_mutex);
+            std::unique_lock<std::mutex> l(data_mutex);
             if(ca->xmin > x) { ca->xmin = x; }
             if(ca->xmax < x) { ca->xmax = x; }
             if(ca->ymin > y) { ca->ymin = y; }
@@ -372,13 +370,13 @@ namespace cpplot {
     }
 
     line_t Line::line(const dvec& x, const dvec& y) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         XData = x;
         YData = y;
         return shared_from_this();
     }
     line_t Line::line(const dvec& x, const dvec& y, const dvec& z) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         XData = x;
         YData = y;
         ZData = z;
@@ -406,21 +404,21 @@ namespace cpplot {
         return line(xx,yy);
     }
     line_t Line::semilogx(const dvec& x, const dvec& y) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->XScale = math::logarithmic_scale;
         XData = x;
         YData = y;
         return shared_from_this();
     }
     line_t Line::semilogy(const dvec& x, const dvec& y) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->YScale = math::logarithmic_scale;
         XData = x;
         YData = y;
         return shared_from_this();
     }
     line_t Line::loglog(const dvec& x, const dvec& y) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->XScale = math::logarithmic_scale;
         ca->YScale = math::logarithmic_scale;
         XData = x;
@@ -430,7 +428,7 @@ namespace cpplot {
     /// errorbar
     line_t Line::vertex(const double x, const double y, const double ep, const double em) {//for errorbar
         if(!(XData.size() == max_capacity && stop_at_max_)) {
-            boost::mutex::scoped_lock l(data_mutex);
+            std::unique_lock<std::mutex> l(data_mutex);
             if(ca->xmin>x) { ca->xmin=x; }
             if(ca->xmax < x) { ca->xmax = x; }
             if(ca->ymin > y+ep) { ca->ymin = y+ep; }
@@ -459,7 +457,7 @@ namespace cpplot {
     /// 3D line
     line_t Line::vertex(const double x, const double y, const double z) {
         if(!(XData.size() == max_capacity && stop_at_max_)) {
-            boost::mutex::scoped_lock l(data_mutex);
+            std::unique_lock<std::mutex> l(data_mutex);
             if(ca->xmin > x) { ca->xmin = x; }
             if(ca->xmax < x) { ca->xmax = x; }
             if(ca->ymin > y) { ca->ymin = y; }

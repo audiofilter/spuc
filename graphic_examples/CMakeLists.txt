@@ -7,7 +7,6 @@ message("Project spuc_examples")
 
 find_package(GLUT)
 find_package(OpenGL)
-find_package(Boost COMPONENTS thread system )
 
 execute_process(COMMAND ${CMAKE_CXX_COMPILER} -dumpversion
                 OUTPUT_VARIABLE GCC_VERSION)
@@ -28,9 +27,9 @@ notch
 mlse
 )
 
-INCLUDE_DIRECTORIES(".." "/usr/local/include" "../cpplot/include" ${Boost_INCLUDE_DIRS} ${GLUT_INCLUDE_DIR} )
-SET(CMAKE_CXX_FLAGS "-ggdb -Wno-deprecated -fPIC -DGL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED")
-LINK_DIRECTORIES("/usr/local/lib" ${Boost_LIBRARY_DIRS} )
+INCLUDE_DIRECTORIES(".." "/usr/local/include" "../cpplot/include" ${GLUT_INCLUDE_DIR} )
+SET(CMAKE_CXX_FLAGS "-ggdb -Wno-deprecated -fPIC -DGL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED -std=c++11")
+LINK_DIRECTORIES("/usr/local/lib" )
 
 FOREACH(mod ${TARGETS})
 	SET(SRC test_${mod}.cpp)

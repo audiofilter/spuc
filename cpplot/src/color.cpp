@@ -31,7 +31,7 @@ Version:0.3.13
 
 namespace cpplot {
     std::vector<float> ColorSpec2RGB(const std::string& c) {
-        float r=0,g=0,b=0;
+        float r,g,b;
         float h=0.6;
         float f=0.5;
         //line

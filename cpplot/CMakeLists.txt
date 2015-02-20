@@ -3,15 +3,13 @@ project(CPPLOT)
 
 find_package(GLUT)
 find_package(OpenGL)
-find_package( Boost COMPONENTS thread system )
-link_directories ( ${Boost_LIBRARY_DIRS} )
 
 option(CPPLOT_BUILD_EXAMPLES "Build examples" OFF)
 
-include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/include ${Boost_INCLUDE_DIRS} ${GLUT_INCLUDE_DIR} )
+include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/include ${GLUT_INCLUDE_DIR} )
 
 
-set(CMAKE_CXX_FLAGS "-ggdb -Wno-deprecated -fPIC -DGL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED")
+set(CMAKE_CXX_FLAGS "-ggdb -Wno-deprecated -fPIC -DGL_DO_NOT_WARN_IF_MULTI_GL_VERSION_HEADERS_INCLUDED -std=c++11")
 
 ## Build the library
 set(LIBRARY_OUTPUT_PATH ..)
@@ -21,7 +19,7 @@ add_library(cpplot STATIC ${SRC_DIR}/matplotpp.cpp ${SRC_DIR}/gl2ps.c ${SRC_DIR}
 target_link_libraries(cpplot
     ${GLUT_LIBRARY}
     ${OPENGL_LIBRARY}
-    ${Boost_LIBRARIES})
+)
 
 if(CPPLOT_BUILD_EXAMPLES)
 #    add_subdirectory(examples)

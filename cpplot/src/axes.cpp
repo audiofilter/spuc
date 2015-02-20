@@ -177,7 +177,7 @@ namespace cpplot {
     }
 
     void axes_t_t::draw() {
-        boost::mutex::scoped_lock l(children_mutex);
+        std::unique_lock<std::mutex> l(children_mutex);
         if(children.size() > 0) {
             if(type == _2D) {
                 draw2d();
@@ -216,10 +216,6 @@ namespace cpplot {
 
         glDisable(GL_LINE_STIPPLE);
         gl2psDisable(GL2PS_LINE_STIPPLE);
-
-        float x_axis_location = 1, y_axis_location = 1;
-        if(XAxisLocation=="top"  ) { x_axis_location = 1; } else { x_axis_location = -1; }
-        if(YAxisLocation=="right") { y_axis_location = 1; } else { y_axis_location = -1; }
 
         int char_w = 6, char_h = 12;
         float offset = 0.01;
@@ -386,12 +382,6 @@ namespace cpplot {
 
     void axes_t_t::draw3d() {
         char ctmp[100];
-        float l,b,w,h;//left,bottom,width,height
-
-        l = position[0];
-        b = position[1];
-        w = position[2];
-        h = position[3];
 
         // viewport Axes
         glViewport((int)(viewport3d[0]*window_w() ),

@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
 	//	plot(x,d);set("c");
 	//	plot(x,e);set("y");
 
-	while(true) boost::this_thread::yield();
+	while(true) std::this_thread::yield();
 
 
   return(1);

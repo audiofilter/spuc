@@ -31,7 +31,6 @@ Version:0.3.13
 #define _CPPLOT_LAYER_HPP_
 
 #include "cpplot_common.hpp"
-#include <boost/timer.hpp>
 
 namespace cpplot {
     /**
@@ -40,14 +39,14 @@ namespace cpplot {
      * plots are drawn, and is thus responsible for keeping track of
      * which axes objects that belongs to the layer (and create new when needed).
      */
-    class layer_t_t : public boost::enable_shared_from_this<layer_t_t>, public boost::noncopyable {
+    class layer_t_t : public std::enable_shared_from_this<layer_t_t> {
         private:
             axes_t ca, selected_axes; ///< Pointers to current (in program) and selected (by user) axes
             bool visible; ///< Decides if the layer is drawn or not
-	  //            float xButtonDown, yButtonDown; /// Last clicked mouse position
+            float xButtonDown, yButtonDown; /// Last clicked mouse position
 
         public:
-            boost::timer time_clicked; ///< Time that the layer was last clicked. Used to detect double click
+            std::chrono::steady_clock::time_point time_clicked; ///< Time that the layer was last clicked. Used to detect double click
             std::string layername; ///< Name of layer
             figure_t figure; ///< Pointer to the figure that that the layer is drawn in
 

@@ -35,12 +35,12 @@ namespace cpplot {
      * The text_t is a shared pointer that will keep the
      * Text object it's pointing to alive and available.
      */
-    typedef boost::shared_ptr<Text> const text_t;
+    typedef std::shared_ptr<Text> const text_t;
 
     /**
      * The text object represents a string that is printed on a plot
      */
-    class Text : public drawing_t_t, public boost::enable_shared_from_this<Text> {
+    class Text : public drawing_t_t, public std::enable_shared_from_this<Text> {
         public:
             std::string String; ///< Contains the data that is printed to the plot
             float position[3]; ///< The three-dimensional position of the text. In a 2d-plot, only the first two are used.
@@ -52,7 +52,6 @@ namespace cpplot {
             Text(const axes_t a)
                 :   drawing_t_t(a)
                 {}
-			virtual ~Text() { ; }
             text_t text(double x, double y, const std::string s);
             void clear(); ///< Clear all data
             void config(){} ///< Configure the axes in which the text is printed

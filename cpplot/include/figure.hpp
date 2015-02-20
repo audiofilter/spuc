@@ -41,7 +41,7 @@ namespace cpplot {
      * in the upper left corner with tickboxes available to control the
      * visibility of each layer.
      */
-    class figure_t_t : public boost::enable_shared_from_this<figure_t_t>, boost::noncopyable {
+    class figure_t_t : public std::enable_shared_from_this<figure_t_t> {
         private:
             layers_t layers; ///< List of all associated layers in figure
 

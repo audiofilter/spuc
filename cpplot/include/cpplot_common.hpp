@@ -38,10 +38,10 @@ Version:0.3.13
 #include <cmath>
 #include "math.hpp"
 #include "gl2ps.h"
-#include <boost/shared_ptr.hpp>
-#include <boost/enable_shared_from_this.hpp>
-#include <boost/thread.hpp>
-#include <boost/thread/mutex.hpp>
+#include <memory>
+#include <thread>
+#include <mutex>
+#include <chrono>
 #include "types.hpp"
 #include "glut.hpp"
 

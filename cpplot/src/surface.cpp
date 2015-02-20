@@ -46,7 +46,7 @@ namespace cpplot {
     }
 
     void Surface::clear() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         XData.clear();
         YData.clear();
         ZData.clear();
@@ -57,7 +57,7 @@ namespace cpplot {
     }
 
     void Surface::draw2d() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         unsigned int nxi,nxj,nyi,nyj,nzi,nzj;
         std::vector<float> rgb;
         nxi = XData.size(); if(nxi) { nxj = XData[0].size(); }
@@ -208,7 +208,7 @@ namespace cpplot {
 
     /// display 3d
     void Surface::draw3d() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         std::vector<float> rgb;
         unsigned int ny = ZData.size();
         unsigned int nx = ZData[0].size();
@@ -381,10 +381,9 @@ namespace cpplot {
             }
             // sort contour points
             int is = 0;
-            unsigned int m, k, kk;
+            unsigned int m, kk;
             int mode, mode_next;
 
-            k = 0;
             mode = 0;
             while( mode < 5 ) {
 
@@ -471,7 +470,7 @@ namespace cpplot {
 
 
     void Surface::draw_contour() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         //vector<float> rgb;
         //int ny=ZData.size();
         //int nx=ZData[0].size();
@@ -513,7 +512,7 @@ namespace cpplot {
     }
 
     void Surface::config() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         // check data size
         unsigned int nzi,nzj;
 
@@ -592,7 +591,7 @@ namespace cpplot {
 
         /// create surface
     surface_t Surface::surface(const dmat& Z) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         ZData = Z;
@@ -601,7 +600,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::surface(const dmat& Z, const dmat& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         ZData = Z;
@@ -611,7 +610,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::surface(const dmat& Z, const tcmat& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         ZData = Z;
@@ -621,7 +620,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::surface(const dvec& x, const dvec& y, const dmat& Z) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         XData.resize(1); XData[0] = x;
@@ -632,7 +631,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::surface(const dvec& x, const dvec& y, const dmat& Z, const dmat& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         XData.resize(1); XData[0] = x;
@@ -643,7 +642,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::surface(const dvec& x, const dvec& y, const dmat& Z, const tcmat& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         XData.resize(1); XData[0] = x;
@@ -656,7 +655,7 @@ namespace cpplot {
     }
 
     surface_t Surface::surface(const dmat& X, const dmat& Y, const dmat& Z) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         XData = X;
@@ -667,7 +666,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::surface(const dmat& X, const dmat& Y, const dmat& Z, const dmat& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         XData = X;
@@ -678,7 +677,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::surface(const dmat& X, const dmat& Y, const dmat& Z, const tcmat& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         XData = X;
@@ -690,7 +689,7 @@ namespace cpplot {
     }
     // surf
     surface_t Surface::surf(const dvec& x, const dvec& y, const dmat& Z) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         XData.resize(1); XData[0] = x;
@@ -705,7 +704,7 @@ namespace cpplot {
 
     // create pcolor
     surface_t Surface::pcolor(dmat C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = _2D;
         XData.clear();
         YData.clear();
@@ -715,7 +714,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::pcolor(const tcmat& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = _2D;
         XData.clear();
         YData.clear();
@@ -725,7 +724,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::pcolor(const dvec& x, const dvec& y, const dmat& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = _2D;
         XData.resize(1); XData[0] = x;
         YData.resize(1); YData[0] = y;
@@ -735,7 +734,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::pcolor(const dvec& x, const dvec& y, const tcmat& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = _2D;
         XData.resize(1); XData[0] = x;
         YData.resize(1); YData[0] = y;
@@ -765,7 +764,7 @@ namespace cpplot {
 
     /// mesh
     surface_t Surface::mesh(const dvec& x, const dvec& y, dmat Z) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->type = axes_t_t::_3D;
         type = _3D;
         XData.resize(1); XData[0] = x;
@@ -780,7 +779,7 @@ namespace cpplot {
 
     /// contour
     surface_t Surface::contour(const dmat& Z) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = contourplot;
         XData.clear();
         YData.clear();
@@ -790,7 +789,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::contour(const dmat& Z, const int n) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = contourplot;
         XData.clear();
         YData.clear();
@@ -800,7 +799,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::contour(const dmat& Z, const dvec& v) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = contourplot;
         XData.clear();
         YData.clear();
@@ -810,7 +809,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::contour(const dvec& x, const dvec& y, const dmat& Z) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = contourplot;
         XData.resize(1); XData[0] = x;
         YData.resize(1); YData[0] = y;
@@ -820,7 +819,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::contour(const dvec& x, const dvec& y, const dmat& Z, const int n) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = contourplot;
         XData.resize(1); XData[0] = x;
         YData.resize(1); YData[0] = y;
@@ -830,7 +829,7 @@ namespace cpplot {
         return shared_from_this();
     }
     surface_t Surface::contour(const dvec& x, const dvec& y, const dmat& Z, const dvec& v) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = contourplot;
         XData.resize(1); XData[0] = x;
         YData.resize(1); YData[0] = y;

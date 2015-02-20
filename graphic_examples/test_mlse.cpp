@@ -6,6 +6,10 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+
+#include <chrono>
+#include <thread>
+
 #include "cpplot.hpp"
 using namespace cpplot;
 using namespace SPUC;
@@ -74,7 +78,8 @@ int main(int argc, char* argv[]) {
 		axis(i-50,i+50,-0.05,0.25);
 		grid(1);
 		// fast scrolling but not too fast
-		boost::this_thread::sleep(boost::posix_time::milliseconds(10));
+    std::chrono::milliseconds sec(10);
+		std::this_thread::sleep_for(sec);
 		i++;
 		// Randomize noise gain
 		if (i % 400 == 0) {

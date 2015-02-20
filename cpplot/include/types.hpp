@@ -35,7 +35,7 @@ Version:0.3.13
 #ifndef _CPPLOT_TYPES_HPP_
 #define _CPPLOT_TYPES_HPP_
 
-#include <boost/shared_ptr.hpp>
+#include <memory>
 
 namespace cpplot {
     class axes_t_t;
@@ -43,7 +43,7 @@ namespace cpplot {
      * The axes_t is a shared pointer that will keep the
      * axes object it's pointing to alive and available.
      */
-    typedef boost::shared_ptr<axes_t_t> axes_t;
+    typedef std::shared_ptr<axes_t_t> axes_t;
     typedef std::map<int, axes_t> axess_t;
 
     class layer_t_t;
@@ -51,7 +51,7 @@ namespace cpplot {
      * The figure_t is a shared pointer that will keep the
      * layer object it's pointing to alive and available.
      */
-    typedef boost::shared_ptr<layer_t_t> layer_t;
+    typedef std::shared_ptr<layer_t_t> layer_t;
     typedef std::map<std::string, layer_t> layers_t;
 
     class figure_t_t;
@@ -59,7 +59,7 @@ namespace cpplot {
      * The figure_t is a shared pointer that will keep the
      * figure object it's pointing to alive and available.
      */
-    typedef boost::shared_ptr<figure_t_t> figure_t;
+    typedef std::shared_ptr<figure_t_t> figure_t;
     typedef std::map<int, figure_t> figures_t;
 }
 

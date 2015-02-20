@@ -67,12 +67,13 @@ int main(int argc, char *argv[])
 
 		double ber = Environment.BER_mon.ber(symbols);
 		vertex(snr,log10(ber));
-		boost::this_thread::sleep(boost::posix_time::milliseconds(10));
+    std::chrono::milliseconds msec(10);
+		std::this_thread::sleep_for(msec);
 		Environment.BER_mon.final_results(symbols);
 		Environment.loop_end();
 		snr += 1;
 		Environment.snr = snr;
 	}
-	while(true) boost::this_thread::yield();
+	while(true) std::this_thread::yield();
 	return(1);
 } 

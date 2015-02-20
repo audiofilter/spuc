@@ -30,9 +30,10 @@ Version:0.3.13
 #include "cpplot_common.hpp"
 #include "figure.hpp"
 #include <iostream>
-#include <boost/thread.hpp>
-#include <boost/thread/mutex.hpp>
-#include <boost/bind.hpp>
+#include <thread>
+#include <mutex>
+#include <chrono>
+#include <functional>
 
 namespace cpplot {
     namespace glut {
@@ -51,7 +52,7 @@ namespace cpplot {
         glutmap windows;
         typedef std::list<figure_t> window_queue_t;
         window_queue_t window_queue;
-        boost::mutex wq_mutex;
+        std::mutex wq_mutex;
 
         void set_window_title(const int wn, const std::string name) {
             assert(wn);
@@ -79,18 +80,18 @@ namespace cpplot {
 
         void register_figure(const figure_t fig) {
             std::cout << "Registering new figure " << std::endl;
-            boost::mutex::scoped_lock l(wq_mutex);
+            std::unique_lock<std::mutex> l(wq_mutex);
             window_queue.push_back(fig);
         }
 
         void tool() {
-            boost::mutex::scoped_lock l(wq_mutex);
+            std::unique_lock<std::mutex> l(wq_mutex);
             window_queue_t::iterator it = window_queue.begin();
             while(it != window_queue.end()) {
                 create_window(*it);
                 window_queue.erase(it++);
             }
-            boost::this_thread::sleep(boost::posix_time::milliseconds(200));
+            std::this_thread::sleep_for(std::chrono::milliseconds(200));
         }
 
         void run(int& argc, char* argv[]) {
@@ -103,12 +104,16 @@ namespace cpplot {
             glutMainLoop();
         }
 
-        boost::thread glut_thread;
+        std::thread glut_thread;
         void init(int& argc, char* argv[]) {
-            glut_thread = boost::thread(boost::bind(run, argc, argv));
+            glut_thread = std::thread(std::bind(run, argc, argv));
         }
 
-        void idle() { glutPostRedisplay(); usleep(1000); }
+        void idle() {
+            glutPostRedisplay();
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+        }
+
         void display() {
             //~ std::cout << "Display..."<< std::endl;
             int window = glutGetWindow();

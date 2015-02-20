@@ -38,12 +38,12 @@ namespace cpplot {
      * The linee_t is a shared pointer that will keep the
      * Line object it's pointing to alive and available.
      */
-    typedef boost::shared_ptr<Line> line_t;
+    typedef std::shared_ptr<Line> line_t;
 
     /**
      * The line object represent a single line drawn in an axes
      */
-    class Line : public drawing_t_t, public boost::enable_shared_from_this<Line> {
+    class Line : public drawing_t_t, public std::enable_shared_from_this<Line> {
         public:
             bool Errorbar; ///< Plot errorbar or not
 
@@ -69,7 +69,6 @@ namespace cpplot {
              * The constructor accepts as single argument a shared pointer to the axes to which the object belongs
              */
             Line(const axes_t a);
-			virtual ~Line() { ; }
             figure_t gcf(); ///< Get the figure to which the line belongs
 
             void draw(); ///< Draw the line on the line's axes. Used internally only.
@@ -103,7 +102,7 @@ namespace cpplot {
 
         private:
             std::pair<double, double> min_max(const dvec&, math::scale); ///< Find min and max of data
-            boost::mutex data_mutex; ///< Protects the data when reading/writing
+            std::mutex data_mutex; ///< Protects the data when reading/writing
     };
 }
 #endif

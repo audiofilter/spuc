@@ -36,7 +36,7 @@ namespace cpplot {
         if(type == _3D) { draw3d(); }
     }
     void Patch::clear() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         XData.clear();
         YData.clear();
         ZData.clear();
@@ -46,7 +46,7 @@ namespace cpplot {
     }
 
     void Patch::draw2d() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
 
         std::vector<float> v(3);
         std::vector<int> f(3);
@@ -115,7 +115,7 @@ namespace cpplot {
 
 
     void Patch::draw3d() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         // XYZ Data //
         unsigned int nf, nv; //number of faces and vertex
         nf = XData.size();
@@ -174,7 +174,7 @@ namespace cpplot {
     }
 
     patch_t Patch::bar(const dvec& x, const dvec& y, const float width) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         type = _2D;
         XData.clear(); YData.clear(); ZData.clear();
 
@@ -196,7 +196,7 @@ namespace cpplot {
 
     /// patch
     patch_t Patch::patch(const dmat& X, const dmat& Y) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         // Single color
         type = _2D;
 
@@ -208,7 +208,7 @@ namespace cpplot {
         return shared_from_this();
     }
     patch_t Patch::patch(const dmat& X, const dmat& Y, const dvec& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         // One color per face with index color
         type = _2D;
         XData = X;
@@ -219,7 +219,7 @@ namespace cpplot {
         return shared_from_this();
     }
     patch_t Patch::patch(const dmat& X, const dmat& Y, const tcvec& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         // One color per face with true color
         type = _2D;
         XData = X;
@@ -230,7 +230,7 @@ namespace cpplot {
         return shared_from_this();
     }
     patch_t Patch::patch(const dmat& X, const dmat& Y, const dmat& Z) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         // Single color
         ca->type = axes_t_t::_3D;
         type = _3D;
@@ -242,7 +242,7 @@ namespace cpplot {
         return shared_from_this();
     }
     patch_t Patch::patch(const dmat& X, const dmat& Y, const dmat& Z, const dvec& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         // One color per face
         ca->type = axes_t_t::_3D;
         type = _3D;
@@ -255,7 +255,7 @@ namespace cpplot {
         return shared_from_this();
     }
     patch_t Patch::patch(const dmat& X, const dmat& Y, const dmat& Z, const tcvec& C) {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         // One color per face
         ca->type = axes_t_t::_3D;
         type = _3D;
@@ -269,7 +269,7 @@ namespace cpplot {
     }
 
     void Patch::config() {
-        boost::mutex::scoped_lock l(data_mutex);
+        std::unique_lock<std::mutex> l(data_mutex);
         ca->xmax = std::max( math::max(XData), ca->xmax );
         ca->xmin = std::min( math::min(XData), ca->xmin );
         ca->ymax = std::max( math::max(YData), ca->ymax );

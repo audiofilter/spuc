@@ -31,15 +31,14 @@ Version:0.3.13
 #define _CPPLOT_DRAWING_HPP_
 
 #include "drawing.hpp"
-#include <boost/utility.hpp>
 #include "cpplot_common.hpp"
 
 namespace cpplot {
     class drawing_t_t;
-    typedef boost::shared_ptr<drawing_t_t> drawing_t;
+    typedef std::shared_ptr<drawing_t_t> drawing_t;
     typedef std::list<drawing_t> drawings_t;
 
-    class drawing_t_t : public boost::noncopyable {
+    class drawing_t_t {
         protected:
             axes_t ca;
 
