@@ -19,7 +19,7 @@ frequency domain COMPLEX array.
 complex<float_type> ifft(complex<float_type> *x, int m)
 
 *************************************************************************/
-void ifft(std::vector<complex<float_type> > y, int m) {
+void ifft(std::vector<complex<float_type> >& y, int m) {
   complex<float_type> u, temp, tm;
   int wptr;
   int i, j, k, l, le, windex;

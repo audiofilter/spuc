@@ -14,6 +14,6 @@ namespace SPUC {
 //! \brief fast fourier transforms (FFT)
 //! \author Tony Kirke
 //! \ingroup functions functions
-void fft(std::vector<complex<float_type> > y, int n);
+void fft(std::vector<complex<float_type> >& y, int n);
 }  // namespace SPUC
 #endif
