@@ -158,6 +158,6 @@ make
 Extra switches to CMake enable the various examples to be built
 
 
-SPUC_BUILD_EXAMPLES - Build the examples
-SPUC_BUILD_PLOT_EXAMPLES - Build the examples that plot using python/matplotlib embedded
-SPUC_BUILD_GRAPHIC_EXAMPLES - Build the examples that requires gl,opengl, etc
+* SPUC_BUILD_EXAMPLES - Build the examples
+* SPUC_BUILD_PLOT_EXAMPLES - Build the examples that plot using python/matplotlib embedded
+* SPUC_BUILD_GRAPHIC_EXAMPLES - Build the examples that requires gl,opengl, etc
