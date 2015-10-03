@@ -140,7 +140,7 @@ SET_TARGET_PROPERTIES(spuc PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 SET_TARGET_PROPERTIES(spuc_types PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 
 option(SPUC_BUILD_EXAMPLES "Build examples" OFF)
-option(SPUC_BUILD_PLOT_EXAMPLES "Build plot_examples" ON)
+option(SPUC_BUILD_PLOT_EXAMPLES "Build plot_examples - requires python and matplotlib" OFF)
 option(SPUC_GRAHPIC_EXAMPLES "Build more examples - requires gl, etc" OFF)
 
 if (SPUC_BUILD_EXAMPLES)
