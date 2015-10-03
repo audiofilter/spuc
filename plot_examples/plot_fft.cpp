@@ -18,7 +18,9 @@ void plot_fft(std::vector<double>& data)
 	std::vector<double> fft(N/2);
 
 	for (int i=0;i<N/2;i++) {
-		fft[i] = 10.0*log10(magsq(z[i]));
+		double val = magsq(N*z[i]);
+		if (val < 1e-6) val = 1e-6;
+		fft[i] = 10.0*log10(val);
 	}
 
 	PyPlotter plt;

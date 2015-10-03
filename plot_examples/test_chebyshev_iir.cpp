@@ -13,7 +13,7 @@ using namespace SPUC;
 
 int main(int argv, char* argc[]) {
   const long N=256;
-  const long O=4;
+  const long O=1;
   float_type imp;
 
   iir_coeff BPF(O); 

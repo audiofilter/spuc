@@ -5,8 +5,6 @@
 #include <map>
 #include <vector>
 
-// from github.com/ibell/matplotlib2cpp
-
 std::string format(const char* fmt, ...)
 {
     int size = 512;
@@ -232,7 +230,10 @@ public:
 
 	void show()
 	{
-		std::string s = "plt.show()\n";
+		std::string s = "";
+		s += "plt.ylim([-60,20])\n";
+		s += "plt.grid(True)\n";
+		s += "plt.show()\n";
 		PyRun_SimpleString(s.c_str());
 	}
 		

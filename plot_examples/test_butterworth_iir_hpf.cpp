@@ -13,10 +13,15 @@ using namespace SPUC;
 //! \brief testing various types for IIR 
 //! \ingroup examples
 
-int main(int argv, char* argc[]) {
+int main(int argc, char* argv[]) {
   const long N=256;
-  const long O=4;
+	long O=4;
   float_type imp;
+
+	if (argc > 1) {
+		O = atoi(argv[1]);
+		std::cout << "Order used = " << O << "\n";
+	}
 
   iir_coeff BPF(O); 
   butterworth_iir(BPF,0.1,false,3.0);
