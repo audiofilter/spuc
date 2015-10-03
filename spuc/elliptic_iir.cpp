@@ -47,6 +47,7 @@ void elliptic_iir(iir_coeff& filt, float_type fcd, bool lpf, float_type fstop, f
 
   filt.bilinear();
   filt.convert_to_ab();
+	if (!lpf) filt.gain = filt.hpf_gain;
 }
 //! get roots in Lamda plane
 float_type lamda_plane(float_type k, float_type m, int n, float_type eps) {

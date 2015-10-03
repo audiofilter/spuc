@@ -21,6 +21,7 @@ void chebyshev_iir(iir_coeff& filt, float_type fcd, bool lpf, float_type ripple 
   chebyshev_s(filt.poles, filt.zeros, lpf, wca, epi, order, n2);
   filt.bilinear();
   filt.convert_to_ab();
+	if (!lpf) filt.gain = filt.hpf_gain;
 }
 //! Calculate poles (chebyshev)
 void chebyshev_s(std::vector<complex<float_type> >& poles, std::vector<complex<float_type> >& zeros, bool lpf,

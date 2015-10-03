@@ -24,6 +24,7 @@ void butterworth_iir(iir_coeff& filt, float_type fcd, bool lpf = true, float_typ
   butterworth_s(filt.poles, filt.zeros, lpf, wca, order, n2);
   filt.bilinear();
   filt.convert_to_ab();
+	if (!lpf) filt.gain = filt.hpf_gain;
 }
 //! Calculate roots
 void butterworth_s(std::vector<complex<float_type> >& poles, std::vector<complex<float_type> >& zeros, bool lpf,
