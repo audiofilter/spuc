@@ -1,4 +1,5 @@
-// Copyright (c) 1993-2014 Tony Kirke
+// Copyright (c) 2015 Tony Kirke. License MIT
+// (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <iostream>
@@ -19,6 +20,7 @@ void elliptic_iir(iir_coeff& filt, float_type fcd, bool lpf, float_type fstop,
   const float_type ten = 10.0;
 
   long order = filt.order;
+  filt.lpf = lpf;
   float_type epi = pow(ten, (ripple / ten));
   epi = sqrt(epi - 1.0);
   //! wca - pre-warped angular frequency
@@ -49,7 +51,6 @@ void elliptic_iir(iir_coeff& filt, float_type fcd, bool lpf, float_type fstop,
 
   filt.bilinear();
   filt.convert_to_ab();
-  if (!lpf) filt.gain = filt.hpf_gain;
 }
 //! get roots in Lamda plane
 float_type lamda_plane(float_type k, float_type m, int n, float_type eps) {

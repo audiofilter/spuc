@@ -1,7 +1,6 @@
-#ifndef SPUC_IIR_HPF1
-#define SPUC_IIR_HPF1
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT
+// (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -20,7 +19,8 @@ namespace SPUC {
 //!   Note: Not normalized
 //! \author Tony Kirke
 //! \ingroup double_templates iir
-template <class Numeric, class Coeff = float_type> class iir_hpf1 {
+template <class Numeric, class Coeff = float_type>
+class iir_hpf1 {
  protected:
   Coeff gain;
   Numeric out;
@@ -29,8 +29,11 @@ template <class Numeric, class Coeff = float_type> class iir_hpf1 {
   quantiser<Numeric> Q;
 
  public:
-  iir_hpf1(Coeff A = 0, long b = 0) : gain(A), Q(b) { previous_in = previous_out = out = (Numeric)0; }
+  iir_hpf1(Coeff A = 0, long b = 0) : gain(A), Q(b) {
+    previous_in = previous_out = out = (Numeric)0;
+  }
   void set_coeff(Coeff A) { gain = A; }
+  void set_round_bits(long x) { Q.set_bits(x); }
   //! Constructor reading coefficient from a file.
   iir_hpf1(const char* file) : Q(0) {
     std::ifstream iirf(file);
@@ -55,4 +58,3 @@ template <class Numeric, class Coeff = float_type> class iir_hpf1 {
   void reset() { previous_in = previous_out = out = (Numeric)0; }
 };
 }  // namespace SPUC
-#endif

@@ -1,4 +1,5 @@
-// Copyright (c) 1993-2014 Tony Kirke
+// Copyright (c) 2015 Tony Kirke. License MIT
+// (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/spuc_defines.h>
@@ -18,10 +19,10 @@ void chebyshev_iir(iir_coeff& filt, float_type fcd, bool lpf,
   float_type wca = (lpf) ? tan(0.5 * PI * fcd) : tan(0.5 * PI * (1.0 - fcd));
   //! wca - pre-warped angular frequency
   long n2 = (order + 1) / 2;
+  filt.lpf = lpf;
   chebyshev_s(filt.poles, filt.zeros, lpf, wca, epi, order, n2);
   filt.bilinear();
   filt.convert_to_ab();
-  if (!lpf) filt.gain = filt.hpf_gain;
 }
 //! Calculate poles (chebyshev)
 void chebyshev_s(std::vector<complex<float_type> >& poles,
