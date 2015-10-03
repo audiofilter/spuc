@@ -98,7 +98,22 @@ spuc/qpsk_discriminators.cpp
 spuc/viterbi.cpp
 )
 
+option(SPUC_BUILD_ALL "Build everything" OFF)
 option(SPUC_BUILD_PYTHON_EXTENSIONS "Build extensions" OFF)
+option(SPUC_BUILD_EXAMPLES "Build examples" OFF)
+option(SPUC_BUILD_PLOT_EXAMPLES "Build plot_examples - requires python and matplotlib" OFF)
+option(SPUC_GRAPHIC_EXAMPLES "Build more examples - requires gl, etc" OFF)
+
+if (SPUC_BUILD_ALL)
+	MESSAGE(STATUS "building everything")
+	set(SPUC_BUILD_EXAMPLES ON)
+	set(SPUC_BUILD_PYTHON_EXTENSIONS ON)
+	set(SPUC_BUILD_PLOT_EXAMPLES ON)
+	set(SPUC_BUILD_GRAPHIC_EXAMPLES ON)
+else()
+	MESSAGE(STATUS "Not building everything - enable with cmake -DSPUC_BUILD_ALL=ON")
+endif()
+
 
 if (SPUC_BUILD_PYTHON_EXTENSIONS)
 	FIND_PACKAGE(Boost)
@@ -139,9 +154,6 @@ INSTALL(TARGETS spuc DESTINATION "/usr/local/lib")
 SET_TARGET_PROPERTIES(spuc PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 SET_TARGET_PROPERTIES(spuc_types PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 
-option(SPUC_BUILD_EXAMPLES "Build examples" OFF)
-option(SPUC_BUILD_PLOT_EXAMPLES "Build plot_examples - requires python and matplotlib" OFF)
-option(SPUC_GRAHPIC_EXAMPLES "Build more examples - requires gl, etc" OFF)
 
 if (SPUC_BUILD_EXAMPLES)
 MESSAGE(STATUS "building examples")
@@ -157,10 +169,10 @@ else()
 MESSAGE(STATUS "Not building plot examples - enable with cmake -DSPUC_BUILD_PLOT_EXAMPLES=ON")
 endif()
 
-if (SPUC_GRAPHIC_EXAMPLES)
+if (SPUC_BUILD_GRAPHIC_EXAMPLES)
 MESSAGE(STATUS "building more examples")
 add_subdirectory(graphic_examples)
 add_subdirectory(cpplot)
 else()
-MESSAGE(STATUS "Not building more examples - enable with cmake -DSPUC_GRAPHIC_EXAMPLES=ON")
+MESSAGE(STATUS "Not building more examples - enable with cmake -DSPUC_BUILD_GRAPHIC_EXAMPLES=ON")
 endif()
