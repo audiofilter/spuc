@@ -140,6 +140,7 @@ SET_TARGET_PROPERTIES(spuc PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 SET_TARGET_PROPERTIES(spuc_types PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 
 option(SPUC_BUILD_EXAMPLES "Build examples" OFF)
+option(SPUC_BUILD_PLOT_EXAMPLES "Build plot_examples" ON)
 option(SPUC_GRAHPIC_EXAMPLES "Build more examples - requires gl, etc" OFF)
 
 if (SPUC_BUILD_EXAMPLES)
@@ -147,6 +148,13 @@ MESSAGE(STATUS "building examples")
 add_subdirectory(examples)
 else()
 MESSAGE(STATUS "Not building examples - enable with cmake -DSPUC_BUILD_EXAMPLES=ON")
+endif()
+
+if (SPUC_BUILD_PLOT_EXAMPLES)
+MESSAGE(STATUS "building examples that require python/matplotlib")
+add_subdirectory(plot_examples)
+else()
+MESSAGE(STATUS "Not building plot examples - enable with cmake -DSPUC_BUILD_PLOT_EXAMPLES=ON")
 endif()
 
 if (SPUC_GRAPHIC_EXAMPLES)
