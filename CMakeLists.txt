@@ -98,6 +98,16 @@ spuc/qpsk_discriminators.cpp
 spuc/viterbi.cpp
 )
 
+
+########################################################################
+# install include files
+########################################################################
+install(
+    DIRECTORY spuc
+    DESTINATION include
+    COMPONENT spuc_devel
+)
+
 option(SPUC_BUILD_ALL "Build everything" OFF)
 option(SPUC_BUILD_PYTHON_EXTENSIONS "Build extensions" OFF)
 option(SPUC_BUILD_EXAMPLES "Build examples" OFF)
