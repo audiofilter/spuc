@@ -106,6 +106,7 @@ install(
     DIRECTORY spuc
     DESTINATION include
     COMPONENT spuc_devel
+    PATTERN "*.cpp" EXCLUDE
 )
 
 option(SPUC_BUILD_ALL "Build everything" OFF)
@@ -157,12 +158,12 @@ INCLUDE_DIRECTORIES("/usr/include/" ".")
 ADD_LIBRARY(spuc STATIC ${SPUC_SRCS} ${COMM_SRCS})
 ADD_LIBRARY(spuc_filt STATIC ${FILT_SRCS})
 ADD_LIBRARY(spuc_types STATIC ${TYPE_SRCS})
-INSTALL(TARGETS spuc_filt DESTINATION "/usr/local/lib")
-INSTALL(TARGETS spuc_types DESTINATION "/usr/local/lib")
-INSTALL(TARGETS spuc DESTINATION "/usr/local/lib")
+INSTALL(TARGETS spuc_filt DESTINATION ./lib)
+INSTALL(TARGETS spuc_types DESTINATION ./lib)
+INSTALL(TARGETS spuc DESTINATION ./lib)
 # not working
-SET_TARGET_PROPERTIES(spuc PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
-SET_TARGET_PROPERTIES(spuc_types PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
+#SET_TARGET_PROPERTIES(spuc PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
+#SET_TARGET_PROPERTIES(spuc_types PROPERTIES LIBRARY_OUTPUT_PATH "/usr/local/lib")
 
 
 if (SPUC_BUILD_EXAMPLES)
