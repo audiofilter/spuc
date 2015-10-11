@@ -29,7 +29,7 @@ template <int M, int L = 12> class fbool_nco {
   inline void load(spuc_uint<L> loop_filter_out) { new_fcw = fcw + loop_filter_out; }
   bool clock() {
     acc = acc + new_fcw;
-    phase = acc.overflow;
+    phase = 0; ///acc.overflow;
     return (phase);
   }
   bool clock(spuc_uint<L> loop_filter_out) {

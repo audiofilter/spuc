@@ -1,6 +1,6 @@
 #pragma once
 // Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
-// from directory: spuc_double_templates
+// from directory: spuc_template_functions
 #include <spuc/spuc_types.h>
 #include <spuc/iir.h>
 #include <spuc/butterworth_iir.h>
@@ -10,7 +10,7 @@ namespace SPUC {
 //! \file
 //! \brief Design functions for iir filters
 //! \author Tony Kirke
-//! \ingroup double_templates iir
+//! \ingroup template_functions iir
 
 iir_coeff* design_iir(const std::string& iir_type, const std::string& filter_type, int order, float_type fcd,
                       float_type ripple = 0.1, float_type fstop = 0.5, float_type stopattn = -60) {

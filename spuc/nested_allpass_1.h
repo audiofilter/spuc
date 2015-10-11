@@ -18,8 +18,8 @@ template <class Numeric, class Coeff = float_type> class nested_allpass_1 {
   long round_bits;
   float_type gain;
   float_type vgain;
-  float_type prev_sum;
-  float_type prev_mult;
+  Numeric prev_sum;
+  Numeric prev_mult;
   allpass_1<Numeric> mult;
   allpass_1<Numeric> sum;
   typedef typename mixed_type<Numeric, Coeff>::dtype sum_type;

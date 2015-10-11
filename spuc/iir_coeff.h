@@ -18,8 +18,8 @@ class iir_coeff {
   long order;
   long odd;
   long n2;
-  std::vector<complex<float_type> > poles;
-  std::vector<complex<float_type> > zeros;
+  std::vector<complex<float_type>> poles;
+  std::vector<complex<float_type>> zeros;
   std::vector<float_type> a_tf;
   std::vector<float_type> b_tf;
   float_type gain;
@@ -38,11 +38,11 @@ class iir_coeff {
   void bilinear();
   void bilinear2();
   void convert_to_ab();
-  void z_root_to_ab(std::vector<complex<float_type> >& z);
+  void z_root_to_ab(std::vector<complex<float_type>>& z);
   void pz_to_ap();
   void ab_to_tf();
-  std::vector<float_type> p2_to_poly(const std::vector<complex<float_type> >& ab);
-  std::vector<float_type> pz_to_poly(const std::vector<complex<float_type> >& z);
+  std::vector<float_type> p2_to_poly(const std::vector<complex<float_type>>& ab);
+  std::vector<float_type> pz_to_poly(const std::vector<complex<float_type>>& z);
   complex<float_type> get_root(long i);
   complex<float_type> get_zero(long i);
   float_type get_a(long i);
@@ -52,6 +52,7 @@ class iir_coeff {
   float_type max_abs_coeff();
   void quantize(int bits);
   float_type freqz_mag(float_type freq);
+  int getOrder(void) const;
 };
 // template_instantiations: float_type, complex<float_type>
 }  // namespace SPUC

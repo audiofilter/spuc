@@ -13,6 +13,7 @@
 #include <spuc/qnoise.h>
 #include <cfloat>
 namespace SPUC {
+int iir_coeff::getOrder(void) const { return order; }
 iir_coeff::iir_coeff(long ord, bool lp)
     : poles((ord + 1) / 2), zeros((ord + 1) / 2), a_tf(ord + 1), b_tf(ord + 1), lpf(lp) {
   // amax - attenuation at cutoff
@@ -78,7 +79,7 @@ void iir_coeff::ab_to_tf() {
   b_tf = p2_to_poly(zeros);
   state = 3;  // in Z-domain 2nd order A/B coefficients
 }
-void iir_coeff::z_root_to_ab(std::vector<complex<float_type> >& z) {
+void iir_coeff::z_root_to_ab(std::vector<complex<float_type>>& z) {
   for (int j = odd; j < n2; j++) {
     gain *= (magsq(z[j]) - 2 * real(z[j]) + 1.0);
     hpf_gain *= (magsq(z[j]) + 2 * real(z[j]) + 1.0);
@@ -88,7 +89,7 @@ void iir_coeff::z_root_to_ab(std::vector<complex<float_type> >& z) {
   state = 3;  // in Z-domain 2nd order A/B coefficients
 }
 // Takes poles or zeros and creates a polynomial transfer function
-std::vector<float_type> iir_coeff::pz_to_poly(const std::vector<complex<float_type> >& z) {
+std::vector<float_type> iir_coeff::pz_to_poly(const std::vector<complex<float_type>>& z) {
   std::vector<float_type> p2(3);
   std::vector<float_type> p(order + 1);
   std::vector<float_type> tf(order + 1);
@@ -112,7 +113,7 @@ std::vector<float_type> iir_coeff::pz_to_poly(const std::vector<complex<float_ty
 // Takes 'n' 2nd order polynomials of the form 1+a*z + b*z^2
 // where a and b are packed into a complex float_type as complex<float_type>(a,b)
 // and convolves them all together as 1 polynomial
-std::vector<float_type> iir_coeff::p2_to_poly(const std::vector<complex<float_type> >& ab) {
+std::vector<float_type> iir_coeff::p2_to_poly(const std::vector<complex<float_type>>& ab) {
   std::vector<float_type> tf;
   std::vector<float_type> p2(3);
   std::vector<float_type> p(order + 1);
@@ -185,7 +186,7 @@ complex<float_type> iir_coeff::get_zero(long i) {
 void iir_coeff::pz_to_ap() {
   int m = 2 * order - 1;
   typedef std::vector<float_type> Array;
-  typedef std::vector<complex<float_type> > CArray;
+  typedef std::vector<complex<float_type>> CArray;
   Array fa;
   Array d2(m);
   Array p2(m);
@@ -266,7 +267,7 @@ float_type iir_coeff::max_abs_coeff() {
 void iir_coeff::quantize(int bits) {
   char int_bits = (char)ceil(log(max_abs_coeff()) / log(2.0));
   bits -= int_bits;
-  qnoise<complex<float_type> > Quantize((char)bits);
+  qnoise<complex<float_type>> Quantize((char)bits);
   if (bits > 0) {
     for (int j = 0; j < n2; j++) {
       poles[j] = Quantize(poles[j]);

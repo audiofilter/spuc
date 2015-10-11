@@ -20,6 +20,8 @@ template <class Numeric, class Coeff = float_type> class fir_decim : public fir<
   using SPUC::fir<Numeric, Coeff>::Q;
   typedef typename base_type<Numeric>::btype Numeric_base;
   typedef typename mixed_type<Numeric, Coeff>::dtype sum_type;
+  int rate;
+  int phase;
 
  public:
   //! Constructor
@@ -58,6 +60,7 @@ template <class Numeric, class Coeff = float_type> class fir_decim : public fir<
   }
   void process(const std::vector<Numeric>& in, std::vector<Numeric>& out) {
     out.resize(in.size() - phase + rate - 1 / rate);
+    int j = 0;
     for (int i = 0; i < in.size(); i++) {
       input(in[i]);
       phase = (phase + 1) % rate;
