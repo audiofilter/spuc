@@ -31,7 +31,7 @@ iir_coeff* design_iir(const std::string& iir_type, const std::string& filter_typ
     } else {
       std::cout << "Unsupported band type\n";
     }
-  } else if (iir_type == "chebyshev") {
+  } else if (iir_type == "elliptic") {
     if (filter_type == "LOW_PASS") {
       elliptic_iir(*filt, fcd, true, fstop, stopattn, ripple);
     } else if (filter_type == "HIGH_PASS") {
