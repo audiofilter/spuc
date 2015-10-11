@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <cmath>
@@ -21,7 +20,9 @@ float_type raised_cosine_imp(float_type alpha, float_type xin, float_type rate, 
   if (x2 == 0) {
     x2 = 8 * alpha * (xindx / rate) * (xindx / rate);
     rc1 = sin(x1) * sin(alpha * x1) / x2;
-  } else { rc1 = (sin(x1) * cos(alpha * x1)) / (x1 * x2); }
+  } else {
+    rc1 = (sin(x1) * cos(alpha * x1)) / (x1 * x2);
+  }
   return (rc1);
 }
 }  // namespace SPUC

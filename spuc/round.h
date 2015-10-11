@@ -1,7 +1,5 @@
-#ifndef SPUC_ROUND
-#define SPUC_ROUND
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -16,4 +14,3 @@ namespace SPUC {
 //! \ingroup template_functions misc
 template <class T> T round(T in, long bits) { return (rounder<T>::rounded(in, bits)); }
 }  // namespace SPUC
-#endif

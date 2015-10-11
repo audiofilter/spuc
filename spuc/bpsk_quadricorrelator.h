@@ -1,7 +1,5 @@
-#ifndef SPUC_BPSK_QUADRICORRELATOR
-#define SPUC_BPSK_QUADRICORRELATOR
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_template_functions
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -19,4 +17,3 @@ template <class T> T bpsk_quadricorrelator(complex<T> hard_data, complex<T> prev
   return (-real(hard_data) * imag(prev));
 }
 }  // namespace SPUC
-#endif

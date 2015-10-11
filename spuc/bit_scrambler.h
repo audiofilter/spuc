@@ -1,7 +1,5 @@
-#ifndef SPUC_BIT_SCRAMBLER
-#define SPUC_BIT_SCRAMBLER
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 namespace SPUC {
@@ -27,4 +25,3 @@ class bit_scrambler {
   bool xor_bits(long x);
 };
 }  // namespace SPUC
-#endif

@@ -1,7 +1,5 @@
-#ifndef SPUC_QUAD_DATA
-#define SPUC_QUAD_DATA
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -73,4 +71,3 @@ template <class Numeric> class quad_data {
   }
 };
 }  // namespace SPUC
-#endif

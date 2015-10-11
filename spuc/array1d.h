@@ -1,5 +1,5 @@
-#ifndef SPUC_ARRAY1D
-#define SPUC_ARRAY1D
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <cstdlib>
@@ -345,4 +345,3 @@ template <class T> void array1d<T>::replace_mid(int s, const array1d<T>& v) cons
   for (int i = 0; i < v.dim(); i++) v_[s + i] = v[i];
 }
 }  // namespace SPUC
-#endif

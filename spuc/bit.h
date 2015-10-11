@@ -1,7 +1,5 @@
-#ifndef SPUC_BIT
-#define SPUC_BIT
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -81,4 +79,3 @@ std::ostream &operator<<(std::ostream &output, const bit &x);
 std::istream &operator>>(std::istream &input, bit &outbin);
 #endif
 }  // namespace SPUC
-#endif

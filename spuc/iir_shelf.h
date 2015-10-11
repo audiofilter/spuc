@@ -1,7 +1,5 @@
-#ifndef SPUC_IIR_SHELF
-#define SPUC_IIR_SHELF
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -71,4 +69,3 @@ template <class Numeric, class Coeff = float_type> class iir_shelf {
   void reset() { previous_in = previous_out = out = (Numeric)0; }
 };
 }  // namespace SPUC
-#endif

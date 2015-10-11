@@ -1,7 +1,5 @@
-#ifndef SPUC_CUTBOOST
-#define SPUC_CUTBOOST
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/allpass_2nd.h>
@@ -54,4 +52,3 @@ template <class Numeric, class Coeff = float_type> class cutboost {
 };
 // template_instantiations: float_type
 }  // namespace SPUC
-#endif

@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <cmath>
@@ -9,8 +8,7 @@
 #include <spuc/remez_fir.h>
 #include <spuc/create_remez_lpfir.h>
 namespace SPUC {
-//! \brief calculates the coefficients for lowpass FIR based on Remez
-// constraints
+//! \brief calculates the coefficients for lowpass FIR based on Remez constraints
 void create_remez_lpfir(fir_coeff<float_type>& remezfir, float_type pass_edge, float_type stop_edge,
                         float_type stop_weight) {
   bool ok = true;

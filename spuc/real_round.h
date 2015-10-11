@@ -1,7 +1,5 @@
-#ifndef SPUC_REAL_ROUND
-#define SPUC_REAL_ROUND
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_template_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -30,4 +28,3 @@ template <> inline double real_round(double in, long bits) {
   return (scale * in);
 }
 }  // namespace SPUC
-#endif

@@ -1,6 +1,5 @@
-#ifndef SPUC_VITERBI
-#define SPUC_VITERBI
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #define POLYA 0x6d
@@ -32,7 +31,7 @@ class viterbi {
   bool enable_output;
   bool output_ready;
   long prev_value;
-  viterbi_state* state0, *state1, *state, *next;
+  viterbi_state *state0, *state1, *state, *next;
   int bitcnt;
   int beststate;
   long depuncture_bit_number;
@@ -83,4 +82,3 @@ class viterbi {
   bool depuncture(const long steal, long soft_in);
 };
 }  // namespace SPUC
-#endif

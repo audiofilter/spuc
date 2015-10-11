@@ -1,7 +1,5 @@
-#ifndef SPUC_CONJ
-#define SPUC_CONJ
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -17,4 +15,3 @@ namespace SPUC {
 //! \ingroup template_functions misc
 template <typename T> T conj(T in) { return (conjr<T>::conjd(in)); }
 }  // namespace SPUC
-#endif

@@ -1,7 +1,5 @@
-#ifndef SPUC_BUTTERWORTH_ALLPASS
-#define SPUC_BUTTERWORTH_ALLPASS
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
 #include <spuc/spuc_defines.h>
@@ -20,4 +18,3 @@ namespace SPUC {
 void butterworth_allpass(std::vector<float_type>& a0, std::vector<float_type>& a1, int L);
 
 }  // namespace SPUC
-#endif

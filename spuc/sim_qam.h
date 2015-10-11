@@ -1,7 +1,5 @@
-#ifndef SPUC_SIM_QAM
-#define SPUC_SIM_QAM
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -136,7 +134,9 @@ template <class Numeric> class sim_qam {
         interp.input(TX.clock());
       }
       base = TX.data_level * interp.rephase(time_offset);
-    } else { base = TX.data_level * TX.clock(); }
+    } else {
+      base = TX.data_level * TX.clock();
+    }
     // Apply Frequency offset
     if (enable_freq_offset) {
       complex<float_type> rot = freq_offset->clock();
@@ -172,4 +172,3 @@ template <class Numeric> class sim_qam {
   }
 };
 }  // namespace SPUC
-#endif

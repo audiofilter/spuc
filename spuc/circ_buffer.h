@@ -1,7 +1,5 @@
-#ifndef SPUC_CIRC_BUFFER
-#define SPUC_CIRC_BUFFER
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <vector>
@@ -79,4 +77,3 @@ template <class T> circ_buffer<T> circ_buffer<T>::operator=(circ_buffer<T>& A) {
   return *this;
 }
 }  // namespace SPUC
-#endif

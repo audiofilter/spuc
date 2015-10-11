@@ -1,7 +1,5 @@
-#ifndef SPUC_HASH_MAP
-#define SPUC_HASH_MAP
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <stdexcept>
@@ -21,8 +19,7 @@ template <typename T> class hash_map {
   bool set(std::string key, T value);
   //! Check if table already contains key
   bool contains(std::string key);
-  //! Remove key and corresponding value from table (return operation success /
-  // fail)
+  //! Remove key and corresponding value from table (return operation success / fail)
   bool remove(std::string key);
   //! Get value corresponding to key (if it exists)
   T getValue(std::string key);
@@ -53,7 +50,9 @@ template <typename T> bool hash_map<T>::set(std::string key, T value) {
   if (contains(key)) {
     table[key] = value;
     return true;
-  } else { return false; }
+  } else {
+    return false;
+  }
 }
 
 // Check if table already contains key
@@ -64,8 +63,7 @@ template <typename T> bool hash_map<T>::contains(std::string key) {
     return true;
 }
 
-// Remove key and corresponding value from table (return operation success /
-// fail)
+// Remove key and corresponding value from table (return operation success / fail)
 template <typename T> bool hash_map<T>::remove(std::string key) {
   // Check if key already exists in table
   if (contains(key)) {
@@ -78,11 +76,12 @@ template <typename T> bool hash_map<T>::remove(std::string key) {
 
 // Get value corresponding to key (if it exists)
 template <typename T> T hash_map<T>::getValue(std::string key) {
-  if (contains(key)) { return table[key]; } else {
+  if (contains(key)) {
+    return table[key];
+  } else {
     T x(0);
     return x;
   }
 }
 
 }  // namespace SPUC
-#endif

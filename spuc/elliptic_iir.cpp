@@ -1,5 +1,4 @@
-// Copyright (c) 2015 Tony Kirke. License MIT
-// (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <iostream>
@@ -13,8 +12,7 @@
 #define ROOTMAX FLT_MAX
 using namespace std;
 namespace SPUC {
-void elliptic_iir(iir_coeff& filt, float_type fcd, bool lpf, float_type fstop,
-                  float_type stopattn, float_type ripple) {
+void elliptic_iir(iir_coeff& filt, float_type fcd, bool lpf, float_type fstop, float_type stopattn, float_type ripple) {
   float_type m1, m2;
   float_type a, m, Kk1, Kpk1, k, wr, fstp, Kk, u;
   const float_type ten = 10.0;
@@ -72,10 +70,8 @@ float_type lamda_plane(float_type k, float_type m, int n, float_type eps) {
   return u;
 }
 //! calculate s plane poles and zeros
-void s_plane(std::vector<complex<float_type> >& roots,
-             std::vector<complex<float_type> >& zeros, bool lpf, int n,
-             float_type u, float_type m, float_type k, float_type Kk,
-             float_type wc) {
+void s_plane(std::vector<complex<float_type> >& roots, std::vector<complex<float_type> >& zeros, bool lpf, int n,
+             float_type u, float_type m, float_type k, float_type Kk, float_type wc) {
   float_type b;
   float_type sn1, cn1, dn1;
   float_type sn, cn, dn;
@@ -95,21 +91,18 @@ void s_plane(std::vector<complex<float_type> >& roots,
       } else {
         zeros[j] = ROOTMAX;
       }
-      roots[j] = -complex<float_type>(-wc * cn * dn * sn1 * cn1 * r,
-                                      wc * sn * dn1 * r);
+      roots[j] = -complex<float_type>(-wc * cn * dn * sn1 * cn1 * r, wc * sn * dn1 * r);
     } else {
       if (sn != 0) {
         zeros[j] = -complex<float_type>(0.0, -1.0 / (wc / (k * sn)));
       } else {
         zeros[j] = 0;
       }
-      roots[j] = -1.0 / complex<float_type>(-wc * cn * dn * sn1 * cn1 * r,
-                                            wc * sn * dn1 * r);
+      roots[j] = -1.0 / complex<float_type>(-wc * cn * dn * sn1 * cn1 * r, wc * sn * dn1 * r);
     }
   }
 }
-int ellpj(float_type u, float_type m, float_type& sn, float_type& cn,
-          float_type& dn) {
+int ellpj(float_type u, float_type m, float_type& sn, float_type& cn, float_type& dn) {
   float_type ai, b, phi, t, twon;
   float_type a[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
   float_type c[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};

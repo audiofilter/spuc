@@ -1,7 +1,5 @@
-#ifndef SPUC_QPSK_VARIABLE
-#define SPUC_QPSK_VARIABLE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <string>
@@ -25,11 +23,9 @@
 #include <spuc/fundtype.h>
 namespace SPUC {
 //! \file
-//! \brief A QPSK receiver that can operate over a range of non-integer sampling
-// rates
+//! \brief A QPSK receiver that can operate over a range of non-integer sampling rates
 //
-//! \brief A QPSK receiver that can operate over a range of non-integer sampling
-// rates
+//! \brief A QPSK receiver that can operate over a range of non-integer sampling rates
 //
 //! ,Symbol timing, frequency control and carrier phase locked loops
 //! are included. Also contains root-raised cosine matched filter,
@@ -188,8 +184,7 @@ template <class Numeric> class qpsk_variable {
     if (symbol_clk_pls) carrier__nco.load(carrier_loop_out);
     carrier__nco.clock();
     Numeric carrier_phase = carrier__nco.get_phase();
-    //	long carrier_phase =
-    // carrier_nco.run(carrier_loop_out,symbol_x2_clk_pls);
+    //	long carrier_phase = carrier_nco.run(carrier_loop_out,symbol_x2_clk_pls);
 
     baseband = cordic_mult.rotate(adc, carrier_phase);
 #ifdef NODC
@@ -262,4 +257,3 @@ template <class Numeric> class qpsk_variable {
 };
 
 }  // namespace SPUC
-#endif

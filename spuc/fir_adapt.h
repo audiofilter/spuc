@@ -1,7 +1,5 @@
-#ifndef SPUC_FIR_ADAPT
-#define SPUC_FIR_ADAPT
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_utemplates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -9,11 +7,9 @@
 namespace SPUC {
 //!
 //! \file
-//! \brief template class fir_adapt Based on FIR class, created to support LMS
-// adaptive filtering
+//! \brief template class fir_adapt Based on FIR class, created to support LMS adaptive filtering
 //
-//! \brief template class fir_adapt Based on FIR class, created to support LMS
-// adaptive filtering
+//! \brief template class fir_adapt Based on FIR class, created to support LMS adaptive filtering
 //
 //! \author Tony Kirke
 //! \ingroup double_utemplates equalizers
@@ -53,4 +49,3 @@ template <class Numeric, class Coeff = double> class fir_adapt : public fir<Nume
   }
 };
 }  // namespace SPUC
-#endif

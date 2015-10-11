@@ -1,7 +1,5 @@
-#ifndef SPUC_QUANTIZE
-#define SPUC_QUANTIZE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -20,9 +18,7 @@ template <typename T> typename quantized_type<T>::dtype quantize(T in) {
   return (X);
 }
 template <typename T> T quantize_scale(float_type x, float_type ox, T y) {
-  //  typename quantized_type<T>::dtype X =
-  //  quantizer<T>::quantized_scale(x,ox,y);
+  //  typename quantized_type<T>::dtype X = quantizer<T>::quantized_scale(x,ox,y);
   return (quantizer<T>::quantized_scale(x, ox, y));
 }
 }  // namespace SPUC
-#endif

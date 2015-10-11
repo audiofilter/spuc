@@ -1,7 +1,5 @@
-#ifndef SPUC_FAST_EQUALIZER
-#define SPUC_FAST_EQUALIZER
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <spuc/spuc_types.h>
@@ -58,4 +56,3 @@ class fast_equalizer {
   complex<double> stage_up_down(int i, complex<double> s);
 };
 }  // namespace SPUC
-#endif

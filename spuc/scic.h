@@ -1,15 +1,11 @@
-#ifndef SPUC_SCIC
-#define SPUC_SCIC
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/delay.h>
 #include <spuc/cic.h>
 namespace SPUC {
 //! \file
-//! \brief Implementation for sharped cascaded integrator comb filter
-//
 //! \brief Implementation for sharped cascaded integrator comb filter
 //
 //! Registers are signed long and default number of stages is 2.
@@ -44,4 +40,3 @@ template <class Numeric> class scic {
   }
 };
 }  // namespace SPUC
-#endif

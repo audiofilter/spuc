@@ -1,5 +1,5 @@
-#ifndef SPUC_ARRAY
-#define SPUC_ARRAY
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 namespace SPUC {
@@ -26,18 +26,17 @@ namespace SPUC {
 //!  \author Tobias Ringstrom
 //!  1.10  2003/01/04 00:21:53
 /*
-  This file is not separated into a .h and a .cpp file. The reason is to avoid
-  problems with template initializations of this class.
-  An \c array<type> can contain any type and it is not possible to initialize
-  and pre-compile all types that might be put into an \c array.
+  This file is not separated into a .h and a .cpp file. The reason is to avoid problems with template initializations of
+  this class.
+  An \c array<type> can contain any type and it is not possible to initialize and pre-compile all types that might be
+  put into an \c array.
 
 */
 /*!
   \brief General array class
 
   This class is a general linear array class for arbitrary types. The operations
-  and functions are the same as for the vector Vec class (except for the
-  arithmetics).
+  and functions are the same as for the vector Vec class (except for the arithmetics).
 
   For rarely used types you will need to instantiate the class by
   \code
@@ -91,11 +90,9 @@ template <class T> class array {
   //! Concat element \c e to the beginning of the array \c a
   //  friend array<T> concat TEMPLATE_FUN(const T e, const array<T> &a);
   //! Concat arrays \c a1 and \c a2
-  //  friend array<T> concat TEMPLATE_FUN(const array<T> &a1,const array<T>
-  //  &a2);
+  //  friend array<T> concat TEMPLATE_FUN(const array<T> &a1,const array<T> &a2);
   //! Concat arrays \c a1, \c a2 and \c a3
-  //  friend array<T> concat TEMPLATE_FUN(const array<T> &a1, const array<T>
-  //  &a2, const array<T> &a3);
+  //  friend array<T> concat TEMPLATE_FUN(const array<T> &a1, const array<T> &a2, const array<T> &a3);
 
   //! Returns the number of data elements in the array object
   int size() const { return ndata; }
@@ -133,8 +130,7 @@ template <class T> class array {
   void free();
 };
 
-// --------------------------- Implementation starts here
-// ----------------------------------
+// --------------------------- Implementation starts here ----------------------------------
 
 template <class T> array<T>::array() {
   data = 0;
@@ -171,8 +167,7 @@ template <class T> void array<T>::free() {
 }
 
 template <class T> array<T> array<T>::operator()(int i1, int i2) const {
-  //    it_assert0(i1>=0 && i2>=0 && i1<ndata && i2<ndata && i2>=i1,
-  //    "array::operator()(i1,i2)");
+  //    it_assert0(i1>=0 && i2>=0 && i1<ndata && i2<ndata && i2>=i1, "array::operator()(i1,i2)");
   array<T> s(i2 - i1 + 1);
   int i;
 
@@ -279,8 +274,7 @@ template <class T> void array<T>::set_subarray(int i1, int i2, const array<T> &a
   if (i1 == -1) i1 = ndata - 1;
   if (i2 == -1) i2 = ndata - 1;
 
-  //  it_assert1(in_range(i1) && in_range(i2), "array<T>::set_subarray():
-  //  indicies out of range");
+  //  it_assert1(in_range(i1) && in_range(i2), "array<T>::set_subarray(): indicies out of range");
   //  it_assert1(i2>=i1, "array<T>::set_subarray(): i2 >= i1 necessary");
   //  it_assert1(i2-i1+1 == a.ndata, "array<T>::set_subarray(): wrong sizes");
 
@@ -291,8 +285,7 @@ template <class T> void array<T>::set_subarray(int i1, int i2, const T t) {
   if (i1 == -1) i1 = ndata - 1;
   if (i2 == -1) i2 = ndata - 1;
 
-  //  it_assert1(in_range(i1) && in_range(i2), "array<T>::set_subarray():
-  //  indicies out of range");
+  //  it_assert1(in_range(i1) && in_range(i2), "array<T>::set_subarray(): indicies out of range");
   //  it_assert1(i2>=i1, "array<T>::set_subarray(): i2 >= i1 necessary");
 
   for (int i = i1; i <= i2; i++) data[i] = t;
@@ -358,4 +351,3 @@ template <class T> inline std::ostream &operator<<(std::ostream &o, const array<
 }
 #endif
 }  // namespace SPUC
-#endif

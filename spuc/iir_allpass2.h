@@ -1,18 +1,14 @@
-#ifndef SPUC_IIR_ALLPASS2
-#define SPUC_IIR_ALLPASS2
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/quant.h>
 #include <spuc/allpass_2nd.h>
 namespace SPUC {
 //! \file
-//! \brief  Template Class for IIR filter using sum of 2nd Order Allpass
-// sections
+//! \brief  Template Class for IIR filter using sum of 2nd Order Allpass sections
 //
-//! \brief  Template Class for IIR filter using sum of 2nd Order Allpass
-// sections
+//! \brief  Template Class for IIR filter using sum of 2nd Order Allpass sections
 //
 //! The filter is a combination of 2 2nd order Allpass sections
 //! This class needs the allpass_2nd class
@@ -38,4 +34,3 @@ template <class Numeric, class Coeff = float_type> class iir_allpass2 {
   }
 };
 }  // namespace SPUC
-#endif

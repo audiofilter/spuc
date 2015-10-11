@@ -1,7 +1,5 @@
-#ifndef SPUC_QAM_MOD
-#define SPUC_QAM_MOD
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -29,4 +27,3 @@ class qam_mod {
   complex<long> qam64_map(long data_in);
 };
 }  // namespace SPUC
-#endif

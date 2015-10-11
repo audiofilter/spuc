@@ -1,7 +1,5 @@
-#ifndef SPUC_FIR
-#define SPUC_FIR
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/base_type.h>
@@ -94,6 +92,16 @@ template <class Numeric, class Coeff = float_type> class fir {
       for (i = 0; i < n; i++) coeff[i] = C.coeff[i];
     }
   }
+  void set_coeffs(fir_coeff<Coeff> C) {
+    int i;
+    int n = num_taps = C.num_taps;
+    if (n > 0) {
+      coeff.resize(n);
+      z.resize(n);
+      for (i = 0; i < n; i++) z[i] = (Numeric)0;
+      for (i = 0; i < n; i++) coeff[i] = C.coeff[i];
+    }
+  }
   //! Set size of Filter
   void set_size(long n) {
     int i;
@@ -127,6 +135,18 @@ template <class Numeric, class Coeff = float_type> class fir {
 
     output = Q(sum);
     return (output);
+  }
+  void process(const std::vector<Numeric>& in, std::vector<Numeric>& out) {
+    // Update history of inputs
+    for (int j = 0; j < in.size(); j++) {
+      for (int i = num_taps - 1; i > 0; i--) z[i] = z[i - 1];
+      // Add new input
+      z[0] = in[j];
+      // Perform FIR
+      sum_type sum(0);
+      for (int i = 0; i < num_taps; i++) sum = sum + coeff[i] * z[i];
+      out[j] = Q(sum);
+    }
   }
   // Tapped delay line uses previous outputs (to behave like an IIR)
   Numeric iir(Numeric in) {
@@ -174,4 +194,3 @@ template <class Numeric, class Coeff> std::vector<Numeric> get_input(const fir<N
   return (V);
 }
 }  // namespace SPUC
-#endif

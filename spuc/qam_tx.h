@@ -1,7 +1,5 @@
-#ifndef SPUC_QAM_TX
-#define SPUC_QAM_TX
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -107,7 +105,9 @@ template <class Numeric> class qam_tx {
         tx_data = complex<CNumeric>(preamble_source.out(), 0);
       } else if (tx_symbols < training_interval + preamble_pn) {
         tx_data = training_scale * complex<CNumeric>(training_source.out(), 0);
-      } else { tx_data = ENC.data_map(rate, 0); }
+      } else {
+        tx_data = ENC.data_map(rate, 0);
+      }
       tx_symbols++;
       tx_filter.input(tx_data);
     }
@@ -115,4 +115,3 @@ template <class Numeric> class qam_tx {
   }
 };
 }  // namespace SPUC
-#endif

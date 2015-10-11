@@ -1,7 +1,5 @@
-#ifndef SPUC_NESTED_ALLPASS_1
-#define SPUC_NESTED_ALLPASS_1
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -64,4 +62,3 @@ template <class Numeric, class Coeff = float_type> class nested_allpass_1 {
 };
 
 }  // namespace SPUC
-#endif

@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <cstdlib>
@@ -67,6 +66,5 @@ void quicksort(int *v, unsigned n) {
     }
   }
 }
-// void audi(unsigned char* w, long nf){for (int i=0;i<nf;i++) w[i] = w[i] >>
-// 2;}
+// void audi(unsigned char* w, long nf){for (int i=0;i<nf;i++) w[i] = w[i] >> 2;}
 }  // namespace SPUC

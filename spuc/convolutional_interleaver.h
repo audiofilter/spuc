@@ -1,7 +1,5 @@
-#ifndef SPUC_CONVOLUTIONAL_INTERLEAVER
-#define SPUC_CONVOLUTIONAL_INTERLEAVER
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/delay.h>
@@ -101,4 +99,3 @@ template <class T> T convolutional_interleaver<T>::deinterleave(const T input) {
   return (outp);
 }
 }  // namespace SPUC
-#endif

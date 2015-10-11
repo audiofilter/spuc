@@ -1,7 +1,5 @@
-#ifndef SPUC_BURG
-#define SPUC_BURG
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_array_functions
 #include <spuc/spuc_types.h>
 #include <vector>
@@ -16,7 +14,7 @@ namespace SPUC {
 //! \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //! \ingroup template_array_functions misc
-template <class T> std::vector<T> burg(std::vector<T> x, int P) {
+template <class T> std::vector<T> burg(const std::vector<T>& x, int P) {
   long N = x.size();
   const double EPS = 1e-30;
   std::vector<T> a(P);
@@ -68,4 +66,3 @@ template <class T> std::vector<T> burg(std::vector<T> x, int P) {
   return (a);
 }
 }  // namespace SPUC
-#endif

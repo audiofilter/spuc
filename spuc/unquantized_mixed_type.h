@@ -1,7 +1,5 @@
-#ifndef SPUC_UNQUANTIZED_MIXED_TYPE
-#define SPUC_UNQUANTIZED_MIXED_TYPE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_traits
 #include <spuc/spuc_types.h>
 namespace SPUC {
@@ -34,4 +32,3 @@ template <typename T, typename D> class unquantized_mixed_type<T, complex<D> > {
 };
 // template_instantiations: double,long
 }  // namespace SPUC
-#endif

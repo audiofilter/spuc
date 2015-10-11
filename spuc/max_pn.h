@@ -1,7 +1,5 @@
-#ifndef SPUC_MAX_PN
-#define SPUC_MAX_PN
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 namespace SPUC {
@@ -36,8 +34,7 @@ class max_pn {
     lenp1 = len + 1;
     u = init;
   }
-  //		max_pn(int g=0x074d, int len=1023, int init=-1) : gen(g),
-  // lenp1(len+1), u(init) {;}
+  //		max_pn(int g=0x074d, int len=1023, int init=-1) : gen(g), lenp1(len+1), u(init) {;}
   //! Reset
   void reset() { u = -1; }
   //! Get output (fast method)
@@ -48,4 +45,3 @@ class max_pn {
   int state() { return (u); }
 };
 }  // namespace SPUC
-#endif

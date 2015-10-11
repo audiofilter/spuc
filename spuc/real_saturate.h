@@ -1,7 +1,5 @@
-#ifndef SPUC_REAL_SATURATE
-#define SPUC_REAL_SATURATE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_template_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -50,4 +48,3 @@ template <> inline float real_saturate(float in, long bits) {
     return (in);
 }
 }  // namespace SPUC
-#endif

@@ -1,7 +1,5 @@
-#ifndef SPUC_SUM_AND_DUMP
-#define SPUC_SUM_AND_DUMP
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 namespace SPUC {
@@ -60,4 +58,3 @@ template <class Numeric> class sum_and_dump {
   }
 };
 }  // namespace SPUC
-#endif

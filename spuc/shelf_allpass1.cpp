@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/shelf_allpass1.h>
@@ -10,7 +9,9 @@ namespace SPUC {
 double z_freqz_db(bool hpf, double f, double a, double h, double l) {
   double wf = f * PI;
   complex<double> hf;
-  if (!hpf) { hf = h + l * (1 + (1.0 + polar(a, -wf)) / (a + polar(1.0, -wf))); } else {
+  if (!hpf) {
+    hf = h + l * (1 + (1.0 + polar(a, -wf)) / (a + polar(1.0, -wf)));
+  } else {
     a = 1.0 / a;
     hf = h + l * (1 - (1.0 + polar(a, -wf)) / (a + polar(1.0, -wf)));
   }

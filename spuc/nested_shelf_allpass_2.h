@@ -1,7 +1,5 @@
-#ifndef SPUC_NESTED_SHELF_ALLPASS_2
-#define SPUC_NESTED_SHELF_ALLPASS_2
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/quant.h>
@@ -66,8 +64,8 @@ template <class Numeric, class Coeff = float_type> class nested_shelf_allpass_2 
     // std::cout << "kb = " << kb << " kc = " << kc << "\n";
   }
   void print() {
-    std::cout << "A0 " << A0.get_a() << " " << A0.get_b() << "\n";
-    std::cout << "A1 " << A1.get_a() << " " << A1.get_b() << "\n";
+    std::cout << "A0 " << A0.a << " " << A0.b << "\n";
+    std::cout << "A1 " << A1.a << " " << A1.b << "\n";
     std::cout << "D0 " << D0.get_coefficient() << "\n";
   }
   void change(Coeff k) {
@@ -91,7 +89,9 @@ template <class Numeric, class Coeff = float_type> class nested_shelf_allpass_2 
     dly_input = D0.clock(input);
     out1 = A1.clock(dly_input);
 
-    if (hpf) { sumx = kb * (out0 - out1) + kc * (out0 + out1); } else {
+    if (hpf) {
+      sumx = kb * (out0 - out1) + kc * (out0 + out1);
+    } else {
       sumx = kb * (out0 + out1) + kc * (out0 - out1);
     }
     return (round(sumx, 1));
@@ -101,4 +101,3 @@ template <class Numeric, class Coeff = float_type> class nested_shelf_allpass_2 
 // template_instantiations: long; complex<long>; float_type; complex<float_type>
 
 }  // namespace SPUC
-#endif

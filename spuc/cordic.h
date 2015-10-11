@@ -1,7 +1,5 @@
-#ifndef SPUC_CORDIC
-#define SPUC_CORDIC
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -55,11 +53,15 @@ template <class Numeric> class cordic {
     if (angle > PI) {
       stage[0] = -shift_in;
       angle -= PI;
-    } else { stage[0] = shift_in; }
+    } else {
+      stage[0] = shift_in;
+    }
     if (angle > PI / 2) {
       stage[1] = complex<Numeric>(-imag(stage[0]), real(stage[0]));
       angle -= PI / 2;
-    } else { stage[1] = stage[0]; }
+    } else {
+      stage[1] = stage[0];
+    }
     // Subsequent rotations, with right shifts
     for (i = 0; i <= stages; i++) {
       long sign = (angle < 0) ? -1 : 1;
@@ -115,4 +117,3 @@ template <class Numeric> class cordic {
   }
 };
 }  // namespace SPUC
-#endif

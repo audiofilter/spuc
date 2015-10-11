@@ -1,17 +1,13 @@
-#ifndef SPUC_RUNNING_SUM
-#define SPUC_RUNNING_SUM
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/delay.h>
 namespace SPUC {
 //! \file
-//! \brief template class running average filter consisting of a delay line,
-// adder and subtractor
+//! \brief template class running average filter consisting of a delay line, adder and subtractor
 //
-//! \brief template class running average filter consisting of a delay line,
-// adder and subtractor
+//! \brief template class running average filter consisting of a delay line, adder and subtractor
 //
 //! \author Tony Kirke
 //! \image html running_sum.png
@@ -68,4 +64,3 @@ template <class Numeric> class running_sum {
   Numeric average(Numeric in) { return (((Numeric)inv_size * update(in))); }
 };
 }  // namespace SPUC
-#endif

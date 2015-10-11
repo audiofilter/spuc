@@ -1,7 +1,5 @@
-#ifndef SPUC_IIR_ALLPASS_VARIABLE_CASCADE
-#define SPUC_IIR_ALLPASS_VARIABLE_CASCADE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -15,8 +13,7 @@
 namespace SPUC {
 
 //! \file
-//! \brief  Template Class for iir filter consisting of 1st order allpass
-// sections
+//! \brief  Template Class for iir filter consisting of 1st order allpass sections
 //
 //! This is a halfband IIR filter with two branches of cascades of
 //! 1st order allpass sections
@@ -143,7 +140,9 @@ template <class Numeric, class Coeff = float_type> class iir_allpass_variable_ca
     out1 = prev_input.last();
 #endif
     //	std::cout << out1 << "\n";
-    if (hpf) { return (round((out0 - out1), 1)); } else {
+    if (hpf) {
+      return (round((out0 - out1), 1));
+    } else {
       return (round((out0 + out1), 1));
     }
   }
@@ -153,4 +152,3 @@ template <class Numeric, class Coeff = float_type> class iir_allpass_variable_ca
 // template_instantiations: float_type
 
 }  // namespace SPUC
-#endif

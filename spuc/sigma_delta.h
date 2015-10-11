@@ -1,7 +1,5 @@
-#ifndef SPUC_SIGMA_DELTA
-#define SPUC_SIGMA_DELTA
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 namespace SPUC {
@@ -36,4 +34,3 @@ class sigma_delta {
   signed char single(signed long in);
 };
 }  // namespace SPUC
-#endif

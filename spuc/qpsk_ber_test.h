@@ -1,7 +1,5 @@
-#ifndef SPUC_QPSK_BER_TEST
-#define SPUC_QPSK_BER_TEST
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <ctime>          // For time functions
@@ -59,4 +57,3 @@ class qpsk_ber_test {
   float_type ber(long received) { return (errors / (float_type)received); }
 };
 }  // namespace SPUC
-#endif

@@ -1,7 +1,5 @@
-#ifndef SPUC_NOISE
-#define SPUC_NOISE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -26,7 +24,7 @@ class noise {
  public:
   //! Constructor
   noise(float_type i = 1349555.0);  // Constructor
-                                    //! Gaussian noise
+  //! Gaussian noise
   float_type gauss();
   //! complex gaussian noise
   complex<float_type> Cgauss(void);
@@ -40,4 +38,3 @@ class noise {
   void set_seed(unsigned i = 1349555) { idum = i; }
 };
 }  // namespace SPUC
-#endif

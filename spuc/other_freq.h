@@ -1,7 +1,5 @@
-#ifndef SPUC_OTHER_FREQ
-#define SPUC_OTHER_FREQ
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_functions
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -74,8 +72,7 @@ template <typename T> void fir_freq(T& MF, int pts, double* w, int freq_off, dou
 void cic_freq(int rate, int order, int pts, double* w, int freq_off, double inc);
 
 /*
- template <typename T> void filt_freq(T& MF, int pts, int bits, double* w,
-double inc) {
+ template <typename T> void filt_freq(T& MF, int pts, int bits, double* w, double inc) {
 
   double h0;
   MF.quantize(bits);
@@ -168,4 +165,3 @@ template <typename T> void filt_freq(T& MF, int pts, int bits, double* w) {
 }
 
 }  // namespace SPUC
-#endif

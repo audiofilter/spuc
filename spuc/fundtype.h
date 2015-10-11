@@ -1,7 +1,5 @@
-#ifndef SPUC_FUNDTYPE
-#define SPUC_FUNDTYPE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_traits
 namespace SPUC {
 //! \author Tony Kirke,  Copyright(c) 2005
@@ -20,4 +18,3 @@ template <typename T> class fundtype<builtin<T> > {
   typedef T ftype;
 };
 }  // namespace SPUC
-#endif

@@ -1,7 +1,5 @@
-#ifndef SPUC_LMS_DFE
-#define SPUC_LMS_DFE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_utemplates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -43,7 +41,9 @@ template <class Numeric, class Coeff = double> class lms_dfe {
       fb.set_size(inb);
       fb.set_gain(gain);
       ff.coeff[inf - 1] = mid_tap;
-    } else { ff.coeff[inf / 2] = mid_tap; }
+    } else {
+      ff.coeff[inf / 2] = mid_tap;
+    }
   }
   ~lms_dfe() {}
   void reset() {
@@ -52,7 +52,9 @@ template <class Numeric, class Coeff = double> class lms_dfe {
       if (fb.num_taps > 0) {
         fb.reset();
         ff.settap(ff.num_taps - 1, mid_tap);
-      } else { ff.settap(ff.num_taps / 2, mid_tap); }
+      } else {
+        ff.settap(ff.num_taps / 2, mid_tap);
+      }
     }
   }
   void set_ff_tap(long i, Numeric x) { ff.coeff[i] = x; }
@@ -80,4 +82,3 @@ template <class Numeric, class Coeff = double> class lms_dfe {
   }
 };
 }  // namespace SPUC
-#endif

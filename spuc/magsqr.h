@@ -1,7 +1,5 @@
-#ifndef SPUC_MAGSQR
-#define SPUC_MAGSQR
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_functors
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -16,4 +14,3 @@ template <typename T> class magsqr<complex<T> > {
   static T magsqd(complex<T> x) { return (real(x) * real(x) + imag(x) * imag(x)); }
 };
 }  // namespace SPUC
-#endif

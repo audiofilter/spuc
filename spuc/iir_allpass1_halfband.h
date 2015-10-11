@@ -1,7 +1,5 @@
-#ifndef SPUC_IIR_ALLPASS1_HALFBAND
-#define SPUC_IIR_ALLPASS1_HALFBAND
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/quant.h>
@@ -53,7 +51,9 @@ template <class Numeric, class Coeff = float_type> class iir_allpass1_halfband {
   }
   //! Shift inputs by one time sample and place new sample into array
   Numeric clock(Numeric input) {
-    if (!even) { out0 = A0.clock(input); } else {
+    if (!even) {
+      out0 = A0.clock(input);
+    } else {
       out1 = A1.clock(input);
     }
     even = !even;
@@ -61,10 +61,9 @@ template <class Numeric, class Coeff = float_type> class iir_allpass1_halfband {
       return (round((out0 + out1), 1));
     else
       return ((Numeric)0);  // to indicate that this sample is not calculated
-                            // Complimentary filter return(0.5*(out0 - out1));
+    // Complimentary filter return(0.5*(out0 - out1));
   }
   char ready(void) { return (even); }
 };
 // template_instantiations: long; complex<long>; float_type; complex<float_type>
 }  // namespace SPUC
-#endif

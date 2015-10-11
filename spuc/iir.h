@@ -1,6 +1,5 @@
 #pragma once
-// Copyright (c) 2015 Tony Kirke. License MIT
-// (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -13,15 +12,12 @@
 #include <vector>
 namespace SPUC {
 //! \file
-//! \brief  Template Class for iir filter
-//
 //! \brief Tempate Class for iir filter
 //
 //! consisting of first and second order filter sections
 //! \author Tony Kirke
 //! \ingroup double_templates iir
-template <class Numeric, class Coeff = float_type>
-class iir {
+template <class Numeric, class Coeff = float_type> class iir {
  public:
   long order;
   long odd;
@@ -51,6 +47,7 @@ class iir {
   }
   void clear() { sos.resize(0); }
   void realloc(iir_coeff& design) {
+    lpf = design.lpf;
     sos.resize(design.n2);
     order = design.order;
     n2 = design.n2;
@@ -111,14 +108,16 @@ class iir {
   //! Clock in sample and get output.
   Numeric clock(Numeric in) {
     Numeric tmp = in;
-    for (int i = odd; i < n2; i++) {
-      tmp = sos[i - odd].clock(tmp);
-    }
-    if (odd) {
-      tmp = fos.clock(tmp);
-    }
+    for (int i = odd; i < n2; i++) { tmp = sos[i - odd].clock(tmp); }
+    if (odd) { tmp = fos.clock(tmp); }
     mult_type g = gain * tmp;
     return (Q(g));
+  }
+  void process(const std::vector<Numeric>& in, std::vector<Numeric>& out) {
+    for (int j = 0; j < in.size(); j++) out[j] = clock(in[j]);
+  }
+  void process_inplace(std::vector<Numeric>& io) {
+    for (int j = 0; j < io.size(); j++) io[j] = clock(io[j]);
   }
 };
 }  // namespace SPUC

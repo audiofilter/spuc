@@ -1,7 +1,5 @@
-#ifndef SPUC_FIR_DECIM
-#define SPUC_FIR_DECIM
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/fir.h>
@@ -28,6 +26,16 @@ template <class Numeric, class Coeff = float_type> class fir_decim : public fir<
   fir_decim<Numeric, Coeff>(void) {}
   fir_decim<Numeric, Coeff>(long n) : fir<Numeric, Coeff>(n) {}
   fir_decim<Numeric, Coeff>(const char* file) { read_taps(file); }
+  fir_decim<Numeric, Coeff>(fir_coeff<Coeff> C) : fir<Numeric, Coeff>(C) {
+    int i;
+    int n = num_taps = C.num_taps;
+    if (n > 0) {
+      coeff.resize(n);
+      z.resize(n);
+      for (i = 0; i < n; i++) z[i] = (Numeric)0;
+      for (i = 0; i < n; i++) coeff[i] = C.coeff[i];
+    }
+  }
 
   void input(Numeric in) {
     int i;
@@ -48,6 +56,13 @@ template <class Numeric, class Coeff = float_type> class fir_decim : public fir<
     output = Q(sum);
     return (output);
   }
+  void process(const std::vector<Numeric>& in, std::vector<Numeric>& out) {
+    out.resize(in.size() - phase + rate - 1 / rate);
+    for (int i = 0; i < in.size(); i++) {
+      input(in[i]);
+      phase = (phase + 1) % rate;
+      if (phase == 0) { out[j++] = decim(); }
+    }
+  }
 };
 }  // namespace SPUC
-#endif

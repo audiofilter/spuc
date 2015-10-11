@@ -1,5 +1,4 @@
-// Copyright (c) 2015 Tony Kirke. License MIT
-// (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/spuc_defines.h>
@@ -12,16 +11,13 @@ namespace SPUC {
 //! Constructor, fcd = cut-off (1=sampling rate)
 //! ord = Filter order
 //! amax = attenuation at cut-off
-void butterworth_iir(iir_coeff& filt, float_type fcd, bool lpf = true,
-                     float_type amax = 3.0) {
+void butterworth_iir(iir_coeff& filt, float_type fcd, bool lpf = true, float_type amax = 3.0) {
   // amax - attenuation at cutoff
   const float_type ten = 10.0;
   long order = filt.order;
-  float_type epi = pow((float_type)(pow(ten, amax / ten) - 1.0),
-                       (float_type)(1. / (2.0 * order)));
+  float_type epi = pow((float_type)(pow(ten, amax / ten) - 1.0), (float_type)(1. / (2.0 * order)));
   // fcd - desired cutoff frequency (normalized)
-  float_type wca =
-      (lpf) ? tan(0.5 * PI * fcd) / epi : tan(0.5 * PI * (1.0 - fcd)) / epi;
+  float_type wca = (lpf) ? tan(0.5 * PI * fcd) / epi : tan(0.5 * PI * (1.0 - fcd)) / epi;
   // wca - pre-warped angular frequency
   long n2 = (order + 1) / 2;
   filt.lpf = lpf;
@@ -30,8 +26,7 @@ void butterworth_iir(iir_coeff& filt, float_type fcd, bool lpf = true,
   filt.convert_to_ab();
 }
 //! Calculate roots
-void butterworth_s(std::vector<complex<float_type> >& poles,
-                   std::vector<complex<float_type> >& zeros, bool lpf,
+void butterworth_s(std::vector<complex<float_type> >& poles, std::vector<complex<float_type> >& zeros, bool lpf,
                    float_type wp, long n, long n2) {
   long l = (n % 2 == 0) ? 1 : 0;
   float_type arg;

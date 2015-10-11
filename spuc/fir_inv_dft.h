@@ -1,7 +1,5 @@
-#ifndef SPUC_FIR_INV_DFT
-#define SPUC_FIR_INV_DFT
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
 #include <vector>
@@ -17,4 +15,3 @@ namespace SPUC {
 std::vector<float_type> inv_dft_symmetric(const std::vector<float_type>& A, int N);
 std::vector<float_type> inv_dft(const std::vector<float_type>& A, int N);
 }  // namespace SPUC
-#endif

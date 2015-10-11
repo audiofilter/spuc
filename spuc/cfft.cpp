@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/cfft.h>
@@ -59,7 +58,7 @@ cfft::cfft(int size, float_type scalef1, float_type scalef2, float_type scalei1,
       t = float_type(bitrev[i << 1]) * PI / float_type(k);
       ww = CPLX(cos(t), sin(t));
       w[i] = conj(ww);  // force limiting of imag part if applic.
-                        // cout << w[i] << "\n";
+      // cout << w[i] << "\n";
     }
   }
 }
@@ -87,10 +86,8 @@ void cfft::hermitian(CPLX *buf) {
   }
 }
 /*
- * cfft::fft_func(buf,0) performs a forward fft on the data in the buffer
- * specified.
- * cfft::fft_func(buf,1) performs an inverse fft on the data in the buffer
- * specified.
+ * cfft::fft_func(buf,0) performs a forward fft on the data in the buffer specified.
+ * cfft::fft_func(buf,1) performs an inverse fft on the data in the buffer specified.
  */
 void cfft::fft_func(CPLX *buf, int iflag) {
   int i, j, k;
@@ -132,7 +129,9 @@ void cfft::fft_func(CPLX *buf, int iflag) {
     }
     buf0 = buf;
     for (j = 0; buf0 < bufe; ++j) {
-      if (iflag) { zw = conj(w[j]); } else {
+      if (iflag) {
+        zw = conj(w[j]);
+      } else {
         zw = w[j]; /* get w-factor */
       }
       buf2 = buf0 + k;

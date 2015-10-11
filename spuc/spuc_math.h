@@ -1,7 +1,5 @@
-#ifndef SPUC_SPUC_MATH
-#define SPUC_SPUC_MATH
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -62,4 +60,3 @@ complex<float_type> polar(float_type amp, float_type arg);
 inline complex<float> expj(float x) { return (complex<float>(std::cos(x), std::sin(x))); }
 inline complex<double> expj(double x) { return (complex<double>(std::cos(x), std::sin(x))); }
 }  // namespace SPUC
-#endif

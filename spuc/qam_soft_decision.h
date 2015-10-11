@@ -1,7 +1,5 @@
-#ifndef SPUC_QAM_SOFT_DECISION
-#define SPUC_QAM_SOFT_DECISION
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -13,8 +11,7 @@ namespace SPUC {
 //
 //! \brief  Soft-decision QAM Demapper (used in 802.11A)
 //
-//! Returns an array of soft decision bits, array size is dependant on
-// modulation type
+//! Returns an array of soft decision bits, array size is dependant on modulation type
 //! \author Tony Kirke
 //!  \ingroup functions comm
 void qam_data_demap(long rate_index, complex<long> data_in, long soft_decision_level, std::vector<long>& viterbi_input);
@@ -35,4 +32,3 @@ void qam16_soft_decision(complex<long> data_in, long soft_decision_level, std::v
 //! \ingroup functions comm
 void qam64_soft_decision(complex<long> data_in, long soft_decision_level, std::vector<long>& viterbi_input);
 }  // namespace SPUC
-#endif

@@ -1,7 +1,5 @@
-#ifndef SPUC_ALLPASS_1
-#define SPUC_ALLPASS_1
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -14,11 +12,9 @@
 namespace SPUC {
 //!
 //! \file
-//! \brief  Template class for 1st order allpass filter with programmble gain
-// and delay
+//! \brief  Template class for 1st order allpass filter with programmble gain and delay
 //
-//! \brief  Template class for 1st order allpass filter with programmble gain
-// and delay
+//! \brief  Template class for 1st order allpass filter with programmble gain and delay
 //
 //! Template class for 1st-order Allpass filter.
 //! The filter is a "first-order" Allpass section of
@@ -62,7 +58,7 @@ template <class Numeric, class Coeff = float_type> class allpass_1 {
   }
   void set_gain(Coeff Gain) { gain = Gain; }
   //! Initializes gain and delay
-  void init(Coeff& Gain, long s) {
+  void init(const Coeff& Gain, long s) {
     gain = Gain;
     size = s;
     mult.set_size(size);
@@ -87,4 +83,3 @@ template <class Numeric, class Coeff = float_type> class allpass_1 {
   }
 };
 }  // namespace SPUC
-#endif

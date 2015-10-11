@@ -1,7 +1,5 @@
-#ifndef SPUC_FREQZ
-#define SPUC_FREQZ
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_template_array_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -17,7 +15,8 @@ namespace SPUC {
 //! \brief frequency transfer function at freq with iir A and B equations
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> complex<float_type> freqz_point(std::vector<T> b, std::vector<T> a, float_type freq, int N) {
+template <class T>
+complex<float_type> freqz_point(const std::vector<T>& b, const std::vector<T>& a, float_type freq, int N) {
   int i;
   complex<float_type> z(1, 0);
   complex<float_type> z_inc = complex<float_type>(cos(freq), sin(freq));
@@ -34,7 +33,7 @@ template <class T> complex<float_type> freqz_point(std::vector<T> b, std::vector
 //! \brief frequency magnitude function at freq with fir x
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> float_type freqz_mag_point(std::vector<T> x, float_type freq, int N) {
+template <class T> float_type freqz_mag_point(const std::vector<T>& x, float_type freq, int N) {
   int i;
   complex<float_type> z(1, 0);
   complex<float_type> z_inc = expj(freq);
@@ -60,7 +59,7 @@ template <class T> complex<float_type> freqz_point(T a, float_type freq) {
 //! \brief frequency transfer function over "pts" points for IIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> std::vector<complex<float_type> > freqz(std::vector<T> b, std::vector<T> a, int pts) {
+template <class T> std::vector<complex<float_type> > freqz(const std::vector<T>& b, const std::vector<T>& a, int pts) {
   int i, j;
   int N = b.len();
   complex<float_type> z;
@@ -89,7 +88,8 @@ template <class T> std::vector<complex<float_type> > freqz(std::vector<T> b, std
 //! \brief frequency magnitude function over "pts" points for IIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> std::vector<complex<float_type> > freqz_mag(std::vector<T> b, std::vector<T> a, int pts) {
+template <class T>
+std::vector<complex<float_type> > freqz_mag(const std::vector<T>& b, const std::vector<T>& a, int pts) {
   int i, j;
   int N = b.len();
   complex<float_type> z;
@@ -119,7 +119,7 @@ template <class T> std::vector<complex<float_type> > freqz_mag(std::vector<T> b,
 //! \brief frequency magnitude function over "pts" points for FIR
 //! \author Tony Kirke
 //! \ingroup real_template_array_functions misc
-template <class T> std::vector<complex<float_type> > freqz_fir(std::vector<T> x, int pts) {
+template <class T> std::vector<complex<float_type> > freqz_fir(const std::vector<T>& x, int pts) {
   int i, j;
   int N = x.len();
   complex<float_type> z;
@@ -143,4 +143,3 @@ template <class T> std::vector<complex<float_type> > freqz_fir(std::vector<T> x,
   return (f);
 }
 }  // namespace SPUC
-#endif

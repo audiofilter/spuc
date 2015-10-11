@@ -1,7 +1,5 @@
-#ifndef SPUC_NOTCH_COMB
-#define SPUC_NOTCH_COMB
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/allpass_1.h>
@@ -28,4 +26,3 @@ template <class Numeric, class Coeff = float_type> class notch_comb {
 };
 
 }  // namespace SPUC
-#endif

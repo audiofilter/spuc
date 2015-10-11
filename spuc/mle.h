@@ -1,7 +1,5 @@
-#ifndef SPUC_MLE
-#define SPUC_MLE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -40,11 +38,9 @@ template <class Numeric> class mle {
   std::vector<long> tmp_path;          // Temporary variable
   std::vector<float_type> tmp_weight;  // Temporary variable
   std::vector<long> path_symbol;
-  long phase_states;  //! Phase states for MLSD_CPM (not implemented)
-  long total_states;  //! for CPM total = n_states*phase_states! (not
-  // implemented)
-  float_type phase_inc;  //! phase increment for MLSD_CPM (should divide evenly
-  // into 360 degrees) (not implemented)
+  long phase_states;     //! Phase states for MLSD_CPM (not implemented)
+  long total_states;     //! for CPM total = n_states*phase_states! (not implemented)
+  float_type phase_inc;  //! phase increment for MLSD_CPM (should divide evenly into 360 degrees) (not implemented)
 
   //! Constructor (default to MLSE with no feedback)
   //! q=1 Binary, q=2 Quaternary
@@ -190,4 +186,3 @@ template <class Numeric> class mle {
   }
 };
 }  // namespace SPUC
-#endif

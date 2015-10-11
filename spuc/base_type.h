@@ -1,7 +1,5 @@
-#ifndef SPUC_BASE_TYPE
-#define SPUC_BASE_TYPE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_traits
 #include <spuc/spuc_typedefs.h>
 #ifdef USE_STD_COMPLEX
@@ -33,4 +31,3 @@ template <typename T> class base_type<builtin<T> > {
 };
 #endif
 }  // namespace SPUC
-#endif

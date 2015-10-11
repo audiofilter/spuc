@@ -1,7 +1,5 @@
-#ifndef SPUC_OFDM_DATA_ENCODER
-#define SPUC_OFDM_DATA_ENCODER
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -94,4 +92,3 @@ class ofdm_data_encoder {
   long serial_to_word_output(void);
 };
 }  // namespace SPUC
-#endif

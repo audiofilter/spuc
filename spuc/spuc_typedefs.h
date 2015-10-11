@@ -1,11 +1,12 @@
-#ifndef SPUC_SPUC_TYPEDEFS
-#define SPUC_SPUC_TYPEDEFS
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
+// from directory: spuc_include
 #ifdef USE_STD_COMPLEX
 #include <complex>
 using std::complex;
 #endif
 namespace SPUC {
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 1993-2007 Tony Kirke
 // from directory: spuc_include
 typedef long natural;
 
@@ -57,4 +58,3 @@ typedef complex<builtin<int> > complex_I;
 typedef complex<builtin<long int> > complex_L;
 
 }  // namespace SPUC
-#endif

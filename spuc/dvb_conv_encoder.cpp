@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/spuc_defines.h>
@@ -20,7 +19,9 @@ bool dvb_conv_encoder::clock() {
     conv_bit_number++;
     // XOR the masked register contents to get output data A
     a = reduce(conv_enc_u & g1, 7);
-  } else { a = reduce(conv_enc_u & g2, 7); }
+  } else {
+    a = reduce(conv_enc_u & g2, 7);
+  }
   conv_enc_phase = !conv_enc_phase;
   return (a);
 }

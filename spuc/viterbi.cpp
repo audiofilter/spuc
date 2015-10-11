@@ -1,3 +1,4 @@
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include "viterbi.h"
@@ -193,7 +194,9 @@ bool viterbi::depuncture(const long steal, long soft_in) {
           break;
       }
     }
-  } else { viterbi_data = clock(soft_in); }
+  } else {
+    viterbi_data = clock(soft_in);
+  }
   phase = !phase;
   if (depuncture_bit_number == steal) {
     depuncture_bit_number = 0;

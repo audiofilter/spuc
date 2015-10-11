@@ -1,7 +1,5 @@
-#ifndef SPUC_SIM_QPSK
-#define SPUC_SIM_QPSK
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -97,8 +95,7 @@ template <class Numeric> class sim_qpsk {
     count = 0;        // index of sample number at input rate
 
     // QPSK Receiver Setup
-    if (time) resample_over *= 1.0001;  // 100 ppm timing error (internal clock faster
-                                        // than reference)
+    if (time) resample_over *= 1.0001;  // 100 ppm timing error (internal clock faster than reference)
     // This should be related to total_over + offset
     symbol_nco_word = (long)floor(resample_over * (1 << 14));
     //	RECEIVER.rate_change.symbol_nco.reset_frequency(symbol_nco_word);
@@ -138,4 +135,3 @@ template <class Numeric> class sim_qpsk {
   }
 };
 }  // namespace SPUC
-#endif

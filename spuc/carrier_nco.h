@@ -1,7 +1,5 @@
-#ifndef SPUC_CARRIER_NCO
-#define SPUC_CARRIER_NCO
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -31,4 +29,3 @@ class carrier_nco {
   complex<long> clock(long loop_filter_out = 0, int load = 1);
 };
 }  // namespace SPUC
-#endif

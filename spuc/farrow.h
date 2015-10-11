@@ -1,18 +1,14 @@
-#ifndef SPUC_FARROW
-#define SPUC_FARROW
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
 #include <vector>
 namespace SPUC {
 //! \file
-//! \brief  Template Class for Farrow implementation of a ploynomial
-// interpolation using a FIR  filter.
+//! \brief  Template Class for Farrow implementation of a ploynomial interpolation using a FIR  filter.
 //
-//! \brief  Template Class for Farrow implementation of a ploynomial
-// interpolation using a FIR  filter.
+//! \brief  Template Class for Farrow implementation of a ploynomial interpolation using a FIR  filter.
 //
 //!   Farrow implementation of a polynomial interpolation
 //!   This covers 3 (orders) cases of interpolation
@@ -101,8 +97,7 @@ template <class Numeric> class farrow {
     }
     return (output);
   }
-  //! Rephase => recalculate coefficients and output for new offset (for
-  // upsampling)
+  //! Rephase => recalculate coefficients and output for new offset (for upsampling)
   Numeric rephase(float_type offset) {
     if (num_taps == 1)
       return (z[0]);
@@ -143,4 +138,3 @@ template <class Numeric> class farrow {
   }
 };
 }  // namespace SPUC
-#endif

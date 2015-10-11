@@ -1,7 +1,5 @@
-#ifndef SPUC_ELLIPTIC_ALLPASS
-#define SPUC_ELLIPTIC_ALLPASS
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
 #include <spuc/spuc_defines.h>
@@ -20,4 +18,3 @@ namespace SPUC {
 void elliptic_allpass(std::vector<float_type>& a0, std::vector<float_type>& a1, float_type fp, int L);
 
 }  // namespace SPUC
-#endif

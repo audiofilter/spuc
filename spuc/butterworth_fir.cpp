@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <cmath>
@@ -14,8 +13,7 @@ void butterworth_fir(fir_coeff<float_type>& butfir, float_type spb) {
 
     With B(p) the butterworth response we have:
 
-  \f$ B(p)  = \displaystyle\sum_{k=1}^{N/2}
-  \frac{\lambda(k)*(1+\alpha(k)*p/wc)}{1+2*cos(\beta(k))*p/wc + (p/wc)^2)}.\f$
+  \f$ B(p)  = \displaystyle\sum_{k=1}^{N/2} \frac{\lambda(k)*(1+\alpha(k)*p/wc)}{1+2*cos(\beta(k))*p/wc + (p/wc)^2)}.\f$
 
 
              with<p>
@@ -23,8 +21,8 @@ void butterworth_fir(fir_coeff<float_type>& butfir, float_type spb) {
   \f$	   \beta(k) = (2 * k - 1) / (2 * N)         k = 1, 2, ..  N/2 \f$<p>
   \f$	   \alpha(k) = sin((N/2 - 1) * \beta(k)) / sin(N * \beta(k) / 2) \f$<p>
 
-  \f$ \lambda(p)  = \frac{\sin(N*\beta(k)/2)}{sin(\beta(k))}.
-  \displaystyle\prod_{m=1,m!=k}^{N/2} 2*cos(\beta(k) - cos(\beta(m))) \f$
+  \f$ \lambda(p)  = \frac{\sin(N*\beta(k)/2)}{sin(\beta(k))}. \displaystyle\prod_{m=1,m!=k}^{N/2} 2*cos(\beta(k) -
+  cos(\beta(m))) \f$
 
 
             The impulse response of B(p) can be found by realizing that:

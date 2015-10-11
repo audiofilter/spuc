@@ -1,7 +1,5 @@
-#ifndef SPUC_MIXED_TYPE
-#define SPUC_MIXED_TYPE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_traits
 #include <spuc/spuc_types.h>
 namespace SPUC {
@@ -59,7 +57,6 @@ DMIXED_MACRO(int, float, float)
 MIXED_MACRO(double, double, double)
 DMIXED_MACRO(double, float, double)
 MIXED_MACRO(float, float, float)
-
 MIXED_MACRO(complex<long>, complex<long>, complex<long>)
 DMIXED_MACRO(complex<long>, complex<int>, complex<long>)
 DMIXED_MACRO(complex<long>, complex<double>, complex<double>)
@@ -70,7 +67,6 @@ DMIXED_MACRO(complex<int>, complex<float>, complex<float>)
 MIXED_MACRO(complex<double>, complex<double>, complex<double>)
 DMIXED_MACRO(complex<double>, complex<float>, complex<double>)
 MIXED_MACRO(complex<float>, complex<float>, complex<float>)
-
 DMIXED_MACRO(complex<long>, long, complex<long>)
 DMIXED_MACRO(complex<long>, int, complex<long>)
 DMIXED_MACRO(complex<long>, double, complex<double>)
@@ -91,4 +87,3 @@ DMIXED_MACRO(complex<float>, float, complex<float>)
 #undef DMIXED_MACRO
 #undef MIXED_MACRO
 }  // namespace SPUC
-#endif

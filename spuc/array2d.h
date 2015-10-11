@@ -1,5 +1,5 @@
-#ifndef SPUC_ARRAY2D
-#define SPUC_ARRAY2D
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <cstdlib>
@@ -149,8 +149,7 @@ template <class T> array2d<T>::array2d(int m, int n, const T& val) : v_(0), m_(m
 
 /**
         Create a new (m x n) array,  as a view of an existing one-dimensional
-        array stored in <b>C order</b>, i.e. right-most dimension varying
-   fastest.
+        array stored in <b>C order</b>, i.e. right-most dimension varying fastest.
         (Often referred to as "row-major" ordering.)
         Note that the storage for this pre-existing array will
         never be garbage collected by the array2d class.
@@ -162,7 +161,7 @@ template <class T> array2d<T>::array2d(int m, int n, const T& val) : v_(0), m_(m
 */
 template <class T> array2d<T>::array2d(int m, int n, T* a) : v_(0), m_(m), n_(n), ref_count_(0) {
   T* p = a;
-  v_ = new T* [m];
+  v_ = new T*[m];
   for (int i = 0; i < m; i++) {
     v_[i] = p;
     p += n;
@@ -302,7 +301,7 @@ template <class T> array2d<T>::~array2d() {
 
 template <class T> void array2d<T>::initialize_(int m, int n) {
   T* p = new T[m * n];
-  v_ = new T* [m];
+  v_ = new T*[m];
   for (int i = 0; i < m; i++) {
     v_[i] = p;
     p += n;
@@ -350,4 +349,3 @@ template <class T> array2d<T>::array2d() : v_(0), m_(0), n_(0) {
   *ref_count_ = 1;
 }
 }  // namespace SPUC
-#endif

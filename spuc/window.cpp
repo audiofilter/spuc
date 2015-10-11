@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <cmath>
@@ -66,8 +65,7 @@ std::vector<float_type> hanning(long nf) {
 }
 //:
 //!  \ingroup fir
-//! \brief Blackman Window	\f$ w[x] = 0.42 - 0.5*cos(2*\pi*x/nf) +
-// 0.08*cos(2*\pi*x/nf)\f$
+//! \brief Blackman Window	\f$ w[x] = 0.42 - 0.5*cos(2*\pi*x/nf) + 0.08*cos(2*\pi*x/nf)\f$
 std::vector<float_type> blackman(long nf) {
   // nf = filter length in samples
   // alpha = constant of window
@@ -140,7 +138,9 @@ std::vector<float_type> cheby(long nf, long n, long ieo, float_type dp, float_ty
     xi = i - 1;
     f = xi / fnf;
     x = alpha * ::cos(TWOPI * f) + beta;
-    if ((fabs(x) - 1.) > 0) { p = dp * ::cos(c2 * acos(x)); } else {
+    if ((fabs(x) - 1.) > 0) {
+      p = dp * ::cos(c2 * acos(x));
+    } else {
       p = dp * cosh(c2 * coshin(x));
     }
     pie = complex<float_type>(0.0, p);
@@ -159,8 +159,7 @@ std::vector<float_type> cheby(long nf, long n, long ieo, float_type dp, float_ty
       sum = 0.;
       for (j = 1; j < nf + 1; j++) {
         xj = j - 1;
-        //	  sum += real(pie[j])*cos(twn*xj*xi) +
-        // imag(pie[j])*sin(twn*xj*xi);
+        //	  sum += real(pie[j])*cos(twn*xj*xi) + imag(pie[j])*sin(twn*xj*xi);
         sum += real(pie) * ::cos(twn * xj * xi) + imag(pie) * sin(twn * xj * xi);
       }
       w[i] = sum;

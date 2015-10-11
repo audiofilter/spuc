@@ -1,7 +1,5 @@
-#ifndef SPUC_VCO
-#define SPUC_VCO
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -54,10 +52,8 @@ template <class Numeric> class vco {
   //! Update fcw
   inline void load(Numeric loop_filter_out) { new_fcw = fcw + loop_filter_out; }
   //! return output with updated input
-  complex<Numeric> clock(Numeric loop_filter_out);  // { return((Numeric)0); }
-                                                    // // needs explicit def
+  complex<Numeric> clock(Numeric loop_filter_out);  // { return((Numeric)0); } // needs explicit def
   //! return output only
   complex<Numeric> clock();  // { return((Numeric)0); } // needs explicit def
 };
 }  // namespace SPUC
-#endif

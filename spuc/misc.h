@@ -1,7 +1,5 @@
-#ifndef SPUC_MISC
-#define SPUC_MISC
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -32,4 +30,3 @@ void swap(int *a, int *b);
 //! \ingroup functions functions
 void quicksort(int *v, unsigned n);
 }  // namespace SPUC
-#endif

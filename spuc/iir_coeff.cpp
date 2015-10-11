@@ -1,5 +1,4 @@
-// Copyright (c) 2015 Tony Kirke. License MIT
-// (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/spuc_defines.h>
@@ -15,11 +14,7 @@
 #include <cfloat>
 namespace SPUC {
 iir_coeff::iir_coeff(long ord, bool lp)
-    : poles((ord + 1) / 2),
-      zeros((ord + 1) / 2),
-      a_tf(ord + 1),
-      b_tf(ord + 1),
-      lpf(lp) {
+    : poles((ord + 1) / 2), zeros((ord + 1) / 2), a_tf(ord + 1), b_tf(ord + 1), lpf(lp) {
   // amax - attenuation at cutoff
   order = ord;
   n2 = (order + 1) / 2;
@@ -75,10 +70,8 @@ void iir_coeff::convert_to_ab() {
   a_tf = p2_to_poly(poles);
   b_tf = p2_to_poly(zeros);
 
-  // for (int i=0;i<a_tf.size();i++) std::cout << "a[" <<i << "] = "<< a_tf[i]
-  // << "\n";
-  // for (int i=0;i<b_tf.size();i++) std::cout << "b[" <<i << "] = "<< b_tf[i]
-  // << "\n";
+  // for (int i=0;i<a_tf.size();i++) std::cout << "a[" <<i << "] = "<< a_tf[i] << "\n";
+  // for (int i=0;i<b_tf.size();i++) std::cout << "b[" <<i << "] = "<< b_tf[i] << "\n";
 }
 void iir_coeff::ab_to_tf() {
   a_tf = p2_to_poly(poles);
@@ -95,8 +88,7 @@ void iir_coeff::z_root_to_ab(std::vector<complex<float_type> >& z) {
   state = 3;  // in Z-domain 2nd order A/B coefficients
 }
 // Takes poles or zeros and creates a polynomial transfer function
-std::vector<float_type> iir_coeff::pz_to_poly(
-    const std::vector<complex<float_type> >& z) {
+std::vector<float_type> iir_coeff::pz_to_poly(const std::vector<complex<float_type> >& z) {
   std::vector<float_type> p2(3);
   std::vector<float_type> p(order + 1);
   std::vector<float_type> tf(order + 1);
@@ -118,11 +110,9 @@ std::vector<float_type> iir_coeff::pz_to_poly(
   return (tf);
 }
 // Takes 'n' 2nd order polynomials of the form 1+a*z + b*z^2
-// where a and b are packed into a complex float_type as
-// complex<float_type>(a,b)
+// where a and b are packed into a complex float_type as complex<float_type>(a,b)
 // and convolves them all together as 1 polynomial
-std::vector<float_type> iir_coeff::p2_to_poly(
-    const std::vector<complex<float_type> >& ab) {
+std::vector<float_type> iir_coeff::p2_to_poly(const std::vector<complex<float_type> >& ab) {
   std::vector<float_type> tf;
   std::vector<float_type> p2(3);
   std::vector<float_type> p(order + 1);
@@ -142,9 +132,7 @@ std::vector<float_type> iir_coeff::p2_to_poly(
     p2[2] = imag(ab[j]);
     tf = partial_convolve(p, p2, m, 3);
     m += 2;
-    for (int i = 0; i < m; i++) {
-      p[i] = tf[i];
-    }
+    for (int i = 0; i < m; i++) { p[i] = tf[i]; }
   }
   return tf;
 }
@@ -229,9 +217,7 @@ void iir_coeff::pz_to_ap() {
   d2 = convolve(fa, a_tf);
 
   // B*B - A*fliplr(A)
-  for (j = 0; j < m; j++) {
-    r[j] = p2[j] - d2[j];
-  }
+  for (j = 0; j < m; j++) { r[j] = p2[j] - d2[j]; }
 
   // Appendix IEEE assp-34, no 2, april 1986, page 360
   q[0] = sqrt(r[0]);

@@ -1,7 +1,5 @@
-#ifndef SPUC_RAISED_COSINE
-#define SPUC_RAISED_COSINE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_functions
 #include <spuc/spuc_types.h>
 #include <spuc/fir_coeff.h>
@@ -27,4 +25,3 @@ template <class T> void raised_cosine(fir_coeff<T>& rcfir, float_type alpha, flo
 }
 
 }  // namespace SPUC
-#endif

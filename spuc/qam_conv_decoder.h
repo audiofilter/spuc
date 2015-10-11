@@ -1,7 +1,5 @@
-#ifndef SPUC_QAM_CONV_DECODER
-#define SPUC_QAM_CONV_DECODER
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -85,4 +83,3 @@ class qam_conv_decoder {
   void clear_soft_decision(long rate);
 };
 }  // namespace SPUC
-#endif

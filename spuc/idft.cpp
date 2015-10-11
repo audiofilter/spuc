@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/spuc_defines.h>
@@ -10,7 +9,7 @@
 #include <spuc/idft.h>
 #include <vector>
 namespace SPUC {
-void idft(std::vector<complex<float_type> > y, int n) {
+void idft(std::vector<complex<float_type> >& y, int n) {
   int j, l;
 
   /*  n inverse dft length */
@@ -39,7 +38,7 @@ void idft(std::vector<complex<float_type> > y, int n) {
   for (i = 0; i < n; i++) y[i] = scale * y[i];
 #endif
 }
-void dft(std::vector<complex<float_type> > y, int n) {
+void dft(std::vector<complex<float_type> >& y, int n) {
   int j, l;
 
   /*  n inverse dft length */

@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <iostream>
@@ -85,7 +84,9 @@ void bpsk_ber_test::final_results(long received) {
     std::cout << " Errors = " << errors;
     std::cout << " BER = " << (float_type)errors / (float_type)received;
     std::cout << " Elpsd Time = " << difftime(time(NULL), start_time) / 60.0 << "(min)\n";
-  } else { std::cout << "Synchronization with reference PN not found!\n"; }
+  } else {
+    std::cout << "Synchronization with reference PN not found!\n";
+  }
 }
 //
 // Tracks the number of errors since last invocation and

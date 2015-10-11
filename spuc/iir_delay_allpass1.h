@@ -1,18 +1,14 @@
-#ifndef SPUC_IIR_DELAY_ALLPASS1
-#define SPUC_IIR_DELAY_ALLPASS1
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/quant.h>
 #include <spuc/allpass_1.h>
 namespace SPUC {
 //! \file
-//! \brief  Template Class for IIR filter consisting of 2 1st Order Allpass
-// sections
+//! \brief  Template Class for IIR filter consisting of 2 1st Order Allpass sections
 //
-//! \brief  Template Class for IIR filter consisting of 2 1st Order Allpass
-// sections
+//! \brief  Template Class for IIR filter consisting of 2 1st Order Allpass sections
 //
 //! The filter is a combination of 2 Allpass sections of
 //! the form  G(z) =  (a*z*z + 1)/(z*z+a)
@@ -56,4 +52,3 @@ template <class Numeric, class Coeff = float_type> class iir_delay_allpass1 {
 };
 // template_instantiations: long; complex<long>; float_type; complex<float_type>
 }  // namespace SPUC
-#endif

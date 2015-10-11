@@ -1,7 +1,5 @@
-#ifndef SPUC_SIGNBIT
-#define SPUC_SIGNBIT
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -17,4 +15,3 @@ namespace SPUC {
 //! \ingroup template_functions misc
 template <typename T> T signbit(T in) { return (signbitr<T>::signbitd(in)); }
 }  // namespace SPUC
-#endif

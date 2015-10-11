@@ -1,7 +1,5 @@
-#ifndef SPUC_LOOP_FILTER
-#define SPUC_LOOP_FILTER
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -61,4 +59,3 @@ template <class Numeric, class Coeff = double> class loop_filter {
   }
 };
 }  // namespace SPUC
-#endif

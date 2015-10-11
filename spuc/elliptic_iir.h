@@ -1,7 +1,5 @@
-#ifndef SPUC_ELLIPTIC_IIR
-#define SPUC_ELLIPTIC_IIR
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -29,4 +27,3 @@ float_type ellpk(float_type k);
 int ellpj(float_type u, float_type m, float_type& sn, float_type& cn, float_type& dn);
 float_type msqrt(float_type u);
 }  // namespace SPUC
-#endif

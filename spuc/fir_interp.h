@@ -1,14 +1,11 @@
-#ifndef SPUC_FIR_INTERP
-#define SPUC_FIR_INTERP
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/fir.h>
 namespace SPUC {
 //! \file
-//! \brief template class fir_decim based on FIR class, created to support
-// polyphase FIR interpolation
+//! \brief template class fir_decim based on FIR class, created to support polyphase FIR interpolation
 //
 //! \brief template class fir_decim based on FIR class
 //
@@ -85,4 +82,3 @@ template <class Numeric, class Coeff = float_type> class fir_interp : public fir
   }
 };
 }  // namespace SPUC
-#endif

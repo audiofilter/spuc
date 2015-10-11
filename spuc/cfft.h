@@ -1,7 +1,5 @@
-#ifndef SPUC_CFFT
-#define SPUC_CFFT
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -38,10 +36,9 @@ class cfft {
   void fft_func(CPLX *buf, int iflag);
 
  public:
-  cfft(int size,  // size is power of 2
-       float_type scalef1 = 0.5,
-       float_type scalef2 = 1.0,                           // fwd transform scalings
-       float_type scalei1 = 1.0, float_type scalei2 = 1.0  // rev xform
+  cfft(int size,                                            // size is power of 2
+       float_type scalef1 = 0.5, float_type scalef2 = 1.0,  // fwd transform scalings
+       float_type scalei1 = 1.0, float_type scalei2 = 1.0   // rev xform
        );
   ~cfft();
   inline void fft(CPLX *buf)  //! perform forward fft on buffer
@@ -59,4 +56,3 @@ class cfft {
 
 };  // class cfft
 }  // namespace SPUC
-#endif

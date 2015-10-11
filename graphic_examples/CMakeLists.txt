@@ -33,10 +33,10 @@ LINK_DIRECTORIES("/usr/local/lib" )
 
 FOREACH(mod ${TARGETS})
 	SET(SRC test_${mod}.cpp)
-	ADD_EXECUTABLE(gr_${mod}  ${SRC})
-	TARGET_LINK_LIBRARIES(gr_${mod} spuc spuc_filt spuc_types cpplot)
+	ADD_EXECUTABLE(graph_${mod}  ${SRC})
+	TARGET_LINK_LIBRARIES(graph_${mod} spuc spuc_filt spuc_types cpplot)
 	SET(EXECUTABLE_OUTPUT_PATH ../..)
-	INSTALL(TARGETS gr_${mod} DESTINATION "$ENV{HOME}/bin")
+	INSTALL(TARGETS graph_${mod} DESTINATION "$ENV{HOME}/bin")
 ENDFOREACH(mod ${EXTS})
 
 

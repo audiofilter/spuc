@@ -1,7 +1,5 @@
-#ifndef SPUC_SIM_QPSK_VARIABLE
-#define SPUC_SIM_QPSK_VARIABLE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -82,8 +80,7 @@ template <class Numeric> class sim_qpsk_variable {
 #endif
   }
   void loop_init(float_type actual, float_type time_offset = 0) {
-    //  void root_raised_cosine(fir<float_type> rcfir, float_type alpha, int
-    //  rate);
+    //  void root_raised_cosine(fir<float_type> rcfir, float_type alpha, int rate);
     actual_over = actual;
     total_over = (int)actual_over;           // Nearest integer oversampling rate
     tx_time_inc = total_over / actual_over;  // Timing Inc (in 1/total_over samples) for tx
@@ -151,8 +148,7 @@ template <class Numeric> class sim_qpsk_variable {
     RECEIVER->clock(b);
     if (RECEIVER->symclk()) rcv_symbols++;
     // Analog AGC circuitry
-    //  analog_agc = analog_filter_gain*analog_agc +
-    //  analog_agc_gain*(2*RECEIVER->agc_out()-1);
+    //  analog_agc = analog_filter_gain*analog_agc + analog_agc_gain*(2*RECEIVER->agc_out()-1);
     //  agc_scale += 0.01*analog_agc; // integrator!
   }
   void step(void) {
@@ -171,4 +167,3 @@ template <class Numeric> class sim_qpsk_variable {
   }
 };
 }  // namespace SPUC
-#endif

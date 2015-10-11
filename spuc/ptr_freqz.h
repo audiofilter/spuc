@@ -1,6 +1,5 @@
-#ifndef SPUC_PTR_FREQZ
-#define SPUC_PTR_FREQZ
-// Copyright (c) 1993-2007 Tony Kirke
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_template_array_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -130,4 +129,3 @@ template <class T> void ptr_freqz_fir(complex<float_type>* f, T* x, int N, int p
   }
 }
 }  // namespace SPUC
-#endif

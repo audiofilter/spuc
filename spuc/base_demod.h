@@ -1,7 +1,5 @@
-#ifndef SPUC_BASE_DEMOD
-#define SPUC_BASE_DEMOD
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <spuc/builtin.h>
@@ -31,4 +29,3 @@ template <class Numeric> class base_demod {
   char* vers;
 };
 }  // namespace SPUC
-#endif

@@ -1,7 +1,5 @@
-#ifndef SPUC_LAGRANGE
-#define SPUC_LAGRANGE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -106,8 +104,7 @@ template <class Numeric, class Coeff = float_type> class lagrange {
     output = Q(sum);
     return (output);
   }
-  //! Rephase => recalculate coefficients and output  for new offset (for
-  // upsampling)
+  //! Rephase => recalculate coefficients and output  for new offset (for upsampling)
   Numeric rephase(float_type offset) {
     // Calculate coefficients
     calculate_coeff(offset);
@@ -140,4 +137,3 @@ template <class Numeric, class Coeff = float_type> class lagrange {
 };
 // template_instantiations: long; complex<long>; float_type; complex<float_type>
 }  // namespace SPUC
-#endif

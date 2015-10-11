@@ -1,7 +1,5 @@
-#ifndef SPUC_ALLPASS_2ND
-#define SPUC_ALLPASS_2ND
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -92,4 +90,3 @@ template <class Numeric, class Coeff = float_type> class allpass_2nd {
   }
 };
 }  // namespace SPUC
-#endif

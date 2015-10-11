@@ -1,7 +1,5 @@
-#ifndef SPUC_CONVOLVE
-#define SPUC_CONVOLVE
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_array_functions
 #include <spuc/spuc_types.h>
 #include <vector>
@@ -28,4 +26,3 @@ template <class T> std::vector<T> convolve(const std::vector<T>& x, const std::v
   return (c);
 }
 }  // namespace SPUC
-#endif

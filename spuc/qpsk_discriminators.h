@@ -1,18 +1,14 @@
-#ifndef SPUC_QPSK_DISCRIMINATORS
-#define SPUC_QPSK_DISCRIMINATORS
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
 #include <spuc/delay.h>
 namespace SPUC {
 //! \file
-//! \brief A Class incorporating several symbol and carrier discriminators for
-// QPSK
+//! \brief A Class incorporating several symbol and carrier discriminators for QPSK
 //
-//! \brief A Class incorporating several symbol and carrier discriminators for
-// QPSK
+//! \brief A Class incorporating several symbol and carrier discriminators for QPSK
 //
 //! \author Tony Kirke
 //! \ingroup classes comm
@@ -37,4 +33,3 @@ class qpsk_discriminators {
   long pll_disc(void);
 };
 }  // namespace SPUC
-#endif

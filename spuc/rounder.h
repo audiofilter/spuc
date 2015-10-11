@@ -1,7 +1,5 @@
-#ifndef SPUC_ROUNDER
-#define SPUC_ROUNDER
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_template_functors
 #include <spuc/spuc_types.h>
 #include <cmath>
@@ -20,4 +18,3 @@ template <typename T> class rounder<complex<T> > {
   }
 };
 }  // namespace SPUC
-#endif

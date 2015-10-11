@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/spuc_defines.h>
@@ -38,7 +37,9 @@ void ofdm_data_encoder::get_data_frame() {
 
   raw_bits_this_frame = 0;
   for (j = 0; j < coded_bits_per_frame; j++) {
-    if (no_conv) { data_enc = CONV.get_data(); } else {
+    if (no_conv) {
+      data_enc = CONV.get_data();
+    } else {
       data_enc = CONV.conv_encoder(enc_rate);
     }
     interleaver_in[j] = data_enc;

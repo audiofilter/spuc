@@ -1,7 +1,5 @@
-#ifndef SPUC_BAUD_EQ_ENV
-#define SPUC_BAUD_EQ_ENV
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_complex_templates
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -17,11 +15,9 @@
 #include <spuc/mle.h>
 namespace SPUC {
 //! \file
-//! \brief  Class for doing a simulation of an equalizer running at 1
-// sample/symbol
+//! \brief  Class for doing a simulation of an equalizer running at 1 sample/symbol
 //
-//! \brief  Class for doing a simulation of an equalizer running at 1
-// sample/symbol
+//! \brief  Class for doing a simulation of an equalizer running at 1 sample/symbol
 //
 //! \author Tony Kirke
 //! \ingroup complex_templates sim equalizers
@@ -117,4 +113,3 @@ template <class Numeric> class baud_eq_env {
   }
 };
 }  // namespace SPUC
-#endif

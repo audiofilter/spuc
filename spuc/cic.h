@@ -1,7 +1,5 @@
-#ifndef SPUC_CIC
-#define SPUC_CIC
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
@@ -79,4 +77,3 @@ template <class Numeric> class cic {
   }
 };
 }  // namespace SPUC
-#endif

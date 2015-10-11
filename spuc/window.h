@@ -1,13 +1,11 @@
-#ifndef SPUC_WINDOW
-#define SPUC_WINDOW
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_functions
 #include <spuc/spuc_types.h>
 #include <vector>
 namespace SPUC {
 //! \file
-//! \brief Various FIR window functions: hamming,hanning,blackman,kaiser,
-// chebyshev
+//! \brief Various FIR window functions: hamming,hanning,blackman,kaiser, chebyshev
 //
 //! \brief bessel function for kaiser window
 //! \author Tony Kirke
@@ -21,8 +19,7 @@ std::vector<float_type> hamming(long nf, float_type alpha, float_type beta);
 //! \author Tony Kirke
 //!  \ingroup functions fir
 std::vector<float_type> hanning(long nf);
-//! \brief Blackman Window	\f$ w[x] = 0.42 - 0.5*cos(2*\pi*x/nf) +
-// 0.08*cos(2*\pi*x/nf)\f$
+//! \brief Blackman Window	\f$ w[x] = 0.42 - 0.5*cos(2*\pi*x/nf) + 0.08*cos(2*\pi*x/nf)\f$
 //! \author Tony Kirke
 //!  \ingroup functions fir
 std::vector<float_type> blackman(long nf);
@@ -42,4 +39,3 @@ std::vector<float_type> cheby(long nf, long n, long ieo, float_type dp, float_ty
 //!  \ingroup functions fir
 void chebc(float_type nf, float_type dp, float_type df, float_type n, float_type x0);
 }  // namespace SPUC
-#endif

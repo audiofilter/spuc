@@ -1,7 +1,5 @@
-#ifndef SPUC_BUILTIN
-#define SPUC_BUILTIN
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+#pragma once
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_types
 #include <spuc/spuc_types.h>
 #include <iostream>
@@ -94,71 +92,61 @@ template <class T> inline builtin<T> &builtin<T>::operator/=(const builtin<T> &o
 }
 
 /*
-  template <class T> inline builtin<T> & builtin<T>::operator%=(const builtin<T>
-& other)
+  template <class T> inline builtin<T> & builtin<T>::operator%=(const builtin<T> & other)
   {
   value %= other.value;
   return *this;
   }
 
-  template <class T> inline builtin<T> & builtin<T>::operator<<=(const
-builtin<T> & other)
+  template <class T> inline builtin<T> & builtin<T>::operator<<=(const builtin<T> & other)
   {
   value <<= other.value;
   return *this;
   }
 
-  template <class T> inline builtin<T> & builtin<T>::operator>>=(const
-builtin<T> & other)
+  template <class T> inline builtin<T> & builtin<T>::operator>>=(const builtin<T> & other)
   {
   value >>= other.value;
   return *this;
   }
 
-  template <class T> inline builtin<T> & builtin<T>::operator&=(const builtin<T>
-& other)
+  template <class T> inline builtin<T> & builtin<T>::operator&=(const builtin<T> & other)
   {
   value &= other.value;
   return *this;
   }
 
-  template <class T> inline builtin<T> & builtin<T>::operator|=(const builtin<T>
-& other)
+  template <class T> inline builtin<T> & builtin<T>::operator|=(const builtin<T> & other)
   {
   value |= other.value;
   return *this;
   }
 
-  template <class T> inline builtin<T> & builtin<T>::operator^=(const builtin<T>
-& other)
+  template <class T> inline builtin<T> & builtin<T>::operator^=(const builtin<T> & other)
   {
   value ^= other.value;
   return *this;
   }
-template <class T> inline builtin<T> & builtin<T>::operator++(void) // prefix
-++. returns an lvalue.
+template <class T> inline builtin<T> & builtin<T>::operator++(void) // prefix ++. returns an lvalue.
 {
   ++value;
   return *this;
 }
 
-template <class T> inline builtin<T> builtin<T>::operator++(int) // postfix ++.
-returns an rvalue.
+template <class T> inline builtin<T> builtin<T>::operator++(int) // postfix ++. returns an rvalue.
 {
   T result(value);
   value++;
   return result;
 }
 
-template <class T> inline builtin<T> & builtin<T>::operator--(void) // prefix
---. returns an lvalue.
+template <class T> inline builtin<T> & builtin<T>::operator--(void) // prefix --. returns an lvalue.
 {
   --value;
   return *this;
 }
 
-template <class T> inline builtin<T> builtin<T>::operator--(int) // postfix --.
-returns an rvalue.
+template <class T> inline builtin<T> builtin<T>::operator--(int) // postfix --. returns an rvalue.
 {
   T result(value);
   value--;
@@ -230,28 +218,24 @@ template <class T> inline builtin<T> operator/(const builtin<T> &bi1, const buil
 }
 
 /*
-  template <class T> inline builtin<T> operator%(const builtin<T> & bi1, const
-  builtin<T> & bi2)
+  template <class T> inline builtin<T> operator%(const builtin<T> & bi1, const builtin<T> & bi2)
   {
   return ((T) bi1) % ((T) bi2);
   }
 
-  template <class T> inline builtin<T> operator&(const builtin<T> & bi1, const
-  builtin<T> & bi2)
+  template <class T> inline builtin<T> operator&(const builtin<T> & bi1, const builtin<T> & bi2)
   {
   return ((T) bi1) & ((T) bi2);
 
   }
 
-  template <class T> inline builtin<T> operator^(const builtin<T> & bi1, const
-  builtin<T> & bi2)
+  template <class T> inline builtin<T> operator^(const builtin<T> & bi1, const builtin<T> & bi2)
   {
   return ((T) bi1) ^ ((T) bi2);
 
   }
 
-  template <class T> inline builtin<T> operator|(const builtin<T> & bi1, const
-  builtin<T> & bi2)
+  template <class T> inline builtin<T> operator|(const builtin<T> & bi1, const builtin<T> & bi2)
   {
   return ((T) bi1) | ((T) bi2);
 
@@ -342,4 +326,3 @@ BUILTIN_OPS(Int, Double, double)
 #endif
 
 }  // namespace SPUC
-#endif

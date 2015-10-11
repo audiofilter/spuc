@@ -1,9 +1,9 @@
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/find_roots.h>
 namespace SPUC {
 /* Copyright (C) 1981-1999 Ken Turkowski. <turk_at_computer.org>
- * Modified by 2014, Tony Kirke.
  *
  * All rights reserved.
  *
@@ -75,8 +75,7 @@ std::vector<complex<float_type> > find_roots(const std::vector<float_type>& a, l
   for (j = n; j >= 0; j--) h[2 + j] = a[m++];
 
   t = 1;
-  //  K = pow((float_type)10.0, (float_type)(fig));				/* Relative accuracy
-  //  */
+  //  K = pow((float_type)10.0, (float_type)(fig));				/* Relative accuracy */
 
   for (; h[2 + n] == 0.0; n--) { /* Look for zero high-order coeff. */
     roots[n] = complex<float_type>(0.0, 0.0);

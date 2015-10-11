@@ -1,5 +1,4 @@
-
-// Copyright (c) 2014, Tony Kirke. License: MIT License (http://www.opensource.org/licenses/mit-license.php)
+// Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/complex.h>
@@ -66,7 +65,9 @@ long qpsk_discriminators::symbol_lock_out() {
 //*******************************************************************************
 long qpsk_discriminators::pll_disc() {
   complex<long> ldata = saturate(data, 4);
-  if (bpsk_mode) { return (bpsk_dd_phase(ldata, decision)); } else {
+  if (bpsk_mode) {
+    return (bpsk_dd_phase(ldata, decision));
+  } else {
     return (qpsk_dd_phase(ldata, decision));
   }
 }
