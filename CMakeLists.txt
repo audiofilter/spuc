@@ -77,6 +77,10 @@ spuc/timing_nco.cpp
 spuc/vco.cpp
 spuc/window.cpp
 spuc/utils.cpp
+spuc/xcorr.cpp
+spuc/bartlett.cpp
+spuc/hamming.cpp
+spuc/rotate90.cpp
 )
 
 
@@ -95,6 +99,7 @@ spuc/qam_mod.cpp
 spuc/qam_soft_decision.cpp
 spuc/qpsk_ber_test.cpp
 spuc/qpsk_discriminators.cpp
+spuc/fm_discriminator.cpp
 spuc/viterbi.cpp
 )
 
