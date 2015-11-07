@@ -4,15 +4,13 @@ SPUC - Signal Processing Using C++
 ### Build status - Mac Os X, clang
 [![Build Status](https://travis-ci.org/audiofilter/spuc.png)](https://travis-ci.org/audiofilter/spuc)
 
-[![Gitter chat](https://badges.gitter.im/audiofilter/spuc.png)](https://gitter.im/audiofilter/spuc)
-
 This is an update of code that has been on sourceforge for about 14 years. The genesis of this code goes back even further - before decent C++ template support and availability of a useful complex class.
 
 **Note: boost no longer required, unless building python extensions**
 
-**This code base is no longer being updated, there are known bugs in the IIR filters and window functions **
+**This code base is no longer being updated, there are known bugs in the IIR filters and window functions**
 
-**For bug fixes on these block please see spuce
+**For bug fixes on these block please see spuce**
 
 **Also most files now use MIT License (check each file)**
 
