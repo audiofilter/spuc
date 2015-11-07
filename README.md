@@ -9,6 +9,8 @@ SPUC - Signal Processing Using C++
 This is an update of code that has been on sourceforge for about 14 years. The genesis of this code goes back even further - before decent C++ template support and availability of a useful complex class.
 
 **Note: boost no longer required, unless building python extensions**
+**This code base is no longer being updated, there are known bugs in the IIR filters and window functions **
+**For bug fixes on these block please see spuce
 
 **Also most files now use MIT License (check each file)**
 
@@ -37,9 +39,8 @@ SPUC_QPSK - QPSK simulation
 SPUC_FIXED - Fixed point class similiar to SystemC
 [![Build Status](https://travis-ci.org/audiofilter/spuc_fixed.png)](https://travis-ci.org/audiofilter/spuc_fixed)
 
-SPUC_FILTER - Demo of QT based GUI filter design based on SPUCLIB
-[![Build Status](https://travis-ci.org/audiofilter/spuc_filter.png)](https://travis-ci.org/audiofilter/spuc_filter)
-
+SPUCE - Update of spuc. At this point FIRs,IIRs and Windows supported. Includes QT Examples
+[![Build Status](https://travis-ci.org/audiofilter/spuce.png)](https://travis-ci.org/audiofilter/spuce)
 
 ----
 
