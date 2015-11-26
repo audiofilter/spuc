@@ -7,10 +7,7 @@ namespace SPUC {
 //! \file
 //! \brief Compute the autocorrelation of the Vector
 //
-//! \brief Compute the autocorrelation of the Vector
-//
 //! \author Tony Kirke,  Copyright(c) 2001
-//! \author Tony Kirke
 //! \ingroup template_array_functions misc
 template <class T> std::vector<T> auto_corr(const std::vector<T>& x) {
   int i, j;
