@@ -6,7 +6,7 @@
 #include <spuc/spuc_math.h>
 #include <iostream>
 #include <fstream>
-#include <spuc/idft.h>
+#include <spuc/dsp_functions/idft.h>
 #include <vector>
 namespace SPUC {
 void idft(std::vector<complex<float_type> >& y, int n) {

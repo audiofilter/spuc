@@ -27,11 +27,12 @@ SET(TYPE_SRCS
 )
 
 SET(SPUC_SRCS 
+  spuc/dsp_functions/cfft.cpp
+  spuc/dsp_functions/idft.cpp
+  spuc/dsp_functions/fft.cpp
+  spuc/dsp_functions/ifft.cpp
+  spuc/dsp_functions/xcorr.cpp
   spuc/bit_scrambler.cpp
-  spuc/cfft.cpp
-  spuc/idft.cpp
-  spuc/fft.cpp
-  spuc/ifft.cpp
   spuc/max_pn.cpp
   spuc/misc.cpp
   spuc/nco.cpp
@@ -41,7 +42,6 @@ SET(SPUC_SRCS
   spuc/timing_nco.cpp
   spuc/vco.cpp
   spuc/utils.cpp
-  spuc/xcorr.cpp
 )
 
 

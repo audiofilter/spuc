@@ -8,8 +8,6 @@ namespace SPUC {
 //! \file
 //! \brief  General Purpose C++ complex FFT Transform
 //
-//! \brief  General Purpose C++ complex FFT Transform
-//
 //! This is a general-purpose C++ complex FFT transform class.
 //! it is defined as a template over a complex type. For instance,
 //! if using gnu gcc, the complex type is
@@ -26,7 +24,7 @@ namespace SPUC {
 //!  ComPlex::operator @ (CPLX , CPLX )	[ where @ =* + - ]
 //! \author Tony Kirke
 //!  \ingroup classes misc
-typedef complex<float_type> CPLX;
+typedef std::complex<float_type> CPLX;
 class cfft {
   int N, log2N;           //! these define size of FFT buffer
   CPLX *w;                //! array [N/2] of cos/sin values
