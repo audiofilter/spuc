@@ -2,7 +2,7 @@
 //! \author Tony Kirke
 // from directory: spuc_src
 #include <spuc/complex.h>
-#include <spuc/spuc_math.h>
+#include <spuc/dsp_functions/spuc_math.h>
 #include <spuc/quant.h>
 #include <spuc/bpsk_dd_phase.h>
 #include <spuc/qpsk_dd_phase.h>

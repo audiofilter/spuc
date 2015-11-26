@@ -4,7 +4,7 @@
 #include <cmath>
 #include <spuc/fading_channel.h>
 #include <spuc/complex.h>
-#include <spuc/spuc_math.h>
+#include <spuc/dsp_functions/spuc_math.h>
 #include <vector>
 namespace SPUC {
 void fading_channel::setup(float_type norm_delay_spread) {

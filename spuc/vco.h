@@ -3,7 +3,7 @@
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
-#include <spuc/spuc_math.h>
+#include <spuc/dsp_functions/spuc_math.h>
 namespace SPUC {
 //! \file
 //! \brief VCO

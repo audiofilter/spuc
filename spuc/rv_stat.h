@@ -2,11 +2,9 @@
 // Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
-#include <spuc/spuc_math.h>
+#include <spuc/dsp_functions/spuc_math.h>
 namespace SPUC {
 //! \file
-//! \brief a basic random Variable Statistics Class
-//
 //! \brief a basic random Variable Statistics Class
 //
 //! \author Tony Kirke

@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <spuc/qpsk_ber_test.h>
 #include <spuc/complex.h>
-#include <spuc/spuc_math.h>
+#include <spuc/dsp_functions/spuc_math.h>
 namespace SPUC {
 void qpsk_ber_test::print_running_ber(void) {
   long sym_int = interval;

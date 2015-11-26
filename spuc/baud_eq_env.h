@@ -5,7 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-#include <spuc/spuc_math.h>
+#include <spuc/dsp_functions/spuc_math.h>
 #include <cmath>
 #include <spuc/complex.h>
 #include <spuc/max_pn.h>
