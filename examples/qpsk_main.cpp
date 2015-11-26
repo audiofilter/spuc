@@ -59,13 +59,8 @@ int main(int argc, char *argv[])
 	}
 
 	float_type actual_over=2.00;
-#ifdef USEFP
-	cout << "Using Template type LONG\n";
-	sim_qpsk<long> Environment;
-#else
 	cout << "Using Template type DOUBLE/FLOAT\n";
-	sim_qpsk<float_type> Environment;
-#endif
+	sim_qpsk<double> Environment;
 	//	long rcv_symbols=0;
 	long symbols=0;
 
@@ -115,7 +110,7 @@ int main(int argc, char *argv[])
 #endif
 #ifndef NOFREQC
 	  if (Environment.rcv_symbols == CAR_LOOP_ON) {
-		Environment.RECEIVER.carrier_loop_filter.k1_en = 
+      Environment.RECEIVER.carrier_loop_filter.k1_en = 
 		  Environment.RECEIVER.carrier_loop_filter.k0_en = 1;
 	  }
 #endif
@@ -123,7 +118,7 @@ int main(int argc, char *argv[])
 	  if (Environment.RECEIVER.symclk()==1) {
 		if (Environment.rcv_symbols > WAITSYMBOLS )  {                    
 		  // Get I,Q data output from Chip
-		  complex<long> data = Environment.RECEIVER.data();  
+      std::complex<long> data = Environment.RECEIVER.data();  
 		  Environment.BER_mon.synchronize(&symbols,data);
 		  // Correlate with reference PN
 		  if (Environment.BER_mon.found_sync()) Environment.BER_mon.ber_results(symbols++); 

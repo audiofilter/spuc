@@ -7,7 +7,9 @@ float_type fm_discriminator::sample(complex<float_type> c) {
   float_type new_phase = 0;
   float_type delta_phase = 0;
 
+#ifdef USE_SPUC_COMPLEX
   new_phase = arg(c);
+#endif
   if (new_phase > PI) new_phase -= TWOPI;
 
   delta_phase = new_phase - phase;

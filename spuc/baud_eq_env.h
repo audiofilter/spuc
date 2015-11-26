@@ -59,10 +59,10 @@ template <class Numeric> class baud_eq_env {
   void loop_init(long equalizer_type, long data_delay, float_type delay_spread) {
     long mlse_len;
     int i;
-    fir<Numeric, Numeric> cir(paths);
+    spuce::fir<Numeric, Numeric> cir(paths);
     output_delay = data_delay;
     eq_type = equalizer_type;
-    var = sqrt(2.0) * pow(10.0, -0.05 * snr);  // Unfiltered noise std dev
+    var = std::sqrt(2.0) * pow(10.0, -0.05 * snr);  // Unfiltered noise std dev
     BER_mon = new bpsk_ber_test;
     tx_data_source = new max_pn;
     multipaths = new fading_channel(paths, delay_spread);
@@ -70,10 +70,10 @@ template <class Numeric> class baud_eq_env {
 
     // PICK EQUALIZER Type
     DUT = new mle<Numeric>((char)(mlse_len));
-    multipaths->exp_decay.coeff[0] = 0.9;
-    multipaths->exp_decay.coeff[1] = 0.1;
+    multipaths->exp_decay.settap(0, 0.9);
+    multipaths->exp_decay.settap(1, 0.1);
     // Copy from multipaths (change type if necessary!!!!!!!!!)
-    for (i = 0; i < paths; i++) { cir.settap(i, multipaths->exp_decay.coeff[i]); }
+    for (i = 0; i < paths; i++) { cir.settap(i, multipaths->exp_decay.gettap(i)); }
 
 #ifndef NEWNOISE
     n = new noise;

@@ -14,8 +14,6 @@ namespace SPUC {
 //! \file
 //! \brief  A Class for simulating a variable rate QPSK system
 //
-//! \brief  A Class for simulating a variable rate QPSK system
-//
 //! that includes transmitters, receivers, frequency offsets,
 //! gaussian noise, and a BER tester
 //! Based on sim_qpsk with some minor changes.
@@ -23,8 +21,7 @@ namespace SPUC {
 //! \ingroup real_templates sim examples
 template <class Numeric> class sim_qpsk_variable {
  public:
-  typedef typename fundtype<Numeric>::ftype CNumeric;
-  typedef complex<CNumeric> complex_type;
+  typedef std::complex<Numeric> complex_type;
 
   qpsk_ber_test* BER_mon;
   quad_data<float_type>* tx_data_source;
@@ -32,21 +29,21 @@ template <class Numeric> class sim_qpsk_variable {
   noise* n;
   qpsk_variable<Numeric>* RECEIVER;
 
-  long num;
+  int64_t num;
   float_type var;
   float_type snr;
   float_type timing_offset;
-  long total_over;
+  int64_t total_over;
 
-  complex<float_type> data;
-  complex<float_type> base;
-  complex<float_type> main;
-  complex<float_type> b_noise;  // Noise
+  std::complex<float_type> data;
+  std::complex<float_type> base;
+  std::complex<float_type> main;
+  std::complex<float_type> b_noise;  // Noise
 
   float_type sum_s;  // Signal sum for Es/No estimation
   float_type sum_n;  // Noise sum for Es/No estimation
-  long rcv_symbols;  // Number of symbols decoded
-  long count;        // index of sample number at input rate
+  int64_t rcv_symbols;  // Number of symbols decoded
+  int64_t count;        // index of sample number at input rate
   int dec_rate_log;
   float_type resample_over;
   // AGC stuff
@@ -60,13 +57,13 @@ template <class Numeric> class sim_qpsk_variable {
   float_type actual_over;
   float_type tx_time_inc;
   int rc_delay;
-  long symbol_nco_word;
+  int64_t symbol_nco_word;
 
   sim_qpsk_variable(void) {
     snr = 6.0;
     timing_offset = 0.0;
-    data = complex<float_type>(1, 1);
-    base = complex<float_type>(0, 0);
+    data = std::complex<float_type>(1, 1);
+    base = std::complex<float_type>(0, 0);
     rcv_symbols = 0;
     count = 0;
     dec_rate_log = 0;
@@ -86,7 +83,7 @@ template <class Numeric> class sim_qpsk_variable {
     tx_time_inc = total_over / actual_over;  // Timing Inc (in 1/total_over samples) for tx
     dec_rate_log = (int)floor(log(actual_over / 2.0) / log(2.0));
     resample_over = actual_over / (1 << dec_rate_log);
-    var = sqrt(0.5 * actual_over) * pow(10.0, -0.05 * snr);  // Unfiltered noise std dev
+    var = std::sqrt(0.5 * actual_over) * pow(10.0, -0.05 * snr);  // Unfiltered noise std dev
     BER_mon = new qpsk_ber_test;
     tx_data_source = new quad_data<float_type>(total_over);
     freq_offset = new vco<float_type>;
@@ -116,7 +113,7 @@ template <class Numeric> class sim_qpsk_variable {
 #ifndef NOTIME
     resample_over *= 1.0001;  // 100 ppm timing error (internal clock faster than reference)
 #endif
-    symbol_nco_word = (long)floor(resample_over * (1 << 14));  // This should be related to total_over + offset
+    symbol_nco_word = (int64_t)floor(resample_over * (1 << 14));  // This should be related to total_over + offset
     RECEIVER->rate_change.symbol_nco.reset_frequency(symbol_nco_word);
     // Change Carrier loop gain (from default) based on oversampling rate.
     RECEIVER->carrier_loop_filter.k0 -= dec_rate_log;
@@ -143,7 +140,7 @@ template <class Numeric> class sim_qpsk_variable {
     // AGC
     base *= agc_scale;
   }
-  void rx_step(complex<CNumeric> b) {
+  void rx_step(std::complex<Numeric> b) {
     // Clock IC
     RECEIVER->clock(b);
     if (RECEIVER->symclk()) rcv_symbols++;

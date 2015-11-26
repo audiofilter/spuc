@@ -3,7 +3,6 @@
 // from directory: spuc_template_functions
 #include <spuc/spuc_types.h>
 #include <cmath>
-#include <spuc/base_type.h>
 #include <spuc/conjr.h>
 namespace SPUC {
 //! \file

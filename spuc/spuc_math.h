@@ -11,15 +11,15 @@ namespace SPUC {
 //! \brief sqrt
 //! \author Tony Kirke
 //! \ingroup functions functions
-float_type sqrt(float_type x);
+//float_type sqrt(float_type x);
 //! \brief sqrt
 //! \author Tony Kirke
 //! \ingroup functions functions
-complex<float_type> sqrt(complex<float_type> x);
+//complex<float_type> sqrt(complex<float_type> x);
 //! \brief sqrt
 //! \author Tony Kirke
 //! \ingroup functions functions
-complex<float_type> sqrt(complex<long> x);
+//complex<float_type> sqrt(complex<long> x);
 //! function for hyperbolic inverse cosine of x
 //! \author Tony Kirke
 //! \ingroup functions functions
@@ -39,7 +39,7 @@ float_type sinh(float_type x);
 //! cos function with various overloads
 //! \author Tony Kirke
 //! \ingroup functions functions
-float_type cos(float_type cos);
+//float_type cos(float_type cos);
 //! cos function with various overloads
 //! \author Tony Kirke
 //! \ingroup functions functions
@@ -51,7 +51,7 @@ complex<float_type> exp(complex<float_type> x);
 //! magnitude of a complex number
 //! \author Tony Kirke
 //! \ingroup functions functions
-inline float_type hypot(complex<float_type> z) { return sqrt(magsq(z)); }
+//inline float_type hypot(complex<float_type> z) { return std::sqrt(norm(z)); }
 //! convert from polar to cartesian
 //! \author Tony Kirke
 //! \ingroup functions functions

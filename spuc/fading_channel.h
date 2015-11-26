@@ -3,7 +3,7 @@
 // from directory: spuc_classes
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
-#include <spuc/fir.h>
+#include <spuce/filters/fir.h>
 #include <spuc/noise.h>
 namespace SPUC {
 //! \file
@@ -20,7 +20,7 @@ namespace SPUC {
 //!  \ingroup classes sim comm
 class fading_channel {
  public:
-  fir<complex<float_type>, complex<float_type> > exp_decay;
+  spuce::fir<complex<float_type>, complex<float_type> > exp_decay;
   long taps;
   float_type delay_spread;
   noise tap_gain;

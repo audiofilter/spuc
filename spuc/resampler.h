@@ -5,7 +5,7 @@
 #include <spuc/complex.h>
 #include <spuc/iir_allpass1_halfband.h>
 #include <spuc/timing_nco.h>
-#include <spuc/lagrange.h>
+#include <spuce/filters/lagrange.h>
 namespace SPUC {
 //! \file
 //! \brief A resampling block using interpolator, halfband filter and NCO
@@ -29,7 +29,7 @@ template <class Numeric> class resampler {
  public:
   bool ready;
   long sample2;
-  lagrange<Numeric> interp;
+  spuce::lagrange<Numeric> interp;
   timing_nco symbol_nco;  //! Symbol NCO
   Numeric resampled;
   iir_allpass1_halfband<Numeric> half;  //! Halfband filter (decimate by 2)

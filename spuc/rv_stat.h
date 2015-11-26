@@ -35,14 +35,14 @@ class rv_stat {
     else
       return (0);
   }
-  inline float_type rms() { return (sqrt(sq / count)); }
+  inline float_type rms() { return (std::sqrt(sq / count)); }
   inline float_type var() {
     if (count > 0)
       return (sq / count - (av * av / (count * count)));
     else
       return (0);
   }
-  inline float_type std() { return (sqrt(var())); }
+  inline float_type std() { return (std::sqrt(var())); }
   inline float_type minimum() { return (min_abs); }
   inline float_type maximum() { return (max_abs); }
 };

@@ -1,7 +1,7 @@
 #pragma once
 // Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 // from directory: spuc_include
-#ifdef USE_STD_COMPLEX
+#ifndef USE_SPUC_COMPLEX
 #include <complex>
 using std::complex;
 #endif
@@ -32,7 +32,7 @@ template <class T> class signbitr;
 template <class T> class quantizer;
 
 template <class T> class builtin;
-#ifndef USE_STD_COMPLEX
+#ifdef USE_SPUC_COMPLEX
 template <typename T> T conj(T in);
 template <class T> class complex;
 #endif

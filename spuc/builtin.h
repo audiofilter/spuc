@@ -1,16 +1,11 @@
 #pragma once
 // Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
-// from directory: spuc_types
 #include <spuc/spuc_types.h>
 #include <iostream>
 #include <spuc/spuc_defines.h>
 namespace SPUC {
-
 //! \file
 //! \brief Wrapper around built-in types to allow custom manipulations
-//
-//! \brief Wrapper around built-in types to allow custom manipulations
-//
 //! \author Tony Kirke
 //! \ingroup types base
 template <class T> class builtin {

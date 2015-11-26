@@ -3,7 +3,7 @@
 // from directory: spuc_templates
 #include <spuc/spuc_types.h>
 #include <spuc/delay.h>
-#include <spuc/cic.h>
+#include <spuce/filters/cic.h>
 namespace SPUC {
 //! \file
 //! \brief Implementation for sharped cascaded integrator comb filter
@@ -16,8 +16,8 @@ template <class Numeric> class scic {
  protected:
   long max_rate;
   char stages;
-  cic<Numeric> main;
-  cic<Numeric> sub;
+  spuce::cic<Numeric> main;
+  spuce::cic<Numeric> sub;
   delay<Numeric> dly;
 
  public:

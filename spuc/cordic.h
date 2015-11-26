@@ -48,7 +48,7 @@ template <class Numeric> class cordic {
   // Each stage shifts by either a positive or negative angle.
   complex<Numeric> rotate(complex<Numeric> in, float_type angle) {
     int i;
-    complex<Numeric> shift_in = (in << stages);
+    complex<Numeric> shift_in = (long(1 << stages)) * in;
     // Initial rotation, with left shift
     if (angle > PI) {
       stage[0] = -shift_in;
@@ -65,7 +65,7 @@ template <class Numeric> class cordic {
     // Subsequent rotations, with right shifts
     for (i = 0; i <= stages; i++) {
       long sign = (angle < 0) ? -1 : 1;
-      complex<Numeric> shift_stage = (stage[i + 1] >> i);
+      complex<Numeric> shift_stage = complex<Numeric>(std::real(stage[i + 1]) >> i, std::imag(stage[i + 1]) >> i);
       stage[i + 2] = complex<Numeric>(real(stage[i + 1]) - sign * (imag(shift_stage)),
                                       imag(stage[i + 1]) + sign * (real(shift_stage)));
       angle -= sign * arctan_lut[i];

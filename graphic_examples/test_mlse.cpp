@@ -1,6 +1,6 @@
 #include <spuc/max_pn.h>
 #include <spuc/delay.h>
-#include <spuc/fir.h>
+#include <spuce/filters/fir.h>
 #include <spuc/mle.h>
 #include <spuc/noise.h>
 #include <iostream>
@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
 	max_pn pn(0x006d, 63, -1);  // Maximal length PN sequence for data
 	char data=-1;
 	char taps=3;
-	fir<float_type,float_type> tx_fir(taps);
+    spuce::fir<float_type,float_type> tx_fir(taps);
 	float_type tx_data,rx_data;
 	long path_out;
 	bool bit_out;
@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
 	
 	// Pre-set Taps as would occur during 'training'
 	for (i=0;i<taps;i++) {
-		viterbi.cfir.settap(i,tx_fir.coeff[i]);
+		viterbi.cfir.settap(i,tx_fir.gettap(i));
 	}
 
 	// Randomized levels
