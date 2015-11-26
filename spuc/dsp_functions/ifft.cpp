@@ -5,23 +5,24 @@
 #include <spuc/spuc_math.h>
 #include <iostream>
 #include <fstream>
-#include <spuc/fft.h>
+#include <spuc/dsp_functions/ifft.h>
 #include <vector>
 namespace SPUC {
 /* *************************************************************************
-fft - In-place radix 2 decimation in time inverse FFT
+ifft - In-place radix 2 decimation in time inverse FFT
 
 Requires pointer to complex array, x and power of 2 size of FFT, m
 (size of FFT = 2**m).  Places inverse FFT output on top of input
 frequency domain COMPLEX array.
 
-complex<float_type> fft(complex<float_type> *x, int m)
+complex<float_type> ifft(complex<float_type> *x, int m)
 
 *************************************************************************/
-void fft(std::vector<complex<float_type> >& y, int m) {
+void ifft(std::vector<complex<float_type> >& y, int m) {
   complex<float_type> u, temp, tm;
   int wptr;
   int i, j, k, l, le, windex;
+  float_type scale;
 
   /*  n = 2**m = inverse fft length */
   int n = 1 << m;
@@ -30,7 +31,7 @@ void fft(std::vector<complex<float_type> >& y, int m) {
   std::vector<complex<float_type> > x(n + 1);
 
   /*  calculate the w values recursively */
-  complex<float_type> w_inc = expj(-TWOPI / n);
+  complex<float_type> w_inc = expj(TWOPI / n);
   complex<float_type> w_x = w_inc;
 
   for (j = 0; j < le; j++) {
@@ -83,6 +84,8 @@ void fft(std::vector<complex<float_type> >& y, int m) {
     }
   }
 
-  for (i = 0; i < n; i++) y[i] = x[i];
+  /*  scale all results by 1/n */
+  scale = (float_type)(1.0 / n);
+  for (i = 0; i < n; i++) y[i] = scale * x[i];
 }
 }  // namespace SPUC

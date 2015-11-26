@@ -1,9 +1,9 @@
 // Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
-#include <spuc/xcorr.h>
-#include <spuc/fft.h>
-#include <spuc/ifft.h>
+#include <spuc/dsp_functions/xcorr.h>
+#include <spuc/dsp_functions/fft.h>
+#include <spuc/dsp_functions/ifft.h>
 namespace SPUC {
 
 std::vector<double> xcorr(const std::vector<double> &x, unsigned maxlag) {
