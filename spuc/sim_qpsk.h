@@ -79,7 +79,7 @@ template <class Numeric> class sim_qpsk {
     tx_time_inc = total_over / actual_over;
     resample_over = actual_over;
     var = std::sqrt(0.5 * actual_over) * pow(10.0, -0.05 * snr);  // Unfiltered noise std dev
-    //tx_data_source = new quad_data<float_type>(total_over);
+    tx_data_source = new quad_data<float_type>(total_over);
     freq_offset = new vco<float_type>;
     ADC = new a_d(6);
 #ifndef NEWNOISE

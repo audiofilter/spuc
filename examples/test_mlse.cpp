@@ -1,55 +1,82 @@
 #include <spuc/max_pn.h>
 #include <spuc/delay.h>
-#include <spuc/fir.h>
+#include <spuce/filters/fir.h>
 #include <spuc/mle.h>
+#include <spuc/noise.h>
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-using namespace SPUC;
-using namespace std;
-int main(int argv, char* argc[]) {
 
+#include <chrono>
+#include <thread>
+
+using namespace std;
+using namespace SPUC;
+//! \brief testing MLSE, plot error rate vs samples as random noise is added at random levels
+//
+//! \ingroup examples
+int main(int argc, char* argv[]) {
+
+	const int n=100;
+	std::vector<double> x(n),y(n),z(n);
 	int i;
 	max_pn pn(0x006d, 63, -1);  // Maximal length PN sequence for data
 	char data=-1;
 	char taps=3;
-	fir<float_type,float_type> tx_fir(taps);
+  spuce::fir<float_type,float_type> tx_fir(taps);
 	float_type tx_data,rx_data;
 	long path_out;
 	bool bit_out;
 	bool ref_data;
 	bool ref_dly;
 	long error=0;
-	ofstream resf("mlse.dat");
-	ofstream reff("refmlse.dat");
-	ofstream rawf("raw.dat");
+
+	// Necessary to account for delay through MLSE
 	delay <bool> delayed_ref(34);
+
+	// "Typical" Channel impulse response
 	tx_fir.settap(0,1.0);
 	tx_fir.settap(1,-1.5);
 	tx_fir.settap(2,0.5);
+
+	// The Equalizer
 	mle<float_type> viterbi(taps);
+	
+	// Pre-set Taps as would occur during 'training'
 	for (i=0;i<taps;i++) {
-		viterbi.cfir.settap(i,tx_fir.coeff[i]);
+		viterbi.cfir.settap(i,tx_fir.gettap(i));
 	}
+
+	// Randomized levels
+	noise rando;
 
 	for (i=0;i<20;i++) pn.out();
 
-	for (i=0;i<132;i++) {
+	for (i=0;i<n;i++) x[i] = i;
+	i = 1;
+
+	// Start without noise
+	float_type noise_gain = 0;
+
+	while (1) {
 		data = pn.out(); 
 		ref_data = (data == 1) ? 1 : 0;
 		ref_dly = delayed_ref.update(ref_data);
 		tx_data = tx_fir.update(data);
-		rx_data = tx_data; // + noise?
+		rx_data = tx_data + noise_gain*rando.gauss(); // + noise
 		path_out = viterbi.mlsd(rx_data);
 		bit_out = (path_out & 0x80000000) ? 1 : 0;
-		rawf << rx_data << '\n';
-		reff << ref_dly;
-		resf << bit_out;
 		error += (ref_dly != bit_out);
-		cout << setw(8) << setfill('0') << hex << path_out << ' ' << error << '\n';
+		// fast scrolling but not too fast
+    std::chrono::milliseconds sec(10);
+		std::this_thread::sleep_for(sec);
+		i++;
+		// Randomize noise gain
+		if (i % 400 == 0) {
+			noise_gain = 2.0*rando.uniform();
+			//error = 0; reset error rate
+			std::cout << "Noise gain = " << noise_gain << " BER = " << error/(double)(i) << "\n";
+		}
 	}
-	reff.close();
-	resf.close();
-	rawf.close();
 	return(1);
 }

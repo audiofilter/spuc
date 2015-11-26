@@ -7,6 +7,7 @@ message("Project spuc_examples")
 
 SET(TARGETS
   test_ddfse
+  test_mlse
   test_rls
   )
 

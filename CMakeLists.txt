@@ -79,12 +79,10 @@ install(
 
 option(SPUC_BUILD_ALL "Build everything" OFF)
 option(SPUC_BUILD_EXAMPLES "Build examples" OFF)
-option(SPUC_GRAPHIC_EXAMPLES "Build more examples - requires gl, etc" OFF)
 
 if (SPUC_BUILD_ALL)
 	MESSAGE(STATUS "building everything")
 	set(SPUC_BUILD_EXAMPLES ON)
-	set(SPUC_BUILD_GRAPHIC_EXAMPLES ON)
 else()
 	MESSAGE(STATUS "Not building everything - enable with cmake -DSPUC_BUILD_ALL=ON")
 endif()
@@ -103,10 +101,3 @@ else()
 MESSAGE(STATUS "Not building examples - enable with cmake -DSPUC_BUILD_EXAMPLES=ON")
 endif()
 
-if (SPUC_BUILD_GRAPHIC_EXAMPLES)
-MESSAGE(STATUS "building more examples")
-add_subdirectory(graphic_examples)
-add_subdirectory(cpplot)
-else()
-MESSAGE(STATUS "Not building more examples - enable with cmake -DSPUC_BUILD_GRAPHIC_EXAMPLES=ON")
-endif()
