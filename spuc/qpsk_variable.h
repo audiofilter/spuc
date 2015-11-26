@@ -11,8 +11,8 @@
 #include <spuc/loop_filter.h>
 #include <spuc/vco.h>
 #include <spuc/a_d.h>
-#include <spuc/fir.h>
-#include <spuc/lagrange.h>
+#include <spuce/filters/fir.h>
+#include <spuce/filters/lagrange.h>
 #include <spuc/cordic.h>
 #include <spuc/qpsk_discriminators.h>
 #include <spuc/sum_and_dump.h>
@@ -25,8 +25,6 @@ namespace SPUC {
 //! \file
 //! \brief A QPSK receiver that can operate over a range of non-integer sampling rates
 //
-//! \brief A QPSK receiver that can operate over a range of non-integer sampling rates
-//
 //! ,Symbol timing, frequency control and carrier phase locked loops
 //! are included. Also contains root-raised cosine matched filter,
 //! A/D and agc function.
@@ -34,19 +32,16 @@ namespace SPUC {
 //!  \ingroup real_templates comm examples
 template <class Numeric> class qpsk_variable {
  public:
-  typedef typename fundtype<Numeric>::ftype CNumeric;
-
   a_d ADC;
-  fir<complex<CNumeric>, Numeric> rcv_sqrt_rc;
+  spuce::fir<std::complex<Numeric>, Numeric> rcv_sqrt_rc;
+  spuce::lagrange<std::complex<float_type> > interp;
 
-  lagrange<complex<float_type> > interp;
+  delay<std::complex<Numeric> > final_baseband_delay;
+  delay<std::complex<Numeric> > hard_decision_delay;
+  delay<std::complex<Numeric> > timing_disc_delay;
 
-  delay<complex<CNumeric> > final_baseband_delay;
-  delay<complex<CNumeric> > hard_decision_delay;
-  delay<complex<CNumeric> > timing_disc_delay;
-
-  sum_and_dump<CNumeric> symbol_lock_detect;
-  fir<complex<CNumeric>, Numeric> fmf;
+  sum_and_dump<Numeric> symbol_lock_detect;
+  spuce::fir<std::complex<Numeric>, Numeric> fmf;
 
   agc sigma_delta;
   loop_filter<Numeric> afc_loop_filter;
@@ -63,28 +58,28 @@ template <class Numeric> class qpsk_variable {
   bool symbol_x2_clk_pls;
 
   vco<Numeric> carrier__nco;
-  cordic<CNumeric> cordic_mult;
+  cordic<Numeric> cordic_mult;
 
-  resampler<complex<CNumeric> > rate_change;
+  resampler<std::complex<Numeric> > rate_change;
 
-  long bpsk;
-  long resampler_round;
+  int64_t bpsk;
+  int64_t resampler_round;
   //  Numeric dec_rate_log;
   int sym_dec;
   Numeric carrier_error;
   Numeric symbol_nco_out;
-  complex<CNumeric> hard_decision_prev, final_baseband_prev;
-  complex<long> adc_out;
-  complex<CNumeric> baseband;
-  complex<CNumeric> decimated;
-  complex<CNumeric> decimated_baseband;
-  complex<CNumeric> resampled;
-  complex<CNumeric> carrier_in;
-  complex<CNumeric> carrier_nco_out;
-  complex<CNumeric> mf_in;
-  complex<CNumeric> mf_out;
-  complex<CNumeric> fmf_out;
-  complex<CNumeric> final_baseband;
+  std::complex<Numeric> hard_decision_prev, final_baseband_prev;
+  std::complex<int64_t> adc_out;
+  std::complex<Numeric> baseband;
+  std::complex<Numeric> decimated;
+  std::complex<Numeric> decimated_baseband;
+  std::complex<Numeric> resampled;
+  std::complex<Numeric> carrier_in;
+  std::complex<Numeric> carrier_nco_out;
+  std::complex<Numeric> mf_in;
+  std::complex<Numeric> mf_out;
+  std::complex<Numeric> fmf_out;
+  std::complex<Numeric> final_baseband;
   Numeric timing_error;
   Numeric nda_timing_error;
   Numeric sym_lock;       // from lock discriminator
@@ -92,7 +87,7 @@ template <class Numeric> class qpsk_variable {
   Numeric sym_lock_thres;
   Numeric cp_afc, quad_afc;
   bool afc;
-  complex<CNumeric> hard_decision;
+  std::complex<Numeric> hard_decision;
 
   Numeric qpsk_bpsk_reg;
   Numeric lock_rate_reg;
@@ -100,7 +95,7 @@ template <class Numeric> class qpsk_variable {
 
   Numeric I_data() { return (real(hard_decision)); }
   Numeric Q_data() { return (imag(hard_decision)); }
-  complex<CNumeric> data() { return (hard_decision); }
+  std::complex<Numeric> data() { return (hard_decision); }
   Numeric carrier_loop() { return (carrier_loop_out); }
   Numeric symbol_loop() { return (symbol_loop_out); }
   bool symclk(void) { return (symbol_clk_pls); }
@@ -119,23 +114,26 @@ template <class Numeric> class qpsk_variable {
 
   {
     // CSD Coefficients for alpha = 0.35 root raised cosine fir
-    rcv_sqrt_rc.coeff[4] = 14;
-    rcv_sqrt_rc.coeff[3] = rcv_sqrt_rc.coeff[5] = 8;
-    rcv_sqrt_rc.coeff[2] = rcv_sqrt_rc.coeff[6] = -1;
-    rcv_sqrt_rc.coeff[1] = rcv_sqrt_rc.coeff[7] = -2;
-    rcv_sqrt_rc.coeff[0] = rcv_sqrt_rc.coeff[8] = 1;
+      rcv_sqrt_rc.settap(4,14);
+      rcv_sqrt_rc.settap(3,8);
+      rcv_sqrt_rc.settap(5,8);
+      rcv_sqrt_rc.settap(2,-1);
+      rcv_sqrt_rc.settap(6,-1);
+      rcv_sqrt_rc.settap(1,-2);
+      rcv_sqrt_rc.settap(0,1);
+      rcv_sqrt_rc.settap(8,1);
 
-    fmf.coeff[3] = rcv_sqrt_rc.coeff[5];
-    fmf.coeff[2] = rcv_sqrt_rc.coeff[6];
-    fmf.coeff[1] = rcv_sqrt_rc.coeff[7];
-    fmf.coeff[0] = rcv_sqrt_rc.coeff[8];
-    fmf.coeff[4] = 0;
-    fmf.coeff[5] = -rcv_sqrt_rc.coeff[5];
-    fmf.coeff[6] = -rcv_sqrt_rc.coeff[6];
-    fmf.coeff[7] = -rcv_sqrt_rc.coeff[7];
-    fmf.coeff[8] = -rcv_sqrt_rc.coeff[8];
+      fmf.settap(3, rcv_sqrt_rc.gettap(5));
+      fmf.settap(2, rcv_sqrt_rc.gettap(6));
+      fmf.settap(1, rcv_sqrt_rc.gettap(7));
+      fmf.settap(0, rcv_sqrt_rc.gettap(8));
+      fmf.settap(4,0);
+      fmf.settap(5,-rcv_sqrt_rc.gettap(5));
+      fmf.settap(6,-rcv_sqrt_rc.gettap(6));
+      fmf.settap(7,-rcv_sqrt_rc.gettap(7));
+      fmf.settap(8,-rcv_sqrt_rc.gettap(8));
 
-    //	unsigned long fcw = 1 << (25); for testing
+    //	unsigned int64_t fcw = 1 << (25); for testing
     carrier__nco.reset_frequency(0);
     carrier_error = 0;
     timing_error = 0;
@@ -168,12 +166,12 @@ template <class Numeric> class qpsk_variable {
     sym_lock_thres = 4;
     symbol_lock_detect.set_exp(12);
   }
-  void clock(complex<CNumeric> adc) {
-    long rcfd = 1;  // FMF frequency discriminator
+  void clock(std::complex<Numeric> adc) {
+    int64_t rcfd = 1;  // FMF frequency discriminator
 #ifdef NDA
-    long nda = 1;
+    int64_t nda = 1;
 #else
-    long nda = 0;  // Don't use NDA timing discriminator
+    int64_t nda = 0;  // Don't use NDA timing discriminator
 #endif
 
     // A/D input (assume valid every time step called!
@@ -184,7 +182,7 @@ template <class Numeric> class qpsk_variable {
     if (symbol_clk_pls) carrier__nco.load(carrier_loop_out);
     carrier__nco.clock();
     Numeric carrier_phase = carrier__nco.get_phase();
-    //	long carrier_phase = carrier_nco.run(carrier_loop_out,symbol_x2_clk_pls);
+    //	int64_t carrier_phase = carrier_nco.run(carrier_loop_out,symbol_x2_clk_pls);
 
     baseband = cordic_mult.rotate(adc, carrier_phase);
 #ifdef NODC
@@ -200,8 +198,8 @@ template <class Numeric> class qpsk_variable {
 
     // Processing at Decimated Rate
     if (sample_clk) {
-      // TEMP -> FORCE SYMBOL_LOOP_OUT-> LONG
-      resampled = rate_change.update(decimated, (long)symbol_loop_out, symbol_clk);
+      // TEMP -> FORCE SYMBOL_LOOP_OUT-> INT64_T
+      resampled = rate_change.update(decimated, (int64_t)symbol_loop_out, symbol_clk);
       resampled = round(resampled, resampler_round);
       symbol_x2_clk = rate_change.ready;
 
@@ -233,7 +231,7 @@ template <class Numeric> class qpsk_variable {
           symbol_clk_pls = 1;
           // lock detector
           symbol_lock_detect.input(sym_lock);
-          if ((symbol_lock_detect.output()) > (long)1024 * sym_lock_thres)
+          if ((symbol_lock_detect.output()) > (int64_t)1024 * sym_lock_thres)
             symbol_locked = 1;
           else
             symbol_locked = 0;

@@ -3,7 +3,7 @@
 // from directory: spuc_double_templates
 #include <spuc/spuc_types.h>
 #include <spuc/quant.h>
-#include <spuc/allpass_1.h>
+#include <spuce/filters/allpass_1.h>
 namespace SPUC {
 //! \file
 //! \brief  Template Class for Allpass halfband IIR Filter
@@ -35,12 +35,12 @@ template <class Numeric, class Coeff = float_type> class iir_allpass1_halfband {
   char even;  //! Keeps track of which filter to clock
  protected:
   //! The 2 1st order allpass filters
-  allpass_1<Numeric, Coeff> A0, A1;
+  spuce::allpass_1<Numeric, Coeff> A0, A1;
   //! Individual filter outputs
   Numeric out0, out1;
 
  public:
-  iir_allpass1_halfband(Coeff c0, Coeff c1, long round_bits = 0) : A0(c0, 1, round_bits), A1(c1, 1, round_bits) {
+  iir_allpass1_halfband(Coeff c0, Coeff c1, long round_bits = 0) : A0(c0, 1), A1(c1, 1) {
     even = 0;
   }
   //! reset

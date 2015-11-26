@@ -29,7 +29,7 @@ void fading_channel::generate_channel() {
   }
   // normalize & Divide by 2 (because complex coefficients)
   temp = 0.5 / temp;
-  for (i = 0; i < taps; i++) tap_power[i] = sqrt(temp * tap_power[i]);
+  for (i = 0; i < taps; i++) tap_power[i] = std::sqrt(temp * tap_power[i]);
 
   exp_decay.reset();
 

@@ -5,7 +5,7 @@
 #include <cmath>
 #include <spuc/complex.h>
 #include <spuc/delay.h>
-#include <spuc/fir_adapt.h>
+#include <spuce/filters/fir_adapt.h>
 namespace SPUC {
 //! \file
 //! \brief A Configurable Maximum Likelihood Sequence Estimator Class
@@ -28,7 +28,7 @@ template <class Numeric> class mle {
   const long n_states;               //! Number of states
   const long n_branches;             //! Number of branches
   Numeric fb_est;                    //! Feedback estimator for RSDFSE
-  fir_adapt<Numeric, Numeric> cfir;  //! Channel impulse response
+  spuce::fir_adapt<Numeric, Numeric> cfir;  //! Channel impulse response
   std::vector<Numeric> cir_mlsd;
   std::vector<Numeric> cir_dfe;
   std::vector<Numeric> f_est;  //! Feedforward
@@ -72,14 +72,14 @@ template <class Numeric> class mle {
   //! Update coefficients
   void update_taps_lms(Numeric err) { cfir.update_lms(err); }
   //! Get tap0
-  Numeric tap0(void) { return (cfir.coeff[0]); }
+  Numeric tap0(void) { return (cfir.gettap(0)); }
   //! Copy channel impulse response
-  void set_cir(const fir<Numeric, Numeric>& cir) {
+  void set_cir(const spuce::fir<Numeric, Numeric>& cir) {
     int i;
-    for (i = 0; i < mlsd_span; i++) cir_mlsd[i] = cir.coeff[i];
+    for (i = 0; i < mlsd_span; i++) cir_mlsd[i] = cir.gettap(i);
     for (i = 0; i < dfe_span; i++) {
-      if (i + mlsd_span < cir.num_taps)
-        cir_dfe[i] = cir.coeff[mlsd_span + i];
+        if (i + mlsd_span < cir.number_of_taps())
+          cir_dfe[i] = cir.gettap(mlsd_span + i);
       else
         cir_dfe[i] = (Numeric)0;
     }
@@ -108,9 +108,9 @@ template <class Numeric> class mle {
     for (i = 0; i < num_taps; i++) {
       j >>= 1;
       if ((seq & j) != 0)
-        pred = pred + cfir.coeff[i];
+          pred = pred + cfir.gettap(i);
       else
-        pred = pred - cfir.coeff[i];
+          pred = pred - cfir.gettap(i);
     }
     return (pred);
   }

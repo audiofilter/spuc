@@ -4,7 +4,7 @@
 #ifdef SPUCBOOST
 #include <spuc/spuc_defines.h>
 #include <spuc/builtin.h>
-#include <spuc/base_type.h>
+#include <spuce/base_type.h>
 #include <spuc/fundtype.h>
 #include <spuc/complex.h>
 using namespace SPUC;

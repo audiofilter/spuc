@@ -52,21 +52,6 @@ template <typename T> inline complex<T> reals_only_mult(complex<T> r, complex<T>
   z.im = 0;
   return (z);
 }
-//! only get product of real parts
-template <typename T> inline complex<T> rot90(complex<T> r)
-{
-  complex<T> z;
-  z.im = r.re;
-  z.im = -r.im;
-  return (z);
-}
-template <typename T> inline complex<T> rot270(complex<T> r)
-{
-  complex<T> z;
-  z.im = -r.re;
-  z.im = r.im;
-  return (z);
-}
 //! Approximate magnitude function
 template <typename T> inline T approx_mag(complex<T> x)
 {

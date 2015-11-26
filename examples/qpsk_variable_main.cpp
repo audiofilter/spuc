@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
   }
 
   // Test & I/O setup
-  sim_qpsk_variable<long> Environment;
+  sim_qpsk_variable<double> Environment;
   double actual_over;
   //  long rcv_symbols=0;
   long symbols=0;
@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
 #endif
 	  if (Environment.rcv_symbols > WAITSYMBOLS
 		  || Environment.BER_mon->found_sync())  {                    
-		complex<long> data = Environment.RECEIVER->data();  
+      std::complex<long> data = Environment.RECEIVER->data();  
 		// Get I,Q data output from Chip
 		Environment.BER_mon->synchronize(&Environment.rcv_symbols,data);
 		// Correlate with reference PN

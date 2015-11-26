@@ -1,6 +1,5 @@
 #pragma once
 // Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
-// from directory: spuc_real_templates
 #include <spuc/spuc_types.h>
 #include <spuc/spuc_defines.h>
 #include <cmath>
@@ -11,9 +10,9 @@
 #include <spuc/loop_filter.h>
 #include <spuc/nco.h>
 #include <spuc/a_d.h>
-#include <spuc/fir.h>
-#include <spuc/root_raised_cosine.h>
-#include <spuc/lagrange.h>
+#include <spuce/filters/fir.h>
+#include <spuce/filters/root_raised_cosine.h>
+#include <spuce/filters/lagrange.h>
 #include <spuc/dd_symbol.h>
 #include <spuc/qpsk_quadricorrelator.h>
 #include <spuc/bpsk_quadricorrelator.h>
@@ -55,40 +54,40 @@ template <class Numeric> class qpsk {
 
   vco<Numeric> c_nco;
 
-  fir<complex<CNumeric>, long> rcv_sqrt_rc;
+  spuce::fir<std::complex<Numeric>, int64_t> rcv_sqrt_rc;
 
-  delay<complex<CNumeric> > final_baseband_delay;
-  delay<complex<CNumeric> > hard_decision_delay;
-  delay<complex<CNumeric> > timing_disc_delay;
+  delay<std::complex<Numeric> > final_baseband_delay;
+  delay<std::complex<Numeric> > hard_decision_delay;
+  delay<std::complex<Numeric> > timing_disc_delay;
 
-  long bpsk;
-  long dec_rate_log;
+  int64_t bpsk;
+  int64_t dec_rate_log;
   Numeric carrier_error;
   Numeric symbol_nco_out;
-  complex<CNumeric> prev_sam, prev_sym;
-  complex<CNumeric> decision;
-  complex<CNumeric> hard_decision_prev, final_baseband_prev;
-  complex<CNumeric> baseband;
-  complex<CNumeric> resampled;
-  complex<CNumeric> carrier_in;
-  complex<CNumeric> carrier_nco_out;
-  complex<CNumeric> mf_in;
-  complex<CNumeric> mf_out;
-  complex<CNumeric> final_baseband;
-  complex<CNumeric> hard_decision;
+  std::complex<Numeric> prev_sam, prev_sym;
+  std::complex<Numeric> decision;
+  std::complex<Numeric> hard_decision_prev, final_baseband_prev;
+  std::complex<Numeric> baseband;
+  std::complex<Numeric> resampled;
+  std::complex<Numeric> carrier_in;
+  std::complex<Numeric> carrier_nco_out;
+  std::complex<Numeric> mf_in;
+  std::complex<Numeric> mf_out;
+  std::complex<Numeric> final_baseband;
+  std::complex<Numeric> hard_decision;
 
   Numeric timing_error;
   Numeric nda_timing_error;
   Numeric I_data() { return (real(hard_decision)); }
   Numeric Q_data() { return (imag(hard_decision)); }
-  complex<CNumeric> data() { return (hard_decision); }
+  std::complex<Numeric> data() { return (hard_decision); }
   Numeric carrier_loop() { return (carrier_loop_out); }
   Numeric symbol_loop() { return (symbol_loop_out); }
   bool symclk(void) { return (symbol_clk_pls); }
   qpsk(void) : rcv_sqrt_rc(9), final_baseband_delay(2), hard_decision_delay(2), timing_disc_delay(3) {
     //! alpha = 0.35 root raised cosine fir
-    fir_coeff<long> fir_c(rcv_sqrt_rc.num_taps);
-    root_raised_cosine_quantized(fir_c, 0.35, 2, 8, -0.2);
+    spuce::fir_coeff<int64_t> fir_c(rcv_sqrt_rc.number_of_taps());
+    spuce::root_raised_cosine_quantized(fir_c, 0.35, 2, 8, -0.2);
     rcv_sqrt_rc.settaps(fir_c);
 
     reset();
@@ -121,9 +120,9 @@ template <class Numeric> class qpsk {
     sample_clk = 0;
     nda_timing_error = 0;
   }
-  void clock(complex<CNumeric> adc_out) {
-    complex<CNumeric> carrier_phase;
-    long nda = 0;  //! Don't use NDA timing discriminator
+  void clock(std::complex<Numeric> adc_out) {
+    std::complex<Numeric> carrier_phase;
+    int64_t nda = 0;  //! Don't use NDA timing discriminator
 
     //! Down conversion
     if (symbol_clk_pls)
