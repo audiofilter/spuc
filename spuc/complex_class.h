@@ -47,7 +47,6 @@ template <typename T> class complex
 	  re = y.re; im = y.im; return *this; 
   } 
   inline complex  operator *=(const complex<T>& y) {
-	  ASP_C(cmult_count)
 	  T r = re*y.re - im*y.im;
 	  im  = re*y.im + im*y.re;
 	  re = r;
@@ -57,13 +56,11 @@ template <typename T> class complex
   	return(complex<T>(*this/l));
   }
   inline complex  operator +=(const complex<T>& y) {
-	  ASP_C(cadd_count)
 	  re += y.re;
 	  im += y.im;
 	  return *this;
   }
   inline complex  operator -=(const complex<T>& y) {
-	  ASP_C(cadd_count)
 	  re -= y.re;
 	  im -= y.im;
 	  return *this;

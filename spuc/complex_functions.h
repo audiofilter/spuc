@@ -15,15 +15,11 @@ template <typename T> inline complex<T> conjugate(complex<T> x)
 //! Magnitude Squared of complex vector (also norm)
 template <typename T> inline T magnitude_squared(complex<T> x)
 {
-  ASP_C(hcmult_count)
-  ASP_C(hcadd_count)
   return(magsqr<complex<T> >::magsqd(x));
 }
 //! Magnitude Squared of complex vector (also magnitude_squared)
 template <typename T> inline T norm(complex<T> x)
 {
-  ASP_C(hcmult_count)
-  ASP_C(hcadd_count)
   return(magsqr<complex<T> >::magsqd(x));
 }
 //! Normalized vector (magnitude = 1)
@@ -36,8 +32,6 @@ template <typename T> inline complex<double> normalized(complex<T> x)
 //! only get real part of result
 template <typename T> inline complex<T> real_mult(complex<T> r, complex<T> l)
 {
-  ASP_C(hcmult_count)
-  ASP_C(hcadd_count)
   complex<T> z;
   z.re = ((r.re*l.re) - (r.im*l.im));
   z.im = 0;
@@ -46,7 +40,6 @@ template <typename T> inline complex<T> real_mult(complex<T> r, complex<T> l)
 //! only get product of real parts
 template <typename T> inline complex<T> reals_only_mult(complex<T> r, complex<T> l)
 {
-  ASP_C(rmult_count)
   complex<T> z;
   z.re = (r.re*l.re);
   z.im = 0;

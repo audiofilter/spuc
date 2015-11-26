@@ -32,7 +32,6 @@ SET(SPUC_SRCS
   spuc/idft.cpp
   spuc/fft.cpp
   spuc/ifft.cpp
-  spuc/lib_inst.cpp
   spuc/max_pn.cpp
   spuc/misc.cpp
   spuc/nco.cpp
