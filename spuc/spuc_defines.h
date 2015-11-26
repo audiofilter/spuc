@@ -136,12 +136,11 @@ namespace SPUC {
 //! includes code from other sources including IT++ 3.7.0
 //! \author Tony Kirke,  Copyright(c) 2006
 #ifndef PI
-#define PI 3.141592653589793238462643
+#define PI M_PI
 #endif
-#define TWOPI 6.28318530717958647692
-#define HALFPI 1.57079632679489661923
-#define QUARTPI 0.78539816339744830962
-//#define E	2.7182818284590452353602874
+#define TWOPI 2*M_PI
+#define HALFPI 0.5*M_PI
+#define QUARTPI 0.25*M_PI
 
 // log2 is in tgmath.h on linux but not in MSVC
 #ifndef _TGMATH_H
@@ -163,9 +162,6 @@ template <typename T> T SQR(T a) { return a * a; }
 template <typename T> T SGN(T a) { return a < 0 ? -(T)1 : (T)1; }
 // macros
 
-//#define MAX(x,y)	((x) >= (y) ? (x) : (y))
-//#define MIN(x,y)	((x) <= (y) ? (x) : (y))
-//#define ABS(x) ( (x < 0) ? (-x) : (x))
 #define MASK_LOW(n) ((1 << n) - 1)
 #define MASK_BIT(n) (1 << n)
 #define MASK_NEG_HI(n) (-1 << (32 - n))

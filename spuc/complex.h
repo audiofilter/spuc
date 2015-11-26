@@ -2,7 +2,6 @@
 #include <iostream>
 #include <spuc/spuc_defines.h>
 #include <cmath>
-#include <spuc/conj.h>
 #include <spuc/signbit.h>
 #include <spuc/magsq.h>
 #include <spuc/builtin.h>
