@@ -10,8 +10,6 @@
 #include <spuc/quad_data.h>
 #include <spuc/qpsk_ber_test.h>
 #include <spuc/qpsk.h>
-#include <spuc/builtin.h>
-#include <spuc/fundtype.h>
 namespace SPUC {
 //! \file
 //! \brief  A Class for simulating a QPSK system

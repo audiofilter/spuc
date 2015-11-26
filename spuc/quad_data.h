@@ -9,8 +9,6 @@
 #include <spuce/filters/fir_interp.h>
 #include <spuce/filters/root_raised_cosine.h>
 #include <spuce/filters/lagrange.h>
-#include <spuc/builtin.h>
-#include <spuc/fundtype.h>
 namespace SPUC {
 //! \file
 //! \brief  Class for QPSK data using a root raised cosine transmit filter.

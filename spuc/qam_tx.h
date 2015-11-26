@@ -13,11 +13,8 @@
 #include <spuc/qam_mod.h>
 #include <spuc/spuc_math.h>
 #include <spuc/builtin.h>
-#include <spuc/fundtype.h>
 namespace SPUC {
 //! \file
-//! \brief  Class for QAM transmitter using a root raised cosine transmit filter
-//
 //! \brief  Class for QAM transmitter using a root raised cosine transmit filter
 //
 //! \author Tony Kirke
@@ -25,13 +22,12 @@ namespace SPUC {
 //!  \ingroup real_templates comm modulators
 template <class Numeric> class qam_tx {
  public:
-  typedef typename fundtype<Numeric>::ftype CNumeric;
   float_type alpha;
   max_pn training_source;
   qam_mod ENC;
-  fir_interp<complex<CNumeric>, Numeric> tx_filter;
+  fir_interp<complex<Numeric>, Numeric> tx_filter;
   max_pn preamble_source;
-  complex<CNumeric> tx_data;
+  complex<Numeric> tx_data;
   float_type data_level;
   long preamble_pn;  // Number of symbols used for pre-amble PN
   long training_interval;
@@ -97,14 +93,14 @@ template <class Numeric> class qam_tx {
   //---------------------------------------------------------------------------
   // STEP
   //---------------------------------------------------------------------------
-  complex<CNumeric> clock() {
+  complex<Numeric> clock() {
     // Get new sample from transmitter
     if (count++ % over == 0) {
       if (tx_symbols < preamble_pn) {
         // Preamble is not scaled!!!
-        tx_data = complex<CNumeric>(preamble_source.out(), 0);
+        tx_data = complex<Numeric>(preamble_source.out(), 0);
       } else if (tx_symbols < training_interval + preamble_pn) {
-        tx_data = training_scale * complex<CNumeric>(training_source.out(), 0);
+        tx_data = training_scale * complex<Numeric>(training_source.out(), 0);
       } else {
         tx_data = ENC.data_map(rate, 0);
       }

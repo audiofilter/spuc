@@ -22,8 +22,6 @@
 #include <spuc/vco.h>
 #include <spuc/nda_symbol.h>
 #include <spuc/qpsk_dd_phase.h>
-#include <spuc/builtin.h>
-#include <spuc/fundtype.h>
 namespace SPUC {
 //! \file
 //! \brief A QPSK receiver that can operate at exactly 2 samples/symbol
@@ -39,8 +37,6 @@ namespace SPUC {
 //! \image latex qpsk.eps
 template <class Numeric> class qpsk {
  public:
-  typedef typename fundtype<Numeric>::ftype CNumeric;
-
   a_d ADC;
   loop_filter<Numeric> carrier_loop_filter;
   loop_filter<Numeric> symbol_loop_filter;

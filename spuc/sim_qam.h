@@ -14,21 +14,16 @@
 #include <spuc/root_raised_cosine.h>
 #include <spuc/base_demod.h>
 #include <spuc/builtin.h>
-#include <spuc/fundtype.h>
 namespace SPUC {
 //! \file
 //! \brief  A Class for simulating a QAM system
-//
-//! \brief  A Class for simulating a QAM system
-//
 //! that includes transmitters, receivers, A/D, frequency offsets,
 //! gaussian noise, and a BER tester
 //! \author Tony Kirke
 //!  \ingroup real_templates sim
 template <class Numeric> class sim_qam {
  public:
-  typedef typename fundtype<Numeric>::ftype CNumeric;
-  typedef complex<CNumeric> complex_type;
+  typedef complex<Numeric> complex_type;
 
   const long over;  // Oversampling rate
   float_type alpha;
