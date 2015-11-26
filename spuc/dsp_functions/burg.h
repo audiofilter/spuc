@@ -9,8 +9,6 @@ namespace SPUC {
 //! \file
 //! \brief AR model coefficients calculation using Burg algorithm
 //
-//! \brief AR model coefficients calculation using Burg algorithm
-//
 //! \author Tony Kirke,  Copyright(c) 2001
 //! \author Tony Kirke
 //! \ingroup template_array_functions misc

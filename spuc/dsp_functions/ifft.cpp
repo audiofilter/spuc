@@ -1,12 +1,8 @@
 // Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
-#include <iostream>
-#include <fstream>
-#include <spuc/complex.h>
-#include <spuc/dsp_functions/spuc_math.h>
 #include <spuc/dsp_functions/ifft.h>
-#include <vector>
+#include <spuc/dsp_functions/spuc_math.h>
 namespace SPUC {
 /* *************************************************************************
 ifft - In-place radix 2 decimation in time inverse FFT
