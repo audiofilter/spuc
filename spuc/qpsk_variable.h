@@ -20,7 +20,6 @@
 #include <spuc/agc.h>
 #include <spuc/quant.h>
 #include <spuc/builtin.h>
-#include <spuc/fundtype.h>
 namespace SPUC {
 //! \file
 //! \brief A QPSK receiver that can operate over a range of non-integer sampling rates

@@ -8,7 +8,6 @@ message("Project spuc_examples")
 SET(TARGETS
   test_ddfse
   test_mlse
-  test_rls
   )
 
 # These to make QPSK sync up:" -DNOFREQ -DNOTIME -DNOFREQC -DNORAND "
