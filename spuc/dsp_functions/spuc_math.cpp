@@ -1,7 +1,7 @@
 // Copyright (c) 2015 Tony Kirke. License MIT  (http://www.opensource.org/licenses/mit-license.php)
 //! \author Tony Kirke
 // from directory: spuc_src
-#include <spuc/spuc_math.h>
+#include <spuc/dsp_functions/spuc_math.h>
 namespace SPUC {
 // function for hyperbolic inverse cosine of x
 float_type coshin(float_type x) { return (log(x + sqrt(x * x - 1.))); }

@@ -2,7 +2,7 @@
 //! \author Tony Kirke
 // from directory: spuc_templates
 #include <spuc/vco.h>
-#include <spuc/spuc_math.h>
+#include <spuc/dsp_functions/spuc_math.h>
 #include <spuc/complex.h>
 namespace SPUC {
 template <> float vco<float>::get_phase(void) { return (acc); }

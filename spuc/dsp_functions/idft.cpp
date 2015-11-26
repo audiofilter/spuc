@@ -3,9 +3,7 @@
 // from directory: spuc_src
 #include <spuc/spuc_defines.h>
 #include <spuc/complex.h>
-#include <spuc/spuc_math.h>
-#include <iostream>
-#include <fstream>
+#include <spuc/dsp_functions/spuc_math.h>
 #include <spuc/dsp_functions/idft.h>
 #include <vector>
 namespace SPUC {
