@@ -1,0 +1,20 @@
+# - Config file for the cpplot package
+# It defines the following variables
+#  CPPLOT_INCLUDE_DIRS - include directories for cpplot
+#  CPPLOT_LIBRARIES    - libraries to link against
+#  CPPLOT_EXECUTABLE   - the bar executable
+
+# Compute paths
+get_filename_component(CPPLOT_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+if(EXISTS "${CPPLOT_CMAKE_DIR}/CMakeCache.txt")
+   # In build tree
+   include("${CPPLOT_CMAKE_DIR}/cpplotBuildTreeSettings.cmake")
+else()
+   set(CPPLOT_INCLUDE_DIRS "${CPPLOT_CMAKE_DIR}/@CONF_REL_INCLUDE_DIR@")
+endif()
+
+# Our library dependencies (contains definitions for IMPORTED targets)
+include("${CPPLOT_CMAKE_DIR}/cpplotLibraryDepends.cmake")
+
+# These are IMPORTED targets created by cpplotLibraryDepends.cmake
+set(CPPLOT_LIBRARIES cpplot)
