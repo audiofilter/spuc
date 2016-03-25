@@ -6,6 +6,7 @@
 #include <spuc/sim_qpsk.h>
 #include <spuc/noise.h>
 #include "cpplot.hpp"
+#include <thread>
 #define SYM_LOOP_ON 10
 #define CAR_LOOP_ON 1000
 using namespace cpplot;

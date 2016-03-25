@@ -7,6 +7,8 @@ IF(NOT CMAKE_BUILD_TYPE)
 ENDIF()
 PROJECT("spuc")
 message(STATUS "Project spuc")
+include(FeatureSummary)
+include(CMakeDependentOption)
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
   set(CMAKE_CXX_FLAGS " -std=c++11 ")
@@ -76,15 +78,9 @@ install(
     PATTERN "*.cpp" EXCLUDE
 )
 
-option(SPUC_BUILD_ALL "Build everything" OFF)
-option(SPUC_BUILD_EXAMPLES "Build examples" OFF)
+cmake_dependent_option(SPUC_EXAMPLES "Build examples" ON "SPUC_BUILD_ALL" ON)
+cmake_dependent_option(SPUC_GRAPHICS "Build graphic examples" ON "SPUC_BUILD_ALL" ON)
 
-if (SPUC_BUILD_ALL)
-	MESSAGE(STATUS "building everything")
-	set(SPUC_BUILD_EXAMPLES ON)
-else()
-	MESSAGE(STATUS "Not building everything - enable with cmake -DSPUC_BUILD_ALL=ON")
-endif()
 
 ADD_DEFINITIONS("-Wall -fPIC")
 INCLUDE_DIRECTORIES(${Spuce_INCLUDE_DIRS} "/usr/include/" ".")
@@ -93,10 +89,34 @@ ADD_LIBRARY(spuc_types STATIC ${TYPE_SRCS})
 INSTALL(TARGETS spuc_types DESTINATION ./lib)
 INSTALL(TARGETS spuc DESTINATION ./lib)
 
-if (SPUC_BUILD_EXAMPLES)
-MESSAGE(STATUS "building examples")
-add_subdirectory(examples)
+if (SPUC_EXAMPLES)
+  add_subdirectory(examples)
 else()
-MESSAGE(STATUS "Not building examples - enable with cmake -DSPUC_BUILD_EXAMPLES=ON")
+  MESSAGE(STATUS "Not building examples - enable with cmake -DSPUC_EXAMPLES=ON")
 endif()
 
+if (SPUC_GRAPHICS)
+  add_subdirectory(cpplot)
+  add_subdirectory(graphic_examples)
+else()
+  MESSAGE(STATUS "Not building graphic examples - enable with cmake -DSPUC_GRAPHIC_EXAMPLES=ON")
+endif()
+
+add_feature_info(SPUC_BUILD_ALL SPUC_BUILD_ALL "Build everything")
+add_feature_info(SPUC_GRAPHICS SPUC_GRAPHICS "Build graphic examples")
+add_feature_info(SPUC_EXAMPLES SPUC_EXAMPLES "Build examples")
+
+
+
+
+#########################################################################
+# print features summary
+#########################################################################
+message(STATUS "######################################################")
+message(STATUS "## Enabled features")
+message(STATUS "######################################################")
+feature_summary(WHAT ENABLED_FEATURES)
+message(STATUS "######################################################")
+message(STATUS "## Disabled features")
+message(STATUS "######################################################")
+feature_summary(WHAT DISABLED_FEATURES)

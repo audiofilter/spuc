@@ -4,6 +4,9 @@
 #include <spuc/spuc_types.h>
 #include <spuc/complex.h>
 #include <cmath>  // for sin and cos
+
+typedef std::complex<SPUC::float_type> CPLX;
+
 namespace SPUC {
 //! \file
 //! \brief  General Purpose C++ complex FFT Transform
@@ -24,7 +27,6 @@ namespace SPUC {
 //!  ComPlex::operator @ (CPLX , CPLX )	[ where @ =* + - ]
 //! \author Tony Kirke
 //!  \ingroup classes misc
-typedef std::complex<float_type> CPLX;
 class cfft {
   int N, log2N;           //! these define size of FFT buffer
   CPLX *w;                //! array [N/2] of cos/sin values

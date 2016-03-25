@@ -1,7 +1,8 @@
 #include <iostream>
 #include <iomanip>
-#include <spuc/auto_corr.h>
+#include <spuc/dsp_functions/auto_corr.h>
 #include "cpplot.hpp"
+#include <thread>
 using namespace std;
 using namespace SPUC;
 using namespace cpplot;
