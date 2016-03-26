@@ -4,10 +4,6 @@ language:
   - objective-c
 compiler:
   - clang
-# whitelist
-branches:
-  only:
-  - master
   
 before_install:
   - brew update
