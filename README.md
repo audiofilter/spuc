@@ -18,10 +18,6 @@ This is an update of code that has been on sourceforge for about 14 years. The g
 * brew tap audiofilter/spuc
 * brew install spuc  (or brew install -HEAD spuc for latest sources (unstable)
 
-For a lite-weight version please checkout spuclib instead as it does not have the Doxygen generated files like this does.
-
-Nor does spuclib have the examples or the python extensions available in audiofilter/pyspuc
-
 Library documentation pages here : http://audiofilter.github.io/spuc/
 
 ----
@@ -29,12 +25,6 @@ Library documentation pages here : http://audiofilter.github.io/spuc/
 
 PYSPUC - python bindings for spuclib
 [![Build Status](https://travis-ci.org/audiofilter/pyspuc.png)](https://travis-ci.org/audiofilter/pyspuc) 
-
-SPUCLIB - CMake build of various libraries without examples, etc
-[![Build Status](https://travis-ci.org/audiofilter/spuclib.png)](https://travis-ci.org/audiofilter/spuclib)
-
-SPUC_QPSK - QPSK simulation
-[![Build Status](https://travis-ci.org/audiofilter/spuc_qpsk.png)](https://travis-ci.org/audiofilter/spuc_qpsk)
 
 SPUC_FIXED - Fixed point class similiar to SystemC
 [![Build Status](https://travis-ci.org/audiofilter/spuc_fixed.png)](https://travis-ci.org/audiofilter/spuc_fixed)
