@@ -13,7 +13,7 @@ std::vector<double> xcorr(const std::vector<double> &x, unsigned maxlag) {
   if (maxlag == 0) maxlag = N - 1;
 
   int np2 = int(ceil(log(N + maxlag) / log(2.0)));
-  int M = (1 << np2);
+  unsigned M = (1 << np2);
 
   std::vector<complex<double> > y;
   for (unsigned i = 0; i < M; i++) {
@@ -25,7 +25,7 @@ std::vector<double> xcorr(const std::vector<double> &x, unsigned maxlag) {
   }
 
   fft(y, np2);
-  for (int i = 0; i < M; i++) y[i] = magsq(y[i]);
+  for (unsigned i = 0; i < M; i++) y[i] = magsq(y[i]);
   ifft(y, np2);
 
   double gain = (double)1.0 / N;
