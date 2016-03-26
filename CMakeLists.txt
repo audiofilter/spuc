@@ -10,14 +10,13 @@ message(STATUS "Project spuc")
 include(FeatureSummary)
 include(CMakeDependentOption)
 
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+IF (${CMAKE_SYSTEM_NAME} MATCHES "Darwin" OR ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
   set(CMAKE_CXX_FLAGS " -std=c++11 ")
   message(STATUS "Using c++11")
 ENDIF()
 
-
-find_package(SPUCE CONFIG)
-if (SPUCE_FOUND)
+find_package(Spuce CONFIG)
+if (Spuce_FOUND)
   message(STATUS "Found Spuce!")
   message(STATUS "Spuce inc dir = ${Spuce_INCLUDE_DIRS}")
   message(STATUS "Spuce libs = ${Spuce_LIBRARIES}")
@@ -78,8 +77,9 @@ install(
     PATTERN "*.cpp" EXCLUDE
 )
 
-cmake_dependent_option(SPUC_EXAMPLES "Build examples" ON "SPUC_BUILD_ALL" ON)
-cmake_dependent_option(SPUC_GRAPHICS "Build graphic examples" ON "SPUC_BUILD_ALL" ON)
+
+cmake_dependent_option(SPUC_EXAMPLES "Build examples" ON "SPUC_BUILD_ALL" OFF)
+cmake_dependent_option(SPUC_GRAPHICS "Build graphic examples" ON "SPUC_BUILD_ALL" OFF)
 
 
 ADD_DEFINITIONS("-Wall -fPIC")
