@@ -137,6 +137,15 @@ http://github.com/audiofilter/spuc_filter
 ### Building
 
 ```sh
+# First spuce
+git clone https://github.com/audiofilter/spuce.git
+cd spuce
+mkdir build
+cd build
+cmake ..
+make install
+# Now spuc
+cd ../..
 mkdir build
 cd build
 cmake ..
