@@ -6,16 +6,12 @@ SPUC - Signal Processing Using C++
 
 This is an update of code that has been on sourceforge for about 14 years. The genesis of this code goes back even further - before decent C++ template support and availability of a useful complex class.
 
-**Note: boost no longer required, unless building python extensions**
-
-**This code base is no longer being updated, there are known bugs in the IIR filters and window functions**
-
-**For bug fixes on these block please see spuce**
-
+**Most of the filtering code reqired here is now from spuce library rather than inherent to this library**
 **Also most files now use MIT License (check each file)**
 
 **To install via Homebrew**
 * brew tap audiofilter/spuc
+* brew install spuce
 * brew install spuc  (or brew install -HEAD spuc for latest sources (unstable)
 
 Library documentation pages here : http://audiofilter.github.io/spuc/
@@ -51,7 +47,7 @@ Travis is being used to display the build integrity and uses Clang on Mac OSX 10
 ### Information (details on http://audiofilter.github.io/spuc/ )
 
 SPUC was originally written since early C++ had no complex class as part of a standard. In addition we needed a complex class to support handling fixed-point data types to model real hardware in digital communication ASICs.
-After that many filtering classes and functions were added. This allowed trading off stopband and cut-off without having to go to Matlab to recalculate coefficients. So of the filter types supported are
+After that many filtering classes and functions were added. This allowed trading off stopband and cut-off without having to go to Matlab to recalculate coefficients. So of the filter types supported are (now in spuce)
 
 * Butterworth
 * Chebyshev
