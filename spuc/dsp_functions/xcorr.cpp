@@ -16,7 +16,7 @@ std::vector<double> xcorr(const std::vector<double> &x, unsigned maxlag) {
   int M = (1 << np2);
 
   std::vector<complex<double> > y;
-  for (int i = 0; i < M; i++) {
+  for (unsigned i = 0; i < M; i++) {
     if (i < N) {
       y.push_back(x[i]);
     } else {
@@ -30,8 +30,8 @@ std::vector<double> xcorr(const std::vector<double> &x, unsigned maxlag) {
 
   double gain = (double)1.0 / N;
 
-  for (int i = 0; i < maxlag; i++) R.push_back(gain * real(y[maxlag - i]));
-  for (int i = 0; i < maxlag + 1; i++) R.push_back(gain * real(y[i]));
+  for (unsigned i = 0; i < maxlag; i++) R.push_back(gain * real(y[maxlag - i]));
+  for (unsigned i = 0; i < maxlag + 1; i++) R.push_back(gain * real(y[i]));
 
   return R;
 }
