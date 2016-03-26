@@ -22,7 +22,7 @@ before_script:
   - cd build
   - cmake ..
   - make install
-  - cd ../
+  - cd ../../
   - mkdir build
   - cd build
   - cmake ..
