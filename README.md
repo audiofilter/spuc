@@ -23,9 +23,6 @@ Library documentation pages here : http://audiofilter.github.io/spuc/
 ----
 ### Various Sub-projects also on Github
 
-PYSPUC - python bindings for spuclib
-[![Build Status](https://travis-ci.org/audiofilter/pyspuc.png)](https://travis-ci.org/audiofilter/pyspuc) 
-
 SPUC_FIXED - Fixed point class similiar to SystemC
 [![Build Status](https://travis-ci.org/audiofilter/spuc_fixed.png)](https://travis-ci.org/audiofilter/spuc_fixed)
 
