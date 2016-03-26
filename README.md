@@ -155,4 +155,4 @@ Extra switches to CMake enable the various examples to be built
 
 * SPUC_BUILD_ALL - Build everything
 * SPUC_EXAMPLES - Build the examples
-* SPUC_GRAPHIC_EXAMPLES - Build the examples that requires gl,opengl, etc
+* SPUC_GRAPHICS - Build the examples that requires gl,opengl, etc
